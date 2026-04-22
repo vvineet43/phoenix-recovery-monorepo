@@ -1,0 +1,19 @@
+{
+  "name": "phoenix-recovery-monorepo",
+  "version": "2.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:desktop": "npm run dev --workspace=desktop",
+    "dev:website": "npm run dev --workspace=website",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:desktop\" \"npm run dev:website\"",
+    "build": "npm run build --workspaces",
+    "build:electron": "npm run build --workspace=desktop"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

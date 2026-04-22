@@ -1,0 +1,74 @@
+{
+  "name": "desktop",
+  "version": "2.0.0",
+  "private": true,
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "wait-on http://localhost:5173 && electron .",
+    "build": "rm -rf dist && cp -r ../frontend/dist ./dist && electron-builder"
+  },
+  "dependencies": {
+    "systeminformation": "^5.23.5"
+  },
+  "devDependencies": {
+    "electron": "^34.2.0",
+    "electron-builder": "^25.1.8",
+    "wait-on": "^8.0.3"
+  },
+  "build": {
+    "appId": "com.phoenix.recovery",
+    "productName": "Phoenix Recovery",
+    "copyright": "Copyright © 2025 Phoenix Recovery",
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "electron/icon.png",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "electron/entitlements.mac.plist",
+      "entitlementsInherit": "electron/entitlements.mac.plist"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "electron/icon.ico"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "icon": "electron/icon.png"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "!electron/icon.icns",
+      "!**/.DS_Store"
+    ],
+    "extraResources": [
+      {
+        "from": "../../backend/",
+        "to": "backend/",
+        "filter": [
+          "**/*",
+          "!venv/**",
+          "!__pycache__/**",
+          "!recovered_files/**",
+          "!*.img",
+          "!data/**"
+        ]
+      }
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/systeminformation/**"
+    ]
+  }
+}

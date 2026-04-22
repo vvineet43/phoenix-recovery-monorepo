@@ -1,0 +1,11 @@
+/* App-level overrides (mostly empty now—all styles in index.css) */
+.app-layout {
+  padding-top: 0;
+}
+
+/* Extra safe draggable area offset for Electron */
+@media (display-mode: standalone) {
+  .app-header {
+    padding-top: 2rem;
+  }
+}

@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Next.js
+.next/
+out/
+build/
+
+# Vite / React / Electron Output
+dist/
+release/
+apps/frontend/dist/
+apps/desktop/dist/
+apps/desktop/release/
+
+# Node environment
+.env
+.env*.local
+
+# Python / Flask
+venv/
+__pycache__/
+*.pyc
+*.img
+backend/recovered_files/
+
+# macOS
+.DS_Store
+*.pem
+*.key
+
+# Logs
+logs
+*.log
+npm-debug.log*
