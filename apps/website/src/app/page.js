@@ -14,9 +14,9 @@ export default function Home() {
           <div className="nav-links">
             <a href="#tools" className="link nav-hide-mobile">Our Tools</a>
             <a href="#why" className="link nav-hide-mobile">Why Offline?</a>
-            <Link href="/pdf-tools" className="btn btn-primary" style={{ padding: '0.45rem 0.9rem', fontSize: '0.83rem' }}>
-              Launch PDF Editor
-            </Link>
+            <a href="#tools" className="btn btn-primary" style={{ padding: '0.45rem 0.9rem', fontSize: '0.83rem' }}>
+              Explore Tools
+            </a>
           </div>
         </div>
       </nav>
