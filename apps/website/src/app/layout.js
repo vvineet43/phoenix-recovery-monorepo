@@ -7,14 +7,14 @@ const outfit = Outfit({ subsets: ['latin'], variable: '--font-display' });
 
 // Fully SEO Optimized Metadata (Injected beautifully by Next.js Server Side)
 export const metadata = {
-  title: 'LifeTools | Phoenix Data Recovery & Essential Utilities',
+  title: 'TheNexTools | Phoenix Data Recovery & Essential Utilities',
   description: 'A suite of high-performance desktop utilities designed to rescue your data, repair corrupted files, and keep your digital life running smoothly.',
-  keywords: ['data recovery', 'file repair', 'mac data recovery', 'deep sector scan', 'utilities', 'LifeTools', 'Phoenix Recovery'],
+  keywords: ['data recovery', 'file repair', 'mac data recovery', 'deep sector scan', 'utilities', 'TheNexTools', 'Phoenix Recovery'],
   openGraph: {
-    title: 'LifeTools | Phoenix Data Recovery & Essential Utilities',
+    title: 'TheNexTools | Phoenix Data Recovery & Essential Utilities',
     description: 'A suite of high-performance desktop utilities designed to rescue your data, repair corrupted files, and keep your digital life running smoothly.',
-    url: 'https://lifetools.app',
-    siteName: 'LifeTools Suite',
+    url: 'https://thenextools.com',
+    siteName: 'TheNexTools Suite',
     images: [
       {
         url: '/phoenix-utility.png', // Fallback SEO cover image
@@ -27,7 +27,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LifeTools | Phoenix Data Recovery & Essential Utilities',
+    title: 'TheNexTools | Phoenix Data Recovery & Essential Utilities',
     description: 'A suite of high-performance desktop utilities designed to rescue your data, repair corrupted files.',
   images: ['/phoenix-utility.png'],
   },
