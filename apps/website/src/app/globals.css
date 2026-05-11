@@ -155,8 +155,8 @@ nav {
    Hero
 ══════════════════════════════ */
 .hero {
-  padding-top: calc(var(--nav-h) + 5rem);
-  padding-bottom: 5rem;
+  padding-top: calc(var(--nav-h) + 5.5rem);
+  padding-bottom: 5.5rem;
   text-align: center;
 }
 
@@ -383,8 +383,8 @@ footer {
 
   /* Hero */
   .hero {
-    padding-top: calc(var(--nav-h) + 4rem);
-    padding-bottom: 3rem;
+    padding-top: calc(var(--nav-h) + 5.5rem);
+    padding-bottom: 5rem;
   }
 
   .hero h1 {
@@ -394,7 +394,6 @@ footer {
 
   .hero > p {
     font-size: 0.9rem;
-    margin-bottom: 0;
   }
 
   /* Keep hero actions as a centered row of compact buttons */
