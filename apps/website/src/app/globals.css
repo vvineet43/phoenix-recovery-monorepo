@@ -383,27 +383,37 @@ footer {
 
   /* Hero */
   .hero {
-    padding-top: calc(var(--nav-h) + 2.5rem);
+    padding-top: calc(var(--nav-h) + 4rem);
     padding-bottom: 3rem;
   }
 
   .hero h1 {
-    font-size: 1.85rem;
+    font-size: 1.75rem;
     letter-spacing: -0.015em;
   }
 
-  .hero > p { font-size: 0.975rem; }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: center;
+  .hero > p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
   }
 
-  .hero-actions .btn {
-    width: 100%;
-    max-width: 320px;
-    padding: 0.75rem 1.25rem;
-    font-size: 0.925rem;
+  /* Keep hero actions as a centered row of compact buttons */
+  .hero-actions {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  /* Hide the secondary outline CTA on mobile — reduce clutter */
+  .hero-actions .btn-outline {
+    display: none;
+  }
+
+  .hero-actions .btn-primary {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.875rem;
+    border-radius: 8px;
   }
 
   /* Sections */

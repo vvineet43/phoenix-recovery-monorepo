@@ -25,7 +25,7 @@ export default function Home() {
         <div className="badge">Professional Desktop Software</div>
         <h1>Tools that work where the internet can&apos;t reach them.</h1>
         <p>
-          TheNexTools is a focused collection of desktop utilities for people who handle sensitive files for a living. Recover deleted data, edit PDFs, strip photo metadata, and compress images — all without a single byte leaving your machine.
+          A focused suite of professional utilities that run entirely on your device. PDF editing, EXIF stripping, image compression, data recovery — no uploads, no accounts.
         </p>
         <div className="hero-actions">
           <a href="#tools" className="btn btn-primary">See What&apos;s Available</a>
