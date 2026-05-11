@@ -62,38 +62,68 @@ export default function Home() {
         <div className="container">
           <div className="section-header">
             <h2>The current lineup</h2>
-            <p>Two flagship applications, built to solve two very specific — and very painful — problems.</p>
+            <p>Four tools, all offline, all free to use — built around the same principle of keeping your files on your machine.</p>
           </div>
           
-          <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '2rem' }}>
+          <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem' }}>
             
-            <div className="feature-card" style={{ padding: '3rem', border: '1px solid var(--border-color)', display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>Phoenix Data Recovery</h3>
-              <p style={{ fontSize: '1.05rem', flex: 1, marginBottom: '2rem', lineHeight: '1.7' }}>
-                For when a drive fails, a card gets formatted, or years of files go missing. Phoenix reads raw disk sectors — bypassing whatever the file system can no longer tell you — and recovers what the OS considers gone. Photos, videos, documents, archives.
+            <div className="feature-card" style={{ padding: '2.5rem', border: '1px solid var(--border-color)', display: 'flex', flexDirection: 'column', height: '100%' }}>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>Phoenix Data Recovery</h3>
+              <p style={{ fontSize: '1rem', flex: 1, marginBottom: '1.5rem', lineHeight: '1.7', color: 'var(--text-muted)' }}>
+                Recovers deleted files from formatted drives and corrupted SD cards by scanning raw disk sectors — bypassing the file system entirely.
               </p>
-              <ul style={{ marginBottom: '2rem', paddingLeft: '1.5rem', color: 'var(--text-secondary)', lineHeight: '2' }}>
+              <ul style={{ marginBottom: '1.75rem', paddingLeft: '1.25rem', color: 'var(--text-muted)', lineHeight: '2', fontSize: '0.9rem' }}>
                 <li>Works on dead partitions and formatted volumes</li>
                 <li>Repairs unplayable MP4 and MOV video files</li>
                 <li>Free to scan, pay only when you recover</li>
               </ul>
               <Link href="/data-recovery" className="btn btn-outline" style={{ width: 'fit-content' }}>
-                Learn about Phoenix &rarr;
+                Learn more &rarr;
               </Link>
             </div>
 
-            <div className="feature-card" style={{ padding: '3rem', border: '1px solid var(--border-color)', display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>NexPDF Toolkit</h3>
-              <p style={{ fontSize: '1.05rem', flex: 1, marginBottom: '2rem', lineHeight: '1.7' }}>
-                A full-featured PDF editor that runs entirely in your browser — no upload, no account, no watermarks. Merge documents, reorder pages, add signatures, stamp dates, and compress files down to a sendable size. It all happens locally, in your tab.
+            <div className="feature-card" style={{ padding: '2.5rem', border: '1px solid var(--border-color)', display: 'flex', flexDirection: 'column', height: '100%' }}>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>NexPDF Toolkit</h3>
+              <p style={{ fontSize: '1rem', flex: 1, marginBottom: '1.5rem', lineHeight: '1.7', color: 'var(--text-muted)' }}>
+                A full PDF editor in your browser — merge documents, reorder pages, add signatures, stamp dates, and compress files. No upload, no account.
               </p>
-              <ul style={{ marginBottom: '2rem', paddingLeft: '1.5rem', color: 'var(--text-secondary)', lineHeight: '2' }}>
+              <ul style={{ marginBottom: '1.75rem', paddingLeft: '1.25rem', color: 'var(--text-muted)', lineHeight: '2', fontSize: '0.9rem' }}>
                 <li>Drag-and-drop page management and annotations</li>
                 <li>Handwritten and typed signature support</li>
                 <li>Compression with live file size preview</li>
               </ul>
               <Link href="/pdf-toolkit" className="btn btn-outline" style={{ width: 'fit-content' }}>
-                Learn about NexPDF &rarr;
+                Learn more &rarr;
+              </Link>
+            </div>
+
+            <div className="feature-card" style={{ padding: '2.5rem', border: '1px solid var(--border-color)', display: 'flex', flexDirection: 'column', height: '100%' }}>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>EXIF Metadata Stripper</h3>
+              <p style={{ fontSize: '1rem', flex: 1, marginBottom: '1.5rem', lineHeight: '1.7', color: 'var(--text-muted)' }}>
+                Shows what&apos;s hidden in your photos — GPS coordinates, device fingerprints, timestamps — then removes all of it before you share. Batch-ready, instant download.
+              </p>
+              <ul style={{ marginBottom: '1.75rem', paddingLeft: '1.25rem', color: 'var(--text-muted)', lineHeight: '2', fontSize: '0.9rem' }}>
+                <li>Detects and removes GPS location data</li>
+                <li>Shows every metadata field before stripping</li>
+                <li>Download individually or as a ZIP</li>
+              </ul>
+              <Link href="/exif-stripper" className="btn btn-outline" style={{ width: 'fit-content' }}>
+                Learn more &rarr;
+              </Link>
+            </div>
+
+            <div className="feature-card" style={{ padding: '2.5rem', border: '1px solid var(--border-color)', display: 'flex', flexDirection: 'column', height: '100%' }}>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>Image Compressor</h3>
+              <p style={{ fontSize: '1rem', flex: 1, marginBottom: '1.5rem', lineHeight: '1.7', color: 'var(--text-muted)' }}>
+                Compress JPG, PNG, and WebP images locally. Adjust quality with a slider, compare before and after at full size, and download — nothing leaves your device.
+              </p>
+              <ul style={{ marginBottom: '1.75rem', paddingLeft: '1.25rem', color: 'var(--text-muted)', lineHeight: '2', fontSize: '0.9rem' }}>
+                <li>JPEG, PNG, and WebP output formats</li>
+                <li>Side-by-side comparison before downloading</li>
+                <li>Batch processing with total savings tracker</li>
+              </ul>
+              <Link href="/image-compressor" className="btn btn-outline" style={{ width: 'fit-content' }}>
+                Learn more &rarr;
               </Link>
             </div>
 

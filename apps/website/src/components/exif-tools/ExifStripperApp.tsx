@@ -32,7 +32,7 @@ async function readExif(file: File): Promise<Record<string, string> | null> {
       gps: true,
       exif: true,
       ifd0: true,
-    });
+    } as any);
     if (!data) return null;
     const filtered: Record<string, string> = {};
     const include = ['Make', 'Model', 'Software', 'DateTime', 'DateTimeOriginal',
