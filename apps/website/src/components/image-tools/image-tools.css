@@ -1,0 +1,575 @@
+/* ── Shared CSS for EXIF Stripper & Image Compressor tools ── */
+/* Mirrors pdf-editor.css so all tools share the same visual language */
+
+.tool-wrapper {
+  background-color: #ffffff;
+  color: #0f172a;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+.tool-wrapper * {
+  box-sizing: border-box;
+}
+
+/* ── Layout ── */
+.tool-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+/* ── Header ── */
+.tool-header {
+  text-align: center;
+  padding: 2.5rem 0 3rem;
+}
+
+.tool-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748b;
+  background: #f9fafb;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tool-header h1 {
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  line-height: 1.15;
+}
+
+.tool-header p {
+  font-size: 1.05rem;
+  color: #64748b;
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Upload Zone ── */
+.tool-upload-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border: 2px dashed #e2e8f0;
+  border-radius: 16px;
+  padding: 4rem 2rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.tool-upload-zone:hover,
+.tool-upload-zone.drag-active {
+  border-color: #0f172a;
+  background: #f1f5f9;
+}
+
+.tool-upload-icon {
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.tool-upload-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.tool-upload-subtitle {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.hidden-input {
+  display: none;
+}
+
+/* ── Panel (card) ── */
+.tool-panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04), 0 2px 4px -1px rgba(0,0,0,0.02);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Toolbar ── */
+.tool-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.5rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  margin-bottom: 1.25rem;
+}
+
+.tool-toolbar-info {
+  flex: 1;
+}
+
+.tool-toolbar-info h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.tool-toolbar-info p {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.tool-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ── Buttons ── */
+.tool-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.tool-btn-primary {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.tool-btn-primary:hover:not(:disabled) {
+  background: #334155;
+  transform: translateY(-1px);
+}
+
+.tool-btn-secondary {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: #e2e8f0;
+}
+
+.tool-btn-secondary:hover:not(:disabled) {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.tool-btn-danger {
+  background: #ffffff;
+  color: #ef4444;
+  border-color: #fecaca;
+}
+
+.tool-btn-danger:hover:not(:disabled) {
+  background: #fef2f2;
+}
+
+.tool-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.tool-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tool-btn-icon:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* ── Format Toggle Buttons ── */
+.format-toggle {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.format-btn {
+  padding: 0.35rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: 'Inter', sans-serif;
+}
+
+.format-btn.active {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+/* ── Range Slider ── */
+.tool-slider-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.tool-slider-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tool-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background: #e2e8f0;
+  outline: none;
+}
+
+.tool-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #0f172a;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.tool-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.tool-slider:disabled {
+  opacity: 0.4;
+}
+
+/* ── Stats Bar ── */
+.tool-stats-bar {
+  display: flex;
+  gap: 2.5rem;
+  padding: 1rem 1.5rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+}
+
+.tool-stat-item p:first-child {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #16a34a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.tool-stat-item p:last-child {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #15803d;
+}
+
+/* ── Image List Row ── */
+.tool-image-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: border-color 0.15s;
+}
+
+.tool-image-row:hover {
+  border-color: #cbd5e1;
+}
+
+.tool-thumbnail {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.tool-thumbnail-clean {
+  border-color: #86efac;
+}
+
+.tool-image-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.tool-image-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #0f172a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 3px;
+}
+
+.tool-image-meta {
+  font-size: 0.82rem;
+  color: #64748b;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.meta-warning { color: #f59e0b; font-weight: 500; }
+.meta-success { color: #16a34a; font-weight: 500; }
+.meta-danger  { color: #ef4444; font-weight: 500; }
+.meta-savings { color: #15803d; font-weight: 700; }
+
+.tool-image-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+/* ── Expanded metadata grid ── */
+.metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.metadata-tag {
+  padding: 0.5rem 0.75rem;
+  background: #f9fafb;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+.metadata-tag-key {
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.metadata-tag-val {
+  color: #0f172a;
+  word-break: break-all;
+}
+
+.metadata-tag-val.gps {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.metadata-section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.6rem 0 0.3rem;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 0.5rem;
+}
+
+/* ── Compare view ── */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  background: #f9fafb;
+  border: 1px solid #e2e8f0;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+}
+
+.compare-grid img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  display: block;
+}
+
+.compare-grid .compare-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.compare-grid .compare-label.compressed {
+  color: #15803d;
+}
+
+/* ── List container ── */
+.tool-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* ── Responsive ── */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .tool-toolbar {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .tool-slider-row {
+    min-width: 160px;
+  }
+
+  .compare-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .tool-container {
+    padding: 1rem 1rem 3rem;
+  }
+
+  .tool-header {
+    padding: 1.5rem 0 2rem;
+  }
+
+  .tool-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .tool-header p {
+    font-size: 0.95rem;
+  }
+
+  .tool-upload-zone {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .tool-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .tool-toolbar-actions {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tool-toolbar-actions .tool-btn {
+    flex: 1;
+    justify-content: center;
+    min-width: 80px;
+  }
+
+  .format-toggle {
+    justify-content: stretch;
+  }
+
+  .format-btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .tool-slider-row {
+    min-width: 100%;
+  }
+
+  /* Image rows — stack on mobile */
+  .tool-image-row {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .tool-image-info {
+    min-width: 0;
+    flex: 1 1 140px;
+  }
+
+  .tool-image-actions {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tool-image-actions .tool-btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  /* Compare grid stacks on mobile */
+  .compare-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tool-stats-bar {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  /* Metadata grid */
+  .metadata-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-panel {
+    padding: 1rem;
+  }
+}
+
