@@ -28,7 +28,7 @@ export default function Home() {
           A focused suite of professional utilities that run entirely on your device. PDF editing, EXIF stripping, image compression, data recovery — no uploads, no accounts.
         </p>
         <div className="hero-actions">
-          <a href="#tools" className="btn btn-primary">See What&apos;s Available</a>
+          <a href="#tools" className="btn btn-primary">Explore Tools</a>
         </div>
       </header>
 
