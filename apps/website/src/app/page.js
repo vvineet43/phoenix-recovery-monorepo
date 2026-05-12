@@ -29,7 +29,6 @@ export default function Home() {
         </p>
         <div className="hero-actions">
           <a href="#tools" className="btn btn-primary">See What&apos;s Available</a>
-          <Link href="/pdf-toolkit" className="btn btn-outline">NexPDF Editor</Link>
         </div>
       </header>
 
