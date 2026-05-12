@@ -1,0 +1,21 @@
+{
+  "name": "NexCompress — Image Compressor",
+  "short_name": "NexCompress",
+  "description": "Compress JPG, PNG, and WebP images locally with side-by-side comparison.",
+  "start_url": "/image-tools",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/thenextools-com-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/thenextools-com-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

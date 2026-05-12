@@ -129,11 +129,6 @@ export default function Home() {
         </div>
       </section>
 
-      <footer>
-        <div className="container">
-          &copy; {new Date().getFullYear()} TheNexTools. All rights reserved.
-        </div>
-      </footer>
     </>
   );
 }

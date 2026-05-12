@@ -3,6 +3,9 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Phoenix Data Recovery | TheNexTools',
   description: 'Recover deleted files, photos, and videos from formatted drives and corrupted SD cards. Phoenix reads raw disk sectors to find what the OS considers gone.',
+  alternates: {
+    canonical: '/data-recovery',
+  },
 };
 
 export default function DataRecoveryLanding() {
@@ -68,11 +71,6 @@ export default function DataRecoveryLanding() {
         </div>
       </section>
 
-      <footer>
-        <div className="container">
-          &copy; {new Date().getFullYear()} TheNexTools. All rights reserved.
-        </div>
-      </footer>
     </>
   );
 }

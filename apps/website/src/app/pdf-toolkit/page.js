@@ -3,6 +3,10 @@ import Link from 'next/link';
 export const metadata = {
   title: 'NexPDF — Offline PDF Editor | TheNexTools',
   description: 'Edit, merge, sign, and compress PDF files entirely in your browser. No file uploads, no account required, no watermarks. NexPDF runs locally on your device.',
+  manifest: '/pdf-manifest.json',
+  alternates: {
+    canonical: '/pdf-toolkit',
+  },
 };
 
 function Nav() {
@@ -34,8 +38,8 @@ export default function PdfToolkitLanding() {
           Most free PDF tools require an upload. NexPDF doesn&apos;t. Everything — merging, signing, compressing, annotating — happens directly in your browser using your device&apos;s own processing power. No account. No waiting. No trace.
         </p>
         <div className="hero-actions">
-          <Link href="/pdf-tools" className="btn btn-primary">Open NexPDF — No Login</Link>
-          <Link href="/" className="btn btn-outline">All Tools</Link>
+          <Link href="/pdf-tools" className="btn btn-primary">Open in Browser</Link>
+          <Link href="/pdf-tools" className="btn btn-outline">Install App</Link>
         </div>
       </header>
 
@@ -74,11 +78,6 @@ export default function PdfToolkitLanding() {
         </div>
       </section>
 
-      <footer>
-        <div className="container">
-          &copy; {new Date().getFullYear()} TheNexTools. All rights reserved.
-        </div>
-      </footer>
     </>
   );
 }

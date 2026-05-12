@@ -1,0 +1,21 @@
+{
+  "name": "NexStrip — EXIF Stripper",
+  "short_name": "NexStrip",
+  "description": "Strip GPS coordinates and camera metadata from your photos locally.",
+  "start_url": "/exif-tools",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/thenextools-com-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/thenextools-com-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

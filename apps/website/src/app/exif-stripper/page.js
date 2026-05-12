@@ -3,6 +3,10 @@ import Link from 'next/link';
 export const metadata = {
   title: 'EXIF Metadata Stripper — Remove GPS & Camera Data | TheNexTools',
   description: 'Strip GPS coordinates, camera model, timestamps, and all hidden EXIF metadata from your photos before sharing. Runs locally — nothing is uploaded.',
+  manifest: '/exif-manifest.json',
+  alternates: {
+    canonical: '/exif-stripper',
+  },
 };
 
 export default function ExifStripperLanding() {
@@ -28,8 +32,8 @@ export default function ExifStripperLanding() {
           Every photo taken on a smartphone embeds GPS coordinates, the exact timestamp, your device model, and sometimes your name. NexStrip reads that data, shows you exactly what&apos;s there, then removes it — without touching a server.
         </p>
         <div className="hero-actions">
-          <Link href="/exif-tools" className="btn btn-primary">Open EXIF Stripper — Free</Link>
-          <Link href="/" className="btn btn-outline">All Tools</Link>
+          <Link href="/exif-tools" className="btn btn-primary">Open in Browser</Link>
+          <Link href="/exif-tools" className="btn btn-outline">Install App</Link>
         </div>
       </header>
 
@@ -68,11 +72,6 @@ export default function ExifStripperLanding() {
         </div>
       </section>
 
-      <footer>
-        <div className="container">
-          &copy; {new Date().getFullYear()} TheNexTools. All rights reserved.
-        </div>
-      </footer>
     </>
   );
 }

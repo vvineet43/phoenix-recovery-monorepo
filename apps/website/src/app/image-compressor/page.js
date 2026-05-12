@@ -3,6 +3,10 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Image Compressor — Local JPG, PNG, WebP | TheNexTools',
   description: 'Compress images locally in your browser. No uploads. Adjust quality, choose output format, compare before and after, and download compressed files instantly.',
+  manifest: '/image-manifest.json',
+  alternates: {
+    canonical: '/image-compressor',
+  },
 };
 
 export default function ImageCompressorLanding() {
@@ -28,8 +32,8 @@ export default function ImageCompressorLanding() {
           Most image compression tools send your files to a remote server, process them there, and hand them back. NexCompress does the same work inside your browser tab — faster, private, and with no file size limits imposed by someone else&apos;s infrastructure.
         </p>
         <div className="hero-actions">
-          <Link href="/image-tools" className="btn btn-primary">Open Image Compressor — Free</Link>
-          <Link href="/" className="btn btn-outline">All Tools</Link>
+          <Link href="/image-tools" className="btn btn-primary">Open in Browser</Link>
+          <Link href="/image-tools" className="btn btn-outline">Install App</Link>
         </div>
       </header>
 
@@ -68,11 +72,6 @@ export default function ImageCompressorLanding() {
         </div>
       </section>
 
-      <footer>
-        <div className="container">
-          &copy; {new Date().getFullYear()} TheNexTools. All rights reserved.
-        </div>
-      </footer>
     </>
   );
 }
