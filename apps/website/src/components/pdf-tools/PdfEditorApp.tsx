@@ -99,7 +99,7 @@ export function PdfEditorApp() {
             case 'images': setShowImageExportModal(true); break;
             case 'ocr': void handleOcr(); break;
             case 'redact': if (pages.length > 0) setEditingPageId(pages[0].id); else alert("Please upload a PDF first to use Redact."); break;
-            case 'rotate': if (pages.length > 0) handleRotate(pages[0].id, 90); else alert("Please upload a PDF first to use Rotate."); break;
+            case 'rotate': if (pages.length > 0) handleRotate(pages[0].id); else alert("Please upload a PDF first to use Rotate."); break;
             case 'sign': if (pages.length > 0) setEditingPageId(pages[0].id); else alert("Please upload a PDF first to use Sign."); break;
             case 'rearrange': setIsSidebarOpen(true); break;
             case 'page-numbers': setExportOptions(prev => ({...prev, addPageNumbers: true})); break;
