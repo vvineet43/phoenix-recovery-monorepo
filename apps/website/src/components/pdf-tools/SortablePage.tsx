@@ -81,7 +81,7 @@ export function SortablePage({ page, onRotate, onDelete, onDoubleClick, onEdit, 
         <button 
           className="page-action-btn"
           onClick={(e) => { e.stopPropagation(); onEdit(page.id); }}
-          title="Annotate Page"
+          title="Edit / Redact Page"
         >
           <Edit3 size={16} />
         </button>

@@ -8,9 +8,33 @@ interface PagePreviewProps {
   onClose: () => void;
 }
 
+function previewScaleForScreen(baseW: number, baseH: number) {
+  if (typeof window === 'undefined') return 2;
+  const pad = 32;
+  const maxW = window.innerWidth - pad;
+  const maxH = window.innerHeight - pad;
+  return Math.min(2.5, Math.max(0.4, Math.min(maxW / baseW, maxH / baseH)));
+}
+
 export function PagePreview({ page, files, onClose }: PagePreviewProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [viewportKey, setViewportKey] = useState(0);
+
+  useEffect(() => {
+    let t: ReturnType<typeof setTimeout>;
+    const bump = () => {
+      clearTimeout(t);
+      t = setTimeout(() => setViewportKey((k) => k + 1), 120);
+    };
+    window.addEventListener('resize', bump);
+    window.addEventListener('orientationchange', bump);
+    return () => {
+      window.removeEventListener('resize', bump);
+      window.removeEventListener('orientationchange', bump);
+      clearTimeout(t);
+    };
+  }, []);
 
   useEffect(() => {
     let active = true;
@@ -23,9 +47,10 @@ export function PagePreview({ page, files, onClose }: PagePreviewProps) {
         
         const doc = fileInfo.doc;
         const pdfPage = await doc.getPage(page.pageIndex + 1);
-        
-        // Scale 1.5 or 2.0 to make it readable
-        const viewport = pdfPage.getViewport({ scale: 2.0 });
+
+        const baseViewport = pdfPage.getViewport({ scale: 1 });
+        const scale = previewScaleForScreen(baseViewport.width, baseViewport.height);
+        const viewport = pdfPage.getViewport({ scale });
         
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -58,7 +83,7 @@ export function PagePreview({ page, files, onClose }: PagePreviewProps) {
     return () => {
       active = false;
     };
-  }, [page, files]);
+  }, [page, files, viewportKey]);
 
   return (
     <div className="preview-overlay" onClick={onClose}>

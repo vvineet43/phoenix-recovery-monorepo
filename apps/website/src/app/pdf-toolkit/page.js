@@ -11,7 +11,7 @@ export const metadata = {
 
 function Nav() {
   return (
-    <nav>
+    <nav className="site-nav">
       <div className="container nav-inner">
         <Link href="/" className="brand">TheNexTools</Link>
         <div className="nav-links">
@@ -66,6 +66,33 @@ export default function PdfToolkitLanding() {
               <h3>Works offline after first load</h3>
               <p>Once NexPDF has loaded, you can disconnect from the internet and keep working. Nothing is sent anywhere. Legal documents, HR files, financial statements — whatever is in the document, it stays between you and the PDF.</p>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="divider">
+        <div className="container">
+          <div className="section-header">
+            <h2>Individual PDF Utilities</h2>
+            <p>Direct access to specific tools for faster workflows.</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1.25rem' }}>
+            <Link href="/pdf-toolkit/tools/compress-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>Compress PDF</Link>
+            <Link href="/pdf-toolkit/tools/merge-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>Merge PDF</Link>
+            <Link href="/pdf-toolkit/tools/split-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>Split PDF</Link>
+            <Link href="/pdf-toolkit/tools/pdf-to-images" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>PDF to Images</Link>
+            <Link href="/pdf-toolkit/tools/images-to-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>Images to PDF</Link>
+            <Link href="/pdf-toolkit/tools/rotate-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>Rotate PDF</Link>
+            <Link href="/pdf-toolkit/tools/rearrange-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>Rearrange Pages</Link>
+            <Link href="/pdf-toolkit/tools/sign-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>Sign PDF</Link>
+            <Link href="/pdf-toolkit/tools/add-page-numbers" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>Add Page Numbers</Link>
+            <Link href="/pdf-toolkit/tools/scan-to-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>Scan to PDF</Link>
+            <Link href="/pdf-toolkit/tools/protect-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>Protect PDF</Link>
+            <Link href="/pdf-toolkit/tools/unlock-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>Unlock PDF</Link>
+            <Link href="/pdf-toolkit/tools/watermark-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>Watermark PDF</Link>
+            <Link href="/pdf-toolkit/tools/ocr-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>OCR PDF</Link>
+            <Link href="/pdf-toolkit/tools/redact-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>Redact PDF</Link>
+            <Link href="/pdf-toolkit/tools/html-to-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>HTML to PDF</Link>
+            <Link href="/pdf-toolkit/tools/text-to-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>Text to PDF</Link>
           </div>
         </div>
       </section>

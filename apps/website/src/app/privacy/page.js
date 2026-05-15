@@ -9,7 +9,7 @@ export const metadata = {
 export default function PrivacyPage() {
   return (
     <>
-      <nav>
+      <nav className="site-nav">
         <div className="container nav-inner">
           <Link href="/" className="brand">TheNexTools</Link>
           <div className="nav-links">

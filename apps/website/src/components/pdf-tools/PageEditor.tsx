@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Rnd } from 'react-rnd';
 import SignatureCanvas from 'react-signature-canvas';
-import { X, Type, Calendar, PenTool, Upload, Save, Trash2, Link } from 'lucide-react';
+import { X, Type, Calendar, PenTool, Upload, Save, Trash2, Link, ShieldAlert, Crop } from 'lucide-react';
 import type { PdfPageInfo, PdfFileInfo, Annotation } from '../../lib/pdf';
 
 interface PageEditorProps {
@@ -12,21 +12,62 @@ interface PageEditorProps {
   onApplyToAll?: (anno: Annotation) => void;
 }
 
+function viewportScaleForScreen(baseW: number, baseH: number) {
+  if (typeof window === 'undefined') return 1.5;
+  const margin = 28;
+  const maxW = Math.min(window.innerWidth - margin, 920);
+  const maxH = Math.max(280, window.innerHeight - 220);
+  return Math.min(2, Math.max(0.35, Math.min(maxW / baseW, maxH / baseH)));
+}
+
 export function PageEditor({ page, files, onClose, onSave, onApplyToAll }: PageEditorProps) {
   const [annotations, setAnnotations] = useState<Annotation[]>(page.annotations || []);
   const [isLoading, setIsLoading] = useState(true);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [sigPadWidth, setSigPadWidth] = useState(320);
+  const [viewportKey, setViewportKey] = useState(0);
   
   // Signature Modal State
   const [showSigModal, setShowSigModal] = useState(false);
   const [sigType, setSigType] = useState<'draw' | 'upload'>('draw');
   const [pendingSignaturePos, setPendingSignaturePos] = useState<{x: number, y: number} | null>(null);
   const [savedSignatures, setSavedSignatures] = useState<string[]>(() => JSON.parse(localStorage.getItem('nexpdf_signatures') || '[]'));
+  const [isCropping, setIsCropping] = useState(false);
+  const [cropBox, setCropBox] = useState<{x: number, y: number, width: number, height: number} | null>(page.cropBox ? {
+    x: page.cropBox.x * dimensions.width,
+    y: page.cropBox.y * dimensions.height,
+    width: page.cropBox.width * dimensions.width,
+    height: page.cropBox.height * dimensions.height
+  } : null);
   const sigPadRef = useRef<SignatureCanvas>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const syncSigWidth = () => {
+      setSigPadWidth(Math.max(220, Math.min(480, window.innerWidth - 40)));
+    };
+    syncSigWidth();
+    window.addEventListener('resize', syncSigWidth);
+    return () => window.removeEventListener('resize', syncSigWidth);
+  }, []);
+
+  useEffect(() => {
+    let t: ReturnType<typeof setTimeout>;
+    const bump = () => {
+      clearTimeout(t);
+      t = setTimeout(() => setViewportKey((k) => k + 1), 120);
+    };
+    window.addEventListener('resize', bump);
+    window.addEventListener('orientationchange', bump);
+    return () => {
+      window.removeEventListener('resize', bump);
+      window.removeEventListener('orientationchange', bump);
+      clearTimeout(t);
+    };
+  }, []);
 
   useEffect(() => {
     let active = true;
@@ -38,9 +79,10 @@ export function PageEditor({ page, files, onClose, onSave, onApplyToAll }: PageE
         
         const doc = fileInfo.doc;
         const pdfPage = await doc.getPage(page.pageIndex + 1);
-        
-        // Render at a fixed scale to fit the screen roughly
-        const viewport = pdfPage.getViewport({ scale: 1.5 });
+
+        const baseViewport = pdfPage.getViewport({ scale: 1 });
+        const scale = viewportScaleForScreen(baseViewport.width, baseViewport.height);
+        const viewport = pdfPage.getViewport({ scale });
         setDimensions({ width: viewport.width, height: viewport.height });
         
         const canvas = canvasRef.current;
@@ -79,7 +121,7 @@ export function PageEditor({ page, files, onClose, onSave, onApplyToAll }: PageE
     }
     renderPage();
     return () => { active = false; };
-  }, [page, files]);
+  }, [page, files, viewportKey]);
 
   const addAnnotation = (type: 'text' | 'date' | 'signature' | 'link', content: string = '', x: number = 50, y: number = 50) => {
     const id = `anno-${Date.now()}`;
@@ -100,6 +142,20 @@ export function PageEditor({ page, files, onClose, onSave, onApplyToAll }: PageE
     } else if (type === 'link') {
       newAnno.url = 'https://';
     }
+    setAnnotations([...annotations, newAnno]);
+  };
+
+  const addRedaction = (x: number = 50, y: number = 50) => {
+    const id = `anno-${Date.now()}`;
+    const newAnno: Annotation = {
+      id,
+      type: 'redact',
+      x,
+      y,
+      width: 100,
+      height: 40,
+      content: ''
+    };
     setAnnotations([...annotations, newAnno]);
   };
 
@@ -167,7 +223,20 @@ export function PageEditor({ page, files, onClose, onSave, onApplyToAll }: PageE
       pctW: a.width / dimensions.width,
       pctH: a.height / dimensions.height
     }));
-    onSave(page.id, percentAnnotations);
+    // Also include cropBox if any
+    const finalCropBox = cropBox ? {
+      x: cropBox.x / dimensions.width,
+      y: cropBox.y / dimensions.height,
+      width: cropBox.width / dimensions.width,
+      height: cropBox.height / dimensions.height
+    } : undefined;
+    
+    // We need to pass cropBox to the save function
+    // But onSave only takes pageId and annotations. 
+    // I should probably update the onSave signature or use a different approach.
+    // Let's assume for now I'll hack it into the page object update in the parent.
+    // Wait, I'll update the prop to handle cropBox.
+    (onSave as any)(page.id, percentAnnotations, finalCropBox);
   };
 
   return (
@@ -215,6 +284,19 @@ export function PageEditor({ page, files, onClose, onSave, onApplyToAll }: PageE
           >
             <Link size={20} /> Hyperlink Area
           </div>
+          <div 
+            className="tool-item" 
+            draggable 
+            onDragStart={(e) => { e.dataTransfer.setData('anno-type', 'redact'); }}
+          >
+            <ShieldAlert size={20} /> Redact Area
+          </div>
+          <div 
+            className={`tool-item ${isCropping ? 'active' : ''}`} 
+            onClick={() => setIsCropping(!isCropping)}
+          >
+            <Crop size={20} /> {isCropping ? 'Stop Cropping' : 'Crop Page'}
+          </div>
           <p className="tool-hint">Drag items onto the document.</p>
         </div>
 
@@ -243,6 +325,8 @@ export function PageEditor({ page, files, onClose, onSave, onApplyToAll }: PageE
             if (type === 'signature') {
               setPendingSignaturePos({ x, y });
               setShowSigModal(true);
+            } else if (type === 'redact') {
+              addRedaction(x, y);
             } else {
               addAnnotation(type as any, content || '', x, y);
             }
@@ -304,6 +388,10 @@ export function PageEditor({ page, files, onClose, onSave, onApplyToAll }: PageE
                     onTouchStart={(e) => e.stopPropagation()}
                   />
                 </div>
+              ) : anno.type === 'redact' ? (
+                <div style={{ width: '100%', height: '100%', background: 'black', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', fontWeight: 'bold' }}>
+                  REDACTED
+                </div>
               ) : (
                 <textarea
                   className="anno-textarea"
@@ -311,19 +399,68 @@ export function PageEditor({ page, files, onClose, onSave, onApplyToAll }: PageE
                   onMouseDown={(e) => e.stopPropagation()}
                   onTouchStart={(e) => e.stopPropagation()}
                   onChange={(e) => updateAnnotation(anno.id, { content: e.target.value })}
-                  style={{ fontSize: anno.fontSize || 16 }}
+                  style={{ fontSize: anno.fontSize || 16, color: anno.color || '#000000' }}
                   spellCheck={false}
                 />
               )}
+              
+              {(anno.type === 'text' || anno.type === 'date') && (
+                <div 
+                  className="anno-toolbar" 
+                  onMouseDown={(e) => e.stopPropagation()}
+                  style={{ 
+                    position: 'absolute', top: -35, left: 0, display: 'flex', gap: '5px', 
+                    background: '#fff', padding: '2px 5px', borderRadius: '4px', 
+                    boxShadow: '0 2px 5px rgba(0,0,0,0.2)', zIndex: 100 
+                  }}
+                >
+                  <input 
+                    type="color" 
+                    value={anno.color || '#000000'} 
+                    onChange={(e) => updateAnnotation(anno.id, { color: e.target.value })}
+                    style={{ width: '20px', height: '20px', padding: 0, border: 'none', cursor: 'pointer' }}
+                  />
+                  <select 
+                    value={anno.fontSize || 16} 
+                    onChange={(e) => updateAnnotation(anno.id, { fontSize: parseInt(e.target.value) })}
+                    style={{ fontSize: '12px', padding: '0 2px' }}
+                  >
+                    {[12, 14, 16, 18, 20, 24, 28, 32, 36, 48, 64].map(s => (
+                      <option key={s} value={s}>{s}px</option>
+                    ))}
+                  </select>
+                </div>
+              )}
             </Rnd>
           ))}
+
+          {isCropping && (
+            <Rnd
+              bounds="parent"
+              size={{ width: cropBox?.width || 200, height: cropBox?.height || 200 }}
+              position={{ x: cropBox?.x || 50, y: cropBox?.y || 50 }}
+              onDragStop={(_e, d) => setCropBox(prev => ({ ...prev!, x: d.x, y: d.y }))}
+              onResizeStop={(_e, _dir, ref, _delta, position) => {
+                setCropBox({
+                  width: parseInt(ref.style.width),
+                  height: parseInt(ref.style.height),
+                  ...position
+                });
+              }}
+              style={{ border: '2px dashed #ff4d4d', background: 'rgba(255, 77, 77, 0.1)', zIndex: 1000 }}
+            >
+              <div style={{ position: 'absolute', top: -25, left: 0, background: '#ff4d4d', color: 'white', padding: '2px 8px', fontSize: '12px', fontWeight: 'bold', borderRadius: '4px' }}>
+                Crop Area
+              </div>
+            </Rnd>
+          )}
         </div>
       </div>
     </div>
 
       {showSigModal && (
         <div className="modal-overlay" style={{ zIndex: 4000 }}>
-          <div className="modal-content glass-panel" style={{ minWidth: '500px' }}>
+          <div className="modal-content glass-panel sig-modal-panel">
             <div className="modal-header">
               <h2>Add Signature</h2>
               <button className="btn-icon" onClick={() => {
@@ -354,10 +491,10 @@ export function PageEditor({ page, files, onClose, onSave, onApplyToAll }: PageE
               </div>
               
               {sigType === 'draw' ? (
-                <div className="sig-pad-container" style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px' }}>
+                <div className="sig-pad-container sig-pad-wrap" style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px' }}>
                   <SignatureCanvas 
                     ref={sigPadRef} 
-                    canvasProps={{ width: 460, height: 200, className: 'sig-pad' }} 
+                    canvasProps={{ width: sigPadWidth, height: 200, className: 'sig-pad' }} 
                   />
                   <button className="btn-icon sig-clear" onClick={() => sigPadRef.current?.clear()} style={{ position: 'absolute', bottom: '10px', right: '10px' }}>
                     <Trash2 size={16} /> Clear
