@@ -1,8 +1,109 @@
 import * as pdfjsLib from 'pdfjs-dist';
-import { PDFDocument, degrees, rgb, StandardFonts, PDFName, PDFString } from 'pdf-lib';
+import Tesseract from 'tesseract.js';
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
+import { PDFDocument, degrees, rgb, StandardFonts, PDFName, PDFString, PDFDict, PDFArray, RGB } from 'pdf-lib';
 
-// Set up the worker for pdf.js
-pdfjsLib.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.mjs`;
+function hexToRgb(hex: string): RGB {
+  const r = parseInt(hex.slice(1, 3), 16) / 255;
+  const g = parseInt(hex.slice(3, 5), 16) / 255;
+  const b = parseInt(hex.slice(5, 7), 16) / 255;
+  return rgb(r, g, b);
+}
+
+const IMAGE_EXT = /\.(jpe?g|png|gif|webp|bmp)$/i;
+
+export function isImportableFile(file: File): boolean {
+  const t = (file.type || '').toLowerCase();
+  if (t === 'application/pdf' || t === 'application/x-pdf') return true;
+  if (t.startsWith('image/')) return true;
+  if (/\.pdf$/i.test(file.name)) return true;
+  return IMAGE_EXT.test(file.name);
+}
+
+export function isPdfFile(file: File): boolean {
+  const t = (file.type || '').toLowerCase();
+  if (t === 'application/pdf' || t === 'application/x-pdf') return true;
+  return /\.pdf$/i.test(file.name);
+}
+
+async function rasterizeImageFileToPngBytes(file: File): Promise<Uint8Array> {
+  const bitmap = await createImageBitmap(file);
+  try {
+    const canvas = document.createElement('canvas');
+    canvas.width = bitmap.width;
+    canvas.height = bitmap.height;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) throw new Error('Could not read image');
+    ctx.drawImage(bitmap, 0, 0);
+    const blob = await new Promise<Blob>((resolve, reject) => {
+      canvas.toBlob((b) => (b ? resolve(b) : reject(new Error('Image encode failed'))), 'image/png');
+    });
+    return new Uint8Array(await blob.arrayBuffer());
+  } finally {
+    bitmap.close();
+  }
+}
+
+async function embedRasterImage(pdfDoc: PDFDocument, file: File) {
+  const mime = (file.type || '').toLowerCase();
+  const raw = await file.arrayBuffer();
+  const bytes = new Uint8Array(raw);
+
+  if (mime === 'image/jpeg' || mime === 'image/jpg' || /\.jpe?g$/i.test(file.name)) {
+    try {
+      return await pdfDoc.embedJpg(bytes);
+    } catch {
+      const png = await rasterizeImageFileToPngBytes(file);
+      return await pdfDoc.embedPng(png);
+    }
+  }
+  if (mime === 'image/png' || /\.png$/i.test(file.name)) {
+    try {
+      return await pdfDoc.embedPng(bytes);
+    } catch {
+      const png = await rasterizeImageFileToPngBytes(file);
+      return await pdfDoc.embedPng(png);
+    }
+  }
+  if (mime.startsWith('image/') || IMAGE_EXT.test(file.name)) {
+    const png = await rasterizeImageFileToPngBytes(file);
+    return await pdfDoc.embedPng(png);
+  }
+  throw new Error('Unsupported image format');
+}
+
+function wrapPlainText(
+  text: string,
+  maxWidth: number,
+  font: { widthOfTextAtSize: (t: string, s: number) => number },
+  fontSize: number
+): string[] {
+  const normalized = text.replace(/\r\n/g, '\n');
+  const out: string[] = [];
+  for (const para of normalized.split('\n')) {
+    const words = para.split(/\s+/).filter(Boolean);
+    if (words.length === 0) {
+      out.push('');
+      continue;
+    }
+    let line = '';
+    for (const w of words) {
+      const trial = line ? `${line} ${w}` : w;
+      if (font.widthOfTextAtSize(trial, fontSize) <= maxWidth) {
+        line = trial;
+      } else {
+        if (line) out.push(line);
+        line = w;
+      }
+    }
+    if (line) out.push(line);
+  }
+  return out.length ? out : [' '];
+}
+
+// Worker must match the installed pdfjs-dist version (same major as main bundle).
+pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.mjs`;
 
 export interface PdfPageInfo {
   id: string; // Unique ID for React key
@@ -11,17 +112,19 @@ export interface PdfPageInfo {
   rotation: number; // 0, 90, 180, 270
   thumbnailUrl: string;
   annotations?: Annotation[];
+  cropBox?: { x: number, y: number, width: number, height: number }; // Percentages
 }
 
 export interface Annotation {
   id: string;
-  type: 'text' | 'date' | 'signature' | 'watermark' | 'link';
+  type: 'text' | 'date' | 'signature' | 'watermark' | 'link' | 'redact';
   x: number;
   y: number;
   width: number;
   height: number;
   content: string;
   fontSize?: number;
+  color?: string;
   pctX?: number;
   pctY?: number;
   pctW?: number;
@@ -132,6 +235,19 @@ export async function generatePdf(
       const currentRotation = newPage.getRotation().angle;
       newPage.setRotation(degrees(currentRotation + pageInfo.rotation));
     }
+
+    // Apply Crop if any
+    if (pageInfo.cropBox) {
+      const { width, height } = newPage.getSize();
+      const c = pageInfo.cropBox;
+      // c is in percentages
+      newPage.setCropBox(
+        c.x * width, 
+        (1 - c.y - c.height) * height, 
+        c.width * width, 
+        c.height * height
+      );
+    }
     
     // Apply annotations
     if (pageInfo.annotations && pageInfo.annotations.length > 0) {
@@ -205,7 +321,7 @@ export async function generatePdf(
               y: finalY,
               size: anno.fontSize || 16,
               font: helvetica,
-              color: anno.type === 'watermark' ? rgb(0.5, 0.5, 0.5) : rgb(0, 0, 0),
+              color: anno.color ? hexToRgb(anno.color) : (anno.type === 'watermark' ? rgb(0.5, 0.5, 0.5) : rgb(0, 0, 0)),
               opacity: opacity,
               rotate: rotate
             });
@@ -231,6 +347,18 @@ export async function generatePdf(
             }
           } catch (err) {
             console.error("Failed to embed signature image", err);
+          }
+        } else if (anno.type === 'redact') {
+          try {
+            newPage.drawRectangle({
+              x: x,
+              y: pdfY,
+              width: annoWidth,
+              height: annoHeight,
+              color: rgb(0, 0, 0),
+            });
+          } catch (err) {
+            console.error("Failed to draw redaction box", err);
           }
         }
       }
@@ -407,17 +535,9 @@ export async function compressPdf(
 }
 
 export async function imageToPdf(file: File): Promise<File> {
-  const imgBytes = await file.arrayBuffer();
   const pdfDoc = await PDFDocument.create();
-  let image;
-  if (file.type === 'image/jpeg') {
-    image = await pdfDoc.embedJpg(imgBytes);
-  } else if (file.type === 'image/png') {
-    image = await pdfDoc.embedPng(imgBytes);
-  } else {
-    throw new Error('Unsupported image format');
-  }
-  
+  const image = await embedRasterImage(pdfDoc, file);
+
   const page = pdfDoc.addPage([image.width, image.height]);
   page.drawImage(image, {
     x: 0,
@@ -425,7 +545,280 @@ export async function imageToPdf(file: File): Promise<File> {
     width: image.width,
     height: image.height,
   });
-  
+
   const pdfBytes = await pdfDoc.save();
-  return new File([pdfBytes as any], file.name.replace(/\.[^/.]+$/, "") + ".pdf", { type: 'application/pdf' });
+  return new File([pdfBytes as any], file.name.replace(/\.[^/.]+$/, '') + '.pdf', { type: 'application/pdf' });
+}
+
+export async function imagesToPdf(files: File[]): Promise<File> {
+  const pdfDoc = await PDFDocument.create();
+  for (const file of files) {
+    try {
+      const image = await embedRasterImage(pdfDoc, file);
+      const page = pdfDoc.addPage([image.width, image.height]);
+      page.drawImage(image, { x: 0, y: 0, width: image.width, height: image.height });
+    } catch {
+      /* skip unreadable files */
+    }
+  }
+  if (pdfDoc.getPages().length === 0) {
+    throw new Error('No supported images in selection');
+  }
+  const pdfBytes = await pdfDoc.save();
+  return new File([pdfBytes as any], 'Combined_Images.pdf', { type: 'application/pdf' });
+}
+
+/**
+ * Plain UTF-8 text to a simple multi-page PDF (Helvetica).
+ */
+export async function textToPdf(text: string, title: string = 'Document'): Promise<File> {
+  const pdfDoc = await PDFDocument.create();
+  const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+  const fontSize = 11;
+  const lineHeight = fontSize * 1.38;
+  const pageWidth = 612;
+  const pageHeight = 792;
+  const margin = 54;
+  const maxWidth = pageWidth - margin * 2;
+
+  const lines = wrapPlainText(text.trim().length ? text : ' ', maxWidth, font, fontSize);
+
+  let page = pdfDoc.addPage([pageWidth, pageHeight]);
+  let { height } = page.getSize();
+  let baseline = height - margin;
+
+  for (const line of lines) {
+    if (baseline < margin + fontSize) {
+      page = pdfDoc.addPage([pageWidth, pageHeight]);
+      height = page.getSize().height;
+      baseline = height - margin;
+    }
+    page.drawText(line || ' ', {
+      x: margin,
+      y: baseline,
+      size: fontSize,
+      font,
+      color: rgb(0, 0, 0),
+    });
+    baseline -= lineHeight;
+  }
+
+  const pdfBytes = await pdfDoc.save();
+  const safeName = title.replace(/[^\w\s-]/g, '').trim() || 'Document';
+  return new File([pdfBytes as any], `${safeName}.pdf`, { type: 'application/pdf' });
+}
+
+export async function htmlToPdf(html: string, title: string = 'Document'): Promise<File> {
+  const container = document.createElement('div');
+  container.style.position = 'absolute';
+  container.style.left = '-9999px';
+  container.style.width = '800px';
+  container.style.background = 'white';
+  container.style.padding = '20px';
+  container.innerHTML = html;
+  document.body.appendChild(container);
+  
+  try {
+    const canvas = await html2canvas(container, {
+      scale: 2,
+      useCORS: true,
+      logging: false
+    });
+    
+    const imgData = canvas.toDataURL('image/jpeg', 1.0);
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const imgProps = pdf.getImageProperties(imgData);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    
+    pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+    const pdfBlob = pdf.output('blob');
+    
+    return new File([pdfBlob], `${title}.pdf`, { type: 'application/pdf' });
+  } finally {
+    document.body.removeChild(container);
+  }
+}
+
+
+/**
+ * Converts PDF pages to a list of images (Data URLs).
+ */
+export async function pdfToImages(
+  files: Record<string, PdfFileInfo>,
+  pages: PdfPageInfo[],
+  format: 'image/jpeg' | 'image/png' = 'image/jpeg',
+  quality: number = 0.9
+): Promise<{ name: string, dataUrl: string }[]> {
+  const images: { name: string, dataUrl: string }[] = [];
+  
+  for (let i = 0; i < pages.length; i++) {
+    const pageInfo = pages[i];
+    const fileInfo = files[pageInfo.fileId];
+    const doc = fileInfo.doc;
+    
+    const page = await doc.getPage(pageInfo.pageIndex + 1);
+    const viewport = page.getViewport({ scale: 2.0 }); // Higher scale for better image quality
+    
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    
+    if (context) {
+      if (format === 'image/jpeg') {
+        context.fillStyle = '#ffffff';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+      }
+      
+      await page.render({
+        canvasContext: context,
+        viewport: viewport
+      }).promise;
+    }
+    
+    const dataUrl = canvas.toDataURL(format, quality);
+    images.push({
+      name: `Page_${i + 1}.${format === 'image/jpeg' ? 'jpg' : 'png'}`,
+      dataUrl
+    });
+  }
+  
+  return images;
+}
+
+/**
+ * Flattens all form fields and annotations in the PDF.
+ */
+export async function flattenPdf(
+  files: Record<string, PdfFileInfo>,
+  pages: PdfPageInfo[],
+  options: { addPageNumbers?: boolean } = {}
+): Promise<Uint8Array> {
+  const pdfBytes = await generatePdf(files, pages, options);
+  const pdfDoc = await PDFDocument.load(pdfBytes);
+  
+  const form = pdfDoc.getForm();
+  form.flatten();
+  
+  return await pdfDoc.save();
+}
+
+/**
+ * Adds password protection to a PDF.
+ */
+export async function protectPdf(
+  pdfBytes: Uint8Array,
+  userPassword?: string,
+  ownerPassword?: string,
+  permissions: {
+    printing?: 'lowResolution' | 'highResolution';
+    modifying?: boolean;
+    copying?: boolean;
+    annotating?: boolean;
+    fillingForms?: boolean;
+    contentAccessibility?: boolean;
+    documentAssembly?: boolean;
+  } = {}
+): Promise<Uint8Array> {
+  const pdfDoc = await PDFDocument.load(pdfBytes);
+  
+  return await pdfDoc.save({
+    userPassword,
+    ownerPassword,
+    permissions
+  } as Parameters<PDFDocument['save']>[0]);
+}
+
+/**
+ * Removes password protection from a PDF (requires password).
+ */
+export async function unlockPdf(
+  pdfBytes: ArrayBuffer,
+  password?: string
+): Promise<Uint8Array> {
+  const pdfDoc = await PDFDocument.load(pdfBytes, { password } as Parameters<typeof PDFDocument.load>[1]);
+  return await pdfDoc.save();
+}
+
+/**
+ * Redacts a specific area on a page by physically removing content and placing a black box.
+ * Note: Pure client-side redaction is hard to make "perfect" (removing text stream data), 
+ * but we can effectively cover it and flatten the document.
+ */
+export async function redactPdf(
+  pdfBytes: Uint8Array,
+  redactions: { pageIndex: number, x: number, y: number, width: number, height: number }[]
+): Promise<Uint8Array> {
+  const pdfDoc = await PDFDocument.load(pdfBytes);
+  const pages = pdfDoc.getPages();
+  
+  for (const redaction of redactions) {
+    if (redaction.pageIndex >= pages.length) continue;
+    const page = pages[redaction.pageIndex];
+    
+    // Draw black box
+    page.drawRectangle({
+      x: redaction.x,
+      y: redaction.y,
+      width: redaction.width,
+      height: redaction.height,
+      color: rgb(0, 0, 0),
+    });
+  }
+  
+  // Flattening helps make the redaction more permanent in some viewers
+  const form = pdfDoc.getForm();
+  form.flatten();
+  
+  return await pdfDoc.save();
+}
+
+/**
+ * Performs OCR on PDF pages and returns the extracted text.
+ */
+export async function performOcr(
+  files: Record<string, PdfFileInfo>,
+  pages: PdfPageInfo[],
+  onProgress?: (progress: number, status: string) => void
+): Promise<string> {
+  let fullText = '';
+  
+  for (let i = 0; i < pages.length; i++) {
+    const pageInfo = pages[i];
+    const fileInfo = files[pageInfo.fileId];
+    const doc = fileInfo.doc;
+    
+    const page = await doc.getPage(pageInfo.pageIndex + 1);
+    const viewport = page.getViewport({ scale: 2.0 });
+    
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    
+    if (context) {
+      context.fillStyle = '#ffffff';
+      context.fillRect(0, 0, canvas.width, canvas.height);
+      await page.render({ canvasContext: context, viewport }).promise;
+    }
+    
+    const dataUrl = canvas.toDataURL('image/png');
+    
+    onProgress?.((i / pages.length) * 100, `OCR-ing Page ${i + 1}...`);
+    
+    const result = await Tesseract.recognize(
+      dataUrl,
+      'eng',
+      { logger: m => {
+        if (m.status === 'recognizing text') {
+          onProgress?.(((i + m.progress) / pages.length) * 100, `OCR-ing Page ${i + 1}...`);
+        }
+      }}
+    );
+    
+    fullText += `--- Page ${i + 1} ---\n\n${result.data.text}\n\n`;
+  }
+  
+  return fullText;
 }

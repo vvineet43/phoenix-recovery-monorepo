@@ -26,7 +26,11 @@
 ══════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
 body {
   background: var(--bg);
@@ -35,6 +39,17 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+/* Full-bleed tool routes (no site nav); keeps PDF UI from forcing horizontal scroll */
+.pdf-tools-page {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
 }
 
 img { display: block; max-width: 100%; }
@@ -61,9 +76,9 @@ h1, h2, h3, h4 {
 }
 
 /* ══════════════════════════════
-   Navigation
+   Navigation (scoped — never target bare `nav` or in-app toolbars break)
 ══════════════════════════════ */
-nav {
+nav.site-nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: var(--nav-h);

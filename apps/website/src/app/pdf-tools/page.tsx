@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function PdfToolsPage() {
   return (
-    <main>
+    <main className="pdf-tools-page">
       <PdfEditorWrapper />
     </main>
   );

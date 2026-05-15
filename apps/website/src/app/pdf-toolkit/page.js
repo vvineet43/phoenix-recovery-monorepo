@@ -11,7 +11,7 @@ export const metadata = {
 
 function Nav() {
   return (
-    <nav>
+    <nav className="site-nav">
       <div className="container nav-inner">
         <Link href="/" className="brand">TheNexTools</Link>
         <div className="nav-links">

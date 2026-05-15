@@ -6,6 +6,13 @@ import Footer from '../components/Footer';
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-display' });
 
+/** Required for real mobile layout; without this, many browsers assume ~980px width. */
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+};
+
 // Fully SEO Optimized Metadata (Injected beautifully by Next.js Server Side)
 export const metadata = {
   metadataBase: new URL('https://thenextools.com'),
