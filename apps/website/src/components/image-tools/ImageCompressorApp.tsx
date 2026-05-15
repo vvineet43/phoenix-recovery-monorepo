@@ -142,7 +142,7 @@ export function ImageCompressorApp() {
     <div className="tool-wrapper">
       <div className="tool-container">
         <header className="tool-header">
-          <div className="tool-badge">NexCompress — Local &amp; Private</div>
+          <div className="badge"><Sparkles size={14} /> NexCompress — Local & Private</div>
           <h1>Image Compressor</h1>
           <p>Compress JPG, PNG, and WebP images entirely in your browser. Adjust quality, choose a format, compare results, and download — nothing leaves your device.</p>
         </header>
@@ -185,17 +185,17 @@ export function ImageCompressorApp() {
               </div>
 
               <div className="tool-toolbar-actions">
-                <button className="tool-btn tool-btn-secondary" onClick={applySettings} disabled={images.some(i => i.status === 'compressing')}>
+                <button className="btn btn-outline" onClick={applySettings} disabled={images.some(i => i.status === 'compressing')}>
                   Re-compress All
                 </button>
                 <input ref={fileInputRef} type="file" className="hidden-input" accept="image/*" multiple onChange={e => e.target.files && addFiles(e.target.files)} />
-                <button className="tool-btn tool-btn-secondary" onClick={() => fileInputRef.current?.click()}>
+                <button className="btn btn-outline" onClick={() => fileInputRef.current?.click()}>
                   <Upload size={15} /> Add
                 </button>
-                <button className="tool-btn tool-btn-danger" onClick={clearAll}>
+                <button className="btn btn-outline" style={{color: '#ef4444'}} onClick={clearAll}>
                   <Trash2 size={15} /> Clear
                 </button>
-                <button className="tool-btn tool-btn-primary" onClick={downloadAll} disabled={isZipping || doneCount === 0}>
+                <button className="btn btn-primary" onClick={downloadAll} disabled={isZipping || doneCount === 0}>
                   <Download size={15} /> {isZipping ? 'Zipping…' : `Download All (${doneCount})`}
                 </button>
               </div>
@@ -259,7 +259,7 @@ export function ImageCompressorApp() {
                           </button>
                         )}
                         {img.status === 'done' && (
-                          <button className="tool-btn tool-btn-primary" style={{ padding: '0.3rem 0.7rem', fontSize: '0.78rem' }} onClick={() => downloadOne(img)}>
+                          <button className="btn btn-primary" style={{ padding: '0.3rem 0.7rem', fontSize: '0.78rem' }} onClick={() => downloadOne(img)}>
                             <Download size={13} /> Save
                           </button>
                         )}

@@ -135,8 +135,8 @@ export function ExifStripperApp() {
     <div className="tool-wrapper">
       <div className="tool-container">
         <header className="tool-header">
-          <div className="tool-badge">NexStrip — Free &amp; Private</div>
-          <h1>EXIF &amp; Metadata Stripper</h1>
+          <div className="badge"><Sparkles size={14} /> NexStrip — Free & Private</div>
+          <h1>EXIF & Metadata Stripper</h1>
           <p>Drop in your photos. See exactly what metadata is embedded — GPS, camera, timestamps. Download clean copies with all of it removed.</p>
         </header>
 
@@ -148,7 +148,7 @@ export function ExifStripperApp() {
             onDrop={handleDrop}
             onClick={() => fileInputRef.current?.click()}
           >
-            <FileImage className="tool-upload-icon" size={52} />
+            <ImageIcon className="tool-upload-icon" size={52} />
             <p className="tool-upload-title">Drop images here</p>
             <p className="tool-upload-subtitle">JPG, PNG, WebP — single or batch</p>
             <input ref={fileInputRef} type="file" className="hidden-input" accept="image/*" multiple onChange={e => e.target.files && addFiles(e.target.files)} />
@@ -158,21 +158,21 @@ export function ExifStripperApp() {
             {/* Toolbar */}
             <div className="tool-toolbar">
               <div className="tool-toolbar-info">
-                <h3>{doneCount} of {images.length} processed</h3>
+                <h3 style={{fontSize: '1rem', fontWeight: 700}}>{doneCount} of {images.length} processed</h3>
                 {hasGps
-                  ? <p><span className="meta-danger">⚠ GPS coordinates detected and removed</span></p>
-                  : doneCount > 0 ? <p><span className="meta-success">✓ No GPS data found</span></p> : <p>Scanning…</p>
+                  ? <p><span className="meta-danger" style={{color: '#ef4444', fontWeight: 600}}>⚠ GPS coordinates detected and removed</span></p>
+                  : doneCount > 0 ? <p><span className="meta-success" style={{color: '#16a34a', fontWeight: 600}}>✓ No GPS data found</span></p> : <p>Scanning…</p>
                 }
               </div>
               <div className="tool-toolbar-actions">
                 <input ref={fileInputRef} type="file" className="hidden-input" accept="image/*" multiple onChange={e => e.target.files && addFiles(e.target.files)} />
-                <button className="tool-btn tool-btn-secondary" onClick={() => fileInputRef.current?.click()}>
+                <button className="btn btn-outline" onClick={() => fileInputRef.current?.click()}>
                   <Upload size={15} /> Add More
                 </button>
-                <button className="tool-btn tool-btn-danger" onClick={clearAll}>
+                <button className="btn btn-outline" style={{color: '#ef4444'}} onClick={clearAll}>
                   <Trash2 size={15} /> Clear
                 </button>
-                <button className="tool-btn tool-btn-primary" onClick={downloadAll} disabled={isZipping || doneCount === 0}>
+                <button className="btn btn-primary" onClick={downloadAll} disabled={isZipping || doneCount === 0}>
                   <Download size={15} /> {isZipping ? 'Zipping…' : `Download All (${doneCount})`}
                 </button>
               </div>
@@ -203,13 +203,13 @@ export function ExifStripperApp() {
                         {img.status === 'clean' && <CheckCircle2 size={18} style={{ color: '#16a34a', flexShrink: 0 }} />}
                         {img.status === 'error' && <AlertCircle size={18} style={{ color: '#ef4444', flexShrink: 0 }} />}
                         {img.status === 'clean' && img.metadata && (
-                          <button className="tool-btn tool-btn-secondary" style={{ padding: '0.3rem 0.7rem', fontSize: '0.78rem' }}
+                          <button className="btn btn-outline" style={{ padding: '0.3rem 0.7rem', fontSize: '0.78rem' }}
                             onClick={() => setExpandedId(expandedId === img.id ? null : img.id)}>
                             {expandedId === img.id ? 'Hide' : 'View'} data
                           </button>
                         )}
                         {img.status === 'clean' && (
-                          <button className="tool-btn tool-btn-primary" style={{ padding: '0.3rem 0.7rem', fontSize: '0.78rem' }} onClick={() => downloadOne(img)}>
+                          <button className="btn btn-primary" style={{ padding: '0.3rem 0.7rem', fontSize: '0.78rem' }} onClick={() => downloadOne(img)}>
                             <Download size={13} /> Save
                           </button>
                         )}

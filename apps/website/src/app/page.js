@@ -92,28 +92,15 @@ export default function Home() {
             </div>
 
             <div className="tool-card">
-              <h3>EXIF Metadata Stripper</h3>
-              <p>Shows what&apos;s hidden in your photos — GPS coordinates, device fingerprints, timestamps — then removes all of it before you share.</p>
+              <h3>NexImage Editor</h3>
+              <p>A unified professional image toolkit. Compress photos for the web and strip sensitive EXIF metadata — all in one local, private workspace.</p>
               <ul>
-                <li>Detects and removes GPS location data</li>
-                <li>Shows every metadata field before stripping</li>
-                <li>Download individually or as a ZIP</li>
+                <li>High-efficiency JPEG, PNG, and WebP compression</li>
+                <li>Remove GPS location, camera fingerprints, and timestamps</li>
+                <li>Batch processing with side-by-side comparison</li>
               </ul>
-              <Link href="/exif-stripper" className="btn btn-outline" style={{ width: 'fit-content' }}>
-                Learn more &rarr;
-              </Link>
-            </div>
-
-            <div className="tool-card">
-              <h3>Image Compressor</h3>
-              <p>Compress JPG, PNG, and WebP images locally. Adjust quality with a slider, compare before and after at full size, and download — nothing leaves your device.</p>
-              <ul>
-                <li>JPEG, PNG, and WebP output formats</li>
-                <li>Side-by-side comparison before downloading</li>
-                <li>Batch processing with total savings tracker</li>
-              </ul>
-              <Link href="/image-compressor" className="btn btn-outline" style={{ width: 'fit-content' }}>
-                Learn more &rarr;
+              <Link href="/image-editor" className="btn btn-outline" style={{ width: 'fit-content' }}>
+                Open Editor &rarr;
               </Link>
             </div>
 
