@@ -30,6 +30,7 @@ import type { PdfPageInfo, PdfFileInfo } from '../../lib/pdf';
 import { SortablePage } from './SortablePage';
 import { PagePreview } from './PagePreview';
 import { PageEditor } from './PageEditor';
+import { getFileFromTransition, clearTransitionFile } from '../../lib/db';
 
 export function PdfEditorApp() {
   const [files, setFiles] = useState<Record<string, PdfFileInfo>>({});
@@ -63,6 +64,52 @@ export function PdfEditorApp() {
   
   const fileInputRef = useRef<HTMLInputElement>(null);
   const batchImageInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    // Check for tool parameter in URL
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const tool = params.get('tool');
+      const isPreloaded = params.get('preloaded') === 'true';
+
+      const handlePreload = async () => {
+        if (isPreloaded) {
+          const file = await getFileFromTransition();
+          if (file) {
+            void processFiles([file]);
+            void clearTransitionFile();
+          }
+        }
+      };
+
+      void handlePreload();
+
+      if (tool) {
+        // Small delay to ensure everything is ready
+        setTimeout(() => {
+          switch (tool) {
+            case 'compress': setShowCompressModal(true); break;
+            case 'split': setShowSplitModal(true); break;
+            case 'watermark': setShowWatermarkModal(true); break;
+            case 'protect': setShowProtectModal(true); break;
+            case 'scan': void startScan(); break;
+            case 'html': setShowHtmlModal(true); break;
+            case 'text': setShowTextModal(true); break;
+            case 'merge': fileInputRef.current?.click(); break;
+            case 'images': setShowImageExportModal(true); break;
+            case 'ocr': void handleOcr(); break;
+            case 'redact': if (pages.length > 0) setEditingPageId(pages[0].id); else alert("Please upload a PDF first to use Redact."); break;
+            case 'rotate': if (pages.length > 0) handleRotate(pages[0].id, 90); else alert("Please upload a PDF first to use Rotate."); break;
+            case 'sign': if (pages.length > 0) setEditingPageId(pages[0].id); else alert("Please upload a PDF first to use Sign."); break;
+            case 'rearrange': setIsSidebarOpen(true); break;
+            case 'page-numbers': setExportOptions(prev => ({...prev, addPageNumbers: true})); break;
+            case 'batch-upload': batchImageInputRef.current?.click(); break;
+            case 'unlock': alert("Upload a password-protected PDF to begin unlocking."); fileInputRef.current?.click(); break;
+          }
+        }, 300);
+      }
+    }
+  }, []); // Run once on mount
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
