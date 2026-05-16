@@ -61,17 +61,7 @@ export default async function ToolSeoPage({ params }) {
 
   return (
     <>
-      <nav className="site-nav">
-        <div className="container nav-inner">
-          <Link href="/" className="brand">TheNexTools</Link>
-          <div className="nav-links">
-            <Link href="/pdf-toolkit" className="link nav-hide-mobile">NexPDF Home</Link>
-            <Link href="/pdf-tools" className="btn btn-outline nav-hide-mobile" style={{ padding: '0.45rem 0.9rem', fontSize: '0.83rem' }}>
-              Full Editor
-            </Link>
-          </div>
-        </div>
-      </nav>
+      
 
       <header className="hero container" style={{ textAlign: 'left', alignItems: 'flex-start', display: 'flex', flexDirection: 'column' }}>
         <div className="badge" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', width: 'fit-content' }}>
@@ -111,6 +101,24 @@ export default async function ToolSeoPage({ params }) {
         </div>
       </section>
 
+      {tool.steps && (
+        <section className="divider" style={{ background: 'var(--bg-body)' }}>
+          <div className="container">
+            <h2 style={{ textAlign: 'center', marginBottom: '2.5rem' }}>How to {tool.h1.toLowerCase().replace('.', '')}</h2>
+            <div className="steps-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+              {tool.steps.map((step, index) => (
+                <div key={index} className="step-card" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1.5rem', background: 'var(--bg-2)', borderRadius: '12px', border: '1px solid var(--border)' }}>
+                  <div className="step-number" style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'var(--primary)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>
+                    {index + 1}
+                  </div>
+                  <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="cta-section">
         <div className="container">
           <h2>Ready to {tool.toolParam} your PDF?</h2>
@@ -120,34 +128,6 @@ export default async function ToolSeoPage({ params }) {
           </Link>
         </div>
       </section>
-      <footer className="footer-main">
-        <div className="container">
-          <div className="footer-grid">
-            <div className="footer-brand">
-              <Link href="/" className="brand">TheNexTools</Link>
-              <p>Professional, offline-first utilities designed for privacy-conscious users. Your data stays on your device.</p>
-            </div>
-            <div className="footer-group">
-              <h4>Toolkit</h4>
-              <ul className="footer-links">
-                <li><Link href="/pdf-toolkit">NexPDF Home</Link></li>
-                <li><Link href="/pdf-tools">Open Editor</Link></li>
-                <li><Link href="/exif-stripper">EXIF Stripper</Link></li>
-              </ul>
-            </div>
-            <div className="footer-group">
-              <h4>Legal</h4>
-              <ul className="footer-links">
-                <li><Link href="/privacy">Privacy Policy</Link></li>
-                <li><Link href="/terms">Terms of Service</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <p className="footer-copy">&copy; {new Date().getFullYear()} TheNexTools. All processing happens locally.</p>
-          </div>
-        </div>
-      </footer>
     </>
   );
 }

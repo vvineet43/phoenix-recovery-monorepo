@@ -9,14 +9,7 @@ export const metadata = {
 export default function DocsPage() {
   return (
     <>
-      <nav className="site-nav">
-        <div className="container nav-inner">
-          <Link href="/" className="brand">TheNexTools</Link>
-          <div className="nav-links">
-            <Link href="/" className="link">Home</Link>
-          </div>
-        </div>
-      </nav>
+      
 
       <main className="container" style={{ paddingTop: 'calc(var(--nav-h) + 4rem)', paddingBottom: '6rem', maxWidth: '800px' }}>
         <header style={{ marginBottom: '4rem' }}>
@@ -26,8 +19,8 @@ export default function DocsPage() {
 
         <section className="docs-grid" style={{ display: 'grid', gap: '3rem' }}>
           <div>
-            <h3>Phoenix Data Recovery</h3>
-            <p className="mt-sm">Phoenix works by scanning physical drive sectors. For best results:</p>
+            <h3>NexData Recovery</h3>
+            <p className="mt-sm">NexData works by scanning physical drive sectors. For best results:</p>
             <ul style={{ paddingLeft: '1.25rem', marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <li>Connect the target drive via a stable USB or SATA connection.</li>
               <li>Ensure you have enough space on a <strong>separate</strong> drive to save recovered files.</li>

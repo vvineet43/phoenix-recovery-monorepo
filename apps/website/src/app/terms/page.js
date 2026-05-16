@@ -9,14 +9,7 @@ export const metadata = {
 export default function TermsPage() {
   return (
     <>
-      <nav className="site-nav">
-        <div className="container nav-inner">
-          <Link href="/" className="brand">TheNexTools</Link>
-          <div className="nav-links">
-            <Link href="/" className="link">Home</Link>
-          </div>
-        </div>
-      </nav>
+      
 
       <main className="container" style={{ paddingTop: 'calc(var(--nav-h) + 4rem)', paddingBottom: '6rem', maxWidth: '800px' }}>
         <header style={{ marginBottom: '3rem' }}>
@@ -42,7 +35,7 @@ export default function TermsPage() {
 
           <div>
             <h3>Paid Software &amp; Licensing</h3>
-            <p>Certain tools, such as Phoenix Data Recovery, may require a paid license for full functionality. Licenses are typically node-locked or tied to specific hardware. Refunds are handled on a case-by-case basis as outlined in our documentation.</p>
+            <p>Certain tools, such as NexData Recovery, may require a paid license for full functionality. Licenses are typically node-locked or tied to specific hardware. Refunds are handled on a case-by-case basis as outlined in our documentation.</p>
           </div>
 
           <div>

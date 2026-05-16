@@ -12,18 +12,7 @@ export const metadata = {
 export default function ExifStripperLanding() {
   return (
     <>
-      <nav className="site-nav">
-        <div className="container nav-inner">
-          <Link href="/" className="brand">TheNexTools</Link>
-          <div className="nav-links">
-            <Link href="/" className="link nav-hide-mobile">All Tools</Link>
-            <a href="#features" className="link nav-hide-mobile">Why It Matters</a>
-            <Link href="/exif-tools" className="btn btn-primary" style={{ padding: '0.45rem 0.9rem', fontSize: '0.83rem' }}>
-              Strip Metadata
-            </Link>
-          </div>
-        </div>
-      </nav>
+      
 
       <header className="hero container">
         <div className="badge">NexStrip — Free &amp; Private</div>
