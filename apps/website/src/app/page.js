@@ -8,18 +8,7 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <nav className="site-nav">
-        <div className="container nav-inner">
-          <Link href="/" className="brand">TheNexTools</Link>
-          <div className="nav-links">
-            <a href="#tools" className="link nav-hide-mobile">Our Tools</a>
-            <a href="#why" className="link nav-hide-mobile">Why Offline?</a>
-            <a href="#tools" className="btn btn-primary" style={{ padding: '0.45rem 0.9rem', fontSize: '0.83rem' }}>
-              Explore Tools
-            </a>
-          </div>
-        </div>
-      </nav>
+      
 
       <header className="hero container">
         <div className="badge">Professional Desktop Software</div>
@@ -66,7 +55,7 @@ export default function Home() {
           <div className="grid-tools">
 
             <div className="tool-card">
-              <h3>Phoenix Data Recovery</h3>
+              <h3>NexData Recovery</h3>
               <p>Recovers deleted files from formatted drives and corrupted SD cards by scanning raw disk sectors — bypassing the file system entirely.</p>
               <ul>
                 <li>Works on dead partitions and formatted volumes</li>

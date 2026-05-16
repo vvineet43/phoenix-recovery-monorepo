@@ -9,14 +9,7 @@ export const metadata = {
 export default function PrivacyPage() {
   return (
     <>
-      <nav className="site-nav">
-        <div className="container nav-inner">
-          <Link href="/" className="brand">TheNexTools</Link>
-          <div className="nav-links">
-            <Link href="/" className="link">Home</Link>
-          </div>
-        </div>
-      </nav>
+      
 
       <main className="container" style={{ paddingTop: 'calc(var(--nav-h) + 4rem)', paddingBottom: '6rem', maxWidth: '800px' }}>
         <header style={{ marginBottom: '3rem' }}>
@@ -27,7 +20,7 @@ export default function PrivacyPage() {
         <section className="text-content" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           <div>
             <h3>The Core Principle</h3>
-            <p>TheNexTools was built because we believe your data belongs on your machine. Our business model is based on selling professional software licenses (like Phoenix Data Recovery), not on harvesting or selling user data.</p>
+            <p>TheNexTools was built because we believe your data belongs on your machine. Our business model is based on selling professional software licenses (like NexData Recovery), not on harvesting or selling user data.</p>
           </div>
 
           <div>
@@ -46,8 +39,8 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h3>Phoenix Desktop App</h3>
-            <p>Our desktop application, Phoenix Data Recovery, is designed to run entirely offline. It does not require an internet connection to scan or recover files. License verification happens via a secure, local-first mechanism.</p>
+            <h3>NexData Desktop App</h3>
+            <p>Our desktop application, NexData Recovery, is designed to run entirely offline. It does not require an internet connection to scan or recover files. License verification happens via a secure, local-first mechanism.</p>
           </div>
         </section>
       </main>

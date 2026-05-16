@@ -1,7 +1,7 @@
 import { PdfEditorWrapper } from '../../components/pdf-tools/PdfEditorWrapper';
 
 export const metadata = {
-  title: 'PDF Toolkit | Phoenix',
+  title: 'PDF Toolkit | TheNexTools',
   description: 'Merge, split, watermark, and securely process your PDF documents natively in your browser.',
   manifest: '/pdf-manifest.json',
   alternates: {

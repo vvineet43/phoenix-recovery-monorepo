@@ -12,18 +12,7 @@ export const metadata = {
 export default function ImageCompressorLanding() {
   return (
     <>
-      <nav className="site-nav">
-        <div className="container nav-inner">
-          <Link href="/" className="brand">TheNexTools</Link>
-          <div className="nav-links">
-            <Link href="/" className="link nav-hide-mobile">All Tools</Link>
-            <a href="#features" className="link nav-hide-mobile">Features</a>
-            <Link href="/image-tools" className="btn btn-primary" style={{ padding: '0.45rem 0.9rem', fontSize: '0.83rem' }}>
-              Compress Images
-            </Link>
-          </div>
-        </div>
-      </nav>
+      
 
       <header className="hero container">
         <div className="badge">NexCompress — Local &amp; Private</div>

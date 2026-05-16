@@ -1,6 +1,12 @@
+'use client';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
+  const pathname = usePathname();
+  const hiddenPaths = ['/pdf-tools', '/image-tools', '/exif-tools'];
+  if (hiddenPaths.includes(pathname)) return null;
+
   return (
     <footer className="footer-main">
       <div className="container">
@@ -13,7 +19,7 @@ export default function Footer() {
           <div className="footer-group">
             <h4>Product</h4>
             <ul className="footer-links">
-              <li><Link href="/data-recovery">Phoenix Data Recovery</Link></li>
+              <li><Link href="/data-recovery">NexData Recovery</Link></li>
               <li><Link href="/pdf-toolkit">NexPDF Toolkit</Link></li>
               <li><Link href="/exif-stripper">NexStrip EXIF Stripper</Link></li>
               <li><Link href="/image-compressor">NexCompress Image Tool</Link></li>
