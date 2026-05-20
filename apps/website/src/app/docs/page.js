@@ -14,7 +14,7 @@ export default function DocsPage() {
       <main className="container" style={{ paddingTop: 'calc(var(--nav-h) + 4rem)', paddingBottom: '6rem', maxWidth: '800px' }}>
         <header style={{ marginBottom: '4rem' }}>
           <h1>Documentation</h1>
-          <p className="text-muted">Guides and technical specifications for the TheNexTools suite.</p>
+          <p className="text-muted">Guides and quick-start tips for TheNexTools.</p>
         </header>
 
         <section className="docs-grid" style={{ display: 'grid', gap: '3rem' }}>

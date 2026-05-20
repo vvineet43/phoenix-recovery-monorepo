@@ -12,6 +12,7 @@ export default function sitemap() {
     '/docs',
     '/privacy',
     '/terms',
+    '/refund-policy',
   ];
 
   const dynamicRoutes = Object.keys(TOOLS_METADATA).map(

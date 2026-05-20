@@ -1,5 +1,5 @@
 """
-Phoenix Recovery Backend — Production-Grade Flask API
+NexData Recovery Backend — Production-Grade Flask API
 =====================================================
 Changes from dev version:
   • Reads port from PHOENIX_PORT env var (dynamic, set by Electron)
@@ -27,6 +27,8 @@ import uuid
 import base64
 import hmac
 import secrets
+import urllib.request
+import ssl
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor
 from flask import Flask, jsonify, request, send_from_directory, send_file, abort
@@ -112,6 +114,91 @@ def get_license_secret() -> bytes:
     return secret
 
 LICENSE_SECRET = get_license_secret()
+
+LEMON_API_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NGQ1OWNlZi1kYmI4LTRlYTUtYjE3OC1kMjU0MGZjZDY5MTkiLCJqdGkiOiJkMmJjZjFkYzk0MzNjMjhhMTUyN2E5N2IxMWYzODRhZWM5M2JiYzk1YjUzYTNhM2RmODZhMmI1YmM0MTY5NDhjM2E1ZDYwY2EzOTI0NGRkNCIsImlhdCI6MTc3OTMxMzE5OS45NjEwMDQsIm5iZiI6MTc3OTMxMzE5OS45NjEwMDcsImV4cCI6Mjg2ODk5ODQwMC4wMjA5NTYsInN1YiI6IjY4ODUwMDYiLCJzY29wZXMiOltdfQ.uz75Lmao8kbxfJ4h-rfQUd_x_UxySFNMaOqhy3P_aGN7kflJ9nJOKJYS5-i95CDFiiEVlT92ck4Wp58DAFF-wBsomyL2frWaxWIJHBMaC0251RnVGu8NyM_jHBCzARLAG5HT_znw8Qlc5c3bGAMOc-we-xKvpBzhJbMYPkPYYXe6fgEu3MVSNRn5u_-UJliVRWFc-37F0DRcbH03SBUdiEJaZomDEkhPstLXPpJ0Ul4xvq_p3eXVQcEjQJdiEdknyoO5T9KX2zdHGJcuOTCa2JG5kxWilr4hy6X8iu082ADjw_zNusYBE3TwROCi4Rbbdnfec3b0AzRNZsrUCJy5VlfN8FYLZSPxXWbd_77sVMH4q41v1NOmYoINN48uwpO9V8rC4zxhKP61lnUX2fNeLKyEPjInFvXHSEmGckZ515XpQAKlxEXYVfEe_E83Qq-uRTmvtbl8C6mxN7x6yewzKjXUzXEMg-bsgu5lNQSiKrIaz7cyBUgEq3x_RWCrtNUqKIrdgDq1_JH8WG7QDwEdMKnm0jKjI6DvsOSB_gV90f2RH0uz0OvlQy5lpcISh6_hdRaLB7sR76tj3vIk71kpqLoCRe90V4gk-Ltlj8yeVBp3xOsAQAovWN1bPZ1QNb6Jl6_SVoQUktikmjvRW87cdM1adLEMVn5-UOwASu5_DtI"
+LEMON_STORE_ID = "343447"
+
+def verify_lemon_license_online(key: str, machine_id: str) -> dict:
+    url = "https://api.lemonsqueezy.com/v1/licenses/activate"
+    payload = {
+        "license_key": key,
+        "instance_name": machine_id
+    }
+    payload_bytes = json.dumps(payload).encode('utf-8')
+    ctx = ssl.create_default_context()
+    
+    req = urllib.request.Request(
+        url,
+        data=payload_bytes,
+        headers={
+            "Authorization": f"Bearer {LEMON_API_KEY}",
+            "Accept": "application/vnd.api+json",
+            "Content-Type": "application/json"
+        },
+        method="POST"
+    )
+    try:
+        with urllib.request.urlopen(req, context=ctx, timeout=8) as response:
+            res_data = json.loads(response.read().decode('utf-8'))
+            activated = res_data.get("activated", False)
+            error_msg = res_data.get("error")
+            lic_key_data = res_data.get("license_key", {})
+            status = lic_key_data.get("status")
+            
+            if activated or status == "active" or (error_msg and "already" in str(error_msg).lower()):
+                return {
+                    "valid": True,
+                    "plan": "pro",
+                    "license_id": str(lic_key_data.get("id")),
+                    "key": key,
+                    "email": res_data.get("meta", {}).get("customer_email", "user@example.com")
+                }
+            return {"valid": False, "reason": error_msg or "Invalid license key status"}
+    except urllib.error.HTTPError as e:
+        try:
+            err_data = json.loads(e.read().decode('utf-8'))
+            error_msg = err_data.get("error") or err_data.get("message")
+        except Exception:
+            error_msg = str(e)
+        return {"valid": False, "reason": error_msg or f"HTTP Error {e.code}"}
+    except Exception as e:
+        return {"valid": False, "reason": f"Connection error: {str(e)}"}
+
+def get_free_recovered_files() -> set:
+    usage_file = os.path.join(DATA_DIR, "free_usage.json")
+    if not os.path.exists(usage_file):
+        return set()
+    try:
+        with open(usage_file) as f:
+            data = json.load(f)
+            return set(data.get("recovered_files", []))
+    except Exception:
+        return set()
+
+def add_free_recovered_file(filename: str):
+    usage_file = os.path.join(DATA_DIR, "free_usage.json")
+    files = get_free_recovered_files()
+    files.add(filename)
+    try:
+        with open(usage_file, "w") as f:
+            json.dump({"recovered_files": list(files)}, f)
+    except Exception as e:
+        print(f"Error saving free usage: {e}")
+
+def is_machine_activated() -> bool:
+    try:
+        licenses = load_licenses()
+        for lid, lic in licenses.items():
+            if lic.get("active") is not False:
+                if lic.get("is_lemon"):
+                    return True
+                machine_id = lic.get("machine_id", "")
+                res = verify_license_key(lic.get("key_raw", ""), machine_id)
+                if res.get("valid"):
+                    return True
+    except Exception:
+        pass
+    return False
 
 PLANS = {
     "monthly": {"name": "Monthly", "price": 1.99,  "duration_days": 31},
@@ -378,7 +465,7 @@ def scan_device_real(device_path: str, size_bytes: int = 0):
             scan_status["error"] = (
                 "Permission Denied.\n\n"
                 "Raw disk scanning requires elevated privileges.\n"
-                "Please relaunch Phoenix Recovery with sudo or administrator rights."
+                "Please relaunch NexData Recovery with sudo or administrator rights."
             )
             scan_status["is_scanning"] = False
             return
@@ -618,6 +705,10 @@ def list_drives():
 # --- File Serving ---
 @app.route('/files/<path:filename>')
 def serve_file(filename):
+    # Path traversal guard
+    real_path = os.path.realpath(os.path.join(RECOVERED_DIR, filename))
+    if not real_path.startswith(os.path.realpath(RECOVERED_DIR)):
+        abort(403)
     MIMETYPES = {
         'jpg': 'image/jpeg', 'jpeg': 'image/jpeg', 'png': 'image/png',
         'gif': 'image/gif', 'bmp': 'image/bmp', 'webp': 'image/webp',
@@ -636,6 +727,29 @@ def serve_thumbnail(filename):
 
 @app.route('/api/download/<path:filename>')
 def download_file(filename):
+    filepath = os.path.join(RECOVERED_DIR, filename)
+    # Path traversal guard — ensure resolved path stays within RECOVERED_DIR
+    real_path = os.path.realpath(filepath)
+    if not real_path.startswith(os.path.realpath(RECOVERED_DIR)):
+        return jsonify({"error": "Access denied"}), 403
+    if not os.path.exists(filepath):
+        return jsonify({"error": "File not found"}), 404
+        
+    # Enforce license tier limits
+    if not is_machine_activated():
+        # Check file size (10 MB limit)
+        filesize = os.path.getsize(filepath)
+        if filesize > 10 * 1024 * 1024:
+            return jsonify({"error": "File size exceeds 10MB limit for the Free tier. Upgrade to Pro for unlimited file size."}), 403
+            
+        # Check recovery count (1 file limit)
+        recovered_files = get_free_recovered_files()
+        if filename not in recovered_files and len(recovered_files) >= 1:
+            return jsonify({"error": "Free recovery limit reached (1 file). Upgrade to Pro for unlimited recoveries."}), 403
+            
+        # Allow this recovery and add to tracked files
+        add_free_recovered_file(filename)
+        
     return send_from_directory(RECOVERED_DIR, filename, as_attachment=True)
 
 # --- Scan Control ---
@@ -668,6 +782,8 @@ def pause_scan():
 @app.route('/api/scan/stop', methods=['POST'])
 def stop_scan():
     stop_event.set()
+    scan_status["is_scanning"] = False
+    scan_status["current_stage"] = "⏹ Scan Stopped"
     return jsonify({"message": "Stopping scan…"})
 
 @app.route('/api/scan/status', methods=['GET'])
@@ -720,6 +836,8 @@ def _do_repair(filepath, filename):
 
 @app.route('/api/repair/<path:filename>', methods=['POST'])
 def repair_file_endpoint(filename):
+    if not is_machine_activated():
+        return jsonify({"error": "File repair requires a Pro License."}), 403
     filepath = os.path.join(RECOVERED_DIR, filename)
     if not os.path.exists(filepath):
         return jsonify({"error": "File not found"}), 404
@@ -730,6 +848,8 @@ def repair_file_endpoint(filename):
 
 @app.route('/api/upload-repair', methods=['POST'])
 def upload_and_repair():
+    if not is_machine_activated():
+        return jsonify({"error": "File repair requires a Pro License."}), 403
     if 'file' not in request.files:
         return jsonify({"error": "No file uploaded"}), 400
     file = request.files['file']
@@ -747,6 +867,8 @@ def upload_and_repair():
 
 @app.route('/api/batch/repair', methods=['POST'])
 def batch_repair():
+    if not is_machine_activated():
+        return jsonify({"error": "Batch repair requires a Pro License."}), 403
     data = request.json or {}
     filenames = data.get('filenames', [])
     results = []
@@ -763,6 +885,8 @@ def batch_repair():
 
 @app.route('/api/batch/download', methods=['POST'])
 def batch_download():
+    if not is_machine_activated():
+        return jsonify({"error": "Batch download requires a Pro License."}), 403
     import zipfile
     data = request.json or {}
     filenames = data.get('filenames', [])
@@ -800,6 +924,10 @@ def list_recovered_files():
 @app.route('/api/delete/<path:filename>', methods=['DELETE'])
 def delete_file(filename):
     filepath = os.path.join(RECOVERED_DIR, filename)
+    # Path traversal guard
+    real_path = os.path.realpath(filepath)
+    if not real_path.startswith(os.path.realpath(RECOVERED_DIR)):
+        return jsonify({"error": "Access denied"}), 403
     if os.path.exists(filepath):
         os.remove(filepath)
         return jsonify({"message": f"Deleted {filename}"})
@@ -815,16 +943,42 @@ def verify_license():
     if not key or not machine_id:
         return jsonify({"valid": False, "reason": "key and machine_id required"}), 400
 
-    # If key is in formatted form (PHX-XXXX-...) try to look it up in our DB
     licenses = load_licenses()
+    
+    # 1. Try legacy local keys first
     for lid, lic in licenses.items():
-        if lic.get('key') == key and lic.get('active'):
-            # Verify with raw key
+        if lic.get('key') == key and lic.get('active') and not lic.get('is_lemon'):
             result = verify_license_key(lic.get('key_raw', ''), machine_id)
             return jsonify(result)
 
-    # Otherwise try to parse it directly as a raw b64 key
-    result = verify_license_key(key, machine_id)
+    # 2. Check if already cached as valid Lemon Squeezy key
+    cached_id = f"LEMON_{key}"
+    if cached_id in licenses:
+        cached = licenses[cached_id]
+        if cached.get("machine_id") == machine_id and cached.get("active") is not False:
+            return jsonify({
+                "valid": True,
+                "plan": "pro",
+                "email": cached.get("email", "user@example.com"),
+                "license_id": cached.get("license_id", cached_id)
+            })
+
+    # 3. Otherwise, validate online with Lemon Squeezy API
+    result = verify_lemon_license_online(key, machine_id)
+    if result.get("valid"):
+        # Cache it in licenses.json
+        licenses[cached_id] = {
+            "license_id": cached_id,
+            "key": key,
+            "key_raw": key,
+            "plan": "pro",
+            "email": result.get("email", "user@example.com"),
+            "active": True,
+            "machine_id": machine_id,
+            "is_lemon": True
+        }
+        save_licenses(licenses)
+        
     return jsonify(result)
 
 @app.route('/api/license/generate', methods=['POST'])
@@ -943,5 +1097,5 @@ def video_player(filename):
 # ─── Entry Point ──────────────────────────────────────────────────────────────
 if __name__ == '__main__':
     port = int(os.environ.get('PHOENIX_PORT', 5001))
-    print(f"[Phoenix Recovery] Starting backend on port {port}")
+    print(f"[NexData Recovery] Starting backend on port {port}")
     app.run(host='127.0.0.1', port=port, debug=False, threaded=True)

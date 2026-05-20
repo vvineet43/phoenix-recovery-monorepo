@@ -24,4 +24,7 @@ contextBridge.exposeInMainWorld('phoenixAPI', {
   // OS / App info
   getPlatform: () => process.platform,
   getAppVersion: () => ipcRenderer.invoke('get-app-version'),
+
+  // 14-Day Trial
+  getTrialStatus: () => ipcRenderer.invoke('get-trial-status'),
 });

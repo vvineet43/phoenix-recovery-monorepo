@@ -25,8 +25,8 @@ export default function Home() {
       <section id="why" className="divider" style={{ background: 'var(--bg-2)' }}>
         <div className="container">
           <div className="section-header">
-            <h2>Built for professionals who can&apos;t afford a data breach</h2>
-            <p>Most software is optimized for convenience, not confidentiality. We made different trade-offs.</p>
+            <h2>Built for people who handle sensitive files</h2>
+            <p>Most tools upload your data to a server. We think that's a bad default.</p>
           </div>
           <div className="grid-3">
             <div className="feature-card">
@@ -112,7 +112,7 @@ export default function Home() {
 
       <section className="cta-section">
         <div className="container">
-          <h2>No accounts. No uploads. No nonsense.</h2>
+          <h2>Your files. Your machine. That&apos;s it.</h2>
           <p>TheNexTools exists because the best version of these tools should work offline, owned outright, without conditions.</p>
           <a href="#tools" className="btn btn-primary">Explore the Tools</a>
         </div>
