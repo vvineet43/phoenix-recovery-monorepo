@@ -78,7 +78,7 @@ export default function DataRecoveryLanding() {
               <p style={{ textAlign: 'center', fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '1rem', marginBottom: 0 }}>Install free to scan and verify your data is fully intact before upgrading.</p>
             </div>
             
-            <div className="feature-card" style={{ border: '3px solid var(--primary)', position: 'relative', display: 'flex', flexDirection: 'column', background: 'var(--bg)', transform: 'scale(1.05)' }}>
+            <div className="feature-card popular-card">
               <div style={{ position: 'absolute', top: '-14px', right: '20px', background: 'var(--primary)', color: 'white', padding: '0.3rem 1rem', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold', letterSpacing: '0.5px', boxShadow: '0 4px 12px rgba(var(--primary), 0.3)' }}>POPULAR</div>
               <h3 style={{ fontSize: '1.4rem' }}>NexData Pro</h3>
               <div style={{ fontSize: '2.5rem', fontWeight: '700', margin: '1rem 0 1.5rem 0', color: 'var(--primary)' }}>
@@ -107,7 +107,7 @@ export default function DataRecoveryLanding() {
               As an independent developer, our initial launch binaries are not yet cryptographically signed by Apple or Microsoft. You may see a standard security warning when installing. Here is how to open the app safely:
             </p>
             
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+            <div className="grid-2" style={{ gap: '3rem' }}>
               <div>
                 <h4 style={{ fontSize: '1rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>🍏 macOS Users</h4>
                 <ol style={{ fontSize: '0.85rem', color: 'var(--text-muted)', paddingLeft: '1.2rem', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
