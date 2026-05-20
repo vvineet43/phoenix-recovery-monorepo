@@ -30,6 +30,7 @@ export default function Footer() {
             <h4>Resources</h4>
             <ul className="footer-links">
               <li><Link href="/docs">Documentation</Link></li>
+              <li><Link href="/refund-policy">Refund Policy</Link></li>
               <li><Link href="/privacy">Privacy Policy</Link></li>
               <li><Link href="/terms">Terms of Service</Link></li>
             </ul>

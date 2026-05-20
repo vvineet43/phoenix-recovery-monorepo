@@ -1,6 +1,6 @@
 'use strict';
 /**
- * electron/main.js — Phoenix Recovery Desktop Shell
+ * electron/main.js — NexData Recovery Desktop Shell
  *
  * Production-ready Electron main process:
  *  - Spawns Flask backend on a dynamic (ephemeral) port
@@ -47,6 +47,36 @@ function writeLicense(data) {
 
 function clearLicense() {
   try { fs.unlinkSync(getLicenseStorePath()); } catch { /* ok */ }
+}
+
+// ── 14-Day Trial Logic ──────────────────────────────────────────────────────
+function getTrialStorePath() {
+  return path.join(app.getPath('userData'), 'trial_config.json');
+}
+
+function getTrialStatus() {
+  const trialPath = getTrialStorePath();
+  let firstRun = null;
+  
+  try {
+    if (fs.existsSync(trialPath)) {
+      const data = JSON.parse(fs.readFileSync(trialPath, 'utf8'));
+      firstRun = data.first_run;
+    } else {
+      firstRun = Date.now();
+      fs.writeFileSync(trialPath, JSON.stringify({ first_run: firstRun }));
+    }
+  } catch {
+    firstRun = Date.now();
+  }
+
+  const daysPassed = (Date.now() - firstRun) / (1000 * 60 * 60 * 24);
+  const remaining = Math.ceil(14 - daysPassed);
+  
+  return {
+    isExpired: daysPassed > 14,
+    daysRemaining: remaining < 0 ? 0 : remaining
+  };
 }
 
 // ── Real Machine ID (macOS serial / hardware UUID) ──────────────────────────
@@ -171,7 +201,7 @@ async function startBackend() {
 
   const pythonPath = isDev
     ? path.join(backendDir, 'venv', 'bin', 'python3')
-    : path.join(process.resourcesPath, 'backend', 'python', 'python3');
+    : path.join(process.resourcesPath, 'backend', 'venv', 'bin', 'python3');
 
   const appPath = path.join(backendDir, 'app.py');
 
@@ -201,7 +231,7 @@ async function startBackend() {
     console.error('Failed to start backend:', err.message);
     if (mainWindow) {
       dialog.showErrorBox('Recovery Engine Error',
-        `Could not start the recovery engine.\n\nNote: Scanning raw disks requires sudo privileges.\nRun the app with: sudo open -a "Phoenix Recovery"\n\nError: ${err.message}`
+        `Could not start the recovery engine.\n\nNote: Scanning raw disks requires sudo privileges.\nRun the app with: sudo open -a "NexData Recovery"\n\nError: ${err.message}`
       );
     }
   });
@@ -216,7 +246,7 @@ async function startBackend() {
   } catch (err) {
     console.error('[Main] Backend failed to become ready:', err.message);
     dialog.showErrorBox('Backend Timeout',
-      'The recovery engine took too long to start.\n\nThis may be a permissions issue. Try running Phoenix Recovery with admin/sudo privileges.'
+      'The recovery engine took too long to start.\n\nThis may be a permissions issue. Try running NexData Recovery with admin/sudo privileges.'
     );
   }
 }
@@ -228,7 +258,8 @@ function createWindow() {
     height: 880,
     minWidth: 960,
     minHeight: 640,
-    title: 'Phoenix Recovery',
+    title: 'NexData Recovery',
+    icon: path.join(__dirname, 'icon.png'),
     titleBarStyle: 'hiddenInset',
     trafficLightPosition: { x: 16, y: 16 },
     backgroundColor: '#080c14',
@@ -260,7 +291,7 @@ function createWindow() {
 function createMenu() {
   const template = [
     {
-      label: 'Phoenix Recovery',
+      label: 'NexData Recovery',
       submenu: [
         { role: 'about' },
         { type: 'separator' },
@@ -302,17 +333,17 @@ function createMenu() {
       label: 'Help',
       submenu: [
         {
-          label: 'Phoenix Recovery Website',
-          click: () => shell.openExternal('https://phoenixrecovery.app'),
+          label: 'NexData Recovery Website',
+          click: () => shell.openExternal('https://thenextools.com/data-recovery'),
         },
         {
           label: 'Buy a License',
-          click: () => shell.openExternal('https://phoenixrecovery.app/buy'),
+          click: () => shell.openExternal('https://thenextools.com/data-recovery#pricing'),
         },
         { type: 'separator' },
         {
           label: 'Report a Bug',
-          click: () => shell.openExternal('mailto:support@phoenixrecovery.app'),
+          click: () => shell.openExternal('mailto:support@thenextools.com'),
         },
       ],
     },
@@ -349,6 +380,10 @@ function registerIPCHandlers() {
   ipcMain.handle('clear-license', () => {
     clearLicense();
     return true;
+  });
+
+  ipcMain.handle('get-trial-status', () => {
+    return getTrialStatus();
   });
 
   ipcMain.handle('get-app-version', () => app.getVersion());

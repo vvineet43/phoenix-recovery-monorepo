@@ -1,41 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  /* Pro Desktop Theme (macOS Dark Mode inspired) */
-  --bg-app: #151515;
-  --bg-surface: #202020;
-  --bg-surface-2: #282828;
-  --bg-surface-hover: #323232;
-  --bg-elevated: #2c2c2e;
+  /* NexData Light Theme (Website Matched) */
+  --bg-app: #ffffff;
+  --bg-surface: #f8fafc;
+  --bg-surface-2: #f1f5f9;
+  --bg-surface-hover: #e2e8f0;
+  --bg-elevated: #ffffff;
 
-  /* Accent Palette - System Blue / Pro Look */
-  --primary: #0a84ff;
-  --primary-hover: #409cff;
-  --primary-glow: rgba(10, 132, 255, 0.15);
-  --primary-glow-strong: rgba(10, 132, 255, 0.3);
+  /* Accent Palette - Matches Website */
+  --primary: #0f172a;
+  --primary-hover: #1e293b;
+  --primary-glow: rgba(15, 23, 42, 0.15);
+  --primary-glow-strong: rgba(15, 23, 42, 0.3);
   --accent-violet: #bf5af2;
-  --accent-emerald: #32d74b;
-  --accent-amber: #ff9f0a;
-  --accent-rose: #ff453a;
-  --accent-pink: #ff375f;
+  --accent-emerald: #10b981;
+  --accent-amber: #f59e0b;
+  --accent-rose: #ef4444;
+  --accent-pink: #ec4899;
 
   /* Text - High Contrast Readability */
-  --text-main: #f5f5f7;
-  --text-secondary: #c2c2c2;
-  --text-dim: #8e8e93;
+  --text-main: #0f172a;
+  --text-secondary: #475569;
+  --text-dim: #64748b;
 
   /* Borders - Sharp & Subtle */
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.15);
+  --border: #e2e8f0;
+  --border-hover: #cbd5e1;
 
-  /* Glass - Subtle dark frosted */
-  --glass: rgba(30, 30, 30, 0.85);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  /* Glass - Subtle frosted */
+  --glass: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.08);
 
   /* Misc */
   --radius: 12px;
   --radius-sm: 8px;
-  --radius-xs: 4px;
+  --radius-xs: 6px;
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
@@ -339,14 +339,14 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), #00a6cc);
-  color: #0a0f18;
-  box-shadow: 0 2px 12px rgba(0, 212, 255, 0.25);
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 2px 12px var(--primary-glow);
 }
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
+  box-shadow: 0 4px 20px var(--primary-glow-strong);
 }
 
 .btn-primary:disabled {

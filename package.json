@@ -15,5 +15,8 @@
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "app-builder-bin": "^5.0.0-alpha.10"
   }
 }

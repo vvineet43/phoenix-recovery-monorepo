@@ -20,7 +20,7 @@ export default function PrivacyPage() {
         <section className="text-content" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           <div>
             <h3>The Core Principle</h3>
-            <p>TheNexTools was built because we believe your data belongs on your machine. Our business model is based on selling professional software licenses (like NexData Recovery), not on harvesting or selling user data.</p>
+            <p>We sell software, not data. Our tools process everything on your device, and we have no interest in seeing, storing, or monetizing what you work on.</p>
           </div>
 
           <div>
