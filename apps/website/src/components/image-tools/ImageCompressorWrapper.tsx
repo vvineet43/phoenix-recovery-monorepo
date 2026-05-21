@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import { Minimize2, RefreshCw, EyeOff, ShieldAlert } from 'lucide-react';
+import { Minimize2, RefreshCw, EyeOff, FileImage } from 'lucide-react';
 
 const ImageCompressorApp = dynamic(
   () => import('./ImageCompressorApp').then(m => ({ default: m.ImageCompressorApp })),
@@ -18,7 +18,12 @@ const ImageBlurApp = dynamic(
   { ssr: false, loading: () => <div style={{ padding: '4rem', textAlign: 'center', color: '#64748b' }}>Loading Redactor…</div> }
 );
 
-type ActiveTab = 'compress' | 'convert' | 'redact';
+const ExifStripperApp = dynamic(
+  () => import('../exif-tools/ExifStripperApp').then(m => ({ default: m.ExifStripperApp })),
+  { ssr: false, loading: () => <div style={{ padding: '4rem', textAlign: 'center', color: '#64748b' }}>Loading EXIF Stripper…</div> }
+);
+
+type ActiveTab = 'compress' | 'convert' | 'redact' | 'exif';
 
 export default function ImageCompressorWrapper() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('compress');
@@ -28,7 +33,7 @@ export default function ImageCompressorWrapper() {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const tab = params.get('tool');
-      if (tab === 'compress' || tab === 'convert' || tab === 'redact') {
+      if (tab === 'compress' || tab === 'convert' || tab === 'redact' || tab === 'exif') {
         setActiveTab(tab);
       }
     }
@@ -51,19 +56,25 @@ export default function ImageCompressorWrapper() {
             className={`workspace-tab-btn ${activeTab === 'compress' ? 'active' : ''}`}
             onClick={() => handleTabChange('compress')}
           >
-            <Minimize2 size={16} /> NexCompress
+            <Minimize2 size={16} /> Compress
           </button>
           <button
             className={`workspace-tab-btn ${activeTab === 'convert' ? 'active' : ''}`}
             onClick={() => handleTabChange('convert')}
           >
-            <RefreshCw size={16} /> NexConvert
+            <RefreshCw size={16} /> Convert
           </button>
           <button
             className={`workspace-tab-btn ${activeTab === 'redact' ? 'active' : ''}`}
             onClick={() => handleTabChange('redact')}
           >
-            <EyeOff size={16} /> NexRedact (Privacy Blur)
+            <EyeOff size={16} /> Redact &amp; Blur
+          </button>
+          <button
+            className={`workspace-tab-btn ${activeTab === 'exif' ? 'active' : ''}`}
+            onClick={() => handleTabChange('exif')}
+          >
+            <FileImage size={16} /> EXIF Stripper
           </button>
         </div>
       </div>
@@ -72,6 +83,7 @@ export default function ImageCompressorWrapper() {
         {activeTab === 'compress' && <ImageCompressorApp />}
         {activeTab === 'convert' && <ImageConverterApp />}
         {activeTab === 'redact' && <ImageBlurApp />}
+        {activeTab === 'exif' && <ExifStripperApp />}
       </div>
     </div>
   );
