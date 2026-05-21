@@ -4,7 +4,8 @@ import { usePathname } from 'next/navigation';
 import { 
   ChevronDown, Menu, X, 
   Plus, Scissors, Minimize2, Type, 
-  ImageIcon, ShieldAlert, ArrowRight, HardDrive, FileImage
+  ImageIcon, ShieldAlert, ArrowRight, HardDrive, FileImage,
+  RefreshCw, EyeOff, Sparkles
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import './Navigation.css';
@@ -121,21 +122,44 @@ export default function Navigation() {
                 Image Editing <ChevronDown size={14} />
               </span>
               {openDropdown === 'image' && (
-                <div className="mega-menu mega-menu-small">
-                  <Link href="/image-compressor" className="mega-link">
-                    <div className="mega-icon"><Minimize2 size={18} /></div>
-                    <div className="mega-content">
-                      <span className="mega-title">Image Compressor</span>
-                      <span className="mega-desc">Shrink WebP, PNG, JPG</span>
-                    </div>
-                  </Link>
-                  <Link href="/exif-stripper" className="mega-link">
-                    <div className="mega-icon"><FileImage size={18} /></div>
-                    <div className="mega-content">
-                      <span className="mega-title">EXIF Stripper</span>
-                      <span className="mega-desc">Remove photo metadata</span>
-                    </div>
-                  </Link>
+                <div className="mega-menu mega-menu-medium" style={{ minWidth: '450px' }}>
+                  <div className="mega-grid" style={{ gridTemplateColumns: '1fr 1fr', padding: '1rem' }}>
+                    <Link href="/image-compressor" className="mega-link">
+                      <div className="mega-icon"><Minimize2 size={18} /></div>
+                      <div className="mega-content">
+                        <span className="mega-title">Compressor</span>
+                        <span className="mega-desc">Shrink WebP, PNG, JPG</span>
+                      </div>
+                    </Link>
+                    <Link href="/exif-stripper" className="mega-link">
+                      <div className="mega-icon"><FileImage size={18} /></div>
+                      <div className="mega-content">
+                        <span className="mega-title">EXIF Stripper</span>
+                        <span className="mega-desc">Remove photo metadata</span>
+                      </div>
+                    </Link>
+                    <Link href="/image-tools?tool=convert" className="mega-link">
+                      <div className="mega-icon"><RefreshCw size={18} /></div>
+                      <div className="mega-content">
+                        <span className="mega-title">Converter</span>
+                        <span className="mega-desc">Convert formats locally</span>
+                      </div>
+                    </Link>
+                    <Link href="/image-tools?tool=redact" className="mega-link">
+                      <div className="mega-icon"><EyeOff size={18} /></div>
+                      <div className="mega-content">
+                        <span className="mega-title">Redactor (Blur)</span>
+                        <span className="mega-desc">Hide sensitive details</span>
+                      </div>
+                    </Link>
+                    <Link href="/image-tools?tool=favicon" className="mega-link" style={{ gridColumn: 'span 2' }}>
+                      <div className="mega-icon"><Sparkles size={18} /></div>
+                      <div className="mega-content">
+                        <span className="mega-title">Favicon &amp; Icon Generator</span>
+                        <span className="mega-desc">Create responsive favicon and touch icon packages</span>
+                      </div>
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>
@@ -177,6 +201,9 @@ export default function Navigation() {
             <div className="mobile-group-title">Image Editing</div>
             <Link href="/image-compressor" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Image Compressor</Link>
             <Link href="/exif-stripper" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>EXIF Stripper</Link>
+            <Link href="/image-tools?tool=convert" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Image Converter</Link>
+            <Link href="/image-tools?tool=redact" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Redact &amp; Blur</Link>
+            <Link href="/image-tools?tool=favicon" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Favicon Generator</Link>
           </div>
 
           <div style={{ padding: '1.5rem' }}>
