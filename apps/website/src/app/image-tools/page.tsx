@@ -14,5 +14,9 @@ export const metadata = {
 };
 
 export default function ImageToolPage() {
-  return <ImageCompressorWrapper />;
+  return (
+    <main className="image-tools-page">
+      <ImageCompressorWrapper />
+    </main>
+  );
 }

@@ -577,7 +577,7 @@
 .workspace-tabs {
   display: flex;
   gap: 0.5rem;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border);
   margin-bottom: 2rem;
   padding-bottom: 0.5rem;
   flex-wrap: wrap;
@@ -586,7 +586,7 @@
 .workspace-tab-btn {
   background: none;
   border: none;
-  color: var(--text-2, #64748b);
+  color: var(--text-muted, #64748b);
   padding: 0.6rem 1.2rem;
   font-size: 0.95rem;
   font-weight: 500;
@@ -599,12 +599,12 @@
 }
 
 .workspace-tab-btn:hover {
-  background: var(--bg-2, #f1f5f9);
-  color: var(--text-1, #0f172a);
+  background: var(--bg-3, #f1f5f9);
+  color: var(--text, #0f172a);
 }
 
 .workspace-tab-btn.active {
-  background: var(--primary-color, #6366f1);
+  background: var(--primary, #0f172a);
   color: #ffffff;
 }
 
@@ -615,21 +615,21 @@
   align-items: center;
   justify-content: center;
   padding: 5rem 2rem;
-  border: 2px dashed var(--border-color, #e2e8f0);
+  border: 2px dashed var(--border, #e2e8f0);
   border-radius: 12px;
-  background: var(--bg-1, #ffffff);
+  background: var(--bg, #ffffff);
   cursor: pointer;
   transition: all 0.25s ease;
   text-align: center;
 }
 
 .dropzone:hover, .dropzone.dragover {
-  border-color: var(--primary-color, #6366f1);
+  border-color: var(--primary, #0f172a);
   background: var(--bg-2, #f8fafc);
 }
 
 .dropzone .upload-icon {
-  color: var(--primary-color, #6366f1);
+  color: var(--primary, #0f172a);
   margin-bottom: 1rem;
 }
 
@@ -647,8 +647,8 @@
 }
 
 .settings-panel {
-  background: var(--bg-1, #ffffff);
-  border: 1px solid var(--border-color, #e2e8f0);
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e2e8f0);
   border-radius: 12px;
   padding: 1.25rem;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
@@ -668,7 +668,7 @@
   font-size: 0.85rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
-  color: var(--text-2, #64748b);
+  color: var(--text-muted, #64748b);
 }
 
 /* ── Files and Cards list ── */
@@ -682,8 +682,8 @@
 .file-card-item {
   display: flex;
   align-items: center;
-  background: var(--bg-1, #ffffff);
-  border: 1px solid var(--border-color, #e2e8f0);
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e2e8f0);
   border-radius: 10px;
   padding: 0.75rem;
   gap: 1rem;
@@ -709,7 +709,7 @@
 .file-name {
   font-weight: 500;
   font-size: 0.9rem;
-  color: var(--text-1, #0f172a);
+  color: var(--text, #0f172a);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -717,7 +717,7 @@
 
 .file-meta {
   font-size: 0.8rem;
-  color: var(--text-2, #64748b);
+  color: var(--text-muted, #64748b);
   display: flex;
   align-items: center;
 }
@@ -736,8 +736,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--bg-1, #ffffff);
-  border: 1px solid var(--border-color, #e2e8f0);
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e2e8f0);
   border-radius: 12px;
   padding: 0.75rem 1.25rem;
   width: 100%;
@@ -756,7 +756,7 @@
   justify-content: center;
   align-items: center;
   background: var(--bg-2, #f8fafc);
-  border: 1px solid var(--border-color, #e2e8f0);
+  border: 1px solid var(--border, #e2e8f0);
   border-radius: 12px;
   padding: 2rem;
   width: 100%;
