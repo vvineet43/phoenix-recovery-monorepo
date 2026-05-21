@@ -49,7 +49,7 @@ export default function Home() {
         <div className="container">
           <div className="section-header">
             <h2>The current lineup</h2>
-            <p>Four categories of tools. All offline-capable, all free to start with — each built around keeping your files where they belong.</p>
+            <p>Three toolkits, all offline-capable, all free to start with — each built around keeping your files on your machine.</p>
           </div>
           <div className="grid-tools">
 
@@ -81,26 +81,13 @@ export default function Home() {
 
             <div className="tool-card">
               <h3>Image Toolkit</h3>
-              <p>Compress, convert, redact, and strip metadata from images — all in one workspace. Every operation happens in your browser. Nothing gets uploaded.</p>
+              <p>Four image tools in one workspace — compress, convert formats, blur sensitive areas, and strip hidden EXIF metadata. Everything runs in your browser, nothing gets uploaded.</p>
               <ul>
-                <li>Compress JPG, PNG, and WebP with a quality slider</li>
-                <li>Convert between formats with transparency support</li>
-                <li>Blur faces, plates, and addresses before sharing</li>
+                <li>Compress JPG, PNG, and WebP with real-time quality preview</li>
+                <li>Convert between formats and batch-download as ZIP</li>
+                <li>Blur faces and plates, strip GPS and device data from photos</li>
               </ul>
               <Link href="/image-toolkit" className="btn btn-outline" style={{ width: 'fit-content' }}>
-                Learn more &rarr;
-              </Link>
-            </div>
-
-            <div className="tool-card">
-              <h3>EXIF Metadata Stripper</h3>
-              <p>Shows everything hiding in your photos — GPS coordinates, device fingerprints, timestamps, even your name — then strips it all out before you share the file.</p>
-              <ul>
-                <li>Reveals and removes GPS location data</li>
-                <li>Shows every metadata field before it&apos;s gone</li>
-                <li>Batch process and download as a ZIP</li>
-              </ul>
-              <Link href="/exif-stripper" className="btn btn-outline" style={{ width: 'fit-content' }}>
                 Learn more &rarr;
               </Link>
             </div>
