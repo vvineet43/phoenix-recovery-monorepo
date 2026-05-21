@@ -8,6 +8,8 @@ export default function sitemap() {
     '/pdf-toolkit',
     '/exif-stripper',
     '/image-compressor',
+    '/image-converter',
+    '/image-redactor',
     '/data-recovery',
     '/docs',
     '/privacy',

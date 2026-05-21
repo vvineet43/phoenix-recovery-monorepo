@@ -138,14 +138,14 @@ export default function Navigation() {
                         <span className="mega-desc">Remove photo metadata</span>
                       </div>
                     </Link>
-                    <Link href="/image-tools?tool=convert" className="mega-link">
+                    <Link href="/image-converter" className="mega-link">
                       <div className="mega-icon"><RefreshCw size={18} /></div>
                       <div className="mega-content">
                         <span className="mega-title">Converter</span>
                         <span className="mega-desc">Convert formats locally</span>
                       </div>
                     </Link>
-                    <Link href="/image-tools?tool=redact" className="mega-link">
+                    <Link href="/image-redactor" className="mega-link">
                       <div className="mega-icon"><EyeOff size={18} /></div>
                       <div className="mega-content">
                         <span className="mega-title">Redactor (Blur)</span>
@@ -194,8 +194,8 @@ export default function Navigation() {
             <div className="mobile-group-title">Image Editing</div>
             <Link href="/image-compressor" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Image Compressor</Link>
             <Link href="/exif-stripper" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>EXIF Stripper</Link>
-            <Link href="/image-tools?tool=convert" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Image Converter</Link>
-            <Link href="/image-tools?tool=redact" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Redact &amp; Blur</Link>
+            <Link href="/image-converter" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Image Converter</Link>
+            <Link href="/image-redactor" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Redact &amp; Blur</Link>
           </div>
 
           <div style={{ padding: '1.5rem' }}>
