@@ -26,7 +26,19 @@ export default function Navigation() {
   if (pathname.startsWith('/data-recovery')) {
     ctaLink = '/data-recovery#download';
     ctaText = 'Get NexData Pro';
-  } else if (pathname.startsWith('/image-toolkit') || pathname.startsWith('/image-compressor') || pathname.startsWith('/exif-stripper')) {
+  } else if (pathname.startsWith('/image-compressor')) {
+    ctaLink = '/image-tools?tool=compress';
+    ctaText = 'Open Compressor';
+  } else if (pathname.startsWith('/image-converter')) {
+    ctaLink = '/image-tools?tool=convert';
+    ctaText = 'Open Converter';
+  } else if (pathname.startsWith('/image-redactor')) {
+    ctaLink = '/image-tools?tool=redact';
+    ctaText = 'Open Redactor';
+  } else if (pathname.startsWith('/exif-stripper')) {
+    ctaLink = '/image-tools?tool=exif';
+    ctaText = 'Open EXIF Stripper';
+  } else if (pathname.startsWith('/image-toolkit')) {
     ctaLink = '/image-tools';
     ctaText = 'Open Image Toolkit';
   } else if (pathname.startsWith('/image-tools') || pathname.startsWith('/exif-tools')) {
