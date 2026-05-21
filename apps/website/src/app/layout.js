@@ -52,6 +52,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Lemon Squeezy Affiliate Tracking Script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.lemonSqueezyAffiliateConfig = { store: "thenextools" };`
+          }}
+        />
+        <script src="https://lmsqueezy.com/affiliate.js" defer />
+      </head>
       <body className={`${inter.variable} ${outfit.variable}`}>
         <Navigation />
         {children}
