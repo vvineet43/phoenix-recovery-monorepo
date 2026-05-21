@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import { Minimize2, RefreshCw, EyeOff, ShieldAlert, Sparkles } from 'lucide-react';
+import { Minimize2, RefreshCw, EyeOff, ShieldAlert } from 'lucide-react';
 
 const ImageCompressorApp = dynamic(
   () => import('./ImageCompressorApp').then(m => ({ default: m.ImageCompressorApp })),
@@ -18,12 +18,7 @@ const ImageBlurApp = dynamic(
   { ssr: false, loading: () => <div style={{ padding: '4rem', textAlign: 'center', color: '#64748b' }}>Loading Redactor…</div> }
 );
 
-const FaviconGeneratorApp = dynamic(
-  () => import('./FaviconGeneratorApp').then(m => ({ default: m.FaviconGeneratorApp })),
-  { ssr: false, loading: () => <div style={{ padding: '4rem', textAlign: 'center', color: '#64748b' }}>Loading Generator…</div> }
-);
-
-type ActiveTab = 'compress' | 'convert' | 'redact' | 'favicon';
+type ActiveTab = 'compress' | 'convert' | 'redact';
 
 export default function ImageCompressorWrapper() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('compress');
@@ -33,7 +28,7 @@ export default function ImageCompressorWrapper() {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const tab = params.get('tool');
-      if (tab === 'compress' || tab === 'convert' || tab === 'redact' || tab === 'favicon') {
+      if (tab === 'compress' || tab === 'convert' || tab === 'redact') {
         setActiveTab(tab);
       }
     }
@@ -70,12 +65,6 @@ export default function ImageCompressorWrapper() {
           >
             <EyeOff size={16} /> NexRedact (Privacy Blur)
           </button>
-          <button
-            className={`workspace-tab-btn ${activeTab === 'favicon' ? 'active' : ''}`}
-            onClick={() => handleTabChange('favicon')}
-          >
-            <Sparkles size={16} /> NexIcon (Favicon Generator)
-          </button>
         </div>
       </div>
 
@@ -83,7 +72,6 @@ export default function ImageCompressorWrapper() {
         {activeTab === 'compress' && <ImageCompressorApp />}
         {activeTab === 'convert' && <ImageConverterApp />}
         {activeTab === 'redact' && <ImageBlurApp />}
-        {activeTab === 'favicon' && <FaviconGeneratorApp />}
       </div>
     </div>
   );

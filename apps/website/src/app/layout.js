@@ -1,5 +1,6 @@
 import './globals.css';
 import { Inter, Outfit } from 'next/font/google';
+import Script from 'next/script';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 
@@ -52,16 +53,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
+      <head />
+      <body className={`${inter.variable} ${outfit.variable}`}>
         {/* Lemon Squeezy Affiliate Tracking Script */}
-        <script
+        <Script
+          id="lemon-squeezy-config"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `window.lemonSqueezyAffiliateConfig = { store: "thenextools" };`
           }}
         />
-        <script src="https://lmsqueezy.com/affiliate.js" defer />
-      </head>
-      <body className={`${inter.variable} ${outfit.variable}`}>
+        <Script
+          id="lemon-squeezy-affiliate"
+          src="https://lmsqueezy.com/affiliate.js"
+          strategy="afterInteractive"
+        />
         <Navigation />
         {children}
         <Footer />

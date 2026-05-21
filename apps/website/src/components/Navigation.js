@@ -152,13 +152,6 @@ export default function Navigation() {
                         <span className="mega-desc">Hide sensitive details</span>
                       </div>
                     </Link>
-                    <Link href="/image-tools?tool=favicon" className="mega-link" style={{ gridColumn: 'span 2' }}>
-                      <div className="mega-icon"><Sparkles size={18} /></div>
-                      <div className="mega-content">
-                        <span className="mega-title">Favicon &amp; Icon Generator</span>
-                        <span className="mega-desc">Create responsive favicon and touch icon packages</span>
-                      </div>
-                    </Link>
                   </div>
                 </div>
               )}
@@ -203,7 +196,6 @@ export default function Navigation() {
             <Link href="/exif-stripper" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>EXIF Stripper</Link>
             <Link href="/image-tools?tool=convert" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Image Converter</Link>
             <Link href="/image-tools?tool=redact" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Redact &amp; Blur</Link>
-            <Link href="/image-tools?tool=favicon" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Favicon Generator</Link>
           </div>
 
           <div style={{ padding: '1.5rem' }}>
