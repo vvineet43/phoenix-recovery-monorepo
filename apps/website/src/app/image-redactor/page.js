@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Image Redactor — Blur & Hide Sensitive Areas Locally | TheNexTools',
-  description: 'Blur faces, license plates, addresses, and any sensitive area in your photos. Runs entirely in your browser — files never leave your device. Free, private, and fast.',
+  title: 'Image Redactor — Blur Faces, Plates & Sensitive Areas Locally | TheNexTools',
+  description: 'Draw blur zones over faces, license plates, addresses, and sensitive data in your photos. The blur is permanent and irreversible. Runs locally in your browser — files never leave your device.',
   manifest: '/image-manifest.json',
   alternates: {
     canonical: '/image-redactor',
@@ -14,9 +14,9 @@ export default function ImageRedactorLanding() {
     <>
       <header className="hero container">
         <div className="badge">NexRedact — Private by Default</div>
-        <h1>Blur sensitive details in your images before you share them.</h1>
+        <h1>Some things in a photo aren&apos;t meant to be shared.</h1>
         <p>
-          License plates, faces, home addresses, financial documents — sometimes a photo needs to be shared but shouldn't reveal everything in it. NexRedact lets you draw blur zones directly on your image in the browser, then download the result. Nothing is uploaded.
+          You&apos;re selling a car and need to blur the plates. You&apos;re sharing a screenshot of a receipt but the card number is visible. You took a great event photo but a stranger&apos;s kid is in frame. NexRedact lets you draw blur zones over anything sensitive, then saves a flattened image where the blur is permanent and cannot be undone.
         </p>
         <div className="hero-actions">
           <Link href="/image-tools?tool=redact" className="btn btn-primary">Open Redactor</Link>
@@ -26,25 +26,25 @@ export default function ImageRedactorLanding() {
       <section id="features" style={{ background: 'var(--bg-2)' }} className="divider">
         <div className="container">
           <div className="section-header">
-            <h2>Everything you need to redact images privately</h2>
-            <p>Most online redaction tools upload your images to their servers. NexRedact does all the processing inside your browser — the image stays on your machine throughout.</p>
+            <h2>Simple redaction that actually works</h2>
+            <p>No layers, no Photoshop, no uploading sensitive images to someone else&apos;s server. Just draw, blur, download.</p>
           </div>
           <div className="grid-2">
             <div className="feature-card">
-              <h3>Draw blur zones anywhere</h3>
-              <p>Click and drag to select any rectangular region of the image. Adjust blur strength to control how aggressively the selected area is obscured — from a light softening to a heavy pixelated block.</p>
+              <h3>Draw blur zones with your mouse</h3>
+              <p>Click and drag to select a rectangular area. Adjust the blur intensity — from a subtle gaussian to a heavy pixelation that makes text completely unreadable. Add as many zones as you need before saving.</p>
             </div>
             <div className="feature-card">
-              <h3>Multiple redactions per image</h3>
-              <p>Add as many blur zones as needed on a single image. Each zone can be removed or adjusted independently before you finalize the download.</p>
+              <h3>Permanent, irreversible redaction</h3>
+              <p>The downloaded image is flattened. The blurred pixels are baked into the file — there&apos;s no hidden layer underneath that someone could extract. This matters for legal, medical, and journalistic work where partial redaction isn&apos;t acceptable.</p>
             </div>
             <div className="feature-card">
-              <h3>Suitable for legal, journalistic, and personal use</h3>
-              <p>Redacting a screenshot of a contract, blurring a witness face, or hiding your home address in a listing photo — NexRedact handles each case privately, without any server ever seeing the file.</p>
+              <h3>Common use cases</h3>
+              <p>Blurring license plates in vehicle listings. Redacting account numbers on invoice screenshots. Hiding bystander faces in crowd photos for news use. Removing your address from a photo before posting it to a marketplace. All of this takes about ten seconds.</p>
             </div>
             <div className="feature-card">
-              <h3>Download and share immediately</h3>
-              <p>The redacted image downloads as a JPG or PNG to your device the moment you're done. The blur regions are permanent and cannot be reversed once downloaded.</p>
+              <h3>Nothing gets uploaded</h3>
+              <p>The image stays in your browser the entire time. NexRedact uses the Canvas API to apply the blur filter locally — no server, no account, no file size cap. Download the result as JPG or PNG and you&apos;re done.</p>
             </div>
           </div>
         </div>
@@ -52,8 +52,8 @@ export default function ImageRedactorLanding() {
 
       <section className="cta-section">
         <div className="container">
-          <h2>Redact first. Share with confidence.</h2>
-          <p>Works in any modern browser on Mac, Windows, and Linux — no software to install.</p>
+          <h2>Blur it before you share it.</h2>
+          <p>Open in any modern browser. No installation, no account.</p>
           <Link href="/image-tools?tool=redact" className="btn btn-primary">Open NexRedact</Link>
         </div>
       </section>

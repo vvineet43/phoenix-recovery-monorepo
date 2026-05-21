@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'NexPDF — Offline PDF Editor | TheNexTools',
-  description: 'Edit, merge, sign, and compress PDF files entirely in your browser. No file uploads, no account required, no watermarks. NexPDF runs locally on your device.',
+  title: 'NexPDF — Edit, Sign, Merge & Compress PDFs Offline | TheNexTools',
+  description: 'A full PDF editor that runs in your browser. Merge, split, sign, compress, redact, watermark — no uploads, no accounts, no watermarks on output.',
   manifest: '/pdf-manifest.json',
   alternates: {
     canonical: '/pdf-toolkit',
@@ -15,38 +15,37 @@ export default function PdfToolkitLanding() {
 
       <header className="hero container">
         <div className="badge">NexPDF — Free &amp; Private</div>
-        <h1>Edit PDFs without handing your files to a stranger&apos;s server.</h1>
+        <h1>Edit PDFs without handing your files to someone else&apos;s server.</h1>
         <p>
-          Most free PDF tools require an upload. NexPDF doesn&apos;t. Everything — merging, signing, compressing, annotating — happens directly in your browser using your device&apos;s own processing power. No account. No waiting. No trace.
+          Every time you use a free online PDF tool, your document gets uploaded to a company you&apos;ve never heard of, processed on their machines, and (maybe) deleted afterward. NexPDF skips all of that. Merging, signing, compressing, redacting — it all happens right here in your browser. No account. No waiting. No trace left behind.
         </p>
         <div className="hero-actions">
-          <Link href="/pdf-tools" className="btn btn-primary">Open in Browser</Link>
-          <Link href="/pdf-tools" className="btn btn-outline">Install App</Link>
+          <Link href="/pdf-tools" className="btn btn-primary">Open PDF Editor</Link>
         </div>
       </header>
 
       <section id="features" style={{ background: 'var(--bg-2)' }} className="divider">
         <div className="container">
           <div className="section-header">
-            <h2>What NexPDF actually does</h2>
-            <p>A practical toolkit for the PDF tasks that come up constantly — handled the way they should be.</p>
+            <h2>What you can actually do with it</h2>
+            <p>The PDF tasks that come up every week — handled locally, the way they should be.</p>
           </div>
           <div className="grid-2">
             <div className="feature-card">
-              <h3>Signatures and Annotations</h3>
-              <p>Draw a signature by hand, type one out, or stamp the date on any page. Drag the element exactly where it needs to go, resize it, and save. The output is a clean, flattened PDF — no hidden layers, no editable fields left behind.</p>
+              <h3>Sign and annotate</h3>
+              <p>Draw your signature with a mouse or your finger on a touchscreen. Or type it out and pick a font that looks handwritten. Place it anywhere on the page, resize it, then export a flattened PDF — no hidden layers, no editable signature field left behind. Good enough for leases, NDAs, and the dozen other documents that show up every month asking for your name on a line.</p>
             </div>
             <div className="feature-card">
-              <h3>Merge and Reorder Pages</h3>
-              <p>Load multiple PDFs at once, then drag pages into the right order. Rotate anything scanned sideways. Pull out specific pages and export them separately — without a subscription.</p>
+              <h3>Merge, reorder, and extract pages</h3>
+              <p>Load multiple PDFs, drag pages around until they&apos;re in the right order, rotate anything that came through the scanner sideways, and pull out specific pages as standalone files. The kind of thing you shouldn&apos;t need Acrobat Pro for.</p>
             </div>
             <div className="feature-card">
-              <h3>Compression with a Preview</h3>
-              <p>When a PDF is too heavy to email, the compress tool lets you dial in the quality level and see the estimated file size before committing. High-quality scans that come in at 40MB routinely compress to under 3MB.</p>
+              <h3>Compress with a preview</h3>
+              <p>When a scan comes in at 40MB and your email caps at 25MB, the compressor lets you dial in a quality level and see the estimated output size before saving. Most high-resolution scans compress to a third of their original size without visible quality loss.</p>
             </div>
             <div className="feature-card">
-              <h3>Works offline after first load</h3>
-              <p>Once NexPDF has loaded, you can disconnect from the internet and keep working. Nothing is sent anywhere. Legal documents, HR files, financial statements — whatever is in the document, it stays between you and the PDF.</p>
+              <h3>Works offline</h3>
+              <p>After the first load, NexPDF doesn&apos;t need the internet. You can disconnect your Wi-Fi and keep working. Legal documents, financial statements, HR paperwork — whatever it is, it stays between you and the file.</p>
             </div>
           </div>
         </div>
@@ -54,8 +53,8 @@ export default function PdfToolkitLanding() {
       <section className="divider">
         <div className="container">
           <div className="section-header">
-            <h2>Individual PDF Utilities</h2>
-            <p>Direct access to specific tools for faster workflows.</p>
+            <h2>All 17 tools</h2>
+            <p>Jump straight to the tool you need.</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1.25rem' }}>
             <Link href="/pdf-toolkit/tools/compress-pdf" className="btn btn-outline" style={{ justifyContent: 'center', textAlign: 'center' }}>Compress PDF</Link>
@@ -82,7 +81,7 @@ export default function PdfToolkitLanding() {
       <section className="cta-section">
         <div className="container">
           <h2>Ready when you are.</h2>
-          <p>Open the editor, drop in your files, and get to work. No sign-up step, no trial period.</p>
+          <p>Open the editor, drop in a file, and get to work. No sign-up, no trial countdown.</p>
           <Link href="/pdf-tools" className="btn btn-primary">Launch NexPDF</Link>
         </div>
       </section>

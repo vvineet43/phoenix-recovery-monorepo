@@ -41,9 +41,6 @@ export default function Footer() {
           <p className="footer-copy">
             &copy; {new Date().getFullYear()} TheNexTools. All rights reserved.
           </p>
-          <div className="footer-copy">
-            Securely processed on your machine.
-          </div>
         </div>
       </div>
     </footer>
