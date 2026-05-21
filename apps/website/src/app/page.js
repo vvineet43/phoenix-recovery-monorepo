@@ -80,7 +80,7 @@ export default function Home() {
             </div>
 
             <div className="tool-card">
-              <h3>Image Toolkit</h3>
+              <h3>NexImage Toolkit</h3>
               <p>Four image tools in one workspace — compress, convert formats, blur sensitive areas, and strip hidden EXIF metadata. Everything runs in your browser, nothing gets uploaded.</p>
               <ul>
                 <li>Compress JPG, PNG, and WebP with real-time quality preview</li>

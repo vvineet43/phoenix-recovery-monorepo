@@ -40,10 +40,10 @@ export default function Navigation() {
     ctaText = 'Open EXIF Stripper';
   } else if (pathname.startsWith('/image-toolkit')) {
     ctaLink = '/image-tools';
-    ctaText = 'Open Image Toolkit';
+    ctaText = 'Open NexImage';
   } else if (pathname.startsWith('/image-tools') || pathname.startsWith('/exif-tools')) {
     ctaLink = '/image-toolkit';
-    ctaText = 'Image Toolkit';
+    ctaText = 'NexImage Toolkit';
   } else if (pathname.startsWith('/pdf-toolkit') || pathname.startsWith('/pdf-tools')) {
     ctaLink = '/pdf-tools';
     ctaText = 'Open PDF Editor';
@@ -165,7 +165,7 @@ export default function Navigation() {
                   </div>
                   <div className="mega-footer">
                     <Link href="/image-toolkit" className="view-all-btn">
-                      Open Image Toolkit <ArrowRight size={14} />
+                      Open NexImage Toolkit <ArrowRight size={14} />
                     </Link>
                   </div>
                 </div>
@@ -211,7 +211,7 @@ export default function Navigation() {
             <Link href="/image-converter" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Convert Format</Link>
             <Link href="/image-redactor" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Redact &amp; Blur</Link>
             <Link href="/exif-stripper" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>EXIF Stripper</Link>
-            <Link href="/image-toolkit" className="mobile-sublink view-all-mobile" onClick={() => setIsMobileMenuOpen(false)}>Open Image Toolkit &rarr;</Link>
+            <Link href="/image-toolkit" className="mobile-sublink view-all-mobile" onClick={() => setIsMobileMenuOpen(false)}>Open NexImage Toolkit &rarr;</Link>
           </div>
 
           <div style={{ padding: '1.5rem' }}>

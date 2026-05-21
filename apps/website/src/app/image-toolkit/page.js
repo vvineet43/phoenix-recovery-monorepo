@@ -1,14 +1,14 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Image Toolkit — Compress, Convert, Redact & Strip Metadata | TheNexTools',
+  title: 'NexImage Toolkit — Compress, Convert, Redact & Strip Metadata | TheNexTools',
   description: 'Four image tools in one browser tab. Compress, convert formats, blur sensitive areas, and strip EXIF metadata — all locally, no uploads, no accounts.',
   manifest: '/image-manifest.json',
   alternates: {
     canonical: '/image-toolkit',
   },
   openGraph: {
-    title: 'Image Toolkit — Compress, Convert, Redact & Strip Metadata | TheNexTools',
+    title: 'NexImage Toolkit — Compress, Convert, Redact & Strip Metadata | TheNexTools',
     description: 'Four image tools in one browser tab. Compress, convert formats, blur sensitive areas, and strip EXIF metadata — all locally.',
     url: 'https://thenextools.com/image-toolkit',
     type: 'website',
@@ -20,13 +20,13 @@ export default function ImageToolkitLanding() {
     <>
 
       <header className="hero container">
-        <div className="badge">Image Toolkit — Local &amp; Private</div>
+        <div className="badge">NexImage — Local &amp; Private</div>
         <h1>Four image tools that never touch a server.</h1>
         <p>
           Compress, convert, redact, and clean metadata from your images — all inside a single browser tab. Nothing gets uploaded. The tools run on your hardware using the browser&apos;s native Canvas API, so they work even after you disconnect from the internet.
         </p>
         <div className="hero-actions">
-          <Link href="/image-tools" className="btn btn-primary">Open Image Toolkit</Link>
+          <Link href="/image-tools" className="btn btn-primary">Open NexImage</Link>
         </div>
       </header>
 
@@ -111,7 +111,7 @@ export default function ImageToolkitLanding() {
             </div>
             <div className="feature-card">
               <h3>No limits means no friction</h3>
-              <p>Cloud tools restrict free users to 5–10MB per file. The Image Toolkit has no such cap — your browser can typically handle files of several hundred megabytes without breaking a sweat.</p>
+              <p>Cloud tools restrict free users to 5–10MB per file. NexImage has no such cap — your browser can typically handle files of several hundred megabytes without breaking a sweat.</p>
             </div>
           </div>
         </div>
@@ -121,7 +121,7 @@ export default function ImageToolkitLanding() {
         <div className="container">
           <h2>Everything you need for image work, without leaving the browser.</h2>
           <p>Works in Chrome, Firefox, Safari, and Edge on Mac, Windows, and Linux.</p>
-          <Link href="/image-tools" className="btn btn-primary">Open Image Toolkit</Link>
+          <Link href="/image-tools" className="btn btn-primary">Open NexImage</Link>
         </div>
       </section>
 
