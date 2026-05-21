@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'EXIF Metadata Stripper — Remove GPS & Camera Data | TheNexTools',
-  description: 'Strip GPS coordinates, camera model, timestamps, and all hidden EXIF metadata from your photos before sharing. Runs locally — nothing is uploaded.',
+  title: 'EXIF Metadata Stripper — Remove GPS & Camera Data from Photos | TheNexTools',
+  description: 'See the hidden data embedded in your photos — GPS location, device model, timestamps — and strip all of it before sharing. Runs locally in your browser.',
   manifest: '/exif-manifest.json',
   alternates: {
     canonical: '/exif-stripper',
@@ -12,42 +12,40 @@ export const metadata = {
 export default function ExifStripperLanding() {
   return (
     <>
-      
 
       <header className="hero container">
         <div className="badge">NexStrip — Free &amp; Private</div>
-        <h1>Your photos carry more information than you think.</h1>
+        <h1>Your photos know where you live. Seriously.</h1>
         <p>
-          Every photo taken on a smartphone embeds GPS coordinates, the exact timestamp, your device model, and sometimes your name. NexStrip reads that data, shows you exactly what&apos;s there, then removes it — without touching a server.
+          Every photo from your phone has GPS coordinates baked into the file — accurate to a few meters. It also has your device model, the exact time you took the shot, and sometimes your name. Most people have no idea this data is there. NexStrip shows you everything, then strips it out before you share the photo with anyone.
         </p>
         <div className="hero-actions">
-          <Link href="/exif-tools" className="btn btn-primary">Open in Browser</Link>
-          <Link href="/exif-tools" className="btn btn-outline">Install App</Link>
+          <Link href="/image-tools?tool=exif" className="btn btn-primary">Open EXIF Stripper</Link>
         </div>
       </header>
 
       <section id="features" style={{ background: 'var(--bg-2)' }} className="divider">
         <div className="container">
           <div className="section-header">
-            <h2>What gets stripped — and why it matters</h2>
-            <p>Metadata was designed for camera manufacturers. It was never designed for public photo sharing.</p>
+            <h2>What&apos;s actually hiding in your photos</h2>
+            <p>EXIF metadata was designed for camera manufacturers, not for social media. Here&apos;s what gets embedded by default.</p>
           </div>
           <div className="grid-2">
             <div className="feature-card">
-              <h3>GPS &amp; Location data</h3>
-              <p>If location services were on when the photo was taken, the file contains the exact latitude and longitude — accurate to a few meters. Sharing a photo of your home or office exposes that data to anyone who checks the file properties.</p>
+              <h3>GPS coordinates</h3>
+              <p>If location services were on when you took the photo (and on most phones, they are by default), the file contains exact latitude and longitude. Posting a photo of your living room? You just posted your home address to anyone who knows how to right-click and check file properties.</p>
             </div>
             <div className="feature-card">
-              <h3>Device &amp; camera fingerprint</h3>
-              <p>Camera make, model, software version, and lens data are stored in every image. In legal and journalistic contexts, this information can be used to link photos to a specific person or device.</p>
+              <h3>Device fingerprint</h3>
+              <p>Camera make, model, serial number, software version, lens data — all of it is stored in the image file. In legal or investigative contexts, this can directly link a photo to a specific device and person. Most people sharing vacation photos don&apos;t realize they&apos;re also sharing their phone&apos;s identity.</p>
             </div>
             <div className="feature-card">
-              <h3>Timestamps and shooting data</h3>
-              <p>The original capture time, editing timestamps, and exposure details are embedded by default. For anyone who wants to keep their schedule private, stripping this is straightforward hygiene.</p>
+              <h3>Timestamps and capture settings</h3>
+              <p>The original capture time, any editing timestamps, ISO, shutter speed, aperture — it&apos;s all there. If you&apos;d rather not broadcast exactly when and how you took every photo, stripping this is basic digital hygiene.</p>
             </div>
             <div className="feature-card">
-              <h3>Everything stays local</h3>
-              <p>NexStrip reads and strips metadata entirely inside your browser using canvas APIs. Your images are never sent anywhere. Batch-process an entire folder and download clean copies individually or as a ZIP — all offline after first load.</p>
+              <h3>Everything processed locally</h3>
+              <p>NexStrip reads and removes metadata entirely inside your browser. No server involved. Batch-process a whole folder and download clean copies individually or as a ZIP. After the first page load, it even works offline.</p>
             </div>
           </div>
         </div>
@@ -55,9 +53,9 @@ export default function ExifStripperLanding() {
 
       <section className="cta-section">
         <div className="container">
-          <h2>See what&apos;s in your files before you share them.</h2>
-          <p>Drop in any image and NexStrip will show you exactly what metadata is embedded — then remove it.</p>
-          <Link href="/exif-tools" className="btn btn-primary">Open NexStrip</Link>
+          <h2>Check what&apos;s in your photos before someone else does.</h2>
+          <p>Drop in any image. NexStrip shows every metadata field, then removes it with one click.</p>
+          <Link href="/image-tools?tool=exif" className="btn btn-primary">Open NexStrip</Link>
         </div>
       </section>
 

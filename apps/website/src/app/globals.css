@@ -43,8 +43,10 @@ body {
   overflow-x: clip;
 }
 
-/* Full-bleed tool routes (no site nav); keeps PDF UI from forcing horizontal scroll */
-.pdf-tools-page {
+/* Full-bleed tool routes (no site nav); keeps tool UI from forcing horizontal scroll */
+.pdf-tools-page,
+.image-tools-page,
+.exif-tools-page {
   display: block;
   width: 100%;
   max-width: 100%;

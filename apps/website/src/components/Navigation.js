@@ -4,7 +4,8 @@ import { usePathname } from 'next/navigation';
 import { 
   ChevronDown, Menu, X, 
   Plus, Scissors, Minimize2, Type, 
-  ImageIcon, ShieldAlert, ArrowRight, HardDrive, FileImage
+  ImageIcon, ShieldAlert, ArrowRight, HardDrive, FileImage,
+  RefreshCw, EyeOff
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import './Navigation.css';
@@ -26,19 +27,27 @@ export default function Navigation() {
     ctaLink = '/data-recovery#download';
     ctaText = 'Get NexData Pro';
   } else if (pathname.startsWith('/image-compressor')) {
-    ctaLink = '/image-tools';
+    ctaLink = '/image-tools?tool=compress';
     ctaText = 'Open Compressor';
+  } else if (pathname.startsWith('/image-converter')) {
+    ctaLink = '/image-tools?tool=convert';
+    ctaText = 'Open Converter';
+  } else if (pathname.startsWith('/image-redactor')) {
+    ctaLink = '/image-tools?tool=redact';
+    ctaText = 'Open Redactor';
   } else if (pathname.startsWith('/exif-stripper')) {
-    ctaLink = '/exif-tools';
-    ctaText = 'Open EXIF Tool';
-  } else if (pathname.startsWith('/pdf-toolkit')) {
+    ctaLink = '/image-tools?tool=exif';
+    ctaText = 'Open EXIF Stripper';
+  } else if (pathname.startsWith('/image-toolkit')) {
+    ctaLink = '/image-tools';
+    ctaText = 'Open NexImage';
+  } else if (pathname.startsWith('/image-tools') || pathname.startsWith('/exif-tools')) {
+    ctaLink = '/image-toolkit';
+    ctaText = 'NexImage Toolkit';
+  } else if (pathname.startsWith('/pdf-toolkit') || pathname.startsWith('/pdf-tools')) {
     ctaLink = '/pdf-tools';
     ctaText = 'Open PDF Editor';
   }
-
-  // Hide navigation on actual tool app pages
-  const hiddenPaths = ['/pdf-tools', '/image-tools', '/exif-tools'];
-  if (hiddenPaths.includes(pathname)) return null;
 
   return (
     <>
@@ -49,6 +58,7 @@ export default function Navigation() {
           <div className="nav-links nav-desktop">
             <Link href="/data-recovery" className="link">Data Recovery</Link>
             
+            {/* PDF Editing dropdown */}
             <div 
               className="dropdown"
               onMouseEnter={() => setOpenDropdown('pdf')}
@@ -112,30 +122,52 @@ export default function Navigation() {
               )}
             </div>
 
+            {/* Image Editing dropdown — mirrors PDF pattern */}
             <div 
               className="dropdown"
               onMouseEnter={() => setOpenDropdown('image')}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <span className="link" style={{display: 'flex', alignItems: 'center', gap: '0.2rem', cursor: 'pointer'}}>
+              <Link href="/image-toolkit" className="link" style={{display: 'flex', alignItems: 'center', gap: '0.2rem'}}>
                 Image Editing <ChevronDown size={14} />
-              </span>
+              </Link>
               {openDropdown === 'image' && (
-                <div className="mega-menu mega-menu-small">
-                  <Link href="/image-compressor" className="mega-link">
-                    <div className="mega-icon"><Minimize2 size={18} /></div>
-                    <div className="mega-content">
-                      <span className="mega-title">Image Compressor</span>
-                      <span className="mega-desc">Shrink WebP, PNG, JPG</span>
-                    </div>
-                  </Link>
-                  <Link href="/exif-stripper" className="mega-link">
-                    <div className="mega-icon"><FileImage size={18} /></div>
-                    <div className="mega-content">
-                      <span className="mega-title">EXIF Stripper</span>
-                      <span className="mega-desc">Remove photo metadata</span>
-                    </div>
-                  </Link>
+                <div className="mega-menu mega-menu-medium" style={{ minWidth: '420px' }}>
+                  <div className="mega-grid" style={{ gridTemplateColumns: '1fr 1fr', padding: '1rem' }}>
+                    <Link href="/image-compressor" className="mega-link">
+                      <div className="mega-icon"><Minimize2 size={18} /></div>
+                      <div className="mega-content">
+                        <span className="mega-title">Compress</span>
+                        <span className="mega-desc">Shrink JPG, PNG, WebP</span>
+                      </div>
+                    </Link>
+                    <Link href="/image-converter" className="mega-link">
+                      <div className="mega-icon"><RefreshCw size={18} /></div>
+                      <div className="mega-content">
+                        <span className="mega-title">Convert Format</span>
+                        <span className="mega-desc">JPG · PNG · WebP</span>
+                      </div>
+                    </Link>
+                    <Link href="/image-redactor" className="mega-link">
+                      <div className="mega-icon"><EyeOff size={18} /></div>
+                      <div className="mega-content">
+                        <span className="mega-title">Redact &amp; Blur</span>
+                        <span className="mega-desc">Hide sensitive areas</span>
+                      </div>
+                    </Link>
+                    <Link href="/exif-stripper" className="mega-link">
+                      <div className="mega-icon"><FileImage size={18} /></div>
+                      <div className="mega-content">
+                        <span className="mega-title">EXIF Stripper</span>
+                        <span className="mega-desc">Remove photo metadata</span>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="mega-footer">
+                    <Link href="/image-toolkit" className="view-all-btn">
+                      Open NexImage Toolkit <ArrowRight size={14} />
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>
@@ -156,7 +188,7 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* Mobile Dropdown Menu (Moved outside nav to fix CSS backdrop-filter stacking context) */}
+      {/* Mobile Dropdown Menu */}
       <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
         <div className="mobile-scroll">
           <Link href="/data-recovery" className="mobile-link">
@@ -175,8 +207,11 @@ export default function Navigation() {
 
           <div className="mobile-group">
             <div className="mobile-group-title">Image Editing</div>
-            <Link href="/image-compressor" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Image Compressor</Link>
+            <Link href="/image-compressor" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Compress Images</Link>
+            <Link href="/image-converter" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Convert Format</Link>
+            <Link href="/image-redactor" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Redact &amp; Blur</Link>
             <Link href="/exif-stripper" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>EXIF Stripper</Link>
+            <Link href="/image-toolkit" className="mobile-sublink view-all-mobile" onClick={() => setIsMobileMenuOpen(false)}>Open NexImage Toolkit &rarr;</Link>
           </div>
 
           <div style={{ padding: '1.5rem' }}>

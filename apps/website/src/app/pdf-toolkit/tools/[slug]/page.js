@@ -90,7 +90,7 @@ export default async function ToolSeoPage({ params }) {
             <div className="feature-card" style={{ background: 'var(--bg-2)' }}>
               <h3>Local & Private</h3>
               <p>
-                Unlike other tools, NexPDF doesn't upload your files to any server. All processing for <strong>{tool.h1.toLowerCase()}</strong> is done directly in your browser using your machine's hardware. This means your data remains strictly on your device.
+                This tool processes your files directly in your browser — nothing gets uploaded to a server. When you're working with <strong>{tool.h1.toLowerCase().replace('.', '')}</strong>, the document stays on your machine from start to finish.
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.5rem' }}>
                 <div className="badge"><ShieldCheck size={14} /> Private</div>
@@ -121,10 +121,10 @@ export default async function ToolSeoPage({ params }) {
 
       <section className="cta-section">
         <div className="container">
-          <h2>Ready to {tool.toolParam} your PDF?</h2>
-          <p>No sign-up, no cost, no compromise on privacy. Everything runs in your browser.</p>
+          <h2>Give it a try — it takes about five seconds to get started.</h2>
+          <p>No sign-up, no cost, and your files stay on your machine the entire time.</p>
           <Link href={`/pdf-tools?tool=${tool.toolParam}`} className="btn btn-primary">
-            Launch {tool.toolParam.charAt(0).toUpperCase() + tool.toolParam.slice(1)} Toolkit
+            Open in NexPDF
           </Link>
         </div>
       </section>

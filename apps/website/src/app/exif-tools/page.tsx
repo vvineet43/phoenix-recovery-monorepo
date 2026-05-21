@@ -14,5 +14,9 @@ export const metadata = {
 };
 
 export default function ExifToolPage() {
-  return <ExifStripperWrapper />;
+  return (
+    <main className="exif-tools-page">
+      <ExifStripperWrapper />
+    </main>
+  );
 }
