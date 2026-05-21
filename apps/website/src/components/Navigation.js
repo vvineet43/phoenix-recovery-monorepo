@@ -122,28 +122,28 @@ export default function Navigation() {
               {openDropdown === 'image' && (
                 <div className="mega-menu mega-menu-medium" style={{ minWidth: '420px' }}>
                   <div className="mega-grid" style={{ gridTemplateColumns: '1fr 1fr', padding: '1rem' }}>
-                    <Link href="/image-tools?tool=compress" className="mega-link">
+                    <Link href="/image-compressor" className="mega-link">
                       <div className="mega-icon"><Minimize2 size={18} /></div>
                       <div className="mega-content">
                         <span className="mega-title">Compress</span>
                         <span className="mega-desc">Shrink JPG, PNG, WebP</span>
                       </div>
                     </Link>
-                    <Link href="/image-tools?tool=convert" className="mega-link">
+                    <Link href="/image-converter" className="mega-link">
                       <div className="mega-icon"><RefreshCw size={18} /></div>
                       <div className="mega-content">
                         <span className="mega-title">Convert Format</span>
                         <span className="mega-desc">JPG · PNG · WebP</span>
                       </div>
                     </Link>
-                    <Link href="/image-tools?tool=redact" className="mega-link">
+                    <Link href="/image-redactor" className="mega-link">
                       <div className="mega-icon"><EyeOff size={18} /></div>
                       <div className="mega-content">
                         <span className="mega-title">Redact &amp; Blur</span>
                         <span className="mega-desc">Hide sensitive areas</span>
                       </div>
                     </Link>
-                    <Link href="/image-tools?tool=exif" className="mega-link">
+                    <Link href="/exif-stripper" className="mega-link">
                       <div className="mega-icon"><FileImage size={18} /></div>
                       <div className="mega-content">
                         <span className="mega-title">EXIF Stripper</span>
@@ -195,10 +195,10 @@ export default function Navigation() {
 
           <div className="mobile-group">
             <div className="mobile-group-title">Image Editing</div>
-            <Link href="/image-tools?tool=compress" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Compress Images</Link>
-            <Link href="/image-tools?tool=convert" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Convert Format</Link>
-            <Link href="/image-tools?tool=redact" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Redact &amp; Blur</Link>
-            <Link href="/image-tools?tool=exif" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>EXIF Stripper</Link>
+            <Link href="/image-compressor" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Compress Images</Link>
+            <Link href="/image-converter" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Convert Format</Link>
+            <Link href="/image-redactor" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>Redact &amp; Blur</Link>
+            <Link href="/exif-stripper" className="mobile-sublink" onClick={() => setIsMobileMenuOpen(false)}>EXIF Stripper</Link>
             <Link href="/image-toolkit" className="mobile-sublink view-all-mobile" onClick={() => setIsMobileMenuOpen(false)}>Open Image Toolkit &rarr;</Link>
           </div>
 
