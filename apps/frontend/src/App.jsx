@@ -53,6 +53,25 @@ export default function App() {
   const [showLicenseGate, setShowLicenseGate] = useState(null); // 'recover' | 'repair' | null
   const [activationKey, setActivationKey] = useState('');
   const [activationError, setActivationError] = useState('');
+  const [selectedPlan, setSelectedPlan] = useState('lifetime');
+
+  // Sector activity state
+  const [sectors, setSectors] = useState(Array.from({ length: 48 }, () => Math.random() > 0.4 ? 'checked' : 'empty'));
+
+  useEffect(() => {
+    if (!scanStatus.is_scanning) return;
+    const interval = setInterval(() => {
+      setSectors(prev => prev.map(() => {
+        const rand = Math.random();
+        if (rand < 0.12) return 'reading';
+        if (rand < 0.16) return 'recovered';
+        if (rand < 0.20) return 'bad';
+        if (rand < 0.70) return 'checked';
+        return 'empty';
+      }));
+    }, 150);
+    return () => clearInterval(interval);
+  }, [scanStatus.is_scanning]);
 
   // ── INIT ──
   useEffect(() => {
@@ -253,21 +272,21 @@ export default function App() {
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'var(--bg-app)', color: 'var(--text-main)', fontFamily: 'var(--font-main)' }}>
       
       {/* ── TOOLBAR ── */}
-      <div style={{ padding: '0.75rem 1.5rem', display: 'flex', alignItems: 'center', backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid var(--border)', boxShadow: '0 1px 2px rgba(0,0,0,0.02)' }}>
+      <div style={{ padding: '0.75rem 1.5rem', display: 'flex', alignItems: 'center', backgroundColor: 'var(--glass)', borderBottom: '1px solid var(--border)', backdropFilter: 'blur(20px)', zIndex: 10 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginRight: '2.5rem' }}>
-          <div style={{ background: 'var(--primary)', padding: '0.4rem', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 6px var(--primary-glow)' }}>
+          <div style={{ background: 'linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%)', padding: '0.5rem', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 12px rgba(139, 92, 246, 0.4)' }}>
             <img src="/logo.png" alt="Logo" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
           </div>
           <div>
-            <h1 style={{ fontSize: '1.1rem', fontWeight: '700', margin: 0, color: 'var(--text-main)' }}>NexData Recovery</h1>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)', fontWeight: 500 }}>Pro Edition</span>
+            <h1 style={{ fontSize: '1.1rem', fontWeight: '800', margin: 0, color: 'var(--text-main)', fontFamily: 'var(--font-heading)', letterSpacing: '-0.02em' }}>NexData</h1>
+            <span style={{ fontSize: '0.7rem', color: 'var(--accent-violet)', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Recovery Engine</span>
           </div>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flex: 1, maxWidth: '400px' }}>
-          <HardDrive size={18} color="var(--text-dim)" />
+          <HardDrive size={16} color="var(--primary)" />
           <select 
-            style={{ padding: '0.6rem 0.75rem', borderRadius: '8px', border: '1px solid var(--border)', background: 'var(--bg-app)', color: 'var(--text-main)', flex: 1, fontSize: '0.9rem', fontWeight: 500, outline: 'none', cursor: 'pointer', boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.02)' }}
+            style={{ padding: '0.6rem 2.2rem 0.6rem 0.75rem', borderRadius: '8px', border: '1px solid var(--border)', background: 'var(--bg-surface)', color: 'var(--text-main)', flex: 1, fontSize: '0.9rem', fontWeight: 500, outline: 'none', cursor: 'pointer', appearance: 'none', backgroundImage: 'url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23a78bfa\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3e%3cpolyline points=\'6 9 12 15 18 9\'%3e%3c/polyline%3e%3c/svg%3e")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 0.75rem center', backgroundSize: '1rem', transition: 'border-color 0.2s' }}
             onChange={(e) => setSelectedDrive(drives.find(d => d.device === e.target.value))}
             value={selectedDrive?.device || ''}
             disabled={scanStatus.is_scanning}
@@ -285,7 +304,7 @@ export default function App() {
           {!scanStatus.is_scanning ? (
             <button 
               onClick={startScan}
-              style={{ padding: '0.6rem 1.5rem', borderRadius: '8px', background: 'var(--primary)', color: 'white', border: 'none', fontWeight: '600', fontSize: '0.9rem', cursor: selectedDrive ? 'pointer' : 'not-allowed', display: 'flex', alignItems: 'center', gap: '0.5rem', boxShadow: '0 4px 12px var(--primary-glow)', transition: 'all 0.2s' }}
+              style={{ padding: '0.6rem 1.5rem', borderRadius: '8px', background: 'linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%)', color: 'white', border: 'none', fontWeight: '600', fontSize: '0.9rem', cursor: selectedDrive ? 'pointer' : 'not-allowed', display: 'flex', alignItems: 'center', gap: '0.5rem', boxShadow: '0 4px 14px rgba(139, 92, 246, 0.3)', transition: 'all 0.2s' }}
               disabled={!selectedDrive}
             >
               <Search size={16} /> Start Deep Scan
@@ -293,9 +312,9 @@ export default function App() {
           ) : (
             <button 
               onClick={stopScan}
-              style={{ padding: '0.6rem 1.5rem', borderRadius: '8px', background: 'var(--accent-rose)', color: 'white', border: 'none', fontWeight: '600', fontSize: '0.9rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem', boxShadow: '0 4px 12px rgba(239,68,68,0.25)', transition: 'all 0.2s' }}
+              style={{ padding: '0.6rem 1.5rem', borderRadius: '8px', background: 'var(--accent-rose)', color: 'white', border: 'none', fontWeight: '600', fontSize: '0.9rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem', boxShadow: '0 4px 12px rgba(248, 113, 113, 0.3)', transition: 'all 0.2s' }}
             >
-              <RefreshCw size={16} style={{ animation: 'spin 2s linear infinite' }} /> Stop Scan
+              <RefreshCw size={16} className="spin" /> Stop Scan
             </button>
           )}
         </div>
@@ -303,7 +322,7 @@ export default function App() {
         <div style={{ flex: 1 }} />
 
         {isPro ? (
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 0.8rem', background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '20px', color: 'var(--accent-emerald)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 0.8rem', background: 'rgba(52, 211, 153, 0.1)', border: '1px solid rgba(52, 211, 153, 0.2)', borderRadius: '20px', color: 'var(--accent-emerald)' }}>
             <CheckCircle size={14} /> 
             <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>Lifetime Pro Active</span>
           </div>
@@ -316,7 +335,7 @@ export default function App() {
             )}
             <button 
               onClick={() => setShowLicenseGate('generic')}
-              style={{ padding: '0.5rem 1.25rem', borderRadius: '8px', background: 'transparent', color: 'var(--primary)', border: '1.5px solid var(--primary)', fontSize: '0.85rem', fontWeight: 600, cursor: 'pointer', transition: 'all 0.2s' }}
+              style={{ padding: '0.5rem 1.25rem', borderRadius: '8px', background: 'transparent', color: 'var(--primary-hover)', border: '1.5px solid var(--primary)', fontSize: '0.85rem', fontWeight: 600, cursor: 'pointer', transition: 'all 0.2s' }}
             >
               <Key size={14} style={{ verticalAlign: 'middle', marginRight: '0.4rem' }}/> Activate Pro
             </button>
@@ -328,24 +347,67 @@ export default function App() {
       <div style={{ flex: 1, display: 'flex', overflow: 'hidden' }}>
         
         {/* Left pane: Dynamic Sidebar */}
-        <div style={{ width: '300px', borderRight: '1px solid var(--border)', backgroundColor: 'var(--bg-surface-2)', padding: '1.75rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        <div style={{ width: '300px', borderRight: '1px solid var(--border)', backgroundColor: 'var(--bg-surface)', padding: '1.75rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <div>
-            <h2 style={{ fontSize: '0.85rem', textTransform: 'uppercase', color: 'var(--text-dim)', marginBottom: '1.25rem', letterSpacing: '0.08em', fontWeight: 600 }}>System Overview</h2>
+            <h2 style={{ fontSize: '0.8rem', textTransform: 'uppercase', color: 'var(--text-dim)', marginBottom: '1.25rem', letterSpacing: '0.08em', fontWeight: 700, fontFamily: 'var(--font-heading)' }}>System Overview</h2>
             
             {scanStatus.is_scanning ? (
-              <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)', padding: '1.25rem', borderRadius: '12px', marginBottom: '1.5rem', boxShadow: '0 4px 6px rgba(0,0,0,0.02)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.5rem' }}>
-                  <span style={{ fontSize: '0.85rem', color: 'var(--text-dim)', fontWeight: 500 }}>Scan Progress</span>
-                  <span style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--primary)' }}>{Math.round(scanStatus.progress || 0)}%</span>
+              <>
+                <div style={{ background: 'var(--bg-surface-2)', border: '1px solid var(--border)', padding: '1.25rem', borderRadius: '12px', marginBottom: '1rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '0.85rem', color: 'var(--text-dim)', fontWeight: 500 }}>Scan Progress</span>
+                    <span style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--primary-hover)', fontFamily: 'var(--font-heading)' }}>{Math.round(scanStatus.progress || 0)}%</span>
+                  </div>
+                  <div style={{ height: '6px', background: 'var(--bg-surface-hover)', borderRadius: '3px', overflow: 'hidden' }}>
+                    <div style={{ height: '100%', width: `${scanStatus.progress || 0}%`, background: 'linear-gradient(90deg, var(--primary), var(--accent-violet))', transition: 'width 0.3s ease' }} />
+                  </div>
                 </div>
-                <div style={{ height: '6px', background: 'var(--bg-surface-hover)', borderRadius: '3px', overflow: 'hidden' }}>
-                  <div style={{ height: '100%', width: `${scanStatus.progress || 0}%`, background: 'var(--primary)', transition: 'width 0.3s ease' }} />
+
+                <div style={{ background: 'var(--bg-surface-2)', border: '1px solid var(--border)', padding: '1.25rem', borderRadius: '12px', marginBottom: '1.5rem' }}>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-dim)', fontWeight: 700, marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: 'var(--font-heading)' }}>
+                    Live Sector Activity
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(8, 1fr)', gap: '4px' }}>
+                    {sectors.map((state, index) => {
+                      let bg = 'rgba(255,255,255,0.04)';
+                      let glow = 'none';
+                      if (state === 'reading') {
+                        bg = 'var(--primary)';
+                        glow = '0 0 8px var(--primary)';
+                      } else if (state === 'recovered') {
+                        bg = 'var(--accent-emerald)';
+                        glow = '0 0 8px var(--accent-emerald)';
+                      } else if (state === 'bad') {
+                        bg = 'var(--accent-rose)';
+                      } else if (state === 'checked') {
+                        bg = 'rgba(139, 92, 246, 0.2)';
+                      }
+                      return (
+                        <div 
+                          key={index} 
+                          style={{ 
+                            width: '100%', 
+                            aspectRatio: '1', 
+                            borderRadius: '3px', 
+                            backgroundColor: bg, 
+                            boxShadow: glow,
+                            transition: 'all 0.15s ease'
+                          }} 
+                        />
+                      );
+                    })}
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.75rem', fontSize: '0.7rem', color: 'var(--text-dim)' }}>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '3px' }}><span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--primary)' }}/> Read</span>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '3px' }}><span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--accent-emerald)' }}/> Found</span>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '3px' }}><span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'rgba(139,92,246,0.2)' }}/> Check</span>
+                  </div>
                 </div>
-              </div>
+              </>
             ) : (
-              <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)', padding: '1.25rem', borderRadius: '12px', marginBottom: '1.5rem', boxShadow: '0 4px 6px rgba(0,0,0,0.02)' }}>
+              <div style={{ background: 'var(--bg-surface-2)', border: '1px solid var(--border)', padding: '1.25rem', borderRadius: '12px', marginBottom: '1.5rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
-                  <div style={{ padding: '0.5rem', background: 'rgba(15, 23, 42, 0.05)', borderRadius: '8px', color: 'var(--primary)' }}>
+                  <div style={{ padding: '0.5rem', background: 'rgba(139, 92, 246, 0.1)', borderRadius: '8px', color: 'var(--primary)' }}>
                     <Cpu size={20} />
                   </div>
                   <div>
@@ -360,10 +422,10 @@ export default function App() {
               </div>
             )}
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', background: 'var(--bg-surface)', border: '1px solid var(--border)', padding: '1.25rem', borderRadius: '12px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', background: 'var(--bg-surface-2)', border: '1px solid var(--border)', padding: '1.25rem', borderRadius: '12px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ color: 'var(--text-dim)', fontSize: '0.85rem', fontWeight: 500 }}>Files Found</span>
-                <span style={{ background: 'var(--primary-glow)', color: 'var(--primary)', padding: '0.2rem 0.6rem', borderRadius: '12px', fontSize: '0.85rem', fontWeight: 700 }}>{scanStatus.found_files.length}</span>
+                <span style={{ background: 'rgba(139, 92, 246, 0.15)', color: 'var(--primary-hover)', padding: '0.2rem 0.6rem', borderRadius: '12px', fontSize: '0.85rem', fontWeight: 700 }}>{scanStatus.found_files.length}</span>
               </div>
               <div style={{ borderTop: '1px solid var(--border)', paddingTop: '0.75rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ color: 'var(--text-dim)', fontSize: '0.85rem', fontWeight: 500 }}>Sectors Scanned</span>
@@ -372,8 +434,8 @@ export default function App() {
             </div>
           </div>
 
-          <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)', padding: '1.25rem', borderRadius: '12px', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.5rem' }}>
+          <div style={{ background: 'var(--bg-surface-2)', border: '1px solid var(--border)', padding: '1.25rem', borderRadius: '12px', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary-hover)', fontWeight: 700, marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}>
               <Shield size={16} /> Deep-Sector Carving
             </div>
             Bypasses the OS file system to directly reconstruct lost headers from raw magnetic sectors.
@@ -550,45 +612,97 @@ export default function App() {
           };
         };
         const modalContent = getModalContent();
+        const checkoutUrl = selectedPlan === 'lifetime'
+          ? `https://store.thenextools.com/checkout/buy/dc65d7a1-8030-4e2c-9b29-328989852cd5?checkout[custom][machine_id]=${machineId}`
+          : `https://store.thenextools.com/checkout/buy/88f289df-88c9-4976-b6b6-d2ef1dfc20d7?checkout[custom][machine_id]=${machineId}`;
 
         return (
-          <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(4px)' }}>
-            <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)', borderRadius: '12px', padding: '2.5rem', width: '420px', boxShadow: '0 20px 40px rgba(0,0,0,0.15)', position: 'relative' }}>
-              <button onClick={() => setShowLicenseGate(null)} style={{ position: 'absolute', top: '16px', right: '16px', background: 'transparent', border: 'none', color: 'var(--text-dim)', cursor: 'pointer' }}>
-                <X size={20} />
+          <div style={{ position: 'fixed', inset: 0, background: 'rgba(5, 7, 12, 0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(12px)', animation: 'fadeIn 0.25s ease-out' }}>
+            <div style={{ background: 'radial-gradient(circle at top left, rgba(139, 92, 246, 0.12), transparent 70%), var(--bg-surface)', border: '1px solid var(--border)', borderRadius: '16px', padding: '2.5rem', width: '460px', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.6)', position: 'relative', animation: 'modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1)' }}>
+              <button onClick={() => setShowLicenseGate(null)} style={{ position: 'absolute', top: '16px', right: '16px', background: 'transparent', border: 'none', color: 'var(--text-dim)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', borderRadius: '50%', transition: 'background 0.2s' }} onMouseEnter={e => e.currentTarget.style.background = 'var(--bg-surface-hover)'} onMouseLeave={e => e.currentTarget.style.background = 'transparent'}>
+                <X size={18} />
               </button>
               
-              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-                <div style={{ display: 'inline-flex', padding: '1rem', background: 'var(--primary-glow)', borderRadius: '50%', color: 'var(--primary)', marginBottom: '1rem' }}>
-                  <Lock size={32} />
+              <div style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
+                <div style={{ display: 'inline-flex', padding: '1rem', background: 'var(--primary-glow)', borderRadius: '50%', color: 'var(--primary)', marginBottom: '1.25rem', boxShadow: '0 0 20px rgba(139, 92, 246, 0.2)' }}>
+                  <Lock size={28} />
                 </div>
-                <h2 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: 'var(--text-main)' }}>{modalContent.title}</h2>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.5 }}>
+                <h2 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>{modalContent.title}</h2>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.5, margin: 0 }}>
                   {modalContent.desc}
                 </p>
               </div>
 
-              <div style={{ background: 'var(--bg-app)', padding: '1.25rem', borderRadius: '8px', marginBottom: '1.5rem', border: '1px solid var(--border)' }}>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-dim)', marginBottom: '0.5rem', textTransform: 'uppercase', fontWeight: 600 }}>Have a key?</div>
+              {/* Dynamic Checkout Plans Selector */}
+              <div style={{ fontSize: '0.8rem', color: 'var(--text-dim)', marginBottom: '0.5rem', textTransform: 'uppercase', fontWeight: 700, fontFamily: 'var(--font-heading)' }}>Choose License Tier</div>
+              <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.5rem' }}>
+                <div 
+                  onClick={() => setSelectedPlan('lifetime')}
+                  style={{ 
+                    flex: 1, 
+                    padding: '1rem', 
+                    borderRadius: '10px', 
+                    border: '2px solid ' + (selectedPlan === 'lifetime' ? 'var(--primary)' : 'var(--border)'), 
+                    background: selectedPlan === 'lifetime' ? 'rgba(139, 92, 246, 0.08)' : 'var(--bg-surface-2)', 
+                    cursor: 'pointer', 
+                    textAlign: 'center',
+                    transition: 'all 0.2s',
+                    boxShadow: selectedPlan === 'lifetime' ? '0 0 12px rgba(139, 92, 246, 0.15)' : 'none'
+                  }}
+                >
+                  <div style={{ fontSize: '0.8rem', fontWeight: 700, color: selectedPlan === 'lifetime' ? 'var(--primary-hover)' : 'var(--text-dim)', fontFamily: 'var(--font-heading)' }}>Lifetime Pro</div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-main)', margin: '4px 0', fontFamily: 'var(--font-heading)' }}>$69</div>
+                  <div style={{ fontSize: '0.7rem', color: 'var(--accent-emerald)', fontWeight: 600 }}>1 Machine License</div>
+                </div>
+                <div 
+                  onClick={() => setSelectedPlan('business')}
+                  style={{ 
+                    flex: 1, 
+                    padding: '1rem', 
+                    borderRadius: '10px', 
+                    border: '2px solid ' + (selectedPlan === 'business' ? 'var(--primary)' : 'var(--border)'), 
+                    background: selectedPlan === 'business' ? 'rgba(139, 92, 246, 0.08)' : 'var(--bg-surface-2)', 
+                    cursor: 'pointer', 
+                    textAlign: 'center',
+                    transition: 'all 0.2s',
+                    boxShadow: selectedPlan === 'business' ? '0 0 12px rgba(139, 92, 246, 0.15)' : 'none'
+                  }}
+                >
+                  <div style={{ fontSize: '0.8rem', fontWeight: 700, color: selectedPlan === 'business' ? 'var(--primary-hover)' : 'var(--text-dim)', fontFamily: 'var(--font-heading)' }}>Commercial</div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-main)', margin: '4px 0', fontFamily: 'var(--font-heading)' }}>$119</div>
+                  <div style={{ fontSize: '0.7rem', color: 'var(--accent-emerald)', fontWeight: 600 }}>3 Machine License</div>
+                </div>
+              </div>
+
+              <div style={{ background: 'var(--bg-surface-2)', padding: '1.25rem', borderRadius: '10px', marginBottom: '1.5rem', border: '1px solid var(--border)' }}>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-dim)', marginBottom: '0.5rem', textTransform: 'uppercase', fontWeight: 700, fontFamily: 'var(--font-heading)' }}>Activate license key</div>
                 <input 
                   value={activationKey}
                   onChange={e => setActivationKey(e.target.value)}
-                  placeholder="Paste key here"
-                  style={{ width: '100%', padding: '0.75rem', background: 'var(--bg-surface)', border: '1px solid var(--border)', borderRadius: '6px', color: 'var(--text-main)', fontSize: '0.9rem', boxSizing: 'border-box' }}
+                  placeholder="Paste your serial key"
+                  style={{ width: '100%', padding: '0.75rem', background: 'var(--bg-surface)', border: '1px solid var(--border)', borderRadius: '8px', color: 'var(--text-main)', fontSize: '0.9rem', outline: 'none', boxSizing: 'border-box', transition: 'border-color 0.2s' }}
+                  onFocus={e => e.currentTarget.style.borderColor = 'var(--primary)'}
+                  onBlur={e => e.currentTarget.style.borderColor = 'var(--border)'}
                 />
-                {activationError && <div style={{ color: 'var(--accent-rose)', fontSize: '0.8rem', marginTop: '0.5rem' }}>{activationError}</div>}
+                {activationError && <div style={{ color: 'var(--accent-rose)', fontSize: '0.8rem', marginTop: '0.5rem', fontWeight: 500 }}>{activationError}</div>}
                 <button 
                   onClick={handleActivate}
-                  style={{ width: '100%', padding: '0.75rem', marginTop: '0.75rem', background: 'var(--primary)', color: 'white', border: 'none', borderRadius: '6px', fontWeight: '600', cursor: 'pointer' }}>
+                  style={{ width: '100%', padding: '0.75rem', marginTop: '0.75rem', background: 'linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%)', color: 'white', border: 'none', borderRadius: '8px', fontWeight: '600', cursor: 'pointer', transition: 'all 0.2s', boxShadow: '0 4px 12px rgba(139, 92, 246, 0.2)' }}
+                  onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'}
+                  onMouseLeave={e => e.currentTarget.style.transform = 'none'}
+                >
                   Activate License
                 </button>
               </div>
 
               <a 
-                href={`https://store.thenextools.com/checkout/buy/dc65d7a1-8030-4e2c-9b29-328989852cd5?checkout[custom][machine_id]=${machineId}`}
+                href={checkoutUrl}
                 target="_blank" rel="noreferrer"
-                style={{ display: 'block', textAlign: 'center', color: 'var(--primary)', textDecoration: 'underline', fontSize: '0.9rem', fontWeight: 500 }}>
-                Don't have a key? Buy online &rarr;
+                style={{ display: 'block', textAlign: 'center', color: 'var(--primary-hover)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 700, fontFamily: 'var(--font-heading)', border: '1px solid var(--border)', padding: '0.75rem', borderRadius: '8px', background: 'var(--bg-surface-2)', transition: 'all 0.2s' }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(139,92,246,0.1)'; e.currentTarget.style.borderColor = 'var(--primary)'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg-surface-2)'; e.currentTarget.style.borderColor = 'var(--border)'; }}
+              >
+                Buy Selected Plan Online &rarr;
               </a>
             </div>
           </div>
