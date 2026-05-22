@@ -1,49 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  /* NexData Light Theme (Website Matched) */
-  --bg-app: #ffffff;
-  --bg-surface: #f8fafc;
-  --bg-surface-2: #f1f5f9;
-  --bg-surface-hover: #e2e8f0;
-  --bg-elevated: #ffffff;
+  /* NexData Dark Theme (Website Matched) */
+  --bg-app: #080b11;
+  --bg-surface: #0e1322;
+  --bg-surface-2: #171e30;
+  --bg-surface-hover: #1e2942;
+  --bg-elevated: #1c2438;
 
   /* Accent Palette - Matches Website */
-  --primary: #0f172a;
-  --primary-hover: #1e293b;
-  --primary-glow: rgba(15, 23, 42, 0.15);
-  --primary-glow-strong: rgba(15, 23, 42, 0.3);
-  --accent-violet: #bf5af2;
-  --accent-emerald: #10b981;
-  --accent-amber: #f59e0b;
-  --accent-rose: #ef4444;
-  --accent-pink: #ec4899;
+  --primary: #8b5cf6;
+  --primary-hover: #a78bfa;
+  --primary-glow: rgba(139, 92, 246, 0.15);
+  --primary-glow-strong: rgba(139, 92, 246, 0.35);
+  --accent-violet: #a78bfa;
+  --accent-emerald: #34d399;
+  --accent-amber: #fbbf24;
+  --accent-rose: #f87171;
+  --accent-pink: #f472b6;
 
   /* Text - High Contrast Readability */
-  --text-main: #0f172a;
-  --text-secondary: #475569;
-  --text-dim: #64748b;
+  --text-main: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-dim: #94a3b8;
 
   /* Borders - Sharp & Subtle */
-  --border: #e2e8f0;
-  --border-hover: #cbd5e1;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.16);
 
   /* Glass - Subtle frosted */
-  --glass: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass: rgba(8, 11, 17, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.08);
 
   /* Misc */
   --radius: 12px;
   --radius-sm: 8px;
   --radius-xs: 6px;
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Outfit', 'Inter', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Shadows - Minimalist Drops */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-  --shadow-glow: 0 0 10px rgba(0, 0, 0, 0.02);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 12px rgba(139, 92, 246, 0.15);
 }
 
 
@@ -219,9 +220,9 @@ body {
 }
 
 .mode-tab.active {
-  color: var(--bg-app);
+  color: #ffffff;
   background: var(--primary);
-  box-shadow: 0 0 16px rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.3);
 }
 
 /* ── CARD SYSTEM ── */
@@ -431,7 +432,7 @@ body {
 
 .drive-card.selected {
   border-color: var(--primary);
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.04), rgba(139, 92, 246, 0.03));
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(139, 92, 246, 0.02));
   box-shadow: var(--shadow-glow);
 }
 
@@ -481,8 +482,8 @@ body {
 }
 
 .drive-badge.external {
-  background: rgba(0, 212, 255, 0.1);
-  color: var(--primary);
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--primary-hover);
 }
 
 .drive-badge.internal {
@@ -510,7 +511,7 @@ body {
   right: 0;
   bottom: 0;
   background:
-    radial-gradient(circle at 50% 0%, rgba(0, 212, 255, 0.08), transparent 60%),
+    radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.15), transparent 60%),
     radial-gradient(circle at 80% 100%, rgba(139, 92, 246, 0.05), transparent 40%);
   pointer-events: none;
 }
@@ -530,7 +531,7 @@ body {
 
 .scan-ring.active {
   border-color: transparent;
-  background: conic-gradient(var(--primary), var(--accent-violet), var(--primary));
+  background: conic-gradient(var(--primary), #c084fc, #7c3aed, var(--primary));
   -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
   mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
   animation: rotate-ring 2s linear infinite;
@@ -1369,8 +1370,8 @@ body {
 
 .plan-card.selected {
   border-color: var(--primary);
-  background: linear-gradient(135deg, rgba(0,212,255,0.06), rgba(139,92,246,0.04));
-  box-shadow: 0 0 24px rgba(0,212,255,0.12);
+  background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(139,92,246,0.03));
+  box-shadow: 0 0 24px rgba(139,92,246,0.2);
 }
 
 .plan-badge {
@@ -1379,7 +1380,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(135deg, var(--primary), var(--accent-violet));
-  color: #0a0f18;
+  color: #ffffff;
   font-size: 0.68rem;
   font-weight: 800;
   padding: 3px 12px;
