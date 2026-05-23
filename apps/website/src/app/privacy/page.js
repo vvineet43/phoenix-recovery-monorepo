@@ -42,6 +42,11 @@ export default function PrivacyPage() {
             <h3>NexData Desktop App</h3>
             <p>Our desktop application, NexData Recovery, is designed to run entirely offline. It does not require an internet connection to scan or recover files. License verification happens via a secure, local-first mechanism.</p>
           </div>
+
+          <div>
+            <h3>Contact</h3>
+            <p>Questions about this privacy policy? Email us at <a href="mailto:contact@thenextools.com" style={{ color: 'var(--primary)', fontWeight: 600 }}>contact@thenextools.com</a>.</p>
+          </div>
         </section>
       </main>
     </>

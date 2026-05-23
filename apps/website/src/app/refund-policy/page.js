@@ -53,7 +53,7 @@ export default function RefundPolicyPage() {
           <div>
             <h3>How to Request a Refund</h3>
             <ol style={{ paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.8rem', marginTop: '1rem' }}>
-              <li>Send an email to <a href="mailto:support@xpensepal.com" style={{ color: 'var(--primary)', fontWeight: 600 }}>support@xpensepal.com</a> with the subject line: <strong>&quot;Refund Request — NexData Recovery Pro&quot;</strong></li>
+              <li>Send an email to <a href="mailto:contact@thenextools.com" style={{ color: 'var(--primary)', fontWeight: 600 }}>contact@thenextools.com</a> with the subject line: <strong>&quot;Refund Request — NexData Recovery Pro&quot;</strong></li>
               <li>Include your <strong>order confirmation email</strong> or <strong>license key</strong> for verification.</li>
               <li>Attach a <strong>screenshot or screen recording</strong> clearly showing the issue you are experiencing.</li>
               <li>Briefly describe the problem and the steps you took before encountering it.</li>
@@ -76,7 +76,7 @@ export default function RefundPolicyPage() {
 
           <div>
             <h3>Contact</h3>
-            <p>For any questions about this policy, reach out to us at <a href="mailto:support@xpensepal.com" style={{ color: 'var(--primary)', fontWeight: 600 }}>support@xpensepal.com</a>.</p>
+            <p>For any questions about this policy, reach out to us at <a href="mailto:contact@thenextools.com" style={{ color: 'var(--primary)', fontWeight: 600 }}>contact@thenextools.com</a>.</p>
           </div>
 
         </section>
