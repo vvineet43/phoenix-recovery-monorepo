@@ -4,9 +4,10 @@ import Script from 'next/script';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 
-// Optimize fonts for SSR
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
-const outfit = Outfit({ subsets: ['latin'], variable: '--font-display' });
+// Optimize fonts for SSR — display:'swap' forces Next.js to self-host fonts,
+// eliminating the render-blocking request to fonts.googleapis.com
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-display', display: 'swap' });
 
 /** Required for real mobile layout; without this, many browsers assume ~980px width. */
 export const viewport = {

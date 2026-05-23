@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
           
           <div className="footer-group">
-            <h4>Product</h4>
+            <div className="footer-group-title">Product</div>
             <ul className="footer-links">
               <li><Link href="/data-recovery">NexData Recovery</Link></li>
               <li><Link href="/pdf-toolkit">NexPDF Toolkit</Link></li>
@@ -27,9 +27,10 @@ export default function Footer() {
           </div>
 
           <div className="footer-group">
-            <h4>Resources</h4>
+            <div className="footer-group-title">Resources</div>
             <ul className="footer-links">
               <li><Link href="/docs">Documentation</Link></li>
+              <li><Link href="/contact">Contact Us</Link></li>
               <li><Link href="/refund-policy">Refund Policy</Link></li>
               <li><Link href="/privacy">Privacy Policy</Link></li>
               <li><Link href="/terms">Terms of Service</Link></li>

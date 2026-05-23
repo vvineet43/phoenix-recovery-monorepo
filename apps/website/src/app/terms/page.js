@@ -42,6 +42,11 @@ export default function TermsPage() {
             <h3>Modifications</h3>
             <p>We reserve the right to modify these terms at any time. Your continued use of the site after such changes constitutes acceptance of the new terms.</p>
           </div>
+
+          <div>
+            <h3>Contact</h3>
+            <p>Questions about these terms? Reach us at <a href="mailto:contact@thenextools.com" style={{ color: 'var(--primary)', fontWeight: 600 }}>contact@thenextools.com</a>.</p>
+          </div>
         </section>
       </main>
     </>

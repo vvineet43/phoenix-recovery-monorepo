@@ -54,7 +54,7 @@ async function compressImage(file: File, quality: number, fmt: OutputFormat): Pr
   });
 }
 
-export function ImageCompressorApp() {
+export function ImageCompressorApp({ hideHeader }: { hideHeader?: boolean }) {
   const [images, setImages] = useState<CompressedImage[]>([]);
   const [isDragging, setIsDragging] = useState(false);
   const [globalQuality, setGlobalQuality] = useState(80);
@@ -141,11 +141,13 @@ export function ImageCompressorApp() {
   return (
     <div className="tool-wrapper">
       <div className="tool-container">
-        <header className="tool-header">
-          <div className="tool-badge">NexCompress — Local &amp; Private</div>
-          <h1>Image Compressor</h1>
-          <p>Compress JPG, PNG, and WebP images entirely in your browser. Adjust quality, choose a format, compare results, and download — nothing leaves your device.</p>
-        </header>
+        {!hideHeader && (
+          <header className="tool-header">
+            <div className="tool-badge">NexCompress — Local &amp; Private</div>
+            <h1>Image Compressor</h1>
+            <p>Compress JPG, PNG, and WebP images entirely in your browser. Adjust quality, choose a format, compare results, and download — nothing leaves your device.</p>
+          </header>
+        )}
 
         {images.length === 0 ? (
           <div

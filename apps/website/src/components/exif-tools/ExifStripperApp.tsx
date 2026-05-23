@@ -66,7 +66,7 @@ async function stripExif(file: File): Promise<Blob> {
   });
 }
 
-export function ExifStripperApp() {
+export function ExifStripperApp({ hideHeader }: { hideHeader?: boolean }) {
   const [images, setImages] = useState<ImageFile[]>([]);
   const [isDragging, setIsDragging] = useState(false);
   const [isZipping, setIsZipping] = useState(false);
@@ -134,11 +134,13 @@ export function ExifStripperApp() {
   return (
     <div className="tool-wrapper">
       <div className="tool-container">
-        <header className="tool-header">
-          <div className="tool-badge">NexStrip — Free &amp; Private</div>
-          <h1>EXIF &amp; Metadata Stripper</h1>
-          <p>Drop in your photos. See exactly what metadata is embedded — GPS, camera, timestamps. Download clean copies with all of it removed.</p>
-        </header>
+        {!hideHeader && (
+          <header className="tool-header">
+            <div className="tool-badge">NexStrip — Free &amp; Private</div>
+            <h1>EXIF &amp; Metadata Stripper</h1>
+            <p>Drop in your photos. See exactly what metadata is embedded — GPS, camera, timestamps. Download clean copies with all of it removed.</p>
+          </header>
+        )}
 
         {images.length === 0 ? (
           <div

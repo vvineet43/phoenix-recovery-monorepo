@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <>
+    <main>
 
       <header className="hero container">
         <div className="badge">Professional Desktop Software</div>
@@ -104,6 +104,6 @@ export default function Home() {
         </div>
       </section>
 
-    </>
+    </main>
   );
 }

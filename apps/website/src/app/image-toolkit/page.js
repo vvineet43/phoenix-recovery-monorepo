@@ -26,7 +26,7 @@ export default function ImageToolkitLanding() {
           Compress, convert, redact, and clean metadata from your images — all inside a single browser tab. Nothing gets uploaded. The tools run on your hardware using the browser&apos;s native Canvas API, so they work even after you disconnect from the internet.
         </p>
         <div className="hero-actions">
-          <Link href="/image-tools" className="btn btn-primary">Open NexImage</Link>
+          <Link href="/image-compressor" className="btn btn-primary">Open NexImage</Link>
         </div>
       </header>
 
@@ -46,7 +46,7 @@ export default function ImageToolkitLanding() {
                 <li>Side-by-side comparison before download</li>
                 <li>Running total of space saved across all files</li>
               </ul>
-              <Link href="/image-tools?tool=compress" className="btn btn-outline" style={{ width: 'fit-content' }}>
+              <Link href="/image-compressor" className="btn btn-outline" style={{ width: 'fit-content' }}>
                 Open Compressor →
               </Link>
             </div>
@@ -59,7 +59,7 @@ export default function ImageToolkitLanding() {
                 <li>Alpha channel preserved for PNG output</li>
                 <li>No file size caps or daily limits</li>
               </ul>
-              <Link href="/image-tools?tool=convert" className="btn btn-outline" style={{ width: 'fit-content' }}>
+              <Link href="/image-converter" className="btn btn-outline" style={{ width: 'fit-content' }}>
                 Open Converter →
               </Link>
             </div>
@@ -72,7 +72,7 @@ export default function ImageToolkitLanding() {
                 <li>Multiple zones per image</li>
                 <li>Flattened output — no recoverable layers</li>
               </ul>
-              <Link href="/image-tools?tool=redact" className="btn btn-outline" style={{ width: 'fit-content' }}>
+              <Link href="/image-redactor" className="btn btn-outline" style={{ width: 'fit-content' }}>
                 Open Redactor →
               </Link>
             </div>
@@ -85,7 +85,7 @@ export default function ImageToolkitLanding() {
                 <li>Displays every metadata field before stripping</li>
                 <li>Download clean copies individually or as ZIP</li>
               </ul>
-              <Link href="/image-tools?tool=exif" className="btn btn-outline" style={{ width: 'fit-content' }}>
+              <Link href="/exif-stripper" className="btn btn-outline" style={{ width: 'fit-content' }}>
                 Open EXIF Stripper →
               </Link>
             </div>
@@ -121,7 +121,7 @@ export default function ImageToolkitLanding() {
         <div className="container">
           <h2>Everything you need for image work, without leaving the browser.</h2>
           <p>Works in Chrome, Firefox, Safari, and Edge on Mac, Windows, and Linux.</p>
-          <Link href="/image-tools" className="btn btn-primary">Open NexImage</Link>
+          <Link href="/image-compressor" className="btn btn-primary">Open NexImage</Link>
         </div>
       </section>
 
