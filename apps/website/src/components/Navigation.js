@@ -24,29 +24,29 @@ export default function Navigation() {
   let ctaLink = '/#tools';
   let ctaText = 'Explore All Tools';
   if (pathname.startsWith('/data-recovery')) {
-    ctaLink = '/data-recovery#download';
+    ctaLink = '/data-recovery#pricing';
     ctaText = 'Get NexData Pro';
   } else if (pathname.startsWith('/image-compressor')) {
-    ctaLink = '/image-tools?tool=compress';
-    ctaText = 'Open Compressor';
+    ctaLink = '#tool';
+    ctaText = 'Start Compressing';
   } else if (pathname.startsWith('/image-converter')) {
-    ctaLink = '/image-tools?tool=convert';
-    ctaText = 'Open Converter';
+    ctaLink = '#tool';
+    ctaText = 'Start Converting';
   } else if (pathname.startsWith('/image-redactor')) {
-    ctaLink = '/image-tools?tool=redact';
-    ctaText = 'Open Redactor';
+    ctaLink = '#tool';
+    ctaText = 'Start Redacting';
   } else if (pathname.startsWith('/exif-stripper')) {
-    ctaLink = '/image-tools?tool=exif';
-    ctaText = 'Open EXIF Stripper';
+    ctaLink = '#tool';
+    ctaText = 'Start Stripping';
   } else if (pathname.startsWith('/image-toolkit')) {
-    ctaLink = '/image-tools';
+    ctaLink = '/image-compressor';
     ctaText = 'Open NexImage';
-  } else if (pathname.startsWith('/image-tools') || pathname.startsWith('/exif-tools')) {
-    ctaLink = '/image-toolkit';
-    ctaText = 'NexImage Toolkit';
-  } else if (pathname.startsWith('/pdf-toolkit') || pathname.startsWith('/pdf-tools')) {
-    ctaLink = '/pdf-tools';
-    ctaText = 'Open PDF Editor';
+  } else if (pathname.startsWith('/pdf-toolkit/tools/')) {
+    ctaLink = '#tool';
+    ctaText = 'Open Workspace';
+  } else if (pathname.startsWith('/pdf-toolkit')) {
+    ctaLink = '#tool';
+    ctaText = 'Start PDF Editing';
   }
 
   return (
@@ -221,9 +221,6 @@ export default function Navigation() {
           </div>
         </div>
       </div>
-
-      {/* Spacer to prevent content from hiding under fixed nav */}
-      <div style={{ height: 'var(--nav-h)' }}></div>
     </>
   );
 }

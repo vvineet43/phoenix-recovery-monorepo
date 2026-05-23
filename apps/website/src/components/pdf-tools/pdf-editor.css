@@ -22,8 +22,7 @@
   background-color: var(--editor-bg);
   color: var(--editor-text-main);
   font-family: 'Inter', sans-serif;
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: auto;
   width: 100%;
   max-width: 100%;
   min-width: 0;

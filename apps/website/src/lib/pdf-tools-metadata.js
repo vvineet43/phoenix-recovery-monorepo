@@ -10,10 +10,11 @@ export const TOOLS_METADATA = {
       'No file size limits or daily quotas',
       'Runs offline after the first page load'
     ],
+    howToTitle: 'How to compress a PDF file',
     steps: [
-      'Drop your PDF into the upload area.',
-      'Move the quality slider until the estimated output size works for you.',
-      'Hit "Compress" and the smaller file downloads straight to your hard drive.'
+      { title: 'Upload File', desc: 'Select or drop your PDF document in the workspace above.' },
+      { title: 'Optimize Size', desc: 'Use the quality slider to find your preferred size and resolution balance.' },
+      { title: 'Save Document', desc: 'Generate and download the optimized PDF instantly to your device.' }
     ],
     toolParam: 'compress'
   },
@@ -28,10 +29,11 @@ export const TOOLS_METADATA = {
       'Insert images directly into the final document',
       'No file count or size restrictions'
     ],
+    howToTitle: 'How to combine PDF files',
     steps: [
-      'Select or drag in the PDF files you want to combine.',
-      'Rearrange pages by dragging thumbnails into the right order.',
-      'Click "Merge" to generate your combined document and download it.'
+      { title: 'Add Documents', desc: 'Select or drag in the multiple PDF files you want to merge.' },
+      { title: 'Arrange Layout', desc: 'Drag page thumbnails to sort them into your preferred sequence.' },
+      { title: 'Compile PDF', desc: 'Click "Merge" to compile and save your unified document.' }
     ],
     toolParam: 'merge'
   },
@@ -46,10 +48,11 @@ export const TOOLS_METADATA = {
       'Download as separate PDFs or a single ZIP',
       'Handles encrypted and large documents'
     ],
+    howToTitle: 'How to extract pages from a PDF',
     steps: [
-      'Drop your PDF into the upload area.',
-      'Enter the page numbers or ranges you want to extract.',
-      'Click "Split" and download your extracted pages.'
+      { title: 'Open Document', desc: 'Upload your PDF document into the secure workspace.' },
+      { title: 'Select Pages', desc: 'Specify the page numbers or page ranges you wish to extract.' },
+      { title: 'Save Output', desc: 'Generate and download the selected pages as a new PDF.' }
     ],
     toolParam: 'split'
   },
@@ -64,10 +67,11 @@ export const TOOLS_METADATA = {
       'Batch download all pages as a ZIP',
       'No server involved — everything stays on your device'
     ],
+    howToTitle: 'How to convert PDF pages to JPEG or PNG',
     steps: [
-      'Upload the PDF you want to convert.',
-      'Choose JPEG or PNG and set your quality preference.',
-      'Click "Convert" and download the images individually or as a ZIP.'
+      { title: 'Upload PDF', desc: 'Select the PDF document you wish to convert.' },
+      { title: 'Choose Format', desc: 'Select JPEG for compression or PNG for lossless image quality.' },
+      { title: 'Save Images', desc: 'Convert and download all pages individually or as a single ZIP archive.' }
     ],
     toolParam: 'images'
   },
@@ -82,10 +86,11 @@ export const TOOLS_METADATA = {
       'Automatic contrast enhancement for text documents',
       'Combine multiple scans into one PDF'
     ],
+    howToTitle: 'How to scan documents using your camera',
     steps: [
-      'Tap the camera button and point it at your document.',
-      'Take photos of each page. You can capture as many as you need.',
-      'Click "Create PDF" to combine all scans into a single document.'
+      { title: 'Capture Page', desc: 'Grant camera permission and take a photo of your physical document.' },
+      { title: 'Crop & Enhance', desc: 'Review the capture and let our scanner crop and enhance text readability.' },
+      { title: 'Export PDF', desc: 'Compile your scans into a single, clean PDF document.' }
     ],
     toolParam: 'scan'
   },
@@ -100,10 +105,11 @@ export const TOOLS_METADATA = {
       'Control printing, copying, and editing permissions',
       'The password never leaves your device'
     ],
+    howToTitle: 'How to add a password to your PDF',
     steps: [
-      'Drop your PDF into the upload area.',
-      'Enter a password. Optionally set separate permissions for printing and editing.',
-      'Click "Protect" to encrypt the file and download the secured version.'
+      { title: 'Upload PDF', desc: 'Select the PDF file you wish to encrypt and protect.' },
+      { title: 'Define Key', desc: 'Enter a strong password and customize printing or copying permissions.' },
+      { title: 'Secure File', desc: 'Apply local encryption and download your secured PDF.' }
     ],
     toolParam: 'protect'
   },
@@ -118,10 +124,11 @@ export const TOOLS_METADATA = {
       'Decryption runs locally in your browser',
       'No need to upload the file anywhere'
     ],
+    howToTitle: 'How to unlock a password-protected PDF',
     steps: [
-      'Upload the password-protected PDF.',
-      'Enter the correct password.',
-      'Click "Unlock" and download the unprotected version.'
+      { title: 'Select File', desc: 'Upload your password-protected PDF document.' },
+      { title: 'Enter Password', desc: 'Provide the correct document password to authorize decryption.' },
+      { title: 'Remove Lock', desc: 'Click "Unlock" to save a clean, unprotected copy of the file.' }
     ],
     toolParam: 'unlock'
   },
@@ -136,10 +143,11 @@ export const TOOLS_METADATA = {
       'Apply to specific pages or the whole document',
       'Live preview before saving'
     ],
+    howToTitle: 'How to watermark a PDF document',
     steps: [
-      'Upload your PDF.',
-      'Type your watermark text and adjust the size, opacity, and position.',
-      'Click "Apply" and download the stamped document.'
+      { title: 'Load PDF', desc: 'Upload the PDF document you wish to stamp.' },
+      { title: 'Design Stamp', desc: 'Type your watermark text, adjust opacity, sizing, and position.' },
+      { title: 'Stamp File', desc: 'Render the stamp across your pages and download the file.' }
     ],
     toolParam: 'watermark'
   },
@@ -154,10 +162,11 @@ export const TOOLS_METADATA = {
       'No server involved, so sensitive documents stay private',
       'Export extracted text as a .txt file'
     ],
+    howToTitle: 'How to extract text from a scanned PDF',
     steps: [
-      'Upload your scanned PDF or image.',
-      'Select the document language to optimize recognition.',
-      'Click "Extract Text" and copy the result or download it as a text file.'
+      { title: 'Upload Scan', desc: 'Select your scanned PDF or image document.' },
+      { title: 'Set Language', desc: 'Choose the document language to optimize OCR accuracy.' },
+      { title: 'Copy Text', desc: 'Extract text and copy the results or save them as a plain text file.' }
     ],
     toolParam: 'ocr'
   },
@@ -172,10 +181,11 @@ export const TOOLS_METADATA = {
       'Suitable for legal, financial, and medical documents',
       'Everything processed on your device'
     ],
+    howToTitle: 'How to permanently redact text in a PDF',
     steps: [
-      'Drop your PDF into the editor.',
-      'Draw black boxes over the text or areas you want to hide.',
-      'Click "Redact" to flatten the document and download the final version.'
+      { title: 'Open PDF', desc: 'Select the PDF file containing sensitive details.' },
+      { title: 'Draw Box', desc: 'Draw blackout boxes over names, numbers, or private text.' },
+      { title: 'Sanitize file', desc: 'Click "Redact" to permanently flatten and download your file.' }
     ],
     toolParam: 'redact'
   },
@@ -190,10 +200,11 @@ export const TOOLS_METADATA = {
       'Useful for invoices, reports, and email templates',
       'No external API or service required'
     ],
+    howToTitle: 'How to convert HTML to PDF',
     steps: [
-      'Paste your HTML (and optional CSS) into the editor.',
-      'Check the rendered preview to make sure it looks right.',
-      'Click "Convert to PDF" and download the result.'
+      { title: 'Paste Markup', desc: 'Enter your raw HTML and CSS layout code into the workspace.' },
+      { title: 'Verify Preview', desc: 'Review the interactive rendering window to check formatting.' },
+      { title: 'Export PDF', desc: 'Click "Convert to PDF" to save the formatted document.' }
     ],
     toolParam: 'html'
   },
@@ -208,10 +219,11 @@ export const TOOLS_METADATA = {
       'Adjustable margins and page orientation',
       'No image count or file size limits'
     ],
+    howToTitle: 'How to compile images into a PDF',
     steps: [
-      'Upload your images (JPG, PNG, or WebP).',
-      'Drag them into the order you want.',
-      'Click "Create PDF" and download your document.'
+      { title: 'Add Photos', desc: 'Select the images (JPG, PNG, or WebP) you want to compile.' },
+      { title: 'Sort Layout', desc: 'Drag thumbnails to arrange their page order.' },
+      { title: 'Compile PDF', desc: 'Click "Create PDF" to save the compiled pages.' }
     ],
     toolParam: 'batch-upload'
   },
@@ -226,10 +238,11 @@ export const TOOLS_METADATA = {
       'Lossless — no recompression of content',
       'Works on any PDF regardless of size'
     ],
+    howToTitle: 'How to rotate PDF pages',
     steps: [
-      'Upload the PDF with sideways or upside-down pages.',
-      'Click the rotate button on the pages that need fixing.',
-      'Click "Save" to download the corrected document.'
+      { title: 'Open PDF', desc: 'Upload the PDF containing sideways or upside-down pages.' },
+      { title: 'Align Layout', desc: 'Click rotate controls on individual page thumbnails to align them.' },
+      { title: 'Save Rotation', desc: 'Download the corrected document with orientation baked in.' }
     ],
     toolParam: 'rotate'
   },
@@ -244,10 +257,11 @@ export const TOOLS_METADATA = {
       'Combine and reorder across multiple PDFs',
       'Handles large documents smoothly'
     ],
+    howToTitle: 'How to reorder PDF pages',
     steps: [
-      'Drop your PDF into the upload area.',
-      'Drag page thumbnails into the correct order, or delete the ones you don\'t need.',
-      'Click "Save" to download the reorganized document.'
+      { title: 'Upload PDF', desc: 'Select the PDF file you wish to organize.' },
+      { title: 'Order Pages', desc: 'Drag thumbnails to rearrange pages, or click delete to remove them.' },
+      { title: 'Save File', desc: 'Click "Save" to download the finalized document.' }
     ],
     toolParam: 'rearrange'
   },
@@ -262,10 +276,11 @@ export const TOOLS_METADATA = {
       'Flattened output — signature can\'t be tampered with',
       'Works for leases, NDAs, HR forms, and more'
     ],
+    howToTitle: 'How to sign a PDF document',
     steps: [
-      'Upload the document that needs your signature.',
-      'Draw your signature or type it with a cursive font.',
-      'Drag it to the correct spot, click "Export," and download the signed PDF.'
+      { title: 'Load PDF', desc: 'Upload the PDF contract or form requiring your signature.' },
+      { title: 'Create Signature', desc: 'Draw your signature on screen or type it using cursive styles.' },
+      { title: 'Place & Save', desc: 'Drag the signature onto the signing line and click export.' }
     ],
     toolParam: 'sign'
   },
@@ -280,10 +295,11 @@ export const TOOLS_METADATA = {
       'Works on documents of any length',
       'Processed locally for sensitive documents'
     ],
+    howToTitle: 'How to add page numbers to a PDF',
     steps: [
-      'Upload the PDF you want to number.',
-      'Choose where the page numbers should appear.',
-      'Click "Add Numbers" and download the paginated document.'
+      { title: 'Upload Document', desc: 'Select and upload the PDF file you wish to paginate.' },
+      { title: 'Select Placement', desc: 'Choose the style, formatting, and layout positioning for page numbers.' },
+      { title: 'Stamp Pages', desc: 'Apply numbers across the document and download.' }
     ],
     toolParam: 'page-numbers'
   },
@@ -298,10 +314,11 @@ export const TOOLS_METADATA = {
       'Instant conversion with live preview',
       'No data leaves your browser'
     ],
+    howToTitle: 'How to convert text files to PDF',
     steps: [
-      'Paste your text into the editor.',
-      'Check the formatted preview.',
-      'Click "Convert to PDF" and download the result.'
+      { title: 'Paste Text', desc: 'Type or paste your text content into the workspace editor.' },
+      { title: 'Format Page', desc: 'Configure paper margins and check typography in the preview window.' },
+      { title: 'Export PDF', desc: 'Click "Convert to PDF" to save the completed document.' }
     ],
     toolParam: 'text'
   }

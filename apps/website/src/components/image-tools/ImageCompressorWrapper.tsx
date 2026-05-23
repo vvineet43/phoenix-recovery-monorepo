@@ -45,3 +45,23 @@ export default function ImageCompressorWrapper() {
     </div>
   );
 }
+
+interface PageWrapperProps {
+  hideHeader?: boolean;
+}
+
+export function ImageCompressorPageWrapper({ hideHeader }: PageWrapperProps) {
+  return <ImageCompressorApp hideHeader={hideHeader} />;
+}
+
+export function ImageConverterPageWrapper({ hideHeader }: PageWrapperProps) {
+  return <ImageConverterApp hideHeader={hideHeader} />;
+}
+
+export function ImageBlurPageWrapper({ hideHeader }: PageWrapperProps) {
+  return <ImageBlurApp hideHeader={hideHeader} />;
+}
+
+export function ExifStripperPageWrapper({ hideHeader }: PageWrapperProps) {
+  return <ExifStripperApp hideHeader={hideHeader} />;
+}

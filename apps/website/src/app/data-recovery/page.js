@@ -57,9 +57,9 @@ export default function DataRecoveryLanding() {
             <p>Scan any drive and preview every recoverable file for free. Upgrade only when you need to actually pull files off the disk.</p>
           </div>
           <div className="grid-2" style={{ maxWidth: '900px', margin: '0 auto', gap: '2rem' }}>
-            <div className="feature-card" style={{ border: '1px solid var(--border)', display: 'flex', flexDirection: 'column', background: 'var(--bg-2)' }}>
+            <div className="feature-card" style={{ display: 'flex', flexDirection: 'column' }}>
               <h3 style={{ fontSize: '1.4rem' }}>Free Version</h3>
-              <div style={{ fontSize: '2.5rem', fontWeight: '700', margin: '1rem 0 1.5rem 0', color: 'var(--text)' }}>
+              <div style={{ fontSize: '2.5rem', fontWeight: '700', margin: '1rem 0 1.5rem 0' }}>
                 $0 <span style={{ fontSize: '1.1rem', color: 'var(--text-muted)', fontWeight: '500' }}>/ forever</span>
               </div>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', display: 'flex', flexDirection: 'column', gap: '0.8rem', flex: 1 }}>
@@ -80,7 +80,7 @@ export default function DataRecoveryLanding() {
             <div className="feature-card popular-card">
               <div style={{ position: 'absolute', top: '-14px', right: '20px', background: 'var(--primary)', color: 'white', padding: '0.3rem 1rem', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold', letterSpacing: '0.5px', boxShadow: '0 4px 12px rgba(var(--primary), 0.3)' }}>POPULAR</div>
               <h3 style={{ fontSize: '1.4rem' }}>NexData Pro</h3>
-              <div style={{ fontSize: '2.5rem', fontWeight: '700', margin: '1rem 0 1.5rem 0', color: 'var(--primary)' }}>
+              <div style={{ fontSize: '2.5rem', fontWeight: '700', margin: '1rem 0 1.5rem 0' }}>
                 $49.99 <span style={{ fontSize: '1.1rem', color: 'var(--text-muted)', fontWeight: '500' }}>/ one-time</span>
               </div>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', display: 'flex', flexDirection: 'column', gap: '0.8rem', flex: 1 }}>

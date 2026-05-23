@@ -32,7 +32,7 @@ import { PagePreview } from './PagePreview';
 import { PageEditor } from './PageEditor';
 import { getFileFromTransition, clearTransitionFile } from '../../lib/db';
 
-export function PdfEditorApp() {
+export function PdfEditorApp({ initialTool, hideHeader }: { initialTool?: string; hideHeader?: boolean } = {}) {
   const [files, setFiles] = useState<Record<string, PdfFileInfo>>({});
   const [pages, setPages] = useState<PdfPageInfo[]>([]);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
@@ -66,10 +66,10 @@ export function PdfEditorApp() {
   const batchImageInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    // Check for tool parameter in URL
+    // Check for tool parameter in prop or URL
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
-      const tool = params.get('tool');
+      const tool = initialTool || params.get('tool');
       const isPreloaded = params.get('preloaded') === 'true';
 
       const handlePreload = async () => {
@@ -975,13 +975,15 @@ export function PdfEditorApp() {
           </div>
         )}
 
-        <header className="header">
-          <div className="badge">Professional PDF Toolkit</div>
-          <h1>NexPDF</h1>
-          <p className="header-subtitle">
-            Merge, rearrange, rotate, and compress your documents securely without compromising on quality.
-          </p>
-        </header>
+        {!hideHeader && (
+          <header className="header">
+            <div className="badge">Professional PDF Toolkit</div>
+            <h1>NexPDF</h1>
+            <p className="header-subtitle">
+              Merge, rearrange, rotate, and compress your documents securely without compromising on quality.
+            </p>
+          </header>
+        )}
 
         <div className={`workspace-layout ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
           <button

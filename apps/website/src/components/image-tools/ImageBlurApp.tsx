@@ -11,7 +11,7 @@ interface RedactBox {
   type: 'blur' | 'blackout';
 }
 
-export function ImageBlurApp() {
+export function ImageBlurApp({ hideHeader }: { hideHeader?: boolean }) {
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [imageSrc, setImageSrc] = useState<string | null>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -182,11 +182,13 @@ export function ImageBlurApp() {
   return (
     <div className="tool-wrapper">
       <div className="tool-container">
-        <header className="tool-header">
-          <div className="tool-badge">NexRedact — Privacy &amp; Security</div>
-          <h1>Privacy Blur &amp; Redact</h1>
-          <p>Hide sensitive data on screenshots, files, and credentials locally in your browser before uploading them elsewhere.</p>
-        </header>
+        {!hideHeader && (
+          <header className="tool-header">
+            <div className="tool-badge">NexRedact — Privacy &amp; Security</div>
+            <h1>Privacy Blur &amp; Redact</h1>
+            <p>Hide sensitive data on screenshots, files, and credentials locally in your browser before uploading them elsewhere.</p>
+          </header>
+        )}
 
         {!imageSrc ? (
           <div

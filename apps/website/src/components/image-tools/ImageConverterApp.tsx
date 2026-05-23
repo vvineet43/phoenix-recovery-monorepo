@@ -24,7 +24,7 @@ function formatBytes(bytes: number): string {
   return `${(bytes / 1024 / 1024).toFixed(2)} MB`;
 }
 
-export function ImageConverterApp() {
+export function ImageConverterApp({ hideHeader }: { hideHeader?: boolean }) {
   const [items, setItems] = useState<ConversionItem[]>([]);
   const [isDragging, setIsDragging] = useState(false);
   const [globalFormat, setGlobalFormat] = useState<TargetFormat>('webp');
@@ -188,11 +188,13 @@ export function ImageConverterApp() {
   return (
     <div className="tool-wrapper">
       <div className="tool-container">
-        <header className="tool-header">
-          <div className="tool-badge">NexConvert — Safe &amp; Offline</div>
-          <h1>Image Converter</h1>
-          <p>Batch convert images between PNG, JPEG, and WebP formats inside your browser. No files are ever sent to a server.</p>
-        </header>
+        {!hideHeader && (
+          <header className="tool-header">
+            <div className="tool-badge">NexConvert — Safe &amp; Offline</div>
+            <h1>Image Converter</h1>
+            <p>Batch convert images between PNG, JPEG, and WebP formats inside your browser. No files are ever sent to a server.</p>
+          </header>
+        )}
 
         {items.length === 0 ? (
           <div
