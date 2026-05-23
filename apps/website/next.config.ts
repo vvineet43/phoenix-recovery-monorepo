@@ -9,11 +9,7 @@ const withPWA = withPWAInit({
 });
 
 const nextConfig: NextConfig = {
-  experimental: {
-    // Inlines critical CSS and defers the rest — eliminates the render-blocking
-    // local CSS file reported by PageSpeed Insights
-    optimizeCss: true,
-  },
+  /* config options here */
 };
 
 export default withPWA(nextConfig);
