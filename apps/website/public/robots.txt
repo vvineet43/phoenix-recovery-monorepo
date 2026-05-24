@@ -5,6 +5,6 @@ Disallow: /exif-tools
 Disallow: /image-tools
 
 Sitemap: https://thenextools.com/sitemap.xml
-Sitemap: https://thenextools.com/llms.txt
+llms: https://thenextools.com/llms.txt
 
 Content-Signal: ai-train=no, search=yes, ai-input=no
