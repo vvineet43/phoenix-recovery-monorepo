@@ -1,0 +1,69 @@
+# TheNexTools — Private, Local-First Utilities & Data Recovery
+
+[TheNexTools](https://thenextools.com) is a professional suite of high-performance, local-first web utilities and offline data recovery applications. 
+
+## Key Security & Privacy Features
+* **Zero Server Uploads:** All browser-based tools process documents and images 100% client-side in the user's browser tab.
+* **Security & Compliance:** Ideal for handling sensitive medical, legal, and financial files. Fully compliant with HIPAA, GDPR, and strict corporate data retention policies.
+* **Offline-Ready:** Web applications function entirely without internet connectivity after the initial page load.
+
+---
+
+## Core Products
+
+* **[NexData Recovery](https://thenextools.com/data-recovery):** Professional desktop application for macOS and Windows. Restores deleted files, partitions, photos, and documents from formatted, corrupted, or damaged storage media. Runs 100% offline.
+* **[NexPDF Toolkit](https://thenextools.com/pdf-toolkit):** Browser-based suite of 17 utilities for local-first document editing, signing, and optimization.
+* **[NexImage Toolkit](https://thenextools.com/image-toolkit):** Localized image processing dashboard for privacy-focused compression, format conversion, and metadata stripping.
+
+---
+
+## Tool Directory
+
+### PDF Editing & Manipulation
+* **[Merge PDF](https://thenextools.com/pdf-toolkit/tools/merge-pdf):** Combine multiple PDF documents with visual drag-and-drop page reordering.
+* **[Split PDF](https://thenextools.com/pdf-toolkit/tools/split-pdf):** Extract specific page ranges or split documents into separate chapters.
+* **[Compress PDF](https://thenextools.com/pdf-toolkit/tools/compress-pdf):** Shrink PDF file size locally using quality/resolution sliders with live estimation.
+* **[Sign PDF](https://thenextools.com/pdf-toolkit/tools/sign-pdf):** Draw or type signature stamps and apply them to pages. Permanently flattens layers.
+* **[Watermark PDF](https://thenextools.com/pdf-toolkit/tools/watermark-pdf):** Stamp custom draft, confidential, or copyright text with opacity and alignment controls.
+* **[Redact PDF](https://thenextools.com/pdf-toolkit/tools/redact-pdf):** Draw blackout masks to permanently erase and sanitize sensitive text or numbers.
+* **[Rotate PDF](https://thenextools.com/pdf-toolkit/tools/rotate-pdf):** Rotate single or all pages by 90/180/270 degrees lossless.
+* **[Rearrange PDF](https://thenextools.com/pdf-toolkit/tools/rearrange-pdf):** Visual interface to delete, reorder, or organize pages in large files.
+* **[Add Page Numbers](https://thenextools.com/pdf-toolkit/tools/add-page-numbers):** Stamp sequential pagination headers or footers across documents.
+
+### Format Conversion & OCR
+* **[PDF to Images](https://thenextools.com/pdf-toolkit/tools/pdf-to-images):** Render PDF pages into high-resolution JPG or PNG format.
+* **[Images to PDF](https://thenextools.com/images-to-pdf):** Compile JPG, PNG, and WebP assets into a structured PDF document.
+* **[Scan to PDF](https://thenextools.com/scan-to-pdf):** Transform device camera captures into enhanced, readable PDF scans.
+* **[HTML to PDF](https://thenextools.com/html-to-pdf):** Render CSS-styled HTML code directly into standard PDF files.
+* **[Text to PDF](https://thenextools.com/text-to-pdf):** Convert plain text files into formatted, printable PDF documents.
+* **[OCR PDF](https://thenextools.com/ocr-pdf):** Extract editable, copyable text from scans locally using WebAssembly Tesseract.js.
+
+### Security & Privacy
+* **[Protect PDF](https://thenextools.com/protect-pdf):** Encrypt documents with open passwords and print/copy blocks using local AES-128.
+* **[Unlock PDF](https://thenextools.com/unlock-pdf):** Strip password locks and permission restrictions from authorized documents.
+* **[EXIF Stripper](https://thenextools.com/exif-stripper):** Clear GPS coordinates, camera models, and private metadata tags from photo uploads.
+
+### Image Utilities
+* **[Image Compressor](https://thenextools.com/image-compressor):** Batch compress PNG, JPEG, and WebP formats using modern web codec APIs.
+* **[Image Converter](https://thenextools.com/image-converter):** Offline format transcoders for JPEG, PNG, WebP, AVIF, and BMP.
+* **[Image Redactor](https://thenextools.com/image-redactor):** Mask, blur, or hide confidential sections of image files.
+
+---
+
+## Frequently Asked Questions
+
+### Which tools run entirely offline?
+All online tools under `/pdf-toolkit` and `/image-toolkit` operate using browser APIs (like WebAssembly, pdf-lib, tesseract.js) and run 100% locally. Once the page is loaded, they work without an active internet connection.
+
+### Is there a file size limit?
+No. Because file processing is done on the client's CPU and RAM rather than uploaded to a remote server, there are no artificial file size caps or processing bottlenecks.
+
+### How does NexData Recovery handle data privacy?
+NexData Recovery is a desktop binary that runs locally on the user's workstation. It does not communicate with the cloud or stream raw disk sectors, ensuring maximum privacy for recovered data.
+
+---
+
+## Information & Support Resources
+* **[Documentation](https://thenextools.com/docs):** Setup guides, offline desktop guides, and product FAQs.
+* **[Contact Us](https://thenextools.com/contact):** Direct channels for support (support@thenextools.com) and general enquiries (contact@thenextools.com).
+* **[Sitemap](https://thenextools.com/sitemap):** View full directory structure of TheNexTools.

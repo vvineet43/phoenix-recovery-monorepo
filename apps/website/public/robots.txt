@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /pdf-tools
+Disallow: /exif-tools
+Disallow: /image-tools
+
+Sitemap: https://thenextools.com/sitemap.xml
+llms: https://thenextools.com/llms.txt
+
+Content-Signal: ai-train=no, search=yes, ai-input=no
