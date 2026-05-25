@@ -1,8 +1,11 @@
 'use client';
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { Upload, X, Download, Trash2, FileImage, CheckCircle2, AlertCircle } from 'lucide-react';
 import JSZip from 'jszip';
 import '../image-tools/image-tools.css';
+import { usePathname } from 'next/navigation';
+import { locales, defaultLocale } from '@/lib/i18n-config';
+import enDict from '@/dictionaries/en.json';
 
 interface ImageFile {
   id: string;
@@ -72,6 +75,27 @@ export function ExifStripperApp({ hideHeader }: { hideHeader?: boolean }) {
   const [isZipping, setIsZipping] = useState(false);
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const pathname = usePathname();
+  const segments = pathname.split('/').filter(Boolean);
+  const lang = locales.includes(segments[0]) ? segments[0] : defaultLocale;
+  const [dict, setDict] = useState<any>(lang === 'en' ? enDict : null);
+
+  useEffect(() => {
+    if (lang === 'en') {
+      setDict(enDict);
+    } else {
+      import(`@/dictionaries/${lang}.json`)
+        .then((m) => setDict(m.default))
+        .catch((err) => {
+          console.error(`Failed to load dictionary for ${lang}`, err);
+          setDict(enDict);
+        });
+    }
+  }, [lang]);
+
+  const activeDict = dict || enDict;
+  const t = activeDict.imageTools?.exifStripper || enDict.imageTools.exifStripper;
 
   const addFiles = useCallback(async (files: FileList | File[]) => {
     const arr = Array.from(files).filter(f => f.type.startsWith('image/'));
@@ -151,8 +175,8 @@ export function ExifStripperApp({ hideHeader }: { hideHeader?: boolean }) {
             onClick={() => fileInputRef.current?.click()}
           >
             <FileImage className="tool-upload-icon" size={52} />
-            <p className="tool-upload-title">Drop images here</p>
-            <p className="tool-upload-subtitle">JPG, PNG, WebP — single or batch</p>
+            <p className="tool-upload-title">{t.uploadTitle}</p>
+            <p className="tool-upload-subtitle">{t.uploadSubtitle}</p>
             <input ref={fileInputRef} type="file" className="hidden-input" accept="image/*" multiple onChange={e => e.target.files && addFiles(e.target.files)} />
           </div>
         ) : (
@@ -160,22 +184,22 @@ export function ExifStripperApp({ hideHeader }: { hideHeader?: boolean }) {
             {/* Toolbar */}
             <div className="tool-toolbar">
               <div className="tool-toolbar-info">
-                <h3>{doneCount} of {images.length} processed</h3>
+                <h3>{t.processedInfo.replace('{done}', String(doneCount)).replace('{total}', String(images.length))}</h3>
                 {hasGps
-                  ? <p><span className="meta-danger">⚠ GPS coordinates detected and removed</span></p>
-                  : doneCount > 0 ? <p><span className="meta-success">✓ No GPS data found</span></p> : <p>Scanning…</p>
+                  ? <p><span className="meta-danger">{t.gpsDanger}</span></p>
+                  : doneCount > 0 ? <p><span className="meta-success">{t.noGpsSuccess}</span></p> : <p>{t.scanning}</p>
                 }
               </div>
               <div className="tool-toolbar-actions">
                 <input ref={fileInputRef} type="file" className="hidden-input" accept="image/*" multiple onChange={e => e.target.files && addFiles(e.target.files)} />
                 <button className="tool-btn tool-btn-secondary" onClick={() => fileInputRef.current?.click()}>
-                  <Upload size={15} /> Add More
+                  <Upload size={15} /> {t.addMoreBtn}
                 </button>
                 <button className="tool-btn tool-btn-danger" onClick={clearAll}>
-                  <Trash2 size={15} /> Clear
+                  <Trash2 size={15} /> {t.clearBtn}
                 </button>
                 <button className="tool-btn tool-btn-primary" onClick={downloadAll} disabled={isZipping || doneCount === 0}>
-                  <Download size={15} /> {isZipping ? 'Zipping…' : `Download All (${doneCount})`}
+                  <Download size={15} /> {isZipping ? t.zipping : t.downloadAll.replace('{count}', String(doneCount))}
                 </button>
               </div>
             </div>

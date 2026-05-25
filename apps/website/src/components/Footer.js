@@ -1,39 +1,83 @@
 'use client';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { locales, defaultLocale, localeNames } from '@/lib/i18n-config';
+import enDict from '../dictionaries/en.json';
 
 export default function Footer() {
+  const router = useRouter();
   const pathname = usePathname();
   const hiddenPaths = ['/pdf-tools', '/image-tools', '/exif-tools'];
-  if (hiddenPaths.includes(pathname)) return null;
+  
+  // Parse active locale prefix
+  const segments = pathname.split('/').filter(Boolean);
+  const lang = locales.includes(segments[0]) ? segments[0] : defaultLocale;
+
+  // Dictionary state (default to statically loaded English)
+  const [dict, setDict] = useState(lang === 'en' ? enDict : null);
+
+  useEffect(() => {
+    if (lang === 'en') {
+      setDict(enDict);
+    } else {
+      import(`../dictionaries/${lang}.json`)
+        .then((m) => setDict(m.default))
+        .catch((err) => {
+          console.error(`Failed to load dictionary for ${lang}`, err);
+          setDict(enDict);
+        });
+    }
+  }, [lang]);
+
+  const cleanPath = locales.includes(segments[0]) ? '/' + segments.slice(1).join('/') : pathname;
+  if (hiddenPaths.includes(cleanPath)) return null;
+
+  const d = dict || enDict;
+  const t = d.footer;
+
+  // Dynamic link prepending helper (English has no prefix)
+  const getLink = (path) => {
+    if (path.startsWith('http') || path.startsWith('#')) return path;
+    if (lang === 'en') return path;
+    return `/${lang}${path === '/' ? '' : path}`;
+  };
+
+  const handleLangChange = (newLang) => {
+    if (newLang === 'en') {
+      router.push(cleanPath);
+    } else {
+      router.push(`/${newLang}${cleanPath === '/' ? '' : cleanPath}`);
+    }
+  };
 
   return (
     <footer className="footer-main">
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <Link href="/" className="brand">TheNexTools</Link>
-            <p>High-performance, private desktop utilities that run entirely on your device. No uploads, no accounts, no nonsense.</p>
+            <Link href={getLink('/')} className="brand">TheNexTools</Link>
+            <p>{t.brandDesc}</p>
           </div>
           
           <div className="footer-group">
-            <div className="footer-group-title">Product</div>
+            <div className="footer-group-title">{t.product}</div>
             <ul className="footer-links">
-              <li><Link href="/data-recovery">NexData Recovery</Link></li>
-              <li><Link href="/pdf-toolkit">NexPDF Toolkit</Link></li>
-              <li><Link href="/exif-stripper">NexStrip EXIF Stripper</Link></li>
-              <li><Link href="/image-compressor">NexCompress Image Tool</Link></li>
+              <li><Link href={getLink('/data-recovery')}>{d.home.dataRecoveryTitle}</Link></li>
+              <li><Link href={getLink('/pdf-toolkit')}>{d.home.pdfToolkitTitle}</Link></li>
+              <li><Link href={getLink('/exif-stripper')}>{d.nav.exifStripperTitle}</Link></li>
+              <li><Link href={getLink('/image-compressor')}>{d.nav.imageCompressTitle}</Link></li>
             </ul>
           </div>
 
           <div className="footer-group">
-            <div className="footer-group-title">Resources</div>
+            <div className="footer-group-title">{t.resources}</div>
             <ul className="footer-links">
-              <li><Link href="/docs">Documentation</Link></li>
-              <li><Link href="/contact">Contact Us</Link></li>
-              <li><Link href="/refund-policy">Refund Policy</Link></li>
-              <li><Link href="/privacy">Privacy Policy</Link></li>
-              <li><Link href="/terms">Terms of Service</Link></li>
+              <li><Link href={getLink('/docs')}>{t.documentation}</Link></li>
+              <li><Link href={getLink('/contact')}>{t.contact}</Link></li>
+              <li><Link href={getLink('/refund-policy')}>{t.refund}</Link></li>
+              <li><Link href={getLink('/privacy')}>{t.privacy}</Link></li>
+              <li><Link href={getLink('/terms')}>{t.terms}</Link></li>
             </ul>
           </div>
         </div>
@@ -43,7 +87,21 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} TheNexTools. All rights reserved.
           </p>
           <div className="footer-socials">
-            <Link href="/sitemap" className="footer-bottom-link">Sitemap</Link>
+            {/* Language Selector */}
+            <select 
+              value={lang} 
+              onChange={(e) => handleLangChange(e.target.value)}
+              className="footer-lang-select"
+              aria-label="Select Language"
+            >
+              {locales.map((l) => (
+                <option key={l} value={l}>
+                  {localeNames[l]}
+                </option>
+              ))}
+            </select>
+
+            <Link href={getLink('/sitemap')} className="footer-bottom-link">{t.sitemap}</Link>
             <a 
               href="https://x.com/TheNexTool" 
               target="_blank" 

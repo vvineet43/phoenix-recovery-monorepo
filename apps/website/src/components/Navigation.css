@@ -196,3 +196,22 @@
   font-weight: 600;
   margin-top: 0.5rem;
 }
+
+.nav-lang-select {
+  background: var(--bg-2);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  font-family: inherit;
+}
+
+.nav-lang-select:hover {
+  border-color: var(--text-muted);
+  color: var(--text);
+}
+

@@ -3,7 +3,14 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Privacy Policy | TheNexTools',
   description: 'Our privacy policy is simple: we don\'t want your data. All tools run locally on your device.',
-  alternates: { canonical: '/privacy' },
+  alternates: {
+    canonical: '/privacy',
+    languages: {
+      'en': '/privacy',
+      'es': '/es/privacy',
+      'x-default': '/privacy',
+    }
+  },
 };
 
 export default function PrivacyPage() {

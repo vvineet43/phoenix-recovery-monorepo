@@ -13,6 +13,11 @@ export const metadata = {
   manifest: '/image-manifest.json',
   alternates: {
     canonical: '/image-compressor',
+    languages: {
+      'en': '/image-compressor',
+      'es': '/es/image-compressor',
+      'x-default': '/image-compressor',
+    }
   },
 };
 

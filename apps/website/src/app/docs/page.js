@@ -3,7 +3,14 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Documentation | TheNexTools',
   description: 'Learn how to use TheNexTools suite of privacy-first utilities.',
-  alternates: { canonical: '/docs' },
+  alternates: {
+    canonical: '/docs',
+    languages: {
+      'en': '/docs',
+      'es': '/es/docs',
+      'x-default': '/docs',
+    }
+  },
 };
 
 export default function DocsPage() {

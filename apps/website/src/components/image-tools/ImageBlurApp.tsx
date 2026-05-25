@@ -1,6 +1,9 @@
 'use client';
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Upload, X, Download, Trash2, Eye, EyeOff } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { locales, defaultLocale } from '@/lib/i18n-config';
+import enDict from '@/dictionaries/en.json';
 
 interface RedactBox {
   id: string;
@@ -21,6 +24,27 @@ export function ImageBlurApp({ hideHeader }: { hideHeader?: boolean }) {
   const [startPos, setStartPos] = useState({ x: 0, y: 0 });
   const [currentPos, setCurrentPos] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
+
+  const pathname = usePathname();
+  const segments = pathname.split('/').filter(Boolean);
+  const lang = locales.includes(segments[0]) ? segments[0] : defaultLocale;
+  const [dict, setDict] = useState<any>(lang === 'en' ? enDict : null);
+
+  useEffect(() => {
+    if (lang === 'en') {
+      setDict(enDict);
+    } else {
+      import(`@/dictionaries/${lang}.json`)
+        .then((m) => setDict(m.default))
+        .catch((err) => {
+          console.error(`Failed to load dictionary for ${lang}`, err);
+          setDict(enDict);
+        });
+    }
+  }, [lang]);
+
+  const activeDict = dict || enDict;
+  const t = activeDict.imageTools?.redactor || enDict.imageTools.redactor;
   
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -199,9 +223,9 @@ export function ImageBlurApp({ hideHeader }: { hideHeader?: boolean }) {
             onClick={() => fileInputRef.current?.click()}
           >
             <Upload size={40} className="upload-icon" />
-            <h3>Drag &amp; drop screenshot/image</h3>
-            <p>PNG, JPG, WEBP formats processed purely client-side</p>
-            <button className="btn btn-outline" style={{ marginTop: '1rem' }}>Choose File</button>
+            <h3>{t.uploadTitle}</h3>
+            <p>{t.uploadSubtitle}</p>
+            <button className="btn btn-outline" style={{ marginTop: '1rem' }}>{t.chooseBtn}</button>
             <input
               type="file"
               ref={fileInputRef}
@@ -218,22 +242,22 @@ export function ImageBlurApp({ hideHeader }: { hideHeader?: boolean }) {
                   className={`btn ${activeType === 'blur' ? 'btn-primary' : 'btn-outline'}`}
                   onClick={() => setActiveType('blur')}
                 >
-                  <EyeOff size={16} /> Pixelate Blur
+                  <EyeOff size={16} /> {t.blurMode}
                 </button>
                 <button
                   className={`btn ${activeType === 'blackout' ? 'btn-primary' : 'btn-outline'}`}
                   onClick={() => setActiveType('blackout')}
                 >
-                  <Eye size={16} /> Blackout Solid
+                  <Eye size={16} /> {t.redactMode}
                 </button>
               </div>
 
               <div className="action-buttons-group">
                 <button className="btn btn-primary" onClick={downloadRedacted} disabled={boxes.length === 0}>
-                  <Download size={16} /> Download Image
+                  <Download size={16} /> {t.downloadBtn}
                 </button>
                 <button className="btn btn-outline" onClick={clearAll} disabled={boxes.length === 0}>
-                  Reset Blur Boxes
+                  {t.resetBtn}
                 </button>
                 <button className="btn btn-outline btn-danger" onClick={resetTool}>
                   <Trash2 size={16} /> Close Image
