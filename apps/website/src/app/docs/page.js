@@ -8,6 +8,7 @@ export const metadata = {
     languages: {
       'en': '/docs',
       'es': '/es/docs',
+      'pt': '/pt/docs',
       'x-default': '/docs',
     }
   },

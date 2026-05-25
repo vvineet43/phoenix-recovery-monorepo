@@ -16,6 +16,7 @@ export async function generateMetadata({ params }) {
       languages: {
         'en': '/image-toolkit',
         'es': '/es/image-toolkit',
+        'pt': '/pt/image-toolkit',
         'x-default': '/image-toolkit',
       }
     },

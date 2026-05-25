@@ -13,6 +13,7 @@ export const metadata = {
     languages: {
       'en': '/sitemap',
       'es': '/es/sitemap',
+      'pt': '/pt/sitemap',
       'x-default': '/sitemap',
     }
   },

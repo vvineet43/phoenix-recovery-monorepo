@@ -16,6 +16,7 @@ export const metadata = {
     languages: {
       'en': '/image-compressor',
       'es': '/es/image-compressor',
+      'pt': '/pt/image-compressor',
       'x-default': '/image-compressor',
     }
   },

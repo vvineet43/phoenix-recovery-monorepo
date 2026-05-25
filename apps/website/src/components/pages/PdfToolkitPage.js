@@ -21,6 +21,7 @@ export async function generateMetadata({ params }) {
       languages: {
         'en': '/pdf-toolkit',
         'es': '/es/pdf-toolkit',
+        'pt': '/pt/pdf-toolkit',
         'x-default': '/pdf-toolkit',
       }
     },

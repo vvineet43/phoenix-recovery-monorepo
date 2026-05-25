@@ -16,6 +16,7 @@ export const metadata = {
     languages: {
       'en': '/exif-stripper',
       'es': '/es/exif-stripper',
+      'pt': '/pt/exif-stripper',
       'x-default': '/exif-stripper',
     }
   },

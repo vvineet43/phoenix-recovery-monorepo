@@ -8,6 +8,7 @@ export const metadata = {
     languages: {
       'en': '/refund-policy',
       'es': '/es/refund-policy',
+      'pt': '/pt/refund-policy',
       'x-default': '/refund-policy',
     }
   },
