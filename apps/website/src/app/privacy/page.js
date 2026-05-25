@@ -8,6 +8,7 @@ export const metadata = {
     languages: {
       'en': '/privacy',
       'es': '/es/privacy',
+      'pt': '/pt/privacy',
       'x-default': '/privacy',
     }
   },

@@ -15,6 +15,7 @@ export async function generateMetadata({ params }) {
       languages: {
         'en': '/data-recovery',
         'es': '/es/data-recovery',
+        'pt': '/pt/data-recovery',
         'x-default': '/data-recovery',
       }
     },

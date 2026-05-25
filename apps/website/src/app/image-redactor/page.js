@@ -16,6 +16,7 @@ export const metadata = {
     languages: {
       'en': '/image-redactor',
       'es': '/es/image-redactor',
+      'pt': '/pt/image-redactor',
       'x-default': '/image-redactor',
     }
   },

@@ -16,6 +16,7 @@ export const metadata = {
     languages: {
       'en': '/image-converter',
       'es': '/es/image-converter',
+      'pt': '/pt/image-converter',
       'x-default': '/image-converter',
     }
   },

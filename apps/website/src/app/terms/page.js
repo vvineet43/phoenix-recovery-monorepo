@@ -8,6 +8,7 @@ export const metadata = {
     languages: {
       'en': '/terms',
       'es': '/es/terms',
+      'pt': '/pt/terms',
       'x-default': '/terms',
     }
   },
