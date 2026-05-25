@@ -1,7 +1,10 @@
 'use client';
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { Upload, X, Download, RefreshCw, Trash2, ArrowRight } from 'lucide-react';
 import JSZip from 'jszip';
+import { usePathname } from 'next/navigation';
+import { locales, defaultLocale } from '@/lib/i18n-config';
+import enDict from '@/dictionaries/en.json';
 
 type TargetFormat = 'jpeg' | 'png' | 'webp';
 
@@ -30,6 +33,27 @@ export function ImageConverterApp({ hideHeader }: { hideHeader?: boolean }) {
   const [globalFormat, setGlobalFormat] = useState<TargetFormat>('webp');
   const [isProcessing, setIsProcessing] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const pathname = usePathname();
+  const segments = pathname.split('/').filter(Boolean);
+  const lang = locales.includes(segments[0]) ? segments[0] : defaultLocale;
+  const [dict, setDict] = useState<any>(lang === 'en' ? enDict : null);
+
+  useEffect(() => {
+    if (lang === 'en') {
+      setDict(enDict);
+    } else {
+      import(`@/dictionaries/${lang}.json`)
+        .then((m) => setDict(m.default))
+        .catch((err) => {
+          console.error(`Failed to load dictionary for ${lang}`, err);
+          setDict(enDict);
+        });
+    }
+  }, [lang]);
+
+  const activeDict = dict || enDict;
+  const t = activeDict.imageTools?.converter || enDict.imageTools.converter;
 
   const convertSingle = async (item: ConversionItem, format: TargetFormat): Promise<{ blob: Blob; url: string }> => {
     return new Promise((resolve, reject) => {
@@ -205,9 +229,9 @@ export function ImageConverterApp({ hideHeader }: { hideHeader?: boolean }) {
             onClick={() => fileInputRef.current?.click()}
           >
             <Upload size={40} className="upload-icon" />
-            <h3>Drag &amp; drop images here</h3>
-            <p>Supports PNG, JPG, JPEG, WEBP, and more</p>
-            <button className="btn btn-outline" style={{ marginTop: '1rem' }}>Browse Files</button>
+            <h3>{t.uploadTitle}</h3>
+            <p>{t.uploadSubtitle}</p>
+            <button className="btn btn-outline" style={{ marginTop: '1rem' }}>{t.browseBtn}</button>
             <input
               type="file"
               ref={fileInputRef}

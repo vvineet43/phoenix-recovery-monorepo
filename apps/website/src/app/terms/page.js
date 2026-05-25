@@ -3,7 +3,14 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Terms of Service | TheNexTools',
   description: 'The terms of using TheNexTools suite of utilities.',
-  alternates: { canonical: '/terms' },
+  alternates: {
+    canonical: '/terms',
+    languages: {
+      'en': '/terms',
+      'es': '/es/terms',
+      'x-default': '/terms',
+    }
+  },
 };
 
 export default function TermsPage() {

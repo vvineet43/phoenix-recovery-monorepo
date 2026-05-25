@@ -8,7 +8,14 @@ import {
 export const metadata = {
   title: 'Sitemap | TheNexTools',
   description: 'Navigate through TheNexTools. Complete index of all our online PDF tools, image compressors, metadata strippers, and offline data recovery applications.',
-  alternates: { canonical: '/sitemap' },
+  alternates: {
+    canonical: '/sitemap',
+    languages: {
+      'en': '/sitemap',
+      'es': '/es/sitemap',
+      'x-default': '/sitemap',
+    }
+  },
 };
 
 export default function SitemapPage() {

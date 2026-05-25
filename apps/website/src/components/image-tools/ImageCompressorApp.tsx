@@ -1,8 +1,11 @@
 'use client';
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { Upload, X, Download, Trash2, ZoomIn, Image as ImageIcon } from 'lucide-react';
 import JSZip from 'jszip';
 import './image-tools.css';
+import { usePathname } from 'next/navigation';
+import { locales, defaultLocale } from '@/lib/i18n-config';
+import enDict from '@/dictionaries/en.json';
 
 type OutputFormat = 'jpeg' | 'png' | 'webp';
 
@@ -62,6 +65,27 @@ export function ImageCompressorApp({ hideHeader }: { hideHeader?: boolean }) {
   const [isZipping, setIsZipping] = useState(false);
   const [compareId, setCompareId] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const pathname = usePathname();
+  const segments = pathname.split('/').filter(Boolean);
+  const lang = locales.includes(segments[0]) ? segments[0] : defaultLocale;
+  const [dict, setDict] = useState<any>(lang === 'en' ? enDict : null);
+
+  useEffect(() => {
+    if (lang === 'en') {
+      setDict(enDict);
+    } else {
+      import(`@/dictionaries/${lang}.json`)
+        .then((m) => setDict(m.default))
+        .catch((err) => {
+          console.error(`Failed to load dictionary for ${lang}`, err);
+          setDict(enDict);
+        });
+    }
+  }, [lang]);
+
+  const activeDict = dict || enDict;
+  const t = activeDict.imageTools?.compressor || enDict.imageTools.compressor;
 
   const processImage = async (id: string, file: File, quality: number, fmt: OutputFormat) => {
     setImages(prev => prev.map(i => i.id === id ? { ...i, status: 'compressing' } : i));
@@ -158,8 +182,8 @@ export function ImageCompressorApp({ hideHeader }: { hideHeader?: boolean }) {
             onClick={() => fileInputRef.current?.click()}
           >
             <ImageIcon className="tool-upload-icon" size={52} />
-            <p className="tool-upload-title">Drop images here</p>
-            <p className="tool-upload-subtitle">JPG, PNG, WebP — batch supported</p>
+            <p className="tool-upload-title">{t.uploadTitle}</p>
+            <p className="tool-upload-subtitle">{t.uploadSubtitle}</p>
             <input ref={fileInputRef} type="file" className="hidden-input" accept="image/*" multiple onChange={e => e.target.files && addFiles(e.target.files)} />
           </div>
         ) : (
@@ -167,7 +191,7 @@ export function ImageCompressorApp({ hideHeader }: { hideHeader?: boolean }) {
             {/* Settings toolbar */}
             <div className="tool-toolbar" style={{ alignItems: 'flex-end', gap: '1.5rem' }}>
               <div>
-                <p className="tool-slider-label" style={{ marginBottom: '0.5rem' }}>Output Format</p>
+                <p className="tool-slider-label" style={{ marginBottom: '0.5rem' }}>{t.formatLabel}</p>
                 <div className="format-toggle">
                   {(['jpeg', 'png', 'webp'] as OutputFormat[]).map(f => (
                     <button key={f} className={`format-btn${globalFormat === f ? ' active' : ''}`} onClick={() => setGlobalFormat(f)}>
@@ -179,8 +203,8 @@ export function ImageCompressorApp({ hideHeader }: { hideHeader?: boolean }) {
 
               <div className="tool-slider-row">
                 <span className="tool-slider-label">
-                  Quality: <strong style={{ color: '#0f172a' }}>{globalQuality}%</strong>
-                  {globalFormat === 'png' && <span style={{ fontWeight: 400, opacity: 0.6 }}> (lossless — ignored for PNG)</span>}
+                  {t.qualityLabel} <strong style={{ color: '#0f172a' }}>{globalQuality}%</strong>
+                  {globalFormat === 'png' && <span style={{ fontWeight: 400, opacity: 0.6 }}>{t.losslessNotice}</span>}
                 </span>
                 <input type="range" min={10} max={100} value={globalQuality} className="tool-slider"
                   onChange={e => setGlobalQuality(Number(e.target.value))} disabled={globalFormat === 'png'} />
@@ -188,17 +212,17 @@ export function ImageCompressorApp({ hideHeader }: { hideHeader?: boolean }) {
 
               <div className="tool-toolbar-actions">
                 <button className="tool-btn tool-btn-secondary" onClick={applySettings} disabled={images.some(i => i.status === 'compressing')}>
-                  Re-compress All
+                  {t.recompressBtn}
                 </button>
                 <input ref={fileInputRef} type="file" className="hidden-input" accept="image/*" multiple onChange={e => e.target.files && addFiles(e.target.files)} />
                 <button className="tool-btn tool-btn-secondary" onClick={() => fileInputRef.current?.click()}>
-                  <Upload size={15} /> Add
+                  <Upload size={15} /> {t.addBtn}
                 </button>
                 <button className="tool-btn tool-btn-danger" onClick={clearAll}>
-                  <Trash2 size={15} /> Clear
+                  <Trash2 size={15} /> {t.clearBtn}
                 </button>
                 <button className="tool-btn tool-btn-primary" onClick={downloadAll} disabled={isZipping || doneCount === 0}>
-                  <Download size={15} /> {isZipping ? 'Zipping…' : `Download All (${doneCount})`}
+                  <Download size={15} /> {isZipping ? t.downloading : `${t.downloadAll} (${doneCount})`}
                 </button>
               </div>
             </div>

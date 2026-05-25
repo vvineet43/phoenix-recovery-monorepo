@@ -1,0 +1,858 @@
+{
+  "nav": {
+    "brand": "TheNexTools",
+    "dataRecovery": "Recuperación de Datos",
+    "pdfEditing": "Edición de PDF",
+    "imageEditing": "Edición de Imágenes",
+    "ctaExplore": "Explorar todas las herramientas",
+    "ctaGetPro": "Obtener NexData Pro",
+    "ctaCompress": "Comenzar a comprimir",
+    "ctaConvert": "Comenzar a convertir",
+    "ctaRedact": "Comenzar a redactar",
+    "ctaStrip": "Comenzar a limpiar",
+    "ctaPdf": "Comenzar edición de PDF",
+    "ctaPdfTool": "Abrir espacio de trabajo",
+    "mergePdfTitle": "Combinar PDF",
+    "mergePdfDesc": "Combina múltiples archivos",
+    "splitPdfTitle": "Dividir PDF",
+    "splitPdfDesc": "Extrae páginas específicas",
+    "compressPdfTitle": "Comprimir PDF",
+    "compressPdfDesc": "Reduce el peso localmente",
+    "watermarkPdfTitle": "Marca de Agua",
+    "watermarkPdfDesc": "Añade sellos de texto",
+    "pdfToImagesTitle": "PDF a Imágenes",
+    "pdfToImagesDesc": "Convierte a JPG/PNG",
+    "redactPdfTitle": "Redactar PDF",
+    "redactPdfDesc": "Oculta texto sensible",
+    "viewAllPdf": "Ver las 17 herramientas",
+    "imageCompressTitle": "Comprimir",
+    "imageCompressDesc": "Reduce JPG, PNG, WebP",
+    "imageConvertTitle": "Convertir Formato",
+    "imageConvertDesc": "JPG · PNG · WebP",
+    "imageRedactTitle": "Redactar y Difuminar",
+    "imageRedactDesc": "Oculta áreas sensibles",
+    "exifStripperTitle": "Limpiar EXIF",
+    "exifStripperDesc": "Elimina metadatos de fotos",
+    "viewAllImage": "Abrir NexImage Toolkit"
+  },
+  "footer": {
+    "brandDesc": "Utilidades de escritorio privadas y de alto rendimiento que se ejecutan completamente en tu dispositivo. Sin cargas, sin cuentas, sin rodeos.",
+    "product": "Producto",
+    "resources": "Recursos",
+    "documentation": "Documentación",
+    "contact": "Contacto",
+    "refund": "Política de reembolsos",
+    "privacy": "Política de privacidad",
+    "terms": "Términos de servicio",
+    "sitemap": "Mapa del sitio"
+  },
+  "home": {
+    "heroBadge": "Software de Escritorio Profesional",
+    "heroTitle": "Herramientas que funcionan donde internet no llega.",
+    "heroDesc": "Una colección pequeña y enfocada de utilidades creadas en torno a una idea: tus archivos no deberían tener que salir de tu máquina para realizar el trabajo. Edición de PDF, procesamiento de imágenes, limpieza de metadatos, recuperación de datos — todo se ejecuta localmente.",
+    "heroCta": "Ver herramientas disponibles",
+    "whyTitle": "Creado para personas que manejan archivos confidenciales",
+    "whySubtitle": "La mayoría de las herramientas suben tus datos a un servidor. Ese es un mal hábito.",
+    "whyCard1Title": "Tus archivos se quedan en tu máquina",
+    "whyCard1Desc": "Documentos legales, registros financieros, fotos de clientes, historial médico — nada de eso debería pasar por un servidor externo solo para combinar dos PDF. Cada herramienta procesa tus archivos con tu propio hardware. Sin telemetría, sin sincronización en la nube, sin necesidad de cuentas.",
+    "whyCard2Title": "Paga una vez, es tuyo",
+    "whyCard2Desc": "Las suscripciones para utilidades básicas no tienen sentido. Las herramientas principales son gratis y siempre lo serán. Cuando necesites algo más profundo — como recuperar archivos de un disco dañado — es una compra única. Sin renovaciones, sin vencimiento.",
+    "whyCard3Title": "Velocidad que exprime tu hardware",
+    "whyCard3Desc": "Las herramientas web están limitadas por tu velocidad de subida y las colas de servidores compartidos. Aquí, un PDF de 500 MB se comprime en segundos porque usa tu CPU directamente. El límite es tu máquina, no la infraestructura de otra persona.",
+    "lineupTitle": "La línea de productos",
+    "lineupSubtitle": "Tres paquetes de herramientas, todos con capacidad offline, todos gratis para comenzar — diseñados para mantener tus archivos en tu máquina.",
+    "dataRecoveryTitle": "NexData Recovery",
+    "dataRecoveryDesc": "Busca y recupera archivos eliminados leyendo los sectores del disco directamente, omitiendo por completo el sistema de archivos. Funciona en discos formateados, particiones dañadas y tarjetas SD que no se pueden montar.",
+    "dataRecoveryFeature1": "Escanea particiones eliminadas y formateos anteriores",
+    "dataRecoveryFeature2": "Repara archivos de video MP4 y MOV dañados",
+    "dataRecoveryFeature3": "Escanea gratis, paga solo cuando recuperes tus archivos",
+    "pdfToolkitTitle": "NexPDF Toolkit",
+    "pdfToolkitDesc": "Un editor de PDF completo que se ejecuta en tu navegador. Combina documentos, reordena páginas, firma contratos, pon sellos de fecha, redacta texto confidencial y comprime archivos pesados, sin subir absolutamente nada.",
+    "pdfToolkitFeature1": "Gestión de páginas arrastrar y soltar con anotaciones",
+    "pdfToolkitFeature2": "Soporte para firma manuscrita y escrita con teclado",
+    "pdfToolkitFeature3": "Compresión con previsualización del tamaño en tiempo real",
+    "imageToolkitTitle": "NexImage Toolkit",
+    "imageToolkitDesc": "Cuatro herramientas de imagen en una sola pestaña: comprime, cambia formatos, difumina áreas sensibles y limpia metadatos EXIF ocultos. Todo se ejecuta en tu navegador, nada se sube.",
+    "imageToolkitFeature1": "Comprime JPG, PNG y WebP con previsualización de calidad en tiempo real",
+    "imageToolkitFeature2": "Convierte entre formatos y descarga en lotes como ZIP",
+    "imageToolkitFeature3": "Difumina rostros y matrículas, elimina datos GPS y de la cámara de tus fotos",
+    "learnMore": "Saber más →"
+  },
+  "dataRecovery": {
+    "heroBadge": "NexData Recovery",
+    "heroTitle": "Lo que parece eliminado permanentemente, normalmente no lo está.",
+    "heroDesc": "Cuando se formatea una unidad o desaparece una partición, los archivos no desaparecen — el sistema de archivos simplemente olvida dónde están. NexData lee los sectores sin procesar directamente, reconstruye lo que aún está allí y te permite recuperarlo. Escanea gratis. Previsualiza todo. Recupera lo que importa.",
+    "heroCta": "Comenzar gratis",
+    "howTitle": "Cómo encuentra NexData lo que otras herramientas pasan por alto",
+    "howSubtitle": "La mayoría de las herramientas de recuperación dependen del sistema de archivos. Cuando este desaparece (por formateo o daño), no tienen nada con qué trabajar. NexData no lo necesita.",
+    "howCard1Title": "Escaneo de sectores sin procesar (Raw)",
+    "howCard1Desc": "En lugar de preguntar al sistema de archivos qué hay en el disco, NexData lee los sectores físicos directamente. Reconoce tipos de archivos por sus firmas binarias (JPEG, MP4, PDF, DOCX) y los reconstruye sin importar lo que diga la tabla de particiones. Así funciona la recuperación en discos que ni siquiera se montan.",
+    "howCard2Title": "Reparación de grabaciones de video dañadas",
+    "howCard2Desc": "Los archivos de video recuperados de unidades fragmentadas casi nunca se pueden reproducir porque los encabezados se dañan durante la recuperación. El módulo de reparación de NexData toma un clip de referencia funcional de la misma cámara y lo usa para reconstruir los encabezados dañados, haciendo que el video se pueda reproducir.",
+    "howCard3Title": "Soporte para volúmenes cifrados",
+    "howCard3Desc": "BitLocker, FileVault, cifrado APFS — estos no son obstáculos si tienes la clave de recuperación. NexData puede desbloquear el volumen y realizar un escaneo completo de sectores debajo de la capa de cifrado, recuperando archivos eliminados antes de que la unidad fuera cifrada.",
+    "howCard4Title": "Completamente offline",
+    "howCard4Desc": "NexData nunca se conecta a internet. Nunca. Los resultados del escaneo, las previsualizaciones de archivos y los archivos recuperados se quedan en tu máquina. Nada se transmite ni se registra. Si recuperas documentos sensibles (archivos legales, médicos o fotos personales), esta es la seguridad mínima que debes exigir.",
+    "pricingTitle": "Descarga y Precios",
+    "pricingSubtitle": "Escanea cualquier unidad y previsualiza cada archivo recuperable gratis. Paga solo cuando necesites guardar los archivos recuperados en el disco.",
+    "freeTitle": "Versión Gratuita",
+    "freePrice": "$0",
+    "freeDuration": "/ para siempre",
+    "freeFeature1": "Escaneo ilimitado de sectores sin procesar",
+    "freeFeature2": "Previsualiza todos los archivos y videos recuperables",
+    "freeFeature3": "Recupera 1 archivo (hasta 10MB)",
+    "freeFeature4": "Guarda y reanuda sesiones de escaneo",
+    "freeCtaMac": "Mac (.dmg)",
+    "freeCtaWin": "Windows (.exe)",
+    "freeInstallNote": "Instálalo gratis. Escanea tu disco. Verifica que los archivos estén intactos antes de pagar nada.",
+    "proTitle": "NexData Pro",
+    "proPrice": "$49.99",
+    "proDuration": "/ pago único",
+    "proFeature1": "Recuperación de archivos ilimitada",
+    "proFeature2": "Sin límites de tamaño de archivo",
+    "proFeature3": "Reparación de fotos y videos dañados",
+    "proFeature4": "Soporte para APFS, HFS+, NTFS, FAT32",
+    "proFeature5": "Licencia para uso comercial",
+    "proFeature6": "Actualizaciones gratuitas de por vida",
+    "proCta": "Comprar Licencia Pro",
+    "proDeliveryNote": "Clave de licencia enviada instantáneamente por correo electrónico. Garantía de reembolso de 10 días.",
+    "popular": "MÁS POPULAR",
+    "installTitle": "Nota de instalación",
+    "installDesc": "Somos desarrolladores independientes, por lo que las compilaciones iniciales aún no están firmadas con certificados de Apple o Microsoft. Tu sistema operativo mostrará una advertencia de seguridad estándar — así es como se supera:",
+    "installMacDesc": "Arrastra la aplicación a Aplicaciones. Abre la Terminal. Pega esto y presiona Enter: xattr -cr ... Haz doble clic en la aplicación para iniciarla.",
+    "installWinDesc": "Ejecuta el archivo .exe descargado. Si ves una advertencia azul de Windows Defender — haz clic en Más información, luego en Ejecutar de todos modos.",
+    "cantTitle": "Lo que NexData no puede recuperar",
+    "cantSubtitle": "Ninguna herramienta de recuperación hace milagros. Esto es lo que debes saber de antemano.",
+    "cantCard1Title": "Datos sobrescritos",
+    "cantCard1Desc": "Una vez que se escriben nuevos datos en los mismos sectores físicos, el contenido original se destruye a nivel de hardware. Ningún software (incluido el nuestro) puede deshacer eso. Por eso debes dejar de escribir en el disco en cuanto notes que faltan archivos.",
+    "cantCard2Title": "Discos dañados físicamente",
+    "cantCard2Desc": "Si una unidad ha sufrido fallos mecánicos (caída de cabezales, daño por agua, circuitos quemados), el software no puede acceder a los platos o chips. Eso requiere una sala limpia y recuperación de datos profesional, que es un servicio totalmente diferente.",
+    "cantCard3Title": "Bloques SSD después de TRIM",
+    "cantCard3Desc": "Los SSD modernos con TRIM habilitado borran los bloques eliminados en segundo plano, normalmente en minutos. Una vez que el controlador borra un bloque, los datos desaparecen físicamente. TRIM está activo por defecto en la mayoría de SSD, por lo que la recuperación en HDD suele tener más éxito.",
+    "cantCard4Title": "Volúmenes cifrados sin la clave",
+    "cantCard4Desc": "Si un disco se cifró con BitLocker, FileVault o cifrado APFS y has perdido la contraseña y la clave de recuperación, no se puede descifrar. Ningún software puede descifrar por fuerza bruta los sistemas de cifrado modernos.",
+    "cantNote": "Estos escenarios quedan fuera de nuestra política de reembolsos. Recomendamos escanear primero con la versión gratuita para confirmar que tus archivos son realmente recuperables.",
+    "ctaTitle": "Escanea primero. Mira lo que hay. Decide después.",
+    "ctaDesc": "La versión gratuita realiza un escaneo completo y te permite previsualizar cada archivo recuperable, para que sepas exactamente qué vas a obtener antes de pagar.",
+    "ctaButton": "Descargar Versión Gratuita"
+  },
+  "contact": {
+    "heroBadge": "Ponte en Contacto",
+    "heroTitle": "Leemos todos los mensajes.",
+    "heroDesc": "TheNexTools es un equipo pequeño, por lo que responderá una persona real, no un bot. Elige la dirección correcta a continuación y te responderemos lo antes posible.",
+    "supportTitle": "Soporte Técnico",
+    "supportDesc": "¿La herramienta no funciona como esperabas? Informes de fallos, comportamientos inesperados o preguntas sobre cómo funciona una herramienta específica.",
+    "billingTitle": "Facturación y Reembolsos",
+    "billingDesc": "Preguntas sobre tu licencia de NexData Pro, solicitudes de reembolso o problemas con tu pedido. Ten a mano tu número de pedido.",
+    "generalTitle": "Consultas Generales",
+    "generalDesc": "Comentarios, sugerencias de funciones, ideas de colaboración o cualquier otra cosa que no encaje en las categorías anteriores.",
+    "securityTitle": "Seguridad y Privacidad",
+    "securityDesc": "¿Has encontrado una vulnerabilidad de seguridad o tienes alguna inquietud sobre la privacidad? Escríbenos directamente — nos lo tomamos muy en serio.",
+    "directAddresses": "Direcciones directas",
+    "directSupportLabel": "Soporte",
+    "directSupportDesc": "Problemas técnicos, fallos, facturación y reembolsos, preguntas sobre licencias.",
+    "directGeneralLabel": "General",
+    "directGeneralDesc": "Comentarios, solicitudes de funciones, colaboraciones, prensa o cualquier otra cosa.",
+    "responseTimeTitle": "Tiempo de respuesta",
+    "responseTimeDesc": "Normalmente respondemos en 1-2 días laborables. Somos un equipo pequeño, por lo que en periodos de mucho trabajo puede tardar un poco más, pero responderemos.",
+    "refundRequestsTitle": "Solicitudes de reembolso",
+    "refundRequestsDesc": "NexData Pro incluye una garantía de reembolso de 10 días. Envía un correo electrónico a soporte con tu número de pedido y lo procesaremos rápidamente. Consulta nuestra política de reembolsos para más detalles."
+  },
+  "imageToolkit": {
+    "heroBadge": "NexImage — Local y Privado",
+    "heroTitle": "Cuatro herramientas de imagen que nunca tocan un servidor.",
+    "heroDesc": "Comprime, convierte, redacta y limpia metadatos de tus imágenes — todo dentro de una sola pestaña de navegador. Nada se sube. Las herramientas se ejecutan en tu hardware utilizando la API Canvas nativa del navegador, por lo que funcionan incluso después de desconectarte de internet.",
+    "heroCta": "Abrir NexImage",
+    "includedTitle": "Qué incluye",
+    "includedSubtitle": "Cada herramienta hace una cosa bien. Juntas cubren las tareas de imagen más comunes.",
+    "compressorTitle": "Compresor",
+    "compressorDesc": "Reduce el tamaño de tus archivos con una barra de calidad que muestra el tamaño estimado en tiempo real. Compara el original con el comprimido a resolución completa antes de descargar. Procesa carpetas enteras en lote y descárgalas en un ZIP.",
+    "compressorFeature1": "Salida a formatos JPEG, PNG y WebP",
+    "compressorFeature2": "Comparación lado a lado antes de descargar",
+    "compressorFeature3": "Cálculo total del espacio ahorrado en todos los archivos",
+    "compressorCta": "Abrir Compresor →",
+    "converterTitle": "Convertidor de Formato",
+    "converterDesc": "Convierte entre JPG, PNG y WebP en cualquier dirección. Suelta una carpeta con varios formatos y conviértelos todos a un formato de destino. La transparencia se mantiene al convertir a PNG. La calidad es ajustable para JPG y WebP.",
+    "converterFeature1": "Soporta todas las combinaciones de formatos",
+    "converterFeature2": "Conserva el canal alfa para la salida PNG",
+    "converterFeature3": "Sin límites de tamaño de archivo ni límites diarios",
+    "converterCta": "Abrir Convertidor →",
+    "redactorTitle": "Difuminador de Privacidad",
+    "redactorDesc": "Dibuja zonas de difuminado sobre caras, matrículas, direcciones, datos financieros — cualquier elemento sensible. Ajusta la intensidad del desenfoque en cada zona. El resultado es una imagen plana donde el difuminado es permanente e irreversible.",
+    "redactorFeature1": "Intensidad de desenfoque variable por región",
+    "redactorFeature2": "Múltiples zonas por imagen",
+    "redactorFeature3": "Salida plana — sin capas recuperables",
+    "redactorCta": "Abrir Difuminador →",
+    "stripperTitle": "Limpiador de Metadatos EXIF",
+    "stripperDesc": "Cada foto de tu teléfono contiene coordenadas GPS, marcas de tiempo, información del dispositivo y más. NexStrip te muestra cada campo y luego los elimina todos, para que la foto que compartes no revele tu dirección.",
+    "stripperFeature1": "Muestra y elimina datos de ubicación GPS",
+    "stripperFeature2": "Muestra todos los campos de metadatos antes de limpiar",
+    "stripperFeature3": "Descarga copias limpias individualmente o como ZIP",
+    "stripperCta": "Abrir Limpiador EXIF →",
+    "whyTitle": "Por qué se ejecuta localmente y no en un servidor",
+    "whySubtitle": "Las imágenes no son solo píxeles. Contienen datos que la mayoría de la gente desconoce.",
+    "whyCard1Title": "Tu ubicación está en el archivo",
+    "whyCard1Desc": "Subir una foto a internet para comprimirla también sube tus coordenadas GPS a un servidor de terceros. Si es una foto de tu casa, el colegio de tu hijo o tu oficina, eso es un problema. NexTools nunca recibe esos datos.",
+    "whyCard2Title": "Los archivos de los clientes deben ser locales",
+    "whyCard2Desc": "Comprimir fotos para un cliente, ocultar un área de una captura legal, limpiar metadatos de documentos sensibles... nada de eso debería pasar por servidores ajenos, ni siquiera un instante.",
+    "whyCard3Title": "Sin límites significa sin trabas",
+    "whyCard3Desc": "Las herramientas en la nube limitan a los usuarios gratuitos a 5-10 MB por archivo. NexImage no tiene ese límite; tu navegador puede procesar archivos de cientos de megabytes sin problemas.",
+    "ctaTitle": "Todo lo que necesitas para trabajar con imágenes, sin salir del navegador.",
+    "ctaSubtitle": "Funciona en Chrome, Firefox, Safari y Edge en Mac, Windows y Linux."
+  },
+  "pdfToolkit": {
+    "heroBadge": "NexPDF — Gratis y Privado",
+    "heroTitle": "Edita PDFs sin entregar tus archivos al servidor de otra persona.",
+    "heroDesc": "Cada vez que usas una herramienta PDF gratuita en línea, tu documento se sube a una empresa de la que nunca has oído hablar, se procesa en sus máquinas y (quizás) se elimina después. NexPDF evita todo eso. Combinar, firmar, comprimir, redactar — todo sucede aquí en tu navegador. Sin cuenta. Sin esperas. Sin dejar rastro.",
+    "includedTitle": "Qué puedes hacer con él",
+    "includedSubtitle": "Las tareas de PDF más habituales de la semana, resueltas localmente como debe ser.",
+    "signTitle": "Firmar y anotar",
+    "signDesc": "Dibuja tu firma con el ratón o el dedo en una pantalla táctil. O escríbela y elige una tipografía de estilo manuscrito. Colócala en cualquier parte de la página, cámbiala de tamaño y exporta un PDF plano: sin capas ocultas ni campos de firma editables.",
+    "assembleTitle": "Combinar, reordenar y extraer páginas",
+    "assembleDesc": "Carga varios PDF, arrastra las páginas para ordenarlas, gira las que estén al revés y extrae páginas específicas como archivos independientes. Lo que deberías poder hacer sin pagar Acrobat Pro.",
+    "compressTitle": "Comprimir con previsualización",
+    "compressDesc": "Cuando escaneas un documento y pesa 40 MB pero tu correo limita a 25 MB, el compresor te permite ajustar el nivel de calidad y ver el tamaño estimado antes de guardar. La mayoría de documentos se reducen a un tercio de su tamaño original sin pérdida visible de calidad.",
+    "offlineTitle": "Funciona sin conexión",
+    "offlineDesc": "Tras la primera carga, NexPDF no necesita internet. Puedes apagar el Wi-Fi y seguir trabajando. Contratos, extractos bancarios, documentos de recursos humanos... se quedan solo en tu equipo.",
+    "utilitiesTitle": "Diecisiete utilidades dedicadas para PDF",
+    "utilitiesSubtitle": "Olvídate de menús complejos. Abre el espacio de trabajo seguro con la herramienta que necesitas ya activa.",
+    "assemblyCategory": "Estructura y Organización de Documentos",
+    "assembly1Title": "Combinar PDF",
+    "assembly1Desc": "Combina varios documentos o páginas en un único archivo ordenado.",
+    "assembly2Title": "Dividir PDF",
+    "assembly2Desc": "Extrae rangos de páginas específicos o divide un documento en varios archivos.",
+    "assembly3Title": "Reordenar Páginas",
+    "assembly3Desc": "Arrastra y suelta miniaturas para cambiar el orden o eliminar páginas de forma visual.",
+    "assembly4Title": "Rotar PDF",
+    "assembly4Desc": "Rota de forma permanente páginas individuales o documentos completos.",
+    "conversionCategory": "Optimización y Conversión",
+    "conversion1Title": "Comprimir PDF",
+    "conversion1Desc": "Reduce el peso del archivo con una barra de ajuste y previsualización en tiempo real.",
+    "conversion2Title": "PDF a Imágenes",
+    "conversion2Desc": "Convierte páginas de PDF en archivos JPEG o PNG, de forma individual o en lote ZIP.",
+    "conversion3Title": "Imágenes a PDF",
+    "conversion3Desc": "Agrupa fotos JPG, PNG o WebP en un documento PDF bien formateado.",
+    "conversion4Title": "HTML a PDF",
+    "conversion4Desc": "Convierte plantillas y código HTML en documentos PDF de forma local.",
+    "conversion5Title": "Texto a PDF",
+    "conversion5Desc": "Convierte archivos de texto plano, registros o código en formato PDF listo para imprimir.",
+    "securityCategory": "Seguridad, Privacidad y Sellos",
+    "security1Title": "Proteger PDF",
+    "security1Desc": "Protege tus documentos con cifrado de contraseña local y restricciones AES.",
+    "security2Title": "Desbloquear PDF",
+    "security2Desc": "Elimina contraseñas y restricciones de archivos autorizados.",
+    "security3Title": "Redactar PDF",
+    "security3Desc": "Oculta de forma permanente texto sensible o números de identificación mediante aplanado.",
+    "security4Title": "Marca de Agua",
+    "security4Desc": "Añade sellos de CONFIDENCIAL, borradores o texto con opacidad personalizada.",
+    "signatureCategory": "Firma Digital y Captura",
+    "signature1Title": "Firmar PDF",
+    "signature1Desc": "Dibuja tu firma o escribe en cursiva para firmar digitalmente campos de documentos.",
+    "signature2Title": "Escanear a PDF",
+    "signature2Desc": "Captura páginas usando la cámara de tu dispositivo y mejora el contraste.",
+    "signature3Title": "OCR PDF",
+    "signature3Desc": "Escanea y extrae texto seleccionable y copiable de documentos e imágenes.",
+    "signature4Title": "Numerar Páginas",
+    "signature4Desc": "Añade números de página correlativos en los encabezados o pies de página.",
+    "faqTitle": "Preguntas Frecuentes",
+    "faqSubtitle": "Todo lo que necesitas saber sobre la edición de PDF local de NexPDF.",
+    "faqQ1": "¿Cómo funciona la edición local de PDF?",
+    "faqA1": "Utiliza WebAssembly y librerías de manipulación de PDF en JavaScript del lado del cliente para editar, firmar, combinar y dividir archivos en tu navegador. Ningún archivo se envía a servidores externos.",
+    "faqQ2": "¿Están seguros mis documentos PDF con NexPDF?",
+    "faqA2": "Sí, totalmente seguros. Al ejecutarse todo en el entorno seguro de tu navegador, documentos confidenciales como contratos o declaraciones de impuestos nunca salen de tu equipo.",
+    "faqQ3": "¿Puedo editar PDFs sin conexión?",
+    "faqA3": "Sí. NexPDF está diseñado como una Aplicación Web Progresiva (PWA). Una vez que la visitas, las herramientas se guardan en caché y funcionan sin internet.",
+    "faqQ4": "¿Hay límites o marcas de agua en los archivos de salida?",
+    "faqA4": "No. NexPDF no añade marcas de agua, ni tiene límites de tamaño de archivo o restricciones de uso diario. Es edición de PDF profesional y totalmente gratuita.",
+    "ctaTitle": "Listo cuando tú lo estés.",
+    "ctaDesc": "Abre el editor, suelta un archivo y empieza a trabajar. Sin registros ni cuentas atrás.",
+    "ctaButton": "Volver a la herramienta",
+    "upload": {
+      "selectFile": "Selecciona un archivo PDF",
+      "dragDrop": "Arrastra y suelta tu documento aquí, o haz clic para buscar archivos",
+      "preparing": "Preparando tu espacio de trabajo seguro...",
+      "loading": "Cargando el entorno del editor localmente...",
+      "clientSide": "100% en el cliente",
+      "noUploads": "Sin subidas al servidor",
+      "worksOffline": "Funciona sin conexión"
+    }
+  },
+  "pdfTools": {
+    "tools": {
+      "compress-pdf": {
+        "title": "Comprimir PDF Localmente — Reducir Peso de PDF Sin Subir | TheNexTools",
+        "description": "Reduce el peso de tus archivos PDF directamente en tu navegador. Ajusta la calidad con una barra y mantén tus documentos privados.",
+        "h1": "Reduce el peso de tu PDF para enviarlo por correo.",
+        "p": "Tienes un escaneo de 40MB que debe pesar menos de 10MB para enviarlo por correo. En lugar de subirlo a un sitio de compresión aleatorio, NexPDF lo procesa localmente: tú defines la calidad, ves el tamaño estimado y descargas el resultado.",
+        "features": [
+          "Deslizador de calidad con estimación de tamaño en tiempo real",
+          "Funciona en escaneos, informes y documentos con muchas imágenes",
+          "Sin límites de tamaño de archivo ni cuotas diarias",
+          "Funciona sin conexión tras la primera carga de página"
+        ],
+        "howToTitle": "Cómo comprimir un archivo PDF",
+        "steps": [
+          {
+            "title": "Cargar archivo",
+            "desc": "Selecciona o suelta tu documento PDF en el espacio de trabajo superior."
+          },
+          {
+            "title": "Optimizar tamaño",
+            "desc": "Usa el deslizador de calidad para encontrar el equilibrio preferido entre tamaño y resolución."
+          },
+          {
+            "title": "Guardar documento",
+            "desc": "Genera y descarga el PDF optimizado al instante en tu dispositivo."
+          }
+        ],
+        "toolParam": "compress"
+      },
+      "merge-pdf": {
+        "title": "Combinar PDFs Localmente — Unir Documentos Sin Subir | TheNexTools",
+        "description": "Combina múltiples archivos PDF en un solo documento de forma local. Arrastra para reordenar páginas, añade imágenes y descarga sin límites.",
+        "h1": "Combina múltiples PDFs en un solo documento.",
+        "p": "Carga todos los archivos, arrastra las páginas para ordenarlas y combínalas. Todo ocurre en tu máquina: sin colas de subida, sin límites de tamaño y sin necesidad de crear una cuenta.",
+        "features": [
+          "Combina tantos PDFs como necesites en una sola pasada",
+          "Reordenación visual de páginas antes de combinar",
+          "Inserta imágenes directamente en el documento final",
+          "Sin restricciones de cantidad ni tamaño de archivo"
+        ],
+        "howToTitle": "Cómo combinar archivos PDF",
+        "steps": [
+          {
+            "title": "Añadir documentos",
+            "desc": "Selecciona o arrastra los archivos PDF que deseas combinar."
+          },
+          {
+            "title": "Organizar diseño",
+            "desc": "Arrastra las miniaturas de las páginas para ordenarlas como prefieras."
+          },
+          {
+            "title": "Compilar PDF",
+            "desc": "Haz clic en \"Combinar\" para compilar y guardar tu documento unificado."
+          }
+        ],
+        "toolParam": "merge"
+      },
+      "split-pdf": {
+        "title": "Dividir PDF Localmente — Extraer Páginas Sin Subir | TheNexTools",
+        "description": "Extrae páginas específicas de un PDF o divídelo en varios archivos. Se procesa de forma 100% local en tu navegador.",
+        "h1": "Extrae las páginas que necesitas.",
+        "p": "Tienes un informe de 200 páginas pero solo necesitas las páginas de la 14 a la 22. O quieres dividir un documento en tres archivos independientes. NexPDF hace ambas cosas sin subir nada.",
+        "features": [
+          "Rangos de páginas personalizados (ej. 1-3, 7, 12-18)",
+          "Divide en partes iguales de forma automática",
+          "Descarga como PDFs independientes o en un único archivo ZIP",
+          "Soporta documentos protegidos y de gran tamaño"
+        ],
+        "howToTitle": "Cómo extraer páginas de un PDF",
+        "steps": [
+          {
+            "title": "Abrir documento",
+            "desc": "Carga tu archivo PDF en el espacio de trabajo seguro."
+          },
+          {
+            "title": "Seleccionar páginas",
+            "desc": "Especifica los números o rangos de páginas que deseas extraer."
+          },
+          {
+            "title": "Guardar salida",
+            "desc": "Genera y descarga las páginas seleccionadas como un nuevo PDF."
+          }
+        ],
+        "toolParam": "split"
+      },
+      "pdf-to-images": {
+        "title": "PDF a JPG/PNG Localmente — Convertir Páginas en Imágenes | TheNexTools",
+        "description": "Convierte cada página de un archivo PDF en una imagen JPEG o PNG de alta calidad localmente en tu navegador sin subidas.",
+        "h1": "Convierte páginas de PDF en imágenes.",
+        "p": "¿Necesitas insertar una página de un contrato en una presentación? ¿O guardar un diseño PDF como archivos PNG? NexPDF convierte cada página en una imagen de alta resolución: elige JPEG para menor tamaño o PNG para calidad sin pérdidas.",
+        "features": [
+          "Salida de alta resolución a los DPI que elijas",
+          "Opciones de formato JPEG y PNG",
+          "Descarga en lote de todas las páginas como un archivo ZIP",
+          "Sin servidor: todo permanece en tu dispositivo"
+        ],
+        "howToTitle": "Cómo convertir páginas de PDF a JPEG o PNG",
+        "steps": [
+          {
+            "title": "Cargar PDF",
+            "desc": "Selecciona el documento PDF que deseas convertir."
+          },
+          {
+            "title": "Elegir formato",
+            "desc": "Elige JPEG para mayor compresión o PNG para calidad de imagen sin pérdidas."
+          },
+          {
+            "title": "Guardar imágenes",
+            "desc": "Convierte y descarga las páginas individualmente o en un archivo ZIP."
+          }
+        ],
+        "toolParam": "images"
+      },
+      "scan-to-pdf": {
+        "title": "Escanear a PDF — Usar la Cámara como Escáner de Documentos | TheNexTools",
+        "description": "Captura documentos físicos con tu cámara y conviértelos en páginas PDF de forma local. Tus imágenes nunca salen de tu dispositivo.",
+        "h1": "Usa la cámara de tu teléfono como escáner de documentos.",
+        "p": "Apunta tu cámara a un recibo, una pizarra o un formulario: NexPDF lo captura y lo convierte en una página PDF limpia. Sin necesidad de escáner físico y tus imágenes nunca salen de tu dispositivo.",
+        "features": [
+          "Captura directamente desde la cámara de tu dispositivo",
+          "Funciona perfectamente en teléfonos y tablets",
+          "Mejora automática del contraste para documentos de texto",
+          "Combina múltiples capturas en un único PDF"
+        ],
+        "howToTitle": "Cómo escanear documentos usando tu cámara",
+        "steps": [
+          {
+            "title": "Capturar página",
+            "desc": "Concede permisos de cámara y toma una foto de tu documento físico."
+          },
+          {
+            "title": "Recortar y mejorar",
+            "desc": "Revisa la captura y deja que nuestro escáner recorte y mejore la legibilidad del texto."
+          },
+          {
+            "title": "Exportar PDF",
+            "desc": "Compila tus escaneos en un documento PDF limpio y unificado."
+          }
+        ],
+        "toolParam": "scan"
+      },
+      "protect-pdf": {
+        "title": "Proteger PDF con Contraseña — Cifrar Localmente Sin Subir | TheNexTools",
+        "description": "Añade protección por contraseña y cifrado AES a tus archivos PDF de forma local en tu navegador sin subirlos a ningún servidor.",
+        "h1": "Protege tu PDF con una contraseña.",
+        "p": "Establece una contraseña de apertura para que solo las personas autorizadas puedan ver el documento, y opcionalmente una contraseña de propietario para restringir la impresión y edición. El cifrado ocurre localmente.",
+        "features": [
+          "Cifrado AES aplicado directamente en tu navegador",
+          "Contraseñas de apertura y de propietario independientes",
+          "Controla los permisos de impresión, copia y edición",
+          "La contraseña nunca sale de tu dispositivo"
+        ],
+        "howToTitle": "Cómo añadir una contraseña a tu PDF",
+        "steps": [
+          {
+            "title": "Cargar PDF",
+            "desc": "Selecciona el archivo PDF que deseas cifrar y proteger."
+          },
+          {
+            "title": "Definir contraseña",
+            "desc": "Introduce una contraseña segura y personaliza los permisos de impresión o copia."
+          },
+          {
+            "title": "Asegurar archivo",
+            "desc": "Aplica el cifrado local y descarga tu PDF protegido."
+          }
+        ],
+        "toolParam": "protect"
+      },
+      "unlock-pdf": {
+        "title": "Quitar Contraseña de PDF — Desbloquear Archivos Sin Subir | TheNexTools",
+        "description": "Elimina contraseñas y restricciones de tus archivos PDF autorizados de forma local en tu navegador.",
+        "h1": "Elimina la contraseña de tu PDF.",
+        "p": "Conoces la contraseña pero estás cansado de escribirla cada vez que abres el archivo. O necesitas compartir una versión desbloqueada. Introduce la contraseña una vez y descarga una copia limpia y sin restricciones.",
+        "features": [
+          "Elimina contraseñas de apertura al instante",
+          "Desbloquea restricciones de impresión y edición",
+          "El descifrado se ejecuta localmente en tu navegador",
+          "No hay necesidad de subir el archivo a ningún sitio"
+        ],
+        "howToTitle": "Cómo desbloquear un PDF protegido con contraseña",
+        "steps": [
+          {
+            "title": "Seleccionar archivo",
+            "desc": "Carga tu documento PDF protegido con contraseña."
+          },
+          {
+            "title": "Escribir contraseña",
+            "desc": "Proporciona la contraseña correcta del documento para autorizar el descifrado."
+          },
+          {
+            "title": "Quitar bloqueo",
+            "desc": "Haz clic en \"Desbloquear\" para guardar una copia limpia y desprotegida del archivo."
+          }
+        ],
+        "toolParam": "unlock"
+      },
+      "watermark-pdf": {
+        "title": "Añadir Marca de Agua a PDF — Sellar Texto en Páginas | TheNexTools",
+        "description": "Pon un sello de \"CONFIDENCIAL\", \"BORRADOR\" o texto personalizado en tus páginas PDF directamente en tu navegador.",
+        "h1": "Sella tus PDFs antes de compartirlos.",
+        "p": "Marca un borrador con \"BORRADOR\" para que nadie lo trate como definitivo. Añade \"CONFIDENCIAL\" a un informe interno. O pon el nombre de tu empresa como una marca de agua sutil en cada página. Ajusta el texto, tamaño, opacidad y posición.",
+        "features": [
+          "Texto personalizado con tamaño de fuente y opacidad ajustables",
+          "Posicionamiento centrado, diagonal, en el encabezado o pie de página",
+          "Aplícalo a páginas específicas o a todo el documento",
+          "Previsualización en tiempo real antes de guardar"
+        ],
+        "howToTitle": "Cómo añadir marca de agua a un documento PDF",
+        "steps": [
+          {
+            "title": "Cargar PDF",
+            "desc": "Sube el documento PDF que deseas sellar."
+          },
+          {
+            "title": "Diseñar sello",
+            "desc": "Escribe el texto de tu marca de agua, ajusta la opacidad, el tamaño y la posición."
+          },
+          {
+            "title": "Sellar archivo",
+            "desc": "Renderiza la marca de agua en tus páginas y descarga el archivo."
+          }
+        ],
+        "toolParam": "watermark"
+      },
+      "ocr-pdf": {
+        "title": "OCR PDF Localmente — Extraer Texto de Documentos Escaneados | TheNexTools",
+        "description": "Convierte archivos PDF escaneados e imágenes en texto seleccionable y copiable mediante un motor de OCR basado en navegador.",
+        "h1": "Obtén texto seleccionable de un documento escaneado.",
+        "p": "Alguien te envió el escaneo de un contrato y necesitas copiar un párrafo. O tienes una pila de documentos fotografiados como PDFs y necesitas buscar en ellos. El motor de OCR de NexPDF lee el texto de la imagen y te da un resultado copiable.",
+        "features": [
+          "Impulsado por Tesseract.js: se ejecuta en tu navegador",
+          "Soporta múltiples idiomas de reconocimiento",
+          "Sin servidor: los documentos confidenciales siguen siendo privados",
+          "Exporta el texto extraído como un archivo .txt"
+        ],
+        "howToTitle": "Cómo extraer texto de un PDF escaneado",
+        "steps": [
+          {
+            "title": "Cargar escaneo",
+            "desc": "Selecciona tu PDF escaneado o documento de imagen."
+          },
+          {
+            "title": "Definir idioma",
+            "desc": "Elige el idioma del documento para optimizar la precisión del OCR."
+          },
+          {
+            "title": "Copiar texto",
+            "desc": "Extrae el texto y copia los resultados o guárdalos como un archivo de texto plano."
+          }
+        ],
+        "toolParam": "ocr"
+      },
+      "redact-pdf": {
+        "title": "Redactar PDF Localmente — Ocultar Texto Sensible Permanentemente | TheNexTools",
+        "description": "Dibuja cuadros negros sobre nombres, números de identificación o direcciones en tus PDF. La eliminación de texto es definitiva y permanente.",
+        "h1": "Oculta lo que no debería ser visible.",
+        "p": "Dibuja cuadros de redacción sobre números de seguro social, nombres de clientes, cifras financieras o cualquier otra cosa que deba permanecer oculta. La salida se aplana: el texto de abajo se destruye permanentemente, no solo se cubre.",
+        "features": [
+          "Redacción basada en áreas con aplanado permanente",
+          "El texto oculto no se puede copiar, pegar ni extraer",
+          "Adecuado para documentos legales, financieros y médicos",
+          "Todo se procesa de forma segura en tu dispositivo"
+        ],
+        "howToTitle": "Cómo redactar texto permanentemente en un PDF",
+        "steps": [
+          {
+            "title": "Abrir PDF",
+            "desc": "Selecciona el archivo PDF que contiene detalles confidenciales."
+          },
+          {
+            "title": "Dibujar cuadros",
+            "desc": "Dibuja cuadros negros sobre nombres, números o cualquier texto privado."
+          },
+          {
+            "title": "Sanear archivo",
+            "desc": "Haz clic en \"Redactar\" para aplanar permanentemente y descargar tu archivo."
+          }
+        ],
+        "toolParam": "redact"
+      },
+      "html-to-pdf": {
+        "title": "HTML a PDF Localmente — Convertir Contenido Web a PDF | TheNexTools",
+        "description": "Pega código HTML y obtén un archivo PDF con formato al instante. Admite estilos CSS y se ejecuta de forma local.",
+        "h1": "Convierte HTML en un PDF descargable.",
+        "p": "Pega tu HTML (una plantilla de factura, un informe, un correo electrónico) y NexPDF lo renderizará como un PDF limpio. Muy útil para desarrolladores que necesitan una vista previa rápida de PDF sin configurar un navegador headless.",
+        "features": [
+          "Renderiza HTML con estilos CSS incluidos",
+          "Previsualización instantánea antes de la conversión",
+          "Útil para facturas, informes y plantillas de correo",
+          "No requiere APIs ni servicios externos"
+        ],
+        "howToTitle": "Cómo convertir HTML a PDF",
+        "steps": [
+          {
+            "title": "Pegar código",
+            "desc": "Introduce tu código HTML y CSS en el espacio de trabajo."
+          },
+          {
+            "title": "Verificar vista previa",
+            "desc": "Revisa la ventana de renderizado interactivo para comprobar el formato."
+          },
+          {
+            "title": "Exportar PDF",
+            "desc": "Haz clic en \"Convertir a PDF\" para guardar el documento formateado."
+          }
+        ],
+        "toolParam": "html"
+      },
+      "images-to-pdf": {
+        "title": "Imágenes a PDF Localmente — Combinar Fotos en un Documento | TheNexTools",
+        "description": "Convierte imágenes JPG, PNG y WebP en un solo documento PDF. Reordena páginas, ajusta márgenes y descarga gratis.",
+        "h1": "Convierte un conjunto de imágenes en un único PDF.",
+        "p": "Fotografiaste un documento de varias páginas con tu teléfono y ahora lo necesitas en un solo PDF. O tienes un conjunto de bocetos que deben enviarse como un archivo único. Arrástralos, ordénalos y expórtalos.",
+        "features": [
+          "Acepta formatos JPG, PNG y WebP",
+          "Reordenación visual mediante arrastrar y soltar",
+          "Márgenes ajustables y orientación de página personalizable",
+          "Sin límites de cantidad de imágenes ni de tamaño de archivo"
+        ],
+        "howToTitle": "Cómo compilar imágenes en un PDF",
+        "steps": [
+          {
+            "title": "Añadir fotos",
+            "desc": "Selecciona las imágenes (JPG, PNG o WebP) que deseas compilar."
+          },
+          {
+            "title": "Ordenar diseño",
+            "desc": "Arrastra las miniaturas para organizar el orden de las páginas."
+          },
+          {
+            "title": "Compilar PDF",
+            "desc": "Haz clic en \"Crear PDF\" para guardar las páginas compiladas."
+          }
+        ],
+        "toolParam": "batch-upload"
+      },
+      "rotate-pdf": {
+        "title": "Rotar Páginas de PDF Localmente — Corregir Escaneos Torcidos | TheNexTools",
+        "description": "Gira páginas individuales o documentos completos de PDF de forma permanente. Solución visual de forma local y sin pérdidas.",
+        "h1": "Corrige las páginas que salieron torcidas.",
+        "p": "Los documentos escaneados y las fotos de móviles suelen terminar con la orientación incorrecta. Rota páginas individuales o el documento completo de forma visual y guarda la versión corregida de forma permanente.",
+        "features": [
+          "Rota páginas individuales o el documento completo",
+          "Previsualización visual de cada rotación",
+          "Sin pérdidas: sin recompresión del contenido original",
+          "Funciona en cualquier PDF independientemente de su tamaño"
+        ],
+        "howToTitle": "Cómo rotar páginas de un PDF",
+        "steps": [
+          {
+            "title": "Abrir PDF",
+            "desc": "Carga el PDF que contiene páginas torcidas o invertidas."
+          },
+          {
+            "title": "Alinear diseño",
+            "desc": "Haz clic en los controles de rotación en las miniaturas de las páginas para alinearlas."
+          },
+          {
+            "title": "Guardar rotación",
+            "desc": "Descarga el documento corregido con la orientación integrada."
+          }
+        ],
+        "toolParam": "rotate"
+      },
+      "rearrange-pdf": {
+        "title": "Reordenar Páginas de PDF Localmente — Arrastrar y Soltar | TheNexTools",
+        "description": "Reorganiza o elimina páginas de tu PDF de forma visual mediante arrastrar y soltar en tu navegador.",
+        "h1": "Coloca las páginas en el orden correcto.",
+        "p": "El apéndice terminó antes de la introducción, o hay tres páginas en blanco que debes eliminar. Arrastra las miniaturas para reordenar, haz clic para eliminar y descarga el documento limpio.",
+        "features": [
+          "Reordenación visual de páginas mediante arrastrar y soltar",
+          "Elimina páginas no deseadas con un solo clic",
+          "Combina y reordena páginas de múltiples PDFs",
+          "Procesa documentos de gran tamaño con fluidez"
+        ],
+        "howToTitle": "Cómo reordenar páginas de un PDF",
+        "steps": [
+          {
+            "title": "Cargar PDF",
+            "desc": "Selecciona el archivo PDF que deseas organizar."
+          },
+          {
+            "title": "Ordenar páginas",
+            "desc": "Arrastra las miniaturas para reordenar páginas, o haz clic en eliminar para quitarlas."
+          },
+          {
+            "title": "Guardar archivo",
+            "desc": "Haz clic en \"Guardar\" para descargar el documento finalizado."
+          }
+        ],
+        "toolParam": "rearrange"
+      },
+      "sign-pdf": {
+        "title": "Firmar PDF Localmente — Añadir Firma Sin Imprimir | TheNexTools",
+        "description": "Dibuja o escribe tu firma manuscrita en cualquier página PDF. El archivo resultante se aplana para mayor seguridad.",
+        "h1": "Fírmalo sin tener que imprimirlo.",
+        "p": "Dibuja tu firma con el ratón o pantalla táctil, o escríbela y elige una tipografía cursiva. Colócala en la línea correspondiente, cámbiala de tamaño y exporta un PDF aplanado. La firma pasa a formar parte de la página.",
+        "features": [
+          "Modos de firma manuscrita (dibujo) y tipográfica",
+          "Guarda firmas para reutilizarlas en otros documentos",
+          "Salida aplanada: la firma no puede ser manipulada ni extraída",
+          "Ideal para contratos, acuerdos de confidencialidad y formularios de RRHH"
+        ],
+        "howToTitle": "Cómo firmar un documento PDF",
+        "steps": [
+          {
+            "title": "Cargar PDF",
+            "desc": "Sube el contrato o formulario PDF que requiere tu firma."
+          },
+          {
+            "title": "Crear firma",
+            "desc": "Dibuja tu firma en pantalla o escríbela usando estilos caligráficos."
+          },
+          {
+            "title": "Colocar y guardar",
+            "desc": "Arrastra la firma a la línea correspondiente y haz clic en exportar."
+          }
+        ],
+        "toolParam": "sign"
+      },
+      "add-page-numbers": {
+        "title": "Añadir Números de Página a PDF — Paginación Automática | TheNexTools",
+        "description": "Añade números de página correlativos a tu PDF de forma automática. Elige la posición, estilo y formato.",
+        "h1": "Numera tus páginas de forma automática.",
+        "p": "Informes, manuscritos, presentaciones... todo lo que tenga más de unas pocas páginas suele necesitar numeración. Elige dónde va (abajo al centro, arriba a la derecha, etc.) y NexPDF los estampará en cada página.",
+        "features": [
+          "Numeración secuencial en todas las páginas",
+          "Múltiples opciones de posición (arriba, abajo, izquierda, derecha, centro)",
+          "Funciona en documentos de cualquier longitud",
+          "Procesamiento local para garantizar la privacidad"
+        ],
+        "howToTitle": "Cómo añadir números de página a un PDF",
+        "steps": [
+          {
+            "title": "Cargar documento",
+            "desc": "Selecciona y sube el archivo PDF que deseas paginar."
+          },
+          {
+            "title": "Elegir posición",
+            "desc": "Elige el estilo, formato y posición del número de página."
+          },
+          {
+            "title": "Numerar páginas",
+            "desc": "Aplica los números en todo el documento y descárgalo."
+          }
+        ],
+        "toolParam": "page-numbers"
+      },
+      "text-to-pdf": {
+        "title": "Texto a PDF Localmente — Convertir Texto Plano en Documento | TheNexTools",
+        "description": "Pega texto plano y genera un PDF limpio con formato. Conserva saltos de línea e indentación directamente en el navegador.",
+        "h1": "Convierte texto plano en un PDF bien estructurado.",
+        "p": "Tienes notas de reuniones, registros de servidores o un fragmento de código que debes enviar como PDF. Pega el texto, comprueba la vista previa y descarga un documento con formato limpio. Se conservan saltos de línea y espacios.",
+        "features": [
+          "Tipografía limpia con espaciado consistente",
+          "Conserva exactamente saltos de línea, sangrías y espacios",
+          "Conversión instantánea con vista previa en vivo",
+          "Ningún dato sale de tu navegador"
+        ],
+        "howToTitle": "Cómo convertir archivos de texto a PDF",
+        "steps": [
+          {
+            "title": "Pegar texto",
+            "desc": "Escribe o pega el contenido de texto en el editor."
+          },
+          {
+            "title": "Formatear página",
+            "desc": "Configura los márgenes del papel y comprueba la tipografía en la vista previa."
+          },
+          {
+            "title": "Exportar PDF",
+            "desc": "Haz clic en \"Convertir a PDF\" para guardar el documento finalizado."
+          }
+        ],
+        "toolParam": "text"
+      }
+    },
+    "seoPage": {
+      "keyBenefits": "Beneficios Clave",
+      "localPrivate": "Local y Privado",
+      "localPrivateDesc": "Esta herramienta procesa tus archivos directamente en tu navegador: nada se sube a un servidor. Cuando trabajas con {tool}, el documento permanece en tu equipo de principio a fin.",
+      "privateBadge": "Privado",
+      "secureBadge": "Seguro",
+      "faqTitle": "Preguntas Frecuentes",
+      "faqSubtitle": "Todo lo que necesitas saber sobre {tool}.",
+      "readyTitle": "¿Listo para empezar?",
+      "readyDesc": "Arrastra tu archivo al espacio de trabajo en la parte superior de la página. Sin registros ni cuentas atrás.",
+      "backToTool": "Volver a la herramienta",
+      "howToPrefix": "Cómo ",
+      "faqQ1": "¿Cómo puedo {tool} de forma local?",
+      "faqA1": "{steps} Todo este proceso se realiza de forma local en tu máquina.",
+      "faqQ2": "¿Están seguros mis archivos PDF durante este proceso?",
+      "faqA2": "Por supuesto. Dado que NexPDF se ejecuta íntegramente en el lado del cliente utilizando WebAssembly, el documento nunca se sube a ningún servidor externo. Tus datos confidenciales se mantienen 100% privados.",
+      "faqQ3": "¿Existe un límite de tamaño de archivo para {tool}?",
+      "faqA3": "No, no hay límites artificiales de tamaño de archivo. El único límite físico es la memoria disponible del navegador de tu dispositivo, que gestiona sin problemas documentos grandes.",
+      "faqQ4": "¿Funciona sin conexión a internet?",
+      "faqA4": "Sí, NexPDF se guarda en la caché de tu navegador tras la primera carga. Puedes desconectar internet y seguir utilizando la herramienta completamente sin conexión.",
+      "uploadSelect": "Selecciona un PDF para {label}",
+      "uploadDrop": "O arrástralo aquí para empezar de inmediato",
+      "uploadLoading": "Preparando espacio de trabajo..."
+    }
+  },
+  "meta": {
+    "layout": {
+      "title": "TheNexTools | NexData Recovery y Utilidades Esenciales",
+      "description": "Una suite de utilidades de alto rendimiento para recuperar datos, reparar archivos corruptos y mantener tu vida digital sin problemas.",
+      "ogLocale": "es_ES"
+    },
+    "home": {
+      "title": "TheNexTools — Utilidades de Escritorio Privadas y Locales"
+    },
+    "contact": {
+      "title": "Contacto | TheNexTools",
+      "subjectSupport": "Solicitud de Soporte Técnico",
+      "subjectBilling": "Solicitud de Facturación / Reembolso",
+      "subjectGeneral": "Consulta General",
+      "subjectSecurity": "Asunto de Seguridad / Privacidad"
+    },
+    "dataRecovery": {
+      "title": "NexData Recovery — Recuperación de Archivos | TheNexTools"
+    },
+    "pdfToolkit": {
+      "title": "NexPDF — Editar, Firmar, Combinar y Comprimir PDFs Offline | TheNexTools",
+      "breadcrumbHome": "Inicio"
+    },
+    "imageToolkit": {
+      "title": "NexImage Toolkit — Comprimir, Convertir, Redactar y Limpiar Metadatos | TheNexTools"
+    }
+  },
+  "imageTools": {
+    "compressor": {
+      "uploadTitle": "Arrastra tus imágenes aquí",
+      "uploadSubtitle": "JPG, PNG, WebP — compatible con lotes",
+      "formatLabel": "Formato de salida",
+      "qualityLabel": "Calidad:",
+      "losslessNotice": " (sin pérdidas — se ignora para PNG)",
+      "recompressBtn": "Volver a comprimir todo",
+      "addBtn": "Añadir",
+      "clearBtn": "Limpiar",
+      "downloadAll": "Descargar todo",
+      "downloading": "Descargando..."
+    },
+    "converter": {
+      "uploadTitle": "Arrastra y suelta imágenes aquí",
+      "uploadSubtitle": "Compatible con PNG, JPG, JPEG, WEBP y más",
+      "browseBtn": "Buscar archivos",
+      "settingsTitle": "Ajustes de conversión",
+      "formatLabel": "Formato de destino",
+      "qualityLabel": "Calidad de compresión",
+      "reconvertBtn": "Volver a convertir todo",
+      "addBtn": "Añadir imágenes",
+      "clearBtn": "Limpiar todo",
+      "downloadAll": "Descargar todo"
+    },
+    "redactor": {
+      "uploadTitle": "Arrastra y suelta captura o imagen",
+      "uploadSubtitle": "Formatos PNG, JPG, WEBP procesados enteramente en tu navegador",
+      "chooseBtn": "Elegir archivo",
+      "blurMode": "Desenfocar área",
+      "redactMode": "Ocultar área (Fondo negro)",
+      "resetBtn": "Restablecer lienzo",
+      "downloadBtn": "Descargar imagen"
+    },
+    "exifStripper": {
+      "uploadTitle": "Arrastra tus imágenes aquí",
+      "uploadSubtitle": "JPG, PNG, WebP — individual o lote",
+      "processedInfo": "{done} de {total} procesados",
+      "gpsDanger": "⚠ Coordenadas GPS detectadas y eliminadas",
+      "noGpsSuccess": "✓ No se encontraron datos de GPS",
+      "scanning": "Escaneando…",
+      "addMoreBtn": "Añadir más",
+      "clearBtn": "Limpiar",
+      "zipping": "Comprimiendo ZIP…",
+      "downloadAll": "Descargar todo ({count})"
+    }
+  }
+}

@@ -4,10 +4,20 @@ import { useRouter } from 'next/navigation';
 import { saveFileForTransition } from '../../../../lib/db';
 import { FileUp, ArrowRight, Loader2, Plus } from 'lucide-react';
 
-export function LaunchSection({ toolParam, label }) {
+export function LaunchSection({ toolParam, label, translations, locale = 'en' }) {
   const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef(null);
   const router = useRouter();
+
+  // Dynamic localization labels fallback to English if not provided
+  const txtSelect = translations?.uploadSelect || "Select a PDF to {label}";
+  const txtDrop = translations?.uploadDrop || "Or drop it here to start immediately";
+  const txtLoading = translations?.uploadLoading || "Preparing workspace...";
+
+  const getRedirectPath = (preloaded = false) => {
+    const prefix = locale === 'en' ? '' : `/${locale}`;
+    return `${prefix}/pdf-tools?tool=${toolParam}${preloaded ? '&preloaded=true' : ''}`;
+  };
 
   const handleFileChange = async (e) => {
     const file = e.target.files[0];
@@ -15,10 +25,10 @@ export function LaunchSection({ toolParam, label }) {
       setIsUploading(true);
       try {
         await saveFileForTransition(file);
-        router.push(`/pdf-tools?tool=${toolParam}&preloaded=true`);
+        router.push(getRedirectPath(true));
       } catch (err) {
         console.error('Failed to save file for transition:', err);
-        router.push(`/pdf-tools?tool=${toolParam}`);
+        router.push(getRedirectPath(false));
       }
     }
   };
@@ -30,13 +40,15 @@ export function LaunchSection({ toolParam, label }) {
       setIsUploading(true);
       try {
         await saveFileForTransition(file);
-        router.push(`/pdf-tools?tool=${toolParam}&preloaded=true`);
+        router.push(getRedirectPath(true));
       } catch (err) {
         console.error('Failed to save file for transition:', err);
-        router.push(`/pdf-tools?tool=${toolParam}`);
+        router.push(getRedirectPath(false));
       }
     }
   };
+
+  const formattedSelect = txtSelect.replace('{label}', label);
 
   return (
     <div className="launch-section">
@@ -57,7 +69,7 @@ export function LaunchSection({ toolParam, label }) {
         {isUploading ? (
           <div className="upload-loading">
             <Loader2 className="spinner" size={32} />
-            <p>Preparing workspace...</p>
+            <p>{txtLoading}</p>
           </div>
         ) : (
           <>
@@ -65,8 +77,8 @@ export function LaunchSection({ toolParam, label }) {
               <FileUp size={24} />
             </div>
             <div className="upload-text">
-              <strong>Select a PDF to {label}</strong>
-              <p>Or drop it here to start immediately</p>
+              <strong>{formattedSelect}</strong>
+              <p>{txtDrop}</p>
             </div>
           </>
         )}

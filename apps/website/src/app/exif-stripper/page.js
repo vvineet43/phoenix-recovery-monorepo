@@ -13,6 +13,11 @@ export const metadata = {
   manifest: '/exif-manifest.json',
   alternates: {
     canonical: '/exif-stripper',
+    languages: {
+      'en': '/exif-stripper',
+      'es': '/es/exif-stripper',
+      'x-default': '/exif-stripper',
+    }
   },
 };
 

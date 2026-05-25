@@ -1,4 +1,5 @@
 import { TOOLS_METADATA } from '../lib/pdf-tools-metadata';
+import { locales, defaultLocale } from '@/lib/i18n-config';
 
 export default function sitemap() {
   const baseUrl = 'https://thenextools.com';
@@ -12,6 +13,7 @@ export default function sitemap() {
     '/image-redactor',
     '/image-toolkit',
     '/data-recovery',
+    '/contact',
     '/docs',
     '/privacy',
     '/terms',
@@ -22,12 +24,28 @@ export default function sitemap() {
     (slug) => `/pdf-toolkit/tools/${slug}`
   );
 
-  const allRoutes = [...staticRoutes, ...dynamicRoutes];
+  const baseRoutes = [...staticRoutes, ...dynamicRoutes];
+  const allRoutes = [];
 
-  return allRoutes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: 'weekly',
-    priority: route === '' ? 1 : 0.8,
-  }));
+  baseRoutes.forEach((route) => {
+    // Add default prefixless route
+    allRoutes.push(route);
+
+    // Add prefixed routes for non-default locales
+    locales.forEach((locale) => {
+      if (locale !== defaultLocale) {
+        allRoutes.push(`/${locale}${route}`);
+      }
+    });
+  });
+
+  return allRoutes.map((route) => {
+    const isHome = route === '' || locales.some((l) => l !== defaultLocale && route === `/${l}`);
+    return {
+      url: `${baseUrl}${route}`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: 'weekly',
+      priority: isHome ? 1 : 0.8,
+    };
+  });
 }

@@ -1,59 +1,74 @@
 import './globals.css';
 import { Inter, Outfit } from 'next/font/google';
 import Script from 'next/script';
-import Footer from '../components/Footer';
-import Navigation from '../components/Navigation';
+import Footer from '@/components/Footer';
+import Navigation from '@/components/Navigation';
+import { getDictionary } from '@/dictionaries';
 
-// Optimize fonts for SSR — display:'swap' forces Next.js to self-host fonts,
-// eliminating the render-blocking request to fonts.googleapis.com
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-display', display: 'swap' });
 
-/** Required for real mobile layout; without this, many browsers assume ~980px width. */
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
 };
 
-// Fully SEO Optimized Metadata (Injected beautifully by Next.js Server Side)
-export const metadata = {
-  metadataBase: new URL('https://thenextools.com'),
-  title: 'TheNexTools | NexData Recovery & Essential Utilities',
-  description: 'A suite of high-performance desktop utilities designed to rescue your data, repair corrupted files, and keep your digital life running smoothly.',
-  keywords: ['data recovery', 'file repair', 'mac data recovery', 'deep sector scan', 'utilities', 'TheNexTools', 'NexData Recovery'],
-  alternates: {
-    canonical: '/',
-  },
-  icons: {
-    apple: '/thenextools-com-apple-icon.png',
-  },
-  openGraph: {
-    title: 'TheNexTools | NexData Recovery & Essential Utilities',
-    description: 'A suite of high-performance desktop utilities designed to rescue your data, repair corrupted files, and keep your digital life running smoothly.',
-    url: 'https://thenextools.com',
-    siteName: 'TheNexTools Suite',
-    images: [
-      {
-        url: '/thenextools-com-og-image.png',
-        width: 1200,
-        height: 630,
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'TheNexTools | NexData Recovery & Essential Utilities',
-    description: 'A suite of high-performance desktop utilities designed to rescue your data, repair corrupted files.',
-  images: ['/thenextools-com-og-image.png'],
-  },
-};
+// Generate SEO alternate hreflang tags dynamically based on locale
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params;
+  const { lang } = resolvedParams || {};
+  const locale = lang || 'en';
+  const d = await getDictionary(locale);
 
-export default function RootLayout({ children }) {
+  return {
+    metadataBase: new URL('https://thenextools.com'),
+    title: d.meta.layout.title,
+    description: d.meta.layout.description,
+    keywords: ['data recovery', 'file repair', 'mac data recovery', 'deep sector scan', 'utilities', 'TheNexTools', 'NexData Recovery'],
+    alternates: {
+      canonical: locale === 'en' ? '/' : `/${locale}`,
+      languages: {
+        'en': '/',
+        'es': '/es',
+        'x-default': '/',
+      }
+    },
+    icons: {
+      apple: '/thenextools-com-apple-icon.png',
+    },
+    openGraph: {
+      title: d.meta.layout.title,
+      description: d.meta.layout.description,
+      url: locale === 'en' ? 'https://thenextools.com' : `https://thenextools.com/${locale}`,
+      siteName: 'TheNexTools Suite',
+      images: [
+        {
+          url: '/thenextools-com-og-image.png',
+          width: 1200,
+          height: 630,
+        },
+      ],
+      locale: d.meta.layout.ogLocale,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: d.meta.layout.title,
+      description: d.meta.layout.description,
+      images: ['/thenextools-com-og-image.png'],
+    },
+  };
+}
+
+
+export default async function RootLayout({ children, params }) {
+  const resolvedParams = await params;
+  const { lang } = resolvedParams || {};
+  const locale = lang || 'en';
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head />
       <body className={`${inter.variable} ${outfit.variable}`}>
         {/* Lemon Squeezy Affiliate Tracking Script */}
@@ -76,3 +91,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+

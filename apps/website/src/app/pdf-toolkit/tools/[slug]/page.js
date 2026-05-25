@@ -7,6 +7,7 @@ import {
   RefreshCw, Layers, Save
 } from 'lucide-react';
 import { LaunchSection } from './LaunchSection';
+import { getDictionary } from '@/dictionaries';
 
 const ICON_MAP = {
   'compress': Minimize2,
@@ -28,8 +29,12 @@ const ICON_MAP = {
 };
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  const tool = TOOLS_METADATA[slug];
+  const resolvedParams = await params;
+  const { lang, slug } = resolvedParams || {};
+  const locale = lang || 'en';
+  
+  const d = await getDictionary(locale);
+  const tool = d.pdfTools?.tools?.[slug];
   
   if (!tool) return {};
 
@@ -37,7 +42,12 @@ export async function generateMetadata({ params }) {
     title: tool.title,
     description: tool.description,
     alternates: {
-      canonical: `/pdf-toolkit/tools/${slug}`,
+      canonical: locale === 'en' ? `/pdf-toolkit/tools/${slug}` : `/${locale}/pdf-toolkit/tools/${slug}`,
+      languages: {
+        'en': `/pdf-toolkit/tools/${slug}`,
+        'es': `/es/pdf-toolkit/tools/${slug}`,
+        'x-default': `/pdf-toolkit/tools/${slug}`,
+      }
     },
   };
 }
@@ -49,14 +59,36 @@ export async function generateStaticParams() {
 }
 
 export default async function ToolSeoPage({ params }) {
-  const { slug } = await params;
-  const tool = TOOLS_METADATA[slug];
+  const resolvedParams = await params;
+  const { lang, slug } = resolvedParams || {};
+  const locale = lang || 'en';
+  
+  const d = await getDictionary(locale);
+  const tool = d.pdfTools?.tools?.[slug];
+  const s = d.pdfTools?.seoPage;
 
-  if (!tool) {
+  if (!tool || !s) {
     notFound();
   }
 
-  const ToolIcon = ICON_MAP[tool.toolParam] || FileText;
+  const originalTool = TOOLS_METADATA[slug];
+  if (!originalTool) {
+    notFound();
+  }
+
+  const ToolIcon = ICON_MAP[originalTool.toolParam] || FileText;
+  const localizedLabel = tool.h1.toLowerCase().replace('.', '');
+
+  // Helper to replace templates like {tool} and {steps}
+  const t = (str, replacements = {}) => {
+    let res = str;
+    for (const key in replacements) {
+      res = res.replace(`{${key}}`, replacements[key]);
+    }
+    return res;
+  };
+
+  const stepsDescStr = tool.steps ? tool.steps.map(step => `${step.title}: ${step.desc}`).join(' ') : '';
 
   return (
     <>
@@ -70,34 +102,34 @@ export default async function ToolSeoPage({ params }) {
               "mainEntity": [
                 {
                   "@type": "Question",
-                  "name": `How do I ${tool.h1.toLowerCase().replace('.', '')} locally?`,
+                  "name": t(s.faqQ1, { tool: localizedLabel }),
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `${tool.steps.map(s => `${s.title}: ${s.desc}`).join(' ')} All of this is done on your machine.`
+                    "text": t(s.faqA1, { steps: stepsDescStr })
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "Are my PDF files safe during this process?",
+                  "name": s.faqQ2,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Absolutely. Because NexPDF runs entirely client-side using WebAssembly, the document is never uploaded to any external server. Your sensitive data is kept 100% private."
+                    "text": s.faqA2
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": `Is there a file size limit for ${tool.h1.toLowerCase().replace('.', '')}?`,
+                  "name": t(s.faqQ3, { tool: localizedLabel }),
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "No, there are no artificial file size caps. The only physical limit is your device's available browser memory, which easily handles large documents."
+                    "text": s.faqA3
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "Does it work offline?",
+                  "name": s.faqQ4,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, NexPDF is cached inside your browser after the first load. You can disconnect your internet and continue to use the tool completely offline."
+                    "text": s.faqA4
                   }
                 }
               ]
@@ -106,7 +138,7 @@ export default async function ToolSeoPage({ params }) {
               "@context": "https://schema.org",
               "@type": "WebApplication",
               "name": `NexPDF ${tool.h1.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ').replace('.', '')}`,
-              "url": `https://thenextools.com/pdf-toolkit/tools/${slug}`,
+              "url": `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/pdf-toolkit/tools/${slug}`,
               "applicationCategory": "UtilityApplication",
               "operatingSystem": "All",
               "browserRequirements": "Requires HTML5 and modern JS support",
@@ -124,20 +156,20 @@ export default async function ToolSeoPage({ params }) {
                 {
                   "@type": "ListItem",
                   "position": 1,
-                  "name": "Home",
-                  "item": "https://thenextools.com"
+                  "name": d.meta.pdfToolkit.breadcrumbHome,
+                  "item": `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}`
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "PDF Toolkit",
-                  "item": "https://thenextools.com/pdf-toolkit"
+                  "item": `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/pdf-toolkit`
                 },
                 {
                   "@type": "ListItem",
                   "position": 3,
                   "name": tool.h1.replace('.', ''),
-                  "item": `https://thenextools.com/pdf-toolkit/tools/${slug}`
+                  "item": `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/pdf-toolkit/tools/${slug}`
                 }
               ]
             }
@@ -153,7 +185,16 @@ export default async function ToolSeoPage({ params }) {
         <p style={{ margin: '0 0 3rem 0', maxWidth: '700px', textAlign: 'left' }}>{tool.p}</p>
         
         <div id="tool" style={{ width: '100%', textAlign: 'left' }}>
-          <LaunchSection toolParam={tool.toolParam} label={tool.h1.toLowerCase().replace('.', '')} />
+          <LaunchSection 
+            toolParam={originalTool.toolParam} 
+            label={localizedLabel} 
+            translations={{
+              uploadSelect: s.uploadSelect,
+              uploadDrop: s.uploadDrop,
+              uploadLoading: s.uploadLoading
+            }}
+            locale={locale}
+          />
         </div>
       </header>
 
@@ -161,7 +202,7 @@ export default async function ToolSeoPage({ params }) {
         <div className="container">
           <div className="grid-2">
             <div className="feature-card">
-              <h3 style={{ marginBottom: '1.5rem' }}>Key Benefits</h3>
+              <h3 style={{ marginBottom: '1.5rem' }}>{s.keyBenefits}</h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {tool.features.map((feature, i) => (
                   <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
@@ -172,13 +213,13 @@ export default async function ToolSeoPage({ params }) {
               </ul>
             </div>
             <div className="feature-card" style={{ background: 'var(--bg-2)' }}>
-              <h3>Local & Private</h3>
+              <h3>{s.localPrivate}</h3>
               <p>
-                This tool processes your files directly in your browser — nothing gets uploaded to a server. When you're working with <strong>{tool.h1.toLowerCase().replace('.', '')}</strong>, the document stays on your machine from start to finish.
+                {t(s.localPrivateDesc, { tool: localizedLabel })}
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.5rem' }}>
-                <div className="badge"><ShieldCheck size={14} /> Private</div>
-                <div className="badge"><Lock size={14} /> Secure</div>
+                <div className="badge"><ShieldCheck size={14} /> {s.privateBadge}</div>
+                <div className="badge"><Lock size={14} /> {s.secureBadge}</div>
               </div>
             </div>
           </div>
@@ -188,7 +229,7 @@ export default async function ToolSeoPage({ params }) {
       {tool.steps && (
         <section className="divider" style={{ background: 'var(--bg-2)' }}>
           <div className="container">
-            <h2 style={{ textAlign: 'center', marginBottom: '2.5rem' }}>{tool.howToTitle || `How to ${tool.h1.toLowerCase().replace('.', '')}`}</h2>
+            <h2 style={{ textAlign: 'center', marginBottom: '2.5rem' }}>{tool.howToTitle || (s.howToPrefix + localizedLabel)}</h2>
             <div className="premium-steps-grid">
               {tool.steps.map((step, index) => (
                 <div key={index} className="premium-step-card">
@@ -210,40 +251,40 @@ export default async function ToolSeoPage({ params }) {
       <section className="divider" style={{ background: 'var(--bg-body)' }}>
         <div className="container" style={{ maxWidth: '800px' }}>
           <div className="section-header">
-            <h2>Frequently Asked Questions</h2>
-            <p>Everything you need to know about {tool.h1.toLowerCase().replace('.', '')}.</p>
+            <h2>{s.faqTitle}</h2>
+            <p>{t(s.faqSubtitle, { tool: localizedLabel })}</p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <details style={{ background: 'var(--bg-2)', padding: '1.2rem 1.5rem', borderRadius: '12px', border: '1px solid var(--border)' }}>
               <summary style={{ fontWeight: '600', cursor: 'pointer', outline: 'none', userSelect: 'none' }}>
-                How do I {tool.h1.toLowerCase().replace('.', '')} locally?
+                {t(s.faqQ1, { tool: localizedLabel })}
               </summary>
               <p style={{ marginTop: '0.75rem', color: 'var(--text-muted)', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                {tool.steps.map(s => `${s.title}: ${s.desc}`).join(' ')} All of this is done on your machine.
+                {t(s.faqA1, { steps: stepsDescStr })}
               </p>
             </details>
             <details style={{ background: 'var(--bg-2)', padding: '1.2rem 1.5rem', borderRadius: '12px', border: '1px solid var(--border)' }}>
               <summary style={{ fontWeight: '600', cursor: 'pointer', outline: 'none', userSelect: 'none' }}>
-                Are my PDF files safe during this process?
+                {s.faqQ2}
               </summary>
               <p style={{ marginTop: '0.75rem', color: 'var(--text-muted)', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                Absolutely. Because NexPDF runs entirely client-side using WebAssembly, the document is never uploaded to any external server. Your sensitive data is kept 100% private.
+                {s.faqA2}
               </p>
             </details>
             <details style={{ background: 'var(--bg-2)', padding: '1.2rem 1.5rem', borderRadius: '12px', border: '1px solid var(--border)' }}>
               <summary style={{ fontWeight: '600', cursor: 'pointer', outline: 'none', userSelect: 'none' }}>
-                Is there a file size limit for {tool.h1.toLowerCase().replace('.', '')}?
+                {t(s.faqQ3, { tool: localizedLabel })}
               </summary>
               <p style={{ marginTop: '0.75rem', color: 'var(--text-muted)', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                No, there are no artificial file size caps. The only physical limit is your device&apos;s available browser memory, which easily handles large documents.
+                {s.faqA3}
               </p>
             </details>
             <details style={{ background: 'var(--bg-2)', padding: '1.2rem 1.5rem', borderRadius: '12px', border: '1px solid var(--border)' }}>
               <summary style={{ fontWeight: '600', cursor: 'pointer', outline: 'none', userSelect: 'none' }}>
-                Does it work offline?
+                {s.faqQ4}
               </summary>
               <p style={{ marginTop: '0.75rem', color: 'var(--text-muted)', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                Yes, NexPDF is cached inside your browser after the first load. You can disconnect your internet and continue to use the tool completely offline.
+                {s.faqA4}
               </p>
             </details>
           </div>
@@ -252,9 +293,9 @@ export default async function ToolSeoPage({ params }) {
 
       <section className="cta-section">
         <div className="container">
-          <h2>Ready to get started?</h2>
-          <p>Drop your file in the workspace at the top of the page. No registration required.</p>
-          <a href="#" className="btn btn-primary">Back to Tool</a>
+          <h2>{s.readyTitle}</h2>
+          <p>{s.readyDesc}</p>
+          <a href="#tool" className="btn btn-primary">{s.backToTool}</a>
         </div>
       </section>
     </>

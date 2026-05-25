@@ -473,6 +473,25 @@ section { padding: 5rem 0; }
   margin-right: 0.5rem;
 }
 
+.footer-lang-select {
+  background: var(--bg-3);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.825rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  margin-right: 0.5rem;
+  font-family: inherit;
+}
+
+.footer-lang-select:hover {
+  border-color: var(--text-muted);
+  color: var(--text);
+}
+
 .footer-bottom-link:hover {
   color: var(--text);
 }

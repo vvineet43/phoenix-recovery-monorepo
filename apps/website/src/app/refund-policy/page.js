@@ -3,7 +3,14 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Refund Policy | TheNexTools',
   description: 'Our refund policy for NexData Recovery Pro and other paid software. Learn how to request a refund and what is covered.',
-  alternates: { canonical: '/refund-policy' },
+  alternates: {
+    canonical: '/refund-policy',
+    languages: {
+      'en': '/refund-policy',
+      'es': '/es/refund-policy',
+      'x-default': '/refund-policy',
+    }
+  },
 };
 
 export default function RefundPolicyPage() {
