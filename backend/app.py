@@ -115,7 +115,10 @@ def get_license_secret() -> bytes:
 
 LICENSE_SECRET = get_license_secret()
 
-LEMON_API_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NGQ1OWNlZi1kYmI4LTRlYTUtYjE3OC1kMjU0MGZjZDY5MTkiLCJqdGkiOiJkMmJjZjFkYzk0MzNjMjhhMTUyN2E5N2IxMWYzODRhZWM5M2JiYzk1YjUzYTNhM2RmODZhMmI1YmM0MTY5NDhjM2E1ZDYwY2EzOTI0NGRkNCIsImlhdCI6MTc3OTMxMzE5OS45NjEwMDQsIm5iZiI6MTc3OTMxMzE5OS45NjEwMDcsImV4cCI6Mjg2ODk5ODQwMC4wMjA5NTYsInN1YiI6IjY4ODUwMDYiLCJzY29wZXMiOltdfQ.uz75Lmao8kbxfJ4h-rfQUd_x_UxySFNMaOqhy3P_aGN7kflJ9nJOKJYS5-i95CDFiiEVlT92ck4Wp58DAFF-wBsomyL2frWaxWIJHBMaC0251RnVGu8NyM_jHBCzARLAG5HT_znw8Qlc5c3bGAMOc-we-xKvpBzhJbMYPkPYYXe6fgEu3MVSNRn5u_-UJliVRWFc-37F0DRcbH03SBUdiEJaZomDEkhPstLXPpJ0Ul4xvq_p3eXVQcEjQJdiEdknyoO5T9KX2zdHGJcuOTCa2JG5kxWilr4hy6X8iu082ADjw_zNusYBE3TwROCi4Rbbdnfec3b0AzRNZsrUCJy5VlfN8FYLZSPxXWbd_77sVMH4q41v1NOmYoINN48uwpO9V8rC4zxhKP61lnUX2fNeLKyEPjInFvXHSEmGckZ515XpQAKlxEXYVfEe_E83Qq-uRTmvtbl8C6mxN7x6yewzKjXUzXEMg-bsgu5lNQSiKrIaz7cyBUgEq3x_RWCrtNUqKIrdgDq1_JH8WG7QDwEdMKnm0jKjI6DvsOSB_gV90f2RH0uz0OvlQy5lpcISh6_hdRaLB7sR76tj3vIk71kpqLoCRe90V4gk-Ltlj8yeVBp3xOsAQAovWN1bPZ1QNb6Jl6_SVoQUktikmjvRW87cdM1adLEMVn5-UOwASu5_DtI"
+LEMON_API_KEY = os.environ.get(
+    "LEMON_API_KEY",
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NGQ1OWNlZi1kYmI4LTRlYTUtYjE3OC1kMjU0MGZjZDY5MTkiLCJqdGkiOiJkMmJjZjFkYzk0MzNjMjhhMTUyN2E5N2IxMWYzODRhZWM5M2JiYzk1YjUzYTNhM2RmODZhMmI1YmM0MTY5NDhjM2E1ZDYwY2EzOTI0NGRkNCIsImlhdCI6MTc3OTMxMzE5OS45NjEwMDQsIm5iZiI6MTc3OTMxMzE5OS45NjEwMDcsImV4cCI6Mjg2ODk5ODQwMC4wMjA5NTYsInN1YiI6IjY4ODUwMDYiLCJzY29wZXMiOltdfQ.uz75Lmao8kbxfJ4h-rfQUd_x_UxySFNMaOqhy3P_aGN7kflJ9nJOKJYS5-i95CDFiiEVlT92ck4Wp58DAFF-wBsomyL2frWaxWIJHBMaC0251RnVGu8NyM_jHBCzARLAG5HT_znw8Qlc5c3bGAMOc-we-xKvpBzhJbMYPkPYYXe6fgEu3MVSNRn5u_-UJliVRWFc-37F0DRcbH03SBUdiEJaZomDEkhPstLXPpJ0Ul4xvq_p3eXVQcEjQJdiEdknyoO5T9KX2zdHGJcuOTCa2JG5kxWilr4hy6X8iu082ADjw_zNusYBE3TwROCi4Rbbdnfec3b0AzRNZsrUCJy5VlfN8FYLZSPxXWbd_77sVMH4q41v1NOmYoINN48uwpO9V8rC4zxhKP61lnUX2fNeLKyEPjInFvXHSEmGckZ515XpQAKlxEXYVfEe_E83Qq-uRTmvtbl8C6mxN7x6yewzKjXUzXEMg-bsgu5lNQSiKrIaz7cyBUgEq3x_RWCrtNUqKIrdgDq1_JH8WG7QDwEdMKnm0jKjI6DvsOSB_gV90f2RH0uz0OvlQy5lpcISh6_hdRaLB7sR76tj3vIk71kpqLoCRe90V4gk-Ltlj8yeVBp3xOsAQAovWN1bPZ1QNb6Jl6_SVoQUktikmjvRW87cdM1adLEMVn5-UOwASu5_DtI"
+)
 LEMON_STORE_ID = "343447"
 
 def verify_lemon_license_online(key: str, machine_id: str) -> dict:
@@ -723,6 +726,10 @@ def serve_file(filename):
 
 @app.route('/thumbnails/<path:filename>')
 def serve_thumbnail(filename):
+    filepath = os.path.join(THUMBNAIL_DIR, filename)
+    real_path = os.path.realpath(filepath)
+    if not real_path.startswith(os.path.realpath(THUMBNAIL_DIR)):
+        abort(403)
     return send_from_directory(THUMBNAIL_DIR, filename, mimetype='image/jpeg')
 
 @app.route('/api/download/<path:filename>')
@@ -839,6 +846,10 @@ def repair_file_endpoint(filename):
     if not is_machine_activated():
         return jsonify({"error": "File repair requires a Pro License."}), 403
     filepath = os.path.join(RECOVERED_DIR, filename)
+    # Path traversal guard
+    real_path = os.path.realpath(filepath)
+    if not real_path.startswith(os.path.realpath(RECOVERED_DIR)):
+        return jsonify({"error": "Access denied"}), 403
     if not os.path.exists(filepath):
         return jsonify({"error": "File not found"}), 404
     try:
@@ -874,6 +885,11 @@ def batch_repair():
     results = []
     for fname in filenames:
         fp = os.path.join(RECOVERED_DIR, fname)
+        # Path traversal guard
+        real_path = os.path.realpath(fp)
+        if not real_path.startswith(os.path.realpath(RECOVERED_DIR)):
+            results.append({"filename": fname, "error": "Access denied"})
+            continue
         if not os.path.exists(fp):
             results.append({"filename": fname, "error": "Not found"})
             continue
@@ -896,6 +912,10 @@ def batch_download():
     with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
         for fname in filenames:
             fp = os.path.join(RECOVERED_DIR, fname)
+            # Path traversal guard
+            real_path = os.path.realpath(fp)
+            if not real_path.startswith(os.path.realpath(RECOVERED_DIR)):
+                continue
             if os.path.exists(fp):
                 zf.write(fp, fname)
     return send_file(zip_path, as_attachment=True, download_name='recovered_files.zip')
@@ -1097,5 +1117,7 @@ def video_player(filename):
 # ─── Entry Point ──────────────────────────────────────────────────────────────
 if __name__ == '__main__':
     port = int(os.environ.get('PHOENIX_PORT', 5001))
+    if 'PHOENIX_ADMIN_KEY' not in os.environ:
+        print("[WARNING] PHOENIX_ADMIN_KEY not set. Using insecure default 'phoenix-dev-secret'")
     print(f"[NexData Recovery] Starting backend on port {port}")
     app.run(host='127.0.0.1', port=port, debug=False, threaded=True)
