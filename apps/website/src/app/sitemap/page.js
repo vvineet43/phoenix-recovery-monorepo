@@ -4,6 +4,7 @@ import {
   FileText, Image, AlertTriangle, ArrowRight, ShieldCheck, 
   HelpCircle, Mail, Home, Database, FileMinus
 } from 'lucide-react';
+import { locales } from '@/lib/i18n-config';
 
 export const metadata = {
   title: 'Sitemap | TheNexTools',
@@ -11,9 +12,10 @@ export const metadata = {
   alternates: {
     canonical: '/sitemap',
     languages: {
-      'en': '/sitemap',
-      'es': '/es/sitemap',
-      'pt': '/pt/sitemap',
+      ...locales.reduce((acc, l) => {
+        acc[l] = l === 'en' ? '/sitemap' : `/${l}/sitemap`;
+        return acc;
+      }, {}),
       'x-default': '/sitemap',
     }
   },

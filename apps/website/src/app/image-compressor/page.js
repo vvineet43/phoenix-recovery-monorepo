@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ImageCompressorPageWrapper } from '../../components/image-tools/ImageCompressorWrapper';
+import { locales } from '@/lib/i18n-config';
 
 const COMPRESSOR_STEPS = [
   { title: 'Add Images', desc: 'Select or drag JPG, PNG, or WebP files into the compressor.' },
@@ -14,9 +15,10 @@ export const metadata = {
   alternates: {
     canonical: '/image-compressor',
     languages: {
-      'en': '/image-compressor',
-      'es': '/es/image-compressor',
-      'pt': '/pt/image-compressor',
+      ...locales.reduce((acc, l) => {
+        acc[l] = l === 'en' ? '/image-compressor' : `/${l}/image-compressor`;
+        return acc;
+      }, {}),
       'x-default': '/image-compressor',
     }
   },

@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { LaunchSection } from './LaunchSection';
 import { getDictionary } from '@/dictionaries';
+import { locales } from '@/lib/i18n-config';
 
 const ICON_MAP = {
   'compress': Minimize2,
@@ -44,11 +45,18 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: locale === 'en' ? `/pdf-toolkit/tools/${slug}` : `/${locale}/pdf-toolkit/tools/${slug}`,
       languages: {
-        'en': `/pdf-toolkit/tools/${slug}`,
-        'es': `/es/pdf-toolkit/tools/${slug}`,
-        'pt': `/pt/pdf-toolkit/tools/${slug}`,
+        ...locales.reduce((acc, l) => {
+          acc[l] = l === 'en' ? `/pdf-toolkit/tools/${slug}` : `/${l}/pdf-toolkit/tools/${slug}`;
+          return acc;
+        }, {}),
         'x-default': `/pdf-toolkit/tools/${slug}`,
       }
+    },
+    openGraph: {
+      title: tool.title,
+      description: tool.description,
+      url: `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/pdf-toolkit/tools/${slug}`,
+      type: 'website',
     },
   };
 }

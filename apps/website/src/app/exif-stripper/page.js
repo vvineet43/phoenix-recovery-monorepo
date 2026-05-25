@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ExifStripperPageWrapper } from '../../components/image-tools/ImageCompressorWrapper';
+import { locales } from '@/lib/i18n-config';
 
 const STRIPPER_STEPS = [
   { title: 'Drop Photos', desc: 'Select or drag your photos into the EXIF analyzer area.' },
@@ -14,9 +15,10 @@ export const metadata = {
   alternates: {
     canonical: '/exif-stripper',
     languages: {
-      'en': '/exif-stripper',
-      'es': '/es/exif-stripper',
-      'pt': '/pt/exif-stripper',
+      ...locales.reduce((acc, l) => {
+        acc[l] = l === 'en' ? '/exif-stripper' : `/${l}/exif-stripper`;
+        return acc;
+      }, {}),
       'x-default': '/exif-stripper',
     }
   },

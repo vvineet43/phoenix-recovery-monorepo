@@ -1,4 +1,28 @@
 import Link from 'next/link';
+import { locales } from '@/lib/i18n-config';
+
+// ... TRANSLATIONS ...
+
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params;
+  const { lang } = resolvedParams || {};
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.es;
+
+  return {
+    title: t.title,
+    description: t.description,
+    alternates: {
+      canonical: `/${lang}/privacy`,
+      languages: {
+        ...locales.reduce((acc, l) => {
+          acc[l] = l === 'en' ? '/privacy' : `/${l}/privacy`;
+          return acc;
+        }, {}),
+        'x-default': '/privacy',
+      }
+    },
+  };
+}
 
 const TRANSLATIONS = {
   es: {
@@ -41,25 +65,7 @@ const TRANSLATIONS = {
   }
 };
 
-export async function generateMetadata({ params }) {
-  const resolvedParams = await params;
-  const { lang } = resolvedParams || {};
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.es;
 
-  return {
-    title: t.title,
-    description: t.description,
-    alternates: {
-      canonical: `/${lang}/privacy`,
-      languages: {
-        'en': '/privacy',
-        'es': '/es/privacy',
-        'pt': '/pt/privacy',
-        'x-default': '/privacy',
-      }
-    },
-  };
-}
 
 export default async function PrivacyPage({ params }) {
   const resolvedParams = await params;

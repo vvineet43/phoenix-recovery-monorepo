@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { locales } from '@/lib/i18n-config';
 
 const TRANSLATIONS = {
   es: {
@@ -52,9 +53,10 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `/${lang}/terms`,
       languages: {
-        'en': '/terms',
-        'es': '/es/terms',
-        'pt': '/pt/terms',
+        ...locales.reduce((acc, l) => {
+          acc[l] = l === 'en' ? '/terms' : `/${l}/terms`;
+          return acc;
+        }, {}),
         'x-default': '/terms',
       }
     },

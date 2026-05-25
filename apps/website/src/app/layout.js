@@ -4,6 +4,7 @@ import Script from 'next/script';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import { getDictionary } from '@/dictionaries';
+import { locales } from '@/lib/i18n-config';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-display', display: 'swap' });
@@ -29,9 +30,10 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: locale === 'en' ? '/' : `/${locale}`,
       languages: {
-        'en': '/',
-        'es': '/es',
-        'pt': '/pt',
+        ...locales.reduce((acc, l) => {
+          acc[l] = l === 'en' ? '/' : `/${l}`;
+          return acc;
+        }, {}),
         'x-default': '/',
       }
     },

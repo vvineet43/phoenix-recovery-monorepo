@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { locales } from '@/lib/i18n-config';
 
 export const metadata = {
   title: 'Refund Policy | TheNexTools',
@@ -6,9 +7,10 @@ export const metadata = {
   alternates: {
     canonical: '/refund-policy',
     languages: {
-      'en': '/refund-policy',
-      'es': '/es/refund-policy',
-      'pt': '/pt/refund-policy',
+      ...locales.reduce((acc, l) => {
+        acc[l] = l === 'en' ? '/refund-policy' : `/${l}/refund-policy`;
+        return acc;
+      }, {}),
       'x-default': '/refund-policy',
     }
   },

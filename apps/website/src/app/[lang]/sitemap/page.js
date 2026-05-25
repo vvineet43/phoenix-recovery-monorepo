@@ -3,6 +3,7 @@ import { TOOLS_METADATA } from '@/lib/pdf-tools-metadata';
 import { 
   FileText, Image, ArrowRight, ShieldCheck, Home
 } from 'lucide-react';
+import { locales } from '@/lib/i18n-config';
 
 const TRANSLATIONS = {
   es: {
@@ -98,9 +99,10 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `/${lang}/sitemap`,
       languages: {
-        'en': '/sitemap',
-        'es': '/es/sitemap',
-        'pt': '/pt/sitemap',
+        ...locales.reduce((acc, l) => {
+          acc[l] = l === 'en' ? '/sitemap' : `/${l}/sitemap`;
+          return acc;
+        }, {}),
         'x-default': '/sitemap',
       }
     },

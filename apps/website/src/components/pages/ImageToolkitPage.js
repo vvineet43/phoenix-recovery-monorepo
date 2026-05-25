@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getDictionary } from '@/dictionaries';
+import { locales } from '@/lib/i18n-config';
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
@@ -14,9 +15,10 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: locale === 'en' ? '/image-toolkit' : `/${locale}/image-toolkit`,
       languages: {
-        'en': '/image-toolkit',
-        'es': '/es/image-toolkit',
-        'pt': '/pt/image-toolkit',
+        ...locales.reduce((acc, l) => {
+          acc[l] = l === 'en' ? '/image-toolkit' : `/${l}/image-toolkit`;
+          return acc;
+        }, {}),
         'x-default': '/image-toolkit',
       }
     },

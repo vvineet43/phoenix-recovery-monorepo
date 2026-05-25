@@ -1,0 +1,858 @@
+{
+  "nav": {
+    "brand": "TheNexTools",
+    "dataRecovery": "Veri Kurtarma",
+    "pdfEditing": "PDF Düzenleme",
+    "imageEditing": "Görüntü Düzenleme",
+    "ctaExplore": "Tüm Araçları Keşfedin",
+    "ctaGetPro": "NexData Pro'yu edinin",
+    "ctaCompress": "Sıkıştırmayı Başlat",
+    "ctaConvert": "Dönüştürmeye Başlayın",
+    "ctaRedact": "Düzenlemeye Başla",
+    "ctaStrip": "Sıyırma işlemini başlat",
+    "ctaPdf": "PDF Düzenlemeyi Başlat",
+    "ctaPdfTool": "Çalışma Alanını Aç",
+    "mergePdfTitle": "PDF Birleştir",
+    "mergePdfDesc": "Birden fazla dosyayı birleştirin",
+    "splitPdfTitle": "PDF Böl",
+    "splitPdfDesc": "Belirli sayfaları ayıklayın",
+    "compressPdfTitle": "PDF Sıkıştır",
+    "compressPdfDesc": "Dosya boyutunu çevrimdışı azaltın",
+    "watermarkPdfTitle": "PDF'e Filigran Ekle",
+    "watermarkPdfDesc": "Metin damgaları ekleyin",
+    "pdfToImagesTitle": "PDF'den Görsele",
+    "pdfToImagesDesc": "JPG/PNG'ye dönüştürün",
+    "redactPdfTitle": "PDF Sansürle / Karart",
+    "redactPdfDesc": "Hassas metinleri gizleyin",
+    "viewAllPdf": "17 Aracın Tümünü Görüntüle",
+    "imageCompressTitle": "Görsel Sıkıştır",
+    "imageCompressDesc": "JPG, PNG, WebP boyutunu küçültün",
+    "imageConvertTitle": "Format Dönüştür",
+    "imageConvertDesc": "JPG · PNG · WebP",
+    "imageRedactTitle": "Sansürle ve Bulanıklaştır",
+    "imageRedactDesc": "Hassas alanları gizleyin",
+    "exifStripperTitle": "EXIF Temizleyici",
+    "exifStripperDesc": "Fotoğraf meta verilerini kaldırın",
+    "viewAllImage": "NexImage Araç Setini Aç"
+  },
+  "footer": {
+    "brandDesc": "Tamamen cihazınızda çalışan yüksek performanslı, özel masaüstü yardımcı programları. Yükleme yok, hesap yok, saçmalık yok.",
+    "product": "Ürün",
+    "resources": "Kaynaklar",
+    "documentation": "Dokümantasyon",
+    "contact": "Bize Ulaşın",
+    "refund": "Geri Ödeme Politikası",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Hizmet Şartları",
+    "sitemap": "Site haritası"
+  },
+  "home": {
+    "heroBadge": "Profesyonel Masaüstü Yazılımı",
+    "heroTitle": "İnternetin ulaşamadığı yerlerde çalışan araçlar.",
+    "heroDesc": "Tek bir fikir etrafında oluşturulmuş küçük, odaklanmış bir yardımcı programlar koleksiyonu: dosyalarınızın sırf bir işi bitirmek için makinenizden ayrılması gerekmemelidir. PDF düzenleme, görüntü çalışması, meta veri temizleme, veri kurtarma; bunların tümü yerel olarak çalışır.",
+    "heroCta": "Nelerin Mevcut Olduğunu Görün",
+    "whyTitle": "Hassas dosyalarla ilgilenen kişiler için tasarlandı",
+    "whySubtitle": "Çoğu araç, verilerinizi bir sunucuya yükler. Bu kötü bir varsayılan.",
+    "whyCard1Title": "Dosyalarınız makinenizde kalır",
+    "whyCard1Desc": "Yasal özetler, mali kayıtlar, müşteri fotoğrafları, tıbbi belgeler; bunların hiçbiri iki PDF'yi birleştirmek için üçüncü taraf bir sunucudan geçmemelidir. Buradaki her araç, dosyaları kendi donanımınızı kullanarak işler. Telemetri yok, bulut senkronizasyonu yok, hesaba gerek yok.",
+    "whyCard2Title": "Bir kez ödeyin, sahip olun",
+    "whyCard2Desc": "Temel hizmetlere abonelikler mantıklı değil. Temel araçlar ücretsizdir ve her zaman öyle kalacaktır. Ölü bir sürücüden dosyaları kurtarmak gibi daha derin bir şeye ihtiyacınız olduğunda bu tek seferlik bir satın alma işlemidir. Yenileme yok, son kullanma tarihi yok.",
+    "whyCard3Title": "Donanımınıza uygun hız",
+    "whyCard3Desc": "Web araçları, yükleme hızınız ve bazı paylaşılan sunucu kuyrukları nedeniyle darboğaz yaşar. Burada 500 MB'lık bir PDF, doğrudan CPU'nuzu kullandığı için saniyeler içinde sıkıştırılır. Tavan başkasının altyapısı değil, sizin makinenizdir.",
+    "lineupTitle": "Şu anki kadro",
+    "lineupSubtitle": "Tamamı çevrimdışı çalışabilen ve başlangıçta ücretsiz olan üç araç seti; her biri, dosyalarınızı makinenizde tutmayı amaçlıyor.",
+    "dataRecoveryTitle": "NexVeri Kurtarma",
+    "dataRecoveryDesc": "Dosya sistemini tamamen atlayarak ham disk sektörlerini okuyarak silinen dosyaları bulur ve kurtarır. Biçimlendirilmiş sürücülerde, bozuk bölümlerde ve takılmayan SD kartlarda çalışır.",
+    "dataRecoveryFeature1": "Geçmiş silinmiş bölümleri tarar ve olayları biçimlendirir",
+    "dataRecoveryFeature2": "Bozuk MP4 ve MOV video dosyalarını onarır",
+    "dataRecoveryFeature3": "Ücretsiz tarayın, yalnızca iyileştiğinizde ödeme yapın",
+    "pdfToolkitTitle": "NexPDF Araç Seti",
+    "pdfToolkitDesc": "Tarayıcınızda çalışan tam özellikli bir PDF düzenleyici. Hiçbir şey yüklemeden belgeleri birleştirin, sayfaları yeniden sıralayın, sözleşmeleri imzalayın, tarihleri ​​damgalayın, hassas metinleri düzenleyin ve ağır taramaları sıkıştırın.",
+    "pdfToolkitFeature1": "Ek açıklamalarla sürükle ve bırak sayfa yönetimi",
+    "pdfToolkitFeature2": "Elle yazılan ve daktilo edilen imza desteği",
+    "pdfToolkitFeature3": "Gerçek zamanlı dosya boyutu önizlemesiyle sıkıştırma",
+    "imageToolkitTitle": "NexImage Araç Seti",
+    "imageToolkitDesc": "Tek bir çalışma alanında dört görüntü aracı — sıkıştırın, formatları dönüştürün, hassas alanları bulanıklaştırın ve gizli EXIF ​​meta verilerini soyun. Her şey tarayıcınızda çalışır, hiçbir şey yüklenmez.",
+    "imageToolkitFeature1": "JPG, PNG ve WebP'yi gerçek zamanlı kaliteli önizlemeyle sıkıştırın",
+    "imageToolkitFeature2": "Formatlar arasında dönüştürme yapın ve ZIP olarak toplu olarak indirin",
+    "imageToolkitFeature3": "Yüzleri ve plakaları bulanıklaştırın, fotoğraflardan GPS ve cihaz verilerini soyun",
+    "learnMore": "Daha fazla bilgi edinin →"
+  },
+  "dataRecovery": {
+    "heroBadge": "NexVeri Kurtarma",
+    "heroTitle": "Kalıcı olarak silinmiş gibi görünen şeyler genellikle değildir.",
+    "heroDesc": "Bir sürücü formatlandığında veya bir bölüm kaybolduğunda dosyalar kaybolmaz; dosya sistemi yalnızca nerede olduklarını unutur. NexData ham sektörleri doğrudan okur, hala orada olanı yeniden yapılandırır ve onu geri çekmenize olanak tanır. Ücretsiz tarayın. Her şeyi önizleyin. Önemli olanı kurtarın.",
+    "heroCta": "Ücretsiz Başlayın",
+    "howTitle": "NexData diğer araçların gözden kaçırdığı şeyleri nasıl buluyor?",
+    "howSubtitle": "Çoğu kurtarma aracı dosya sistemine dayanır. Bunlar gittiğinde (biçimlendirilmiş, bozulmuş veya kaybolmuşsa) çalışacak hiçbir şeyleri kalmaz. NexData'nın buna ihtiyacı yok.",
+    "howCard1Title": "Ham sektör taraması",
+    "howCard1Desc": "NexData, dosya sistemine diskte ne olduğunu sormak yerine fiziksel sektörleri doğrudan okur. Dosya türlerini ikili başlıklarına (JPEG, MP4, PDF, DOCX) göre tanır ve bölüm tablosunun ne söylediğine bakmaksızın bunları yeniden oluşturur. Takılmayan sürücülerde kurtarma bu şekilde çalışır.",
+    "howCard2Title": "Bozuk görüntüler için video onarımı",
+    "howCard2Desc": "Parçalanmış sürücülerden kurtarılan video dosyaları neredeyse her zaman oynatılamaz; kapsayıcı başlıkları kurtarma işlemi sırasında karışır. NexData'nın onarım modülü aynı kameradan çalışan bir referans klibi alır ve bunu bozuk başlıkları yeniden oluşturmak için kullanarak görüntüleri yeniden izlenebilir hale getirir.",
+    "howCard3Title": "Şifreli birim desteği",
+    "howCard3Desc": "BitLocker, FileVault, APFS şifrelemesi — kurtarma anahtarınız olduğu sürece bunlar birlikte gösterim değildir. NexData, birimin kilidini açabilir ve şifreleme katmanının altında tam sektör taraması çalıştırarak sürücü şifrelenmeden önce silinen dosyaları kurtarabilir.",
+    "howCard4Title": "Tamamen çevrimdışı",
+    "howCard4Desc": "NexData evi aramıyor. Durmadan. Tarama sonuçları, dosya önizlemeleri ve kurtarılan dosyalar tamamen makinenizde kalır. Hiçbir şey iletilmez, günlüğe kaydedilmez veya raporlanmaz. Yasal dosyalar, tıbbi kayıtlar, kişisel fotoğraflar gibi hassas belgeleri kurtarıyorsanız, beklemeniz gereken temel budur.",
+    "pricingTitle": "İndirme ve Fiyatlandırma",
+    "pricingSubtitle": "Herhangi bir sürücüyü tarayın ve kurtarılabilir tüm dosyaları ücretsiz olarak önizleyin. Yalnızca dosyaları diskten gerçekten çıkarmanız gerektiğinde yükseltme yapın.",
+    "freeTitle": "Ücretsiz Sürüm",
+    "freePrice": "0$",
+    "freeDuration": "/ sonsuza kadar",
+    "freeFeature1": "Sınırsız ham sektör taraması",
+    "freeFeature2": "Kurtarılabilir her dosya ve videoyu önizleyin",
+    "freeFeature3": "1 dosyayı kurtarın (10 MB'a kadar)",
+    "freeFeature4": "Tarama oturumlarını kaydedin ve devam ettirin",
+    "freeCtaMac": "Mac (.dmg)",
+    "freeCtaWin": "Windows (.exe)",
+    "freeInstallNote": "Ücretsiz yükleyin. Sürücünüzü tarayın. Herhangi bir harcama yapmadan önce dosyaların sağlam olduğunu doğrulayın.",
+    "proTitle": "NexData Pro",
+    "proPrice": "49,99$",
+    "proDuration": "/ bir kerelik",
+    "proFeature1": "Sınırsız dosya kurtarma",
+    "proFeature2": "Dosya boyutu sınırlaması yok",
+    "proFeature3": "Bozuk video ve fotoğraf onarımı",
+    "proFeature4": "APFS, HFS+, NTFS, FAT32 desteği",
+    "proFeature5": "Ticari kullanım lisansı",
+    "proFeature6": "Ömür boyu ücretsiz güncellemeler",
+    "proCta": "Pro Lisansı Satın Alın",
+    "proDeliveryNote": "Lisans anahtarı e-posta yoluyla anında teslim edilir. 10 günlük geri ödeme politikası.",
+    "popular": "POPÜLER",
+    "installTitle": "Kurulum notu",
+    "installDesc": "Biz bağımsız bir geliştiriciyiz, dolayısıyla ilk derlemeler henüz Apple veya Microsoft sertifikalarıyla imzalanmadı. İşletim sisteminiz standart bir güvenlik istemi gösterecektir; bunu nasıl aşacağınız aşağıda açıklanmıştır:",
+    "installMacDesc": "Uygulamayı Uygulamalar'a sürükleyin. Terminali açın. Bunu yapıştırın ve Enter'a basın: xattr -cr ... Başlatmak için uygulamaya çift tıklayın.",
+    "installWinDesc": "İndirilen .exe dosyasını çalıştırın. Mavi bir Windows bilgisayarınızı korudu istemini görürseniz Daha fazla bilgi'yi ve ardından Yine de çalıştır'ı tıklayın.",
+    "cantTitle": "NexData'nın kurtaramayacağı şeyler",
+    "cantSubtitle": "Hiçbir kurtarma aracı mucizeler yaratamaz. İşte önceden bilmeniz gerekenler.",
+    "cantCard1Title": "Üzerine yazılan veriler",
+    "cantCard1Desc": "Aynı fiziksel sektörlere yeni veriler yazıldığında orijinal içerik donanım düzeyinde yok edilir. Bizimki dahil hiçbir yazılım bunu geri alamaz. Bu nedenle, dosyaların eksik olduğunu fark ettiğiniz anda sürücüye yazmayı bırakmalısınız.",
+    "cantCard2Title": "Fiziksel olarak hasar görmüş sürücüler",
+    "cantCard2Desc": "Bir sürücüde mekanik arıza (kafa çarpması, su hasarı, devre yanması) varsa yazılım plakalara veya çiplere erişemez. Bu, tamamen farklı bir hizmet olan temiz oda ve profesyonel veri kurtarma gerektirir.",
+    "cantCard3Title": "TRIM'den sonra SSD blokajları",
+    "cantCard3Desc": "TRIM'in etkin olduğu modern SSD'ler, arka planda silinen blokları genellikle birkaç dakika içinde siler. Denetleyici bir bloğu sıfırladığında bu veriler fiziksel olarak kaybolur. TRIM çoğu SSD için varsayılan olarak açıktır; bu nedenle HDD kurtarma başarı oranları genellikle daha yüksektir.",
+    "cantCard4Title": "Anahtarsız şifrelenmiş birimler",
+    "cantCard4Desc": "Bir sürücü BitLocker, FileVault veya APFS şifrelemesi ile şifrelendiyse ve parolayı ve kurtarma anahtarını kaybettiyseniz verilerin şifresi çözülemez. Hiçbir yazılım, modern şifrelemeyi makul bir zaman diliminde kaba kuvvetle uygulayamaz.",
+    "cantNote": "Bu senaryolar geri ödeme politikamızın kapsamı dışındadır. Dosyalarınızın gerçekten kurtarılabilir olduğunu doğrulamak için önce ücretsiz sürümle tarama yapmanızı öneririz.",
+    "ctaTitle": "Önce tarayın. Bakın orada ne var. Daha sonra karar verin.",
+    "ctaDesc": "Ücretsiz sürüm tam tarama yapar ve kurtarılabilir her dosyayı önizlemenize olanak tanır; böylece ödeme yapmadan önce tam olarak ne alacağınızı bilirsiniz.",
+    "ctaButton": "Ücretsiz Sürümü İndir"
+  },
+  "contact": {
+    "heroBadge": "İletişime Geçin",
+    "heroTitle": "Her mesajı okuyoruz.",
+    "heroDesc": "TheNexTools küçük bir ekip olduğundan, bir bottan değil, gerçek bir kişiden yanıt alacaksınız. Aşağıdan doğru adresi seçin, size mümkün olan en kısa sürede geri dönüş yapacağız.",
+    "supportTitle": "Teknik Destek",
+    "supportDesc": "Araç beklendiği gibi çalışmıyor mu? Hata raporları, beklenmeyen davranışlar veya belirli bir aracın nasıl çalıştığına ilişkin sorular.",
+    "billingTitle": "Faturalandırma ve Geri Ödemeler",
+    "billingDesc": "NexData Pro lisansınız, geri ödeme talepleriniz veya sipariş sorunlarınız hakkındaki sorular. Mümkünse sipariş numaranızı hazır bulundurun.",
+    "generalTitle": "Genel Sorular",
+    "generalDesc": "Geri bildirim, özellik talepleri, ortaklık fikirleri veya diğer kategorilere uymayan herhangi bir şey.",
+    "securityTitle": "Güvenlik ve Gizlilik",
+    "securityDesc": "Bir güvenlik açığı mı buldunuz veya gizlilik konusunda endişeniz mi var? Lütfen doğrudan iletişime geçin; bunları ciddiye alıyoruz.",
+    "directAddresses": "Doğrudan adresler",
+    "directSupportLabel": "Destek",
+    "directSupportDesc": "Teknik sorunlar, hatalar, faturalandırma ve geri ödemeler, lisanslama soruları.",
+    "directGeneralLabel": "Genel",
+    "directGeneralDesc": "Geri bildirim, özellik talepleri, ortaklıklar, basın veya başka herhangi bir şey.",
+    "responseTimeTitle": "Tepki süresi",
+    "responseTimeDesc": "Genellikle 1-2 iş günü içinde yanıt veririz. Biz küçük bir ekibiz, dolayısıyla yoğun dönemlerde biraz daha uzun sürebilir ancak yanıt vereceğiz.",
+    "refundRequestsTitle": "Geri ödeme talepleri",
+    "refundRequestsDesc": "NexData Pro, 10 günlük geri ödeme garantisiyle birlikte gelir. Destek ekibine sipariş numaranızı e-posta ile gönderin, biz de bunu hemen işleme koyalım. Ayrıntılar için geri ödeme politikamıza bakın."
+  },
+  "imageToolkit": {
+    "heroBadge": "NexImage — Yerel ve Özel",
+    "heroTitle": "Hiçbir zaman bir sunucuya dokunmayan dört görüntü aracı.",
+    "heroDesc": "Resimlerinizdeki meta verileri sıkıştırın, dönüştürün, düzenleyin ve temizleyin; üstelik hepsi tek bir tarayıcı sekmesinde. Hiçbir şey yüklenmiyor. Araçlar, tarayıcınızın yerel Canvas API'sini kullanarak donanımınızda çalışır, böylece internet bağlantınız kesildikten sonra bile çalışırlar.",
+    "heroCta": "NexImage'ı açın",
+    "includedTitle": "Neler dahil?",
+    "includedSubtitle": "Her araç bir şeyi iyi yapar. Birlikte en sık karşılaşılan görüntü görevlerini ele alıyorlar.",
+    "compressorTitle": "Kompresör",
+    "compressorDesc": "Tahmini çıktı boyutunu gerçek zamanlı olarak gösteren kaliteli bir kaydırıcıyla dosya boyutlarını küçültün. İndirmeden önce orijinal ile sıkıştırılmış olanı tam çözünürlükte karşılaştırın. Tüm klasörleri toplu olarak işleyin ve sonucu ZIP olarak alın.",
+    "compressorFeature1": "JPEG, PNG ve WebP çıktısı",
+    "compressorFeature2": "İndirmeden önce yan yana karşılaştırma",
+    "compressorFeature3": "Tüm dosyalarda kaydedilen toplam alan çalıştırılıyor",
+    "compressorCta": "Kompresörü Aç →",
+    "converterTitle": "Biçim Dönüştürücü",
+    "converterDesc": "JPG, PNG ve WebP arasında dilediğiniz yönde dönüştürme yapın. Karışık bir klasör bırakın ve her şeyi tek bir hedef formata dönüştürün. PNG'ye dönüştürürken şeffaflık korunur. Kalite JPG ve WebP için ayarlanabilir.",
+    "converterFeature1": "Tüm format kombinasyonları desteklenir",
+    "converterFeature2": "PNG çıktısı için korunan alfa kanalı",
+    "converterFeature3": "Dosya boyutu sınırı veya günlük sınır yok",
+    "converterCta": "Dönüştürücüyü Aç →",
+    "redactorTitle": "Gizlilik Redaktörü",
+    "redactorDesc": "Yüzlerin, plakaların, adreslerin, finansal verilerin yani hassas her şeyin üzerine bulanık bölgeler çizin. Bölge başına bulanıklık yoğunluğunu ayarlayın. Çıktı, bulanıklığın kalıcı ve geri döndürülemez olduğu düzleştirilmiş bir görüntüdür.",
+    "redactorFeature1": "Bölge başına değişken bulanıklık gücü",
+    "redactorFeature2": "Görüntü başına birden fazla bölge",
+    "redactorFeature3": "Düzleştirilmiş çıktı — kurtarılabilir katman yok",
+    "redactorCta": "Redaktörü Aç →",
+    "stripperTitle": "EXIF Meta Veri Sıyırıcı",
+    "stripperDesc": "Telefonunuzdaki her fotoğrafta GPS koordinatları, zaman damgaları, cihaz bilgileri ve daha fazlası bulunur. NexStrip size her alanı gösterir ve ardından tamamını kaldırır; böylece paylaştığınız fotoğraf, dosya özelliklerinde ev adresinizi taşımaz.",
+    "stripperFeature1": "GPS konum verilerini ortaya çıkarır ve kaldırır",
+    "stripperFeature2": "Çıkarmadan önce her meta veri alanını görüntüler",
+    "stripperFeature3": "Temiz kopyaları tek tek veya ZIP olarak indirin",
+    "stripperCta": "EXIF Stripper'ı açın →",
+    "whyTitle": "Bu neden bir sunucu yerine yerel olarak çalışıyor?",
+    "whySubtitle": "Görüntüler yalnızca piksellerden ibaret değildir. Çoğu insanın bilmediği verileri taşırlar.",
+    "whyCard1Title": "Konumunuz dosyada mevcut",
+    "whyCard1Desc": "Sıkıştırmak için bir fotoğraf yüklendiğinde, GPS koordinatları da üçüncü taraf bir sunucuya yüklenir. Bu evinizin, çocuğunuzun okulunun veya ofisinizin bir fotoğrafıysa bu bir sorundur. NexTools bu verileri asla almaz.",
+    "whyCard2Title": "İstemci dosyaları yerel kalmalıdır",
+    "whyCard2Desc": "Müşteriye teslim edilecek bir ürün için fotoğrafları sıkıştırmak, yasal bir ekran görüntüsünü düzenlemek, hassas belgelerden meta verileri çıkarmak; bunların hiçbiri kısa süreliğine de olsa bir başkasının altyapısından geçmemelidir.",
+    "whyCard3Title": "Sınır yok, sürtünme yok demektir",
+    "whyCard3Desc": "Bulut araçları, ücretsiz kullanıcıları dosya başına 5-10 MB ile sınırlandırır. NexImage'ın böyle bir sınırı yoktur; tarayıcınız genellikle birkaç yüz megabaytlık dosyaları hiç zorlanmadan işleyebilir.",
+    "ctaTitle": "Tarayıcıdan çıkmadan görsel çalışması için ihtiyacınız olan her şey.",
+    "ctaSubtitle": "Mac, Windows ve Linux'ta Chrome, Firefox, Safari ve Edge'de çalışır."
+  },
+  "pdfToolkit": {
+    "heroBadge": "NexPDF — Ücretsiz ve Özel",
+    "heroTitle": "Dosyalarınızı başka birinin sunucusuna teslim etmeden PDF'leri düzenleyin.",
+    "heroDesc": "Ücretsiz bir çevrimiçi PDF aracını her kullandığınızda, belgeniz adını daha önce duymadığınız bir şirkete yüklenir, onların makinelerinde işlenir ve (belki) daha sonra silinir. NexPDF bunların hepsini atlıyor. Birleştirme, imzalama, sıkıştırma, düzenleme; bunların hepsi tam burada, tarayıcınızda gerçekleşir. Hesap yok. Beklemek yok. Geride hiçbir iz kalmadı.",
+    "includedTitle": "Aslında bununla ne yapabilirsin",
+    "includedSubtitle": "Her hafta ortaya çıkan PDF görevleri, olması gerektiği gibi yerel olarak gerçekleştirilir.",
+    "signTitle": "İmzalayın ve açıklama ekleyin",
+    "signDesc": "İmzanızı fareyle veya parmağınızla dokunmatik ekrana çizin. Veya yazın ve el yazısı gibi görünen bir yazı tipi seçin. Sayfanın herhangi bir yerine yerleştirin, yeniden boyutlandırın ve ardından düzleştirilmiş bir PDF'yi dışa aktarın; gizli katmanlar yok, düzenlenebilir imza alanı kalmadı.",
+    "assembleTitle": "Sayfaları birleştirme, yeniden sıralama ve çıkarma",
+    "assembleDesc": "Birden fazla PDF yükleyin, sayfaları doğru sıraya gelinceye kadar sürükleyin, tarayıcıdan gelen her şeyi yanlara doğru döndürün ve belirli sayfaları bağımsız dosyalar olarak dışarı çekin.",
+    "compressTitle": "Önizlemeyle sıkıştır",
+    "compressDesc": "Bir tarama 40 MB boyutunda geldiğinde ve e-postanızın sınırı 25 MB olduğunda, sıkıştırıcı bir kalite düzeyi ayarlamanıza ve kaydetmeden önce tahmini çıktı boyutunu görmenize olanak tanır. Yüksek çözünürlüklü taramaların çoğu, gözle görülür bir kalite kaybı olmaksızın orijinal boyutlarının üçte birine kadar sıkıştırılır.",
+    "offlineTitle": "Çevrimdışı çalışır",
+    "offlineDesc": "İlk yüklemeden sonra NexPDF'in internete ihtiyacı yoktur. Wi-Fi bağlantısını kesebilir ve çalışmaya devam edebilirsiniz. Yasal belgeler, mali tablolar, İK evrakları; her ne ise, sizinle dosya arasında kalır.",
+    "utilitiesTitle": "On yedi özel PDF yardımcı programı",
+    "utilitiesSubtitle": "Karmaşık menüleri atlayın. Seçtiğiniz modül önceden etkinleştirilmiş haldeyken güvenli çalışma alanını başlatın.",
+    "assemblyCategory": "Belge Yapısı ve Birleştirme",
+    "assembly1Title": "PDF'yi birleştir",
+    "assembly1Desc": "Birden fazla belgeyi veya sayfayı kolayca sıralanabilen tek bir dosyada birleştirin.",
+    "assembly2Title": "PDF'yi böl",
+    "assembly2Desc": "Belirli sayfa aralıklarını çıkarın veya belgeyi bağımsız dosyalara bölün.",
+    "assembly3Title": "Sayfaları Yeniden Düzenleme",
+    "assembly3Desc": "Sayfaları görsel olarak yeniden sıralamak veya silmek için küçük resimleri sürükleyip bırakın.",
+    "assembly4Title": "PDF'yi döndür",
+    "assembly4Desc": "Tek tek sayfaları veya tam belgeleri adım adım kalıcı olarak döndürün.",
+    "conversionCategory": "Optimizasyon ve Dönüşüm",
+    "conversion1Title": "PDF'yi sıkıştır",
+    "conversion1Desc": "Gerçek zamanlı kaydırıcı ve yerel boyut önizlemesiyle dosya boyutunu küçültün.",
+    "conversion2Title": "PDF'den Görüntülere",
+    "conversion2Desc": "Sayfaları JPEG veya PNG dosyalarına, tek tek veya toplu ZIP'e dönüştürün.",
+    "conversion3Title": "Resimleri PDF'ye dönüştürme",
+    "conversion3Desc": "JPG, PNG, WebP fotoğraflarını temiz biçimlendirilmiş bir PDF belgesinde derleyin.",
+    "conversion4Title": "HTML'den PDF'ye",
+    "conversion4Desc": "Ham HTML işaretleme şablonlarını yerel olarak biçimlendirilmiş belgelere dönüştürün.",
+    "conversion5Title": "Metni PDF'ye Dönüştürme",
+    "conversion5Desc": "Düz metin dosyalarını, günlükleri veya kodları yazdırılabilir PDF formatlarında biçimlendirin.",
+    "securityCategory": "Güvenlik, Gizlilik ve Damgalama",
+    "security1Title": "PDF'yi koruyun",
+    "security1Desc": "Belgeleri yerel parola şifrelemesi ve AES kısıtlamalarıyla kilitleyin.",
+    "security2Title": "PDF'nin kilidini aç",
+    "security2Desc": "Yetkili dosyalardan şifreleri ve görüntüleme sınırlarını kaldırın.",
+    "security3Title": "PDF'yi düzelt",
+    "security3Desc": "Özel metinleri veya SSN'leri fiziksel düzleştirmeyle kalıcı olarak karartın.",
+    "security4Title": "Filigran PDF",
+    "security4Desc": "GİZLİ damga, taslak kaplamalar veya özel opaklığa sahip metinler.",
+    "signatureCategory": "Dijital İmzalar ve Yakalamalar",
+    "signature1Title": "PDF'yi imzala",
+    "signature1Desc": "Düz imzalı belge alanlarına imza çizin veya el yazısı komut dosyaları yazın.",
+    "signature2Title": "PDF'ye Tara",
+    "signature2Desc": "Belge sayfalarını cihazın kamerasıyla yakalayın ve kontrastı artırın.",
+    "signature3Title": "OCR PDF'si",
+    "signature3Desc": "Raster belge taramalarından kopyalanabilir düz metinleri tarayın ve çıkarın.",
+    "signature4Title": "Sayfa Numaraları Ekle",
+    "signature4Desc": "Başlıklara/altbilgilere sıralı sayfa numarası sayfalama etiketlerini damgalayın.",
+    "faqTitle": "Sıkça Sorulan Sorular",
+    "faqSubtitle": "NexPDF çevrimdışı düzenleme hakkında bilmeniz gereken her şey.",
+    "faqQ1": "Yerel PDF düzenleme nasıl çalışır?",
+    "faqA1": "Tarayıcınızdaki dosyaları derlemek, düzenlemek, imzalamak, birleştirmek ve bölmek için WebAssembly ve istemci tarafı JavaScript PDF işleme kitaplıklarını kullanır. Hiçbir zaman harici bir sunucuya dosya gönderilmez.",
+    "faqQ2": "PDF belgelerim NexPDF ile güvende mi?",
+    "faqA2": "Evet, tamamen güvenli. Tüm araçlar, tarayıcınızın istemci sanal alanında yerel olarak çalıştırıldığından, sözleşmeler, banka ekstreleri veya vergi belgeleri gibi hassas dosyalar makinenizden asla ayrılmaz.",
+    "faqQ3": "PDF'leri çevrimdışı düzenleyebilir miyim?",
+    "faqA3": "Evet. NexPDF, Aşamalı Web Uygulaması (PWA) olarak oluşturulmuştur. Siteyi ziyaret ettiğinizde araçlar yerel olarak önbelleğe alınır ve aktif bir internet bağlantısı olmadan çalışır.",
+    "faqQ4": "Çıktı dosyalarında sınırlamalar veya filigranlar var mı?",
+    "faqA4": "Hayır. NexPDF filigran eklemez, dosya boyutu sınırları uygulamaz veya günlük kullanım sınırlarını zorlamaz. Profesyonel PDF düzenlemeye tamamen ücretsiz olarak sahip oluyorsunuz.",
+    "ctaTitle": "Hazır olduğunuzda hazır olun.",
+    "ctaDesc": "Düzenleyiciyi açın, bir dosya bırakın ve çalışmaya başlayın. Kayıt yok, deneme geri sayımı yok.",
+    "ctaButton": "Araca Geri Dön",
+    "upload": {
+      "selectFile": "Bir PDF Dosyası Seçin",
+      "dragDrop": "Belgenizi buraya sürükleyip bırakın veya dosyalara göz atmak için tıklayın",
+      "preparing": "Güvenli çalışma alanınız hazırlanıyor...",
+      "loading": "Düzenleyici ortamı yerel olarak yükleniyor...",
+      "clientSide": "%100 İstemci Tarafı",
+      "noUploads": "Sunucu Yüklemesi Yok",
+      "worksOffline": "Çevrimdışı Çalışır"
+    }
+  },
+  "pdfTools": {
+    "tools": {
+      "compress-pdf": {
+        "title": "PDF'yi Yerel Olarak Sıkıştırın — Yüklemeden Dosya Boyutunu Küçült | TheNexTools",
+        "description": "Ağır PDF dosyalarını doğrudan tarayıcınızda küçültün. Kaliteyi bir kaydırıcıyla ayarlayın, indirmeden önce tahmini boyutu görün ve belgelerinizi gizli tutun.",
+        "h1": "Bu PDF'yi e-postayla gönderilebilecek kadar küçük yapın.",
+        "p": "Bir e-posta eki için 10 MB'ın altında olması gereken 40 MB'lık bir taramanız var. NexPDF bunu rastgele bir sıkıştırma sitesine yüklemek yerine yerel olarak yönetir; kaliteyi siz belirlersiniz, tahmini boyutu görür ve sonucu indirirsiniz.",
+        "features": [
+          "Gerçek zamanlı dosya boyutu tahminiyle kalite kaydırıcısı",
+          "Taramalar, raporlar ve görüntü ağırlıklı belgeler üzerinde çalışır",
+          "Dosya boyutu sınırı veya günlük kota yok",
+          "İlk sayfa yüklendikten sonra çevrimdışı çalışır"
+        ],
+        "howToTitle": "PDF dosyası nasıl sıkıştırılır",
+        "steps": [
+          {
+            "title": "Dosya Yükle",
+            "desc": "Yukarıdaki çalışma alanına PDF belgenizi seçin veya bırakın."
+          },
+          {
+            "title": "Boyutu Optimize Et",
+            "desc": "Tercih ettiğiniz boyut ve çözünürlük dengesini bulmak için kalite kaydırıcısını kullanın."
+          },
+          {
+            "title": "Belgeyi Kaydet",
+            "desc": "Optimize edilmiş PDF'yi anında oluşturun ve cihazınıza indirin."
+          }
+        ],
+        "toolParam": "kompres"
+      },
+      "merge-pdf": {
+        "title": "PDF'leri Yerel Olarak Birleştirin — Belgeleri Yüklemeden Birleştirin | TheNexTools",
+        "description": "Birden fazla PDF dosyasını tek bir belgede birleştirin. Sayfaları yeniden sıralamak, görsel eklemek ve indirmek için sürükleyin; bunların tümü tarayıcınızda işlenir.",
+        "h1": "Birden fazla PDF'yi tek bir belgede birleştirin.",
+        "p": "Tüm dosyaları yükleyin, sayfaları doğru sıraya sürükleyin ve birleştirin. Her şey makinenizde gerçekleşir; yükleme sırası yoktur, dosya boyutu sınırı yoktur, hesap gerekmez.",
+        "features": [
+          "Tek geçişte ihtiyacınız olduğu kadar PDF'yi birleştirin",
+          "Birleştirmeden önce sayfayı yeniden sıralamayı sürükleyip bırakın",
+          "Görüntüleri doğrudan son belgeye ekleyin",
+          "Dosya sayısı veya boyut sınırlaması yok"
+        ],
+        "howToTitle": "PDF dosyaları nasıl birleştirilir",
+        "steps": [
+          {
+            "title": "Belge Ekle",
+            "desc": "Birleştirmek istediğiniz birden fazla PDF dosyasını seçin veya sürükleyin."
+          },
+          {
+            "title": "Düzeni Düzenle",
+            "desc": "Sayfa küçük resimlerini tercih ettiğiniz sıraya göre sıralamak için sürükleyin."
+          },
+          {
+            "title": "PDF'yi derle",
+            "desc": "Birleştirilmiş belgenizi derleyip kaydetmek için \"Birleştir\"i tıklayın."
+          }
+        ],
+        "toolParam": "birleştirme"
+      },
+      "split-pdf": {
+        "title": "PDF'yi Yerel Olarak Böl — Sayfaları Yüklemeden Çıkart | TheNexTools",
+        "description": "Belirli sayfaları PDF'den çıkarın veya ayrı belgelere bölün. Tarayıcınızda yerel olarak çalışır; sunucu dahil değildir.",
+        "h1": "İhtiyacınız olan sayfaları dışarı çekin.",
+        "p": "200 sayfalık bir raporunuz var ancak yalnızca 14'ten 22'ye kadar olan sayfalara ihtiyacınız var. Veya bir belgeyi bölümlere göre üç ayrı dosyaya bölmek istiyorsunuz. NexPDF her ikisini de hiçbir şey yüklemeden yönetir.",
+        "features": [
+          "Özel sayfa aralıkları (ör. 1-3, 7, 12-18)",
+          "Otomatik olarak eşit parçalara bölün",
+          "Ayrı PDF'ler veya tek bir ZIP olarak indirin",
+          "Şifrelenmiş ve büyük belgeleri yönetir"
+        ],
+        "howToTitle": "PDF'den sayfalar nasıl çıkarılır",
+        "steps": [
+          {
+            "title": "Belgeyi Aç",
+            "desc": "PDF belgenizi güvenli çalışma alanına yükleyin."
+          },
+          {
+            "title": "Sayfaları Seçin",
+            "desc": "Çıkarmak istediğiniz sayfa numaralarını veya sayfa aralıklarını belirtin."
+          },
+          {
+            "title": "Çıktıyı Kaydet",
+            "desc": "Seçilen sayfaları yeni bir PDF olarak oluşturun ve indirin."
+          }
+        ],
+        "toolParam": "bölmek"
+      },
+      "pdf-to-images": {
+        "title": "PDF'yi Yerel Olarak JPG/PNG'ye Dönüştürme — Sayfaları Görüntülere Dönüştürme | TheNexTools",
+        "description": "PDF'nin her sayfasını yüksek kaliteli JPEG veya PNG görüntüsüne dönüştürün. Tarayıcınızda işlendi; yüklemeye gerek yok.",
+        "h1": "PDF sayfalarını görüntülere dönüştürün.",
+        "p": "Bir sunuma sözleşmeden bir sayfa mı yerleştirmeniz gerekiyor? Veya bir tasarım modeli PDF'sini ayrı PNG'ler olarak mı kaydedeceksiniz? NexPDF her sayfayı yüksek çözünürlüklü bir görüntüye dönüştürür; daha küçük dosyalar için JPEG'i veya kayıpsız kalite için PNG'yi seçin.",
+        "features": [
+          "Seçtiğiniz DPI'da yüksek çözünürlüklü çıktı",
+          "JPEG ve PNG formatı seçenekleri",
+          "Tüm sayfaları ZIP olarak toplu olarak indirin",
+          "Hiçbir sunucu dahil değildir; her şey cihazınızda kalır"
+        ],
+        "howToTitle": "PDF sayfalarını JPEG veya PNG'ye dönüştürme",
+        "steps": [
+          {
+            "title": "PDF'yi yükle",
+            "desc": "Dönüştürmek istediğiniz PDF belgesini seçin."
+          },
+          {
+            "title": "Formatı Seçin",
+            "desc": "Sıkıştırma için JPEG'i veya kayıpsız görüntü kalitesi için PNG'yi seçin."
+          },
+          {
+            "title": "Resimleri Kaydet",
+            "desc": "Tüm sayfaları tek tek veya tek bir ZIP arşivi olarak dönüştürün ve indirin."
+          }
+        ],
+        "toolParam": "görseller"
+      },
+      "scan-to-pdf": {
+        "title": "PDF'ye Tara — Kameranızı Belge Tarayıcı Olarak Kullanın | TheNexTools",
+        "description": "Kameranızla fiziksel belgeler yakalayın ve bunları anında PDF sayfalarına dönüştürün. Her şey cihazınızda kalır.",
+        "h1": "Telefonunuzun kamerasını belge tarayıcı olarak kullanın.",
+        "p": "Kameranızı bir makbuz, beyaz tahta veya kağıt forma doğrultun; NexPDF onu yakalar ve temiz bir PDF sayfasına dönüştürür. Özel bir tarayıcı donanımına gerek yoktur ve görüntüler cihazınızdan asla ayrılmaz.",
+        "features": [
+          "Doğrudan cihazınızın kamerasından çekim yapın",
+          "Telefonlarda ve tabletlerde iyi çalışır",
+          "Metin belgeleri için otomatik kontrast geliştirme",
+          "Birden fazla taramayı tek bir PDF'de birleştirin"
+        ],
+        "howToTitle": "Kameranızı kullanarak belgeleri nasıl tarayabilirsiniz?",
+        "steps": [
+          {
+            "title": "Sayfayı Yakala",
+            "desc": "Kamera izni verin ve fiziksel belgenizin fotoğrafını çekin."
+          },
+          {
+            "title": "Kırp ve Geliştir",
+            "desc": "Yakalamayı inceleyin ve tarayıcımızın metni kırpıp okunabilirliğini geliştirmesine izin verin."
+          },
+          {
+            "title": "PDF'yi dışa aktar",
+            "desc": "Taramalarınızı tek, temiz bir PDF belgesinde derleyin."
+          }
+        ],
+        "toolParam": "tarama"
+      },
+      "protect-pdf": {
+        "title": "PDF'yi Yerel Olarak Parolayla Koruyun — Yüklemeden Şifreleyin | TheNexTools",
+        "description": "PDF'lerinize parola koruması ve AES şifrelemesi ekleyin. Tamamen tarayıcınızda çalışır; şifre hiçbir zaman sunucuya dokunmaz.",
+        "h1": "PDF'nizi bir şifreyle kilitleyin.",
+        "p": "Belgeyi yalnızca yetkili kişilerin görüntüleyebilmesi için açık bir parola belirleyin ve isteğe bağlı olarak yazdırma ve düzenlemeyi kısıtlamak için ayrı bir sahip parolası belirleyin. Şifreleme yerel olarak gerçekleşir; şifreniz hiçbir zaman hiçbir yere iletilmez.",
+        "features": [
+          "Tarayıcınızda uygulanan AES şifrelemesi",
+          "Açık ve sahip şifrelerini ayırın",
+          "Yazdırma, kopyalama ve düzenleme izinlerini kontrol edin",
+          "Şifre cihazınızdan asla ayrılmaz"
+        ],
+        "howToTitle": "PDF'nize nasıl şifre eklenir?",
+        "steps": [
+          {
+            "title": "PDF'yi yükle",
+            "desc": "Şifrelemek ve korumak istediğiniz PDF dosyasını seçin."
+          },
+          {
+            "title": "Anahtarı Tanımla",
+            "desc": "Güçlü bir parola girin ve yazdırma veya kopyalama izinlerini özelleştirin."
+          },
+          {
+            "title": "Güvenli Dosya",
+            "desc": "Yerel şifreleme uygulayın ve güvenli PDF'nizi indirin."
+          }
+        ],
+        "toolParam": "korumak"
+      },
+      "unlock-pdf": {
+        "title": "PDF Parolasını Yerel Olarak Kaldırma — Yüklemeden Kilidini Açma | TheNexTools",
+        "description": "PDF dosyalarınızdan şifre korumasını kaldırın. Şifreyi bir kez girin ve korumasız bir kopyasını indirin; tamamı tarayıcınıza.",
+        "h1": "Şifreyi PDF'nizden kaldırın.",
+        "p": "Şifreyi biliyorsunuz ancak dosyayı her açtığınızda yazmaktan yoruldunuz. Veya kilidi açılmış bir sürümü birisiyle paylaşmanız gerekir. Şifreyi buraya bir kez girin ve temiz, korumasız bir kopya indirin.",
+        "features": [
+          "Açık şifreleri anında kaldırır",
+          "Yazdırma ve düzenleme kısıtlamalarının kilidini açar",
+          "Şifre çözme tarayıcınızda yerel olarak çalışır",
+          "Dosyayı herhangi bir yere yüklemenize gerek yok"
+        ],
+        "howToTitle": "Parola korumalı bir PDF'nin kilidini açma",
+        "steps": [
+          {
+            "title": "Dosya Seç",
+            "desc": "Parola korumalı PDF belgenizi yükleyin."
+          },
+          {
+            "title": "Şifreyi Girin",
+            "desc": "Şifre çözme işlemini yetkilendirmek için doğru belge şifresini girin."
+          },
+          {
+            "title": "Kilidi Kaldır",
+            "desc": "Dosyanın temiz, korumasız bir kopyasını kaydetmek için \"Kilidi Aç\"a tıklayın."
+          }
+        ],
+        "toolParam": "kilidini açmak"
+      },
+      "watermark-pdf": {
+        "title": "PDF'ye Yerel Olarak Filigran Ekleme — Sayfalara Metin Damgalama | TheNexTools",
+        "description": "PDF sayfalarınıza \"GİZLİ\", \"TASLAK\" veya özel metin damgalayın. Opaklığı, boyutu ve konumu özelleştirin; hepsi tarayıcınızda.",
+        "h1": "PDF'lerinizi paylaşmadan önce damgalayın.",
+        "p": "Bir taslağı \"TASLAK\" olarak işaretleyin, böylece kimse onu nihai olarak değerlendirmez. Dahili bir rapora \"GİZLİ\" damgasını vurun. Veya şirketinizin adını her sayfaya ince bir filigran olarak ekleyin. Tam olarak istediğiniz görünümü elde etmek için metni, boyutu, opaklığı ve konumu ayarlayın.",
+        "features": [
+          "Ayarlanabilir yazı tipi boyutu ve opaklığa sahip özel metin",
+          "Orta, çapraz, üst bilgi veya alt bilgi konumlandırma",
+          "Belirli sayfalara veya belgenin tamamına uygula",
+          "Kaydetmeden önce canlı önizleme"
+        ],
+        "howToTitle": "Bir PDF belgesine filigran nasıl eklenir",
+        "steps": [
+          {
+            "title": "PDF'yi yükle",
+            "desc": "Damgalamak istediğiniz PDF belgesini yükleyin."
+          },
+          {
+            "title": "Tasarım Damgası",
+            "desc": "Filigran metninizi yazın, opaklığı, boyutu ve konumu ayarlayın."
+          },
+          {
+            "title": "Damga Dosyası",
+            "desc": "Damgayı sayfalarınıza işleyin ve dosyayı indirin."
+          }
+        ],
+        "toolParam": "filigran"
+      },
+      "ocr-pdf": {
+        "title": "OCR PDF Yerel Olarak — Taranan Belgelerden Metin Çıkarma | TheNexTools",
+        "description": "Tarayıcı tabanlı OCR'yi kullanarak taranan PDF'leri ve görüntüleri aranabilir, seçilebilir metne dönüştürün. Yükleme gerekmez.",
+        "h1": "Taranan bir belgeden aranabilir metin alın.",
+        "p": "Birisi size bir sözleşmenin taranmış görüntüsünü gönderdi ve sizin de bir paragrafı kopyalamanız gerekiyor. Veya PDF olarak fotoğraflanmış bir yığın eski kağıt belgeniz var ve bunlar arasında arama yapmanız gerekiyor. NexPDF'in OCR motoru, görseldeki metni okur ve size kopyalanabilir, aranabilir bir sonuç sunar.",
+        "features": [
+          "Tesseract.js tarafından desteklenmektedir — tarayıcınızda çalışır",
+          "Birden fazla dili destekler",
+          "Hiçbir sunucu dahil olmadığından hassas belgeler gizli kalır",
+          "Çıkarılan metni .txt dosyası olarak dışa aktarın"
+        ],
+        "howToTitle": "Taranmış bir PDF'den metin nasıl çıkarılır",
+        "steps": [
+          {
+            "title": "Taramayı Yükle",
+            "desc": "Taranmış PDF veya resim belgenizi seçin."
+          },
+          {
+            "title": "Dili Ayarla",
+            "desc": "OCR doğruluğunu optimize etmek için belge dilini seçin."
+          },
+          {
+            "title": "Metni Kopyala",
+            "desc": "Metni çıkarın ve sonuçları kopyalayın veya düz metin dosyası olarak kaydedin."
+          }
+        ],
+        "toolParam": "ocr"
+      },
+      "redact-pdf": {
+        "title": "PDF'yi Yerel Olarak Düzenleyin — Hassas Metni Kalıcı Olarak Karartın | TheNexTools",
+        "description": "PDF'nizdeki adların, numaraların ve adreslerin üzerine kara kutular çizin. Redaksiyon kalıcıdır; gizli metin kurtarılamaz.",
+        "h1": "Görünmemesi gerekenleri karartın.",
+        "p": "Sosyal güvenlik numaraları, müşteri adları, mali rakamlar veya gizli kalması gereken herhangi bir şeyin üzerine redaksiyon kutuları çizin. Çıktı düzleştirilir; alttaki metin yalnızca bir şekille kaplanmakla kalmaz, kalıcı olarak yok edilir.",
+        "features": [
+          "Kalıcı düzleştirme ile alan bazlı redaksiyon",
+          "Gizli metin kopyalanıp yapıştırılamaz veya çıkartılamaz",
+          "Yasal, mali ve tıbbi belgeler için uygundur",
+          "Cihazınızda işlenen her şey"
+        ],
+        "howToTitle": "PDF'deki metin kalıcı olarak nasıl düzeltilir?",
+        "steps": [
+          {
+            "title": "PDF'yi aç",
+            "desc": "Hassas ayrıntıları içeren PDF dosyasını seçin."
+          },
+          {
+            "title": "Çizim Kutusu",
+            "desc": "İsimlerin, numaraların veya özel metnin üzerine karartma kutuları çizin."
+          },
+          {
+            "title": "Dosyayı temizle",
+            "desc": "Dosyanızı kalıcı olarak düzleştirmek ve indirmek için \"Redaksiyon Yap\"ı tıklayın."
+          }
+        ],
+        "toolParam": "yazıya dökmek"
+      },
+      "html-to-pdf": {
+        "title": "HTML'yi Yerel Olarak PDF'ye Dönüştürme — Web İçeriğini PDF'ye Dönüştürme | TheNexTools",
+        "description": "HTML kodunu yapıştırın ve biçimlendirilmiş PDF'yi anında geri alın. CSS stilini destekler. Tarayıcınızda çalışır.",
+        "h1": "HTML'yi indirilebilir bir PDF'ye dönüştürün.",
+        "p": "HTML'nizi (fatura şablonu, rapor düzeni, stillendirilmiş bir e-posta) yapıştırın ve NexPDF bunu kaydedebileceğiniz veya yazdırabileceğiniz temiz bir PDF olarak oluşturur. Başsız bir tarayıcı kurmadan hızlı bir PDF önizlemesine ihtiyaç duyan geliştiriciler için kullanışlıdır.",
+        "features": [
+          "HTML'yi CSS stiliyle işler",
+          "Dönüşümden önce anında önizleme",
+          "Faturalar, raporlar ve e-posta şablonları için kullanışlıdır",
+          "Harici API veya hizmet gerekmez"
+        ],
+        "howToTitle": "HTML'yi PDF'ye dönüştürme",
+        "steps": [
+          {
+            "title": "İşaretlemeyi Yapıştır",
+            "desc": "Ham HTML ve CSS düzen kodunuzu çalışma alanına girin."
+          },
+          {
+            "title": "Önizlemeyi Doğrula",
+            "desc": "Biçimlendirmeyi kontrol etmek için etkileşimli oluşturma penceresini inceleyin."
+          },
+          {
+            "title": "PDF'yi dışa aktar",
+            "desc": "Biçimlendirilmiş belgeyi kaydetmek için \"PDF'ye Dönüştür\"e tıklayın."
+          }
+        ],
+        "toolParam": "HTML"
+      },
+      "images-to-pdf": {
+        "title": "Görüntüleri Yerel Olarak PDF'ye Dönüştürme — Fotoğrafları Bir Belgede Birleştirme | TheNexTools",
+        "description": "JPG, PNG ve WebP görüntülerini tek bir PDF belgesine dönüştürün. Sayfaları yeniden düzenleyin, kenar boşluklarını ayarlayın ve indirin; tüm bunları tarayıcınızda yapın.",
+        "h1": "Bir görüntü yığınını tek bir PDF'ye dönüştürün.",
+        "p": "Telefonunuzla çok sayfalı bir belgenin fotoğrafını çektiniz ve artık ona tek bir PDF olarak ihtiyacınız var. Veya tek bir dosya olarak yayınlanması gereken bir dizi tasarım maketiniz var. Onları bırakın, siparişi düzenleyin ve dışa aktarın.",
+        "features": [
+          "JPG, PNG ve WebP'yi kabul eder",
+          "Sürükle ve bırak sayfa sıralaması",
+          "Ayarlanabilir kenar boşlukları ve sayfa yönü",
+          "Resim sayısı veya dosya boyutu sınırı yok"
+        ],
+        "howToTitle": "Görüntüler PDF'ye nasıl derlenir",
+        "steps": [
+          {
+            "title": "Fotoğraf Ekle",
+            "desc": "Derlemek istediğiniz görselleri (JPG, PNG veya WebP) seçin."
+          },
+          {
+            "title": "Sıralama Düzeni",
+            "desc": "Sayfa sırasını düzenlemek için küçük resimleri sürükleyin."
+          },
+          {
+            "title": "PDF'yi derle",
+            "desc": "Derlenen sayfaları kaydetmek için \"PDF Oluştur\"a tıklayın."
+          }
+        ],
+        "toolParam": "toplu yükleme"
+      },
+      "rotate-pdf": {
+        "title": "PDF Sayfalarını Yerel Olarak Döndürün — Yan Taramaları Düzeltin | TheNexTools",
+        "description": "Tek tek sayfaları veya PDF'nin tamamını 90, 180 veya 270 derece döndürün. Kalıcı olarak kaydedildi. Yükleme gerekmez.",
+        "h1": "Yan gelen sayfaları düzeltin.",
+        "p": "Taranan belgeler ve telefon fotoğrafları her zaman yanlış yönde sonuçlanır. Tek tek sayfaları veya belgenin tamamını döndürmek ve düzeltilmiş sürümü kaydetmek için tıklayın. Döndürme kalıcıdır; yalnızca bir izleyici ayarı değildir.",
+        "features": [
+          "Tek tek sayfaları veya belgenin tamamını döndürün",
+          "Her rotasyonun görsel önizlemesi",
+          "Kayıpsız — içerik yeniden sıkıştırılmaz",
+          "Boyutu ne olursa olsun her PDF üzerinde çalışır"
+        ],
+        "howToTitle": "PDF sayfaları nasıl döndürülür",
+        "steps": [
+          {
+            "title": "PDF'yi aç",
+            "desc": "Yan veya baş aşağı sayfalar içeren PDF'yi yükleyin."
+          },
+          {
+            "title": "Düzeni Hizala",
+            "desc": "Hizalamak için tek tek sayfa küçük resimleri üzerindeki kontrolleri döndür'e tıklayın."
+          },
+          {
+            "title": "Rotasyonu Kaydet",
+            "desc": "Düzeltilmiş belgeyi yönelimi önceden hazırlanmış olarak indirin."
+          }
+        ],
+        "toolParam": "döndürmek"
+      },
+      "rearrange-pdf": {
+        "title": "PDF Sayfalarını Yerel Olarak Yeniden Düzenleme — Sürükleyip Bırakarak Yeniden Sıralama | TheNexTools",
+        "description": "Sürükle ve bırak yöntemiyle PDF'nizdeki sayfaları yeniden sıralayın, kaldırın ve yeniden düzenleyin. Tarayıcınızda yerel olarak çalışır.",
+        "h1": "Sayfaları doğru sıraya koyun.",
+        "p": "Ekler girişten önce bitti ya da ortada gitmesi gereken üç boş sayfa var. Yeniden sıralamak için küçük resimleri sürükleyin, silmek için tıklayın ve temizlenmiş sürümü indirin.",
+        "features": [
+          "Görsel sürükle ve bırak sayfa yeniden sıralaması",
+          "İstenmeyen sayfaları tek tıklamayla silin",
+          "Birden çok PDF'yi birleştirin ve yeniden sıralayın",
+          "Büyük belgeleri sorunsuz bir şekilde işler"
+        ],
+        "howToTitle": "PDF sayfaları nasıl yeniden sıralanır",
+        "steps": [
+          {
+            "title": "PDF'yi yükle",
+            "desc": "Düzenlemek istediğiniz PDF dosyasını seçin."
+          },
+          {
+            "title": "Sipariş Sayfaları",
+            "desc": "Sayfaları yeniden düzenlemek için küçük resimleri sürükleyin veya kaldırmak için sil'i tıklayın."
+          },
+          {
+            "title": "Dosyayı Kaydet",
+            "desc": "Sonlandırılmış belgeyi indirmek için \"Kaydet\"i tıklayın."
+          }
+        ],
+        "toolParam": "yeniden düzenlemek"
+      },
+      "sign-pdf": {
+        "title": "PDF'yi Yerel Olarak İmzalayın — İmzanızı Yazdırmadan Ekleyin | TheNexTools",
+        "description": "İmzanızı herhangi bir PDF sayfasına çizin veya yazın. Çıktı düzleştirildiği için imza taşınamaz veya düzenlenemez. Yükleme gerekmez.",
+        "h1": "Yazdırmadan imzalayın.",
+        "p": "İmzanızı fare veya dokunmatik ekranla çizin veya yazın ve el yazısı bir yazı tipi seçin. Sağ satıra yerleştirin, yeniden boyutlandırın ve düzleştirilmiş bir PDF'yi dışa aktarın. İmza sayfanın bir parçası haline gelir; alıcı tarafından seçilemez, taşınamaz veya düzenlenemez.",
+        "features": [
+          "El yazısı (çizme) ve daktiloyla imza modları",
+          "Belgelerde yeniden kullanmak üzere imzaları kaydedin",
+          "Düzleştirilmiş çıktı — imza değiştirilemez",
+          "Kiralamalar, Gizlilik Sözleşmeleri, İK formları ve daha fazlası için çalışır"
+        ],
+        "howToTitle": "PDF belgesi nasıl imzalanır",
+        "steps": [
+          {
+            "title": "PDF'yi yükle",
+            "desc": "İmzanızı gerektiren PDF sözleşmesini veya formunu yükleyin."
+          },
+          {
+            "title": "İmza Oluştur",
+            "desc": "İmzanızı ekrana çizin veya el yazısı stillerini kullanarak yazın."
+          },
+          {
+            "title": "Yerleştir ve Kaydet",
+            "desc": "İmzayı imzalama satırına sürükleyin ve dışa aktar'a tıklayın."
+          }
+        ],
+        "toolParam": "imza"
+      },
+      "add-page-numbers": {
+        "title": "PDF'ye Yerel Olarak Sayfa Numaraları Ekleme — Otomatik Sayfalandırma | TheNexTools",
+        "description": "PDF'nize sıralı sayfa numaraları ekleyin. Konumu ve stili seçin. Tarayıcınızda yerel olarak çalışır.",
+        "h1": "Sayfalarınızı otomatik olarak numaralandırın.",
+        "p": "Raporlar, müsveddeler, mahkeme dosyaları - birkaç sayfadan uzun olan her şeyde genellikle sayfa numarası gerekir. Nereye gideceklerini seçin (alt orta, sağ üst vb.) ve NexPDF onları her sayfaya damgalar.",
+        "features": [
+          "Tüm sayfalarda sıralı numaralandırma",
+          "Çoklu konum seçenekleri (üst, alt, sol, sağ, orta)",
+          "Her uzunluktaki belgeler üzerinde çalışır",
+          "Hassas belgeler için yerel olarak işlendi"
+        ],
+        "howToTitle": "PDF'ye sayfa numaraları nasıl eklenir?",
+        "steps": [
+          {
+            "title": "Belgeyi Yükle",
+            "desc": "Sayfalara ayırmak istediğiniz PDF dosyasını seçin ve yükleyin."
+          },
+          {
+            "title": "Yerleşim Seçin",
+            "desc": "Sayfa numaraları için stil, biçimlendirme ve düzen konumlandırmasını seçin."
+          },
+          {
+            "title": "Damga Sayfaları",
+            "desc": "Belgeye sayıları uygulayın ve indirin."
+          }
+        ],
+        "toolParam": "sayfa numaraları"
+      },
+      "text-to-pdf": {
+        "title": "Metni Yerel Olarak PDF'ye Dönüştürme — Düz Metni Biçimlendirilmiş Bir Belgeye Dönüştürme | TheNexTools",
+        "description": "Düz metni yapıştırın ve temiz, biçimlendirilmiş bir PDF elde edin. Satır sonlarını ve aralıklarını korur. Tarayıcınızda çalışır.",
+        "h1": "Düz metni uygun bir PDF'ye dönüştürün.",
+        "p": "PDF olarak yayınlanması gereken toplantı notlarınız, sunucu günlükleriniz veya kod pasajınız var. Metni yapıştırın, önizlemeyi kontrol edin ve temiz biçimlendirilmiş bir belge indirin. Satır sonları ve aralıkları tam olarak korunur.",
+        "features": [
+          "Tutarlı biçimlendirmeyle temiz tipografi",
+          "Satır sonlarını, girintiyi ve aralığı korur",
+          "Canlı önizlemeyle anında dönüşüm",
+          "Tarayıcınızdan hiçbir veri çıkmıyor"
+        ],
+        "howToTitle": "Metin dosyaları PDF'ye nasıl dönüştürülür",
+        "steps": [
+          {
+            "title": "Metni Yapıştır",
+            "desc": "Metin içeriğinizi çalışma alanı düzenleyicisine yazın veya yapıştırın."
+          },
+          {
+            "title": "Sayfayı Biçimlendir",
+            "desc": "Önizleme penceresinde kağıt kenar boşluklarını yapılandırın ve tipografiyi kontrol edin."
+          },
+          {
+            "title": "PDF'yi dışa aktar",
+            "desc": "Tamamlanan belgeyi kaydetmek için \"PDF'ye Dönüştür\"e tıklayın."
+          }
+        ],
+        "toolParam": "metin"
+      }
+    },
+    "seoPage": {
+      "keyBenefits": "Temel Faydalar",
+      "localPrivate": "Yerel ve Özel",
+      "localPrivateDesc": "Bu araç, dosyalarınızı doğrudan tarayıcınızda işler; sunucuya hiçbir şey yüklenmez. Birlikte çalıştığınızda{tool}belge baştan sona makinenizde kalır.",
+      "privateBadge": "Özel",
+      "secureBadge": "Güvenli",
+      "faqTitle": "Sıkça Sorulan Sorular",
+      "faqSubtitle": "Hakkında bilmeniz gereken her şey{tool}.",
+      "readyTitle": "Başlamaya hazır mısınız?",
+      "readyDesc": "Dosyanızı sayfanın üst kısmındaki çalışma alanına bırakın. Kayıt gerekli değildir.",
+      "backToTool": "Araca Geri Dön",
+      "howToPrefix": "Nasıl yapılır",
+      "faqQ1": "Nasıl yaparım{tool}yerel olarak mı?",
+      "faqA1": "{steps}Bunların hepsi makinenizde yapılır.",
+      "faqQ2": "Bu işlem sırasında PDF dosyalarım güvende mi?",
+      "faqA2": "Kesinlikle. NexPDF, WebAssembly kullanarak tamamen istemci tarafında çalıştığından, belge hiçbir zaman herhangi bir harici sunucuya yüklenmez. Hassas verileriniz %100 gizli tutulur.",
+      "faqQ3": "için bir dosya boyutu sınırı var mı?{tool}?",
+      "faqA3": "Hayır, yapay dosya boyutu sınırı yoktur. Tek fiziksel sınır, cihazınızın büyük belgeleri kolayca işleyebilen kullanılabilir tarayıcı belleğidir.",
+      "faqQ4": "Çevrimdışı çalışıyor mu?",
+      "faqA4": "Evet, NexPDF ilk yüklemeden sonra tarayıcınızın içinde önbelleğe alınır. İnternet bağlantınızı kesebilir ve aracı tamamen çevrimdışı kullanmaya devam edebilirsiniz.",
+      "uploadSelect": "için bir PDF seçin{label}",
+      "uploadDrop": "Veya hemen başlamak için buraya bırakın",
+      "uploadLoading": "Çalışma alanı hazırlanıyor..."
+    }
+  },
+  "meta": {
+    "layout": {
+      "title": "TheNexTools | NexData Kurtarma ve Temel Yardımcı Programlar",
+      "description": "Verilerinizi kurtarmak, bozuk dosyaları onarmak ve dijital yaşamınızın sorunsuz çalışmasını sağlamak için tasarlanmış yüksek performanslı masaüstü yardımcı programlarından oluşan bir paket.",
+      "ogLocale": "tr_TR"
+    },
+    "home": {
+      "title": "TheNexTools — Özel, Çevrimdışı Masaüstü Yardımcı Programları"
+    },
+    "contact": {
+      "title": "Bize Ulaşın | TheNexTools",
+      "subjectSupport": "Teknik Destek Talebi",
+      "subjectBilling": "Faturalandırma / Geri Ödeme Talebi",
+      "subjectGeneral": "Genel Sorgulama",
+      "subjectSecurity": "Güvenlik / Gizlilik Kaygısı"
+    },
+    "dataRecovery": {
+      "title": "NexData Recovery — Silinen Dosyaları Biçimlendirilmiş Sürücülerden Kurtarma | TheNexTools"
+    },
+    "pdfToolkit": {
+      "title": "NexPDF — PDF'leri Çevrimdışı Düzenleyin, İmzalayın, Birleştirin ve Sıkıştırın | TheNexTools",
+      "breadcrumbHome": "Ev"
+    },
+    "imageToolkit": {
+      "title": "NexImage Araç Takımı — Meta Verileri Sıkıştırın, Dönüştürün, Düzenleyin ve Soyun | TheNexTools"
+    }
+  },
+  "imageTools": {
+    "compressor": {
+      "uploadTitle": "Resimleri buraya bırakın",
+      "uploadSubtitle": "JPG, PNG, WebP — toplu desteklenir",
+      "formatLabel": "Çıkış Formatı",
+      "qualityLabel": "Kalite:",
+      "losslessNotice": "(kayıpsız — PNG için göz ardı edilir)",
+      "recompressBtn": "Tümünü Yeniden Sıkıştır",
+      "addBtn": "Eklemek",
+      "clearBtn": "Temizlemek",
+      "downloadAll": "Tümünü İndir",
+      "downloading": "İndiriliyor..."
+    },
+    "converter": {
+      "uploadTitle": "Resimleri buraya sürükleyip bırakın",
+      "uploadSubtitle": "PNG, JPG, JPEG, WEBP ve daha fazlasını destekler",
+      "browseBtn": "Dosyalara Göz Atın",
+      "settingsTitle": "Dönüşüm Ayarları",
+      "formatLabel": "Hedef Formatı",
+      "qualityLabel": "Sıkıştırma Kalitesi",
+      "reconvertBtn": "Tümünü Yeniden Dönüştür",
+      "addBtn": "Resim Ekle",
+      "clearBtn": "Tümünü Temizle",
+      "downloadAll": "Tümünü İndir"
+    },
+    "redactor": {
+      "uploadTitle": "Ekran görüntüsünü/resmini sürükleyip bırakın",
+      "uploadSubtitle": "Tamamen istemci tarafında işlenen PNG, JPG, WEBP formatları",
+      "chooseBtn": "Dosya Seç",
+      "blurMode": "Alanı Bulanıklaştır",
+      "redactMode": "Alanı Redakte Et (Karartma)",
+      "resetBtn": "Kanvası Sıfırla",
+      "downloadBtn": "Resmi İndir"
+    },
+    "exifStripper": {
+      "uploadTitle": "Resimleri buraya bırakın",
+      "uploadSubtitle": "JPG, PNG, WebP — tekli veya toplu",
+      "processedInfo": "{done}ile ilgili{total}işlenmiş",
+      "gpsDanger": "⚠ GPS koordinatları tespit edildi ve kaldırıldı",
+      "noGpsSuccess": "✓ GPS verisi bulunamadı",
+      "scanning": "Tarama…",
+      "addMoreBtn": "Daha Fazla Ekle",
+      "clearBtn": "Temizlemek",
+      "zipping": "Sıkıştırılıyor…",
+      "downloadAll": "Tümünü İndir ({count})"
+    }
+  }
+}
