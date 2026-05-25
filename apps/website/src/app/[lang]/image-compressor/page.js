@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ImageCompressorPageWrapper } from '@/components/image-tools/ImageCompressorWrapper';
+import { locales } from '@/lib/i18n-config';
 
 const TRANSLATIONS = {
   es: {
@@ -96,11 +97,18 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `/${lang}/image-compressor`,
       languages: {
-        'en': '/image-compressor',
-        'es': '/es/image-compressor',
-        'pt': '/pt/image-compressor',
+        ...locales.reduce((acc, l) => {
+          acc[l] = l === 'en' ? '/image-compressor' : `/${l}/image-compressor`;
+          return acc;
+        }, {}),
         'x-default': '/image-compressor',
       }
+    },
+    openGraph: {
+      title: t.title,
+      description: t.description,
+      url: `https://thenextools.com/${lang}/image-compressor`,
+      type: 'website',
     },
   };
 }

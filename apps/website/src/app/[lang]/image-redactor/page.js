@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ImageBlurPageWrapper } from '@/components/image-tools/ImageCompressorWrapper';
+import { locales } from '@/lib/i18n-config';
 
 const TRANSLATIONS = {
   es: {
@@ -96,11 +97,18 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `/${lang}/image-redactor`,
       languages: {
-        'en': '/image-redactor',
-        'es': '/es/image-redactor',
-        'pt': '/pt/image-redactor',
+        ...locales.reduce((acc, l) => {
+          acc[l] = l === 'en' ? '/image-redactor' : `/${l}/image-redactor`;
+          return acc;
+        }, {}),
         'x-default': '/image-redactor',
       }
+    },
+    openGraph: {
+      title: t.title,
+      description: t.description,
+      url: `https://thenextools.com/${lang}/image-redactor`,
+      type: 'website',
     },
   };
 }

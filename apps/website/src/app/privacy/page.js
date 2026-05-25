@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { locales } from '@/lib/i18n-config';
 
 export const metadata = {
   title: 'Privacy Policy | TheNexTools',
@@ -6,9 +7,10 @@ export const metadata = {
   alternates: {
     canonical: '/privacy',
     languages: {
-      'en': '/privacy',
-      'es': '/es/privacy',
-      'pt': '/pt/privacy',
+      ...locales.reduce((acc, l) => {
+        acc[l] = l === 'en' ? '/privacy' : `/${l}/privacy`;
+        return acc;
+      }, {}),
       'x-default': '/privacy',
     }
   },

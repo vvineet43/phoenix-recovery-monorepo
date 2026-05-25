@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ExifStripperPageWrapper } from '@/components/image-tools/ImageCompressorWrapper';
+import { locales } from '@/lib/i18n-config';
 
 const TRANSLATIONS = {
   es: {
@@ -96,11 +97,18 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `/${lang}/exif-stripper`,
       languages: {
-        'en': '/exif-stripper',
-        'es': '/es/exif-stripper',
-        'pt': '/pt/exif-stripper',
+        ...locales.reduce((acc, l) => {
+          acc[l] = l === 'en' ? '/exif-stripper' : `/${l}/exif-stripper`;
+          return acc;
+        }, {}),
         'x-default': '/exif-stripper',
       }
+    },
+    openGraph: {
+      title: t.title,
+      description: t.description,
+      url: `https://thenextools.com/${lang}/exif-stripper`,
+      type: 'website',
     },
   };
 }

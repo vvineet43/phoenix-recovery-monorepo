@@ -1,24 +1,32 @@
 import ExifToolsPage from '@/app/exif-tools/page';
+import { getDictionary } from '@/dictionaries';
+import { locales } from '@/lib/i18n-config';
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
-  const isPt = lang === 'pt';
+  const locale = lang || 'en';
+  const d = await getDictionary(locale);
   
   return {
-    title: isPt ? 'Removedor de Metadados EXIF | TheNexTools' : 'Limpiador de Metadatos EXIF | TheNexTools',
-    description: isPt 
-      ? 'Remova coordenadas GPS, informações da câmera, carimbos de data/hora e todos os metadados ocultos de suas fotos de forma local. Sem uploads. Grátis e privado.' 
-      : 'Elimina coordenadas GPS, información de la cámara, marcas de tiempo y todos los metadatos ocultos de tus fotos de forma local. Sin cargas. Gratis y privado.',
+    title: `${d.imageToolkit.stripperTitle} | ${d.nav.brand}`,
+    description: d.imageToolkit.stripperDesc,
     manifest: '/exif-manifest.json',
     alternates: {
-      canonical: `/${lang}/exif-tools`,
+      canonical: locale === 'en' ? '/exif-tools' : `/${locale}/exif-tools`,
       languages: {
-        'en': '/exif-tools',
-        'es': '/es/exif-tools',
-        'pt': '/pt/exif-tools',
+        ...locales.reduce((acc, l) => {
+          acc[l] = l === 'en' ? '/exif-tools' : `/${l}/exif-tools`;
+          return acc;
+        }, {}),
         'x-default': '/exif-tools',
       }
+    },
+    openGraph: {
+      title: `${d.imageToolkit.stripperTitle} | ${d.nav.brand}`,
+      description: d.imageToolkit.stripperDesc,
+      url: `https://thenextools.com/${locale}/exif-tools`,
+      type: 'website',
     },
     robots: {
       index: false,

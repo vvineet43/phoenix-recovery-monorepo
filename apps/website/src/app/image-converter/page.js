@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ImageConverterPageWrapper } from '../../components/image-tools/ImageCompressorWrapper';
+import { locales } from '@/lib/i18n-config';
 
 const CONVERTER_STEPS = [
   { title: 'Select Files', desc: 'Select or drag raw images of any format into the workspace.' },
@@ -14,9 +15,10 @@ export const metadata = {
   alternates: {
     canonical: '/image-converter',
     languages: {
-      'en': '/image-converter',
-      'es': '/es/image-converter',
-      'pt': '/pt/image-converter',
+      ...locales.reduce((acc, l) => {
+        acc[l] = l === 'en' ? '/image-converter' : `/${l}/image-converter`;
+        return acc;
+      }, {}),
       'x-default': '/image-converter',
     }
   },

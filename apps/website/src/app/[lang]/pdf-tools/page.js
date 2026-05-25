@@ -1,24 +1,32 @@
 import PdfToolsPage from '@/app/pdf-tools/page';
+import { getDictionary } from '@/dictionaries';
+import { locales } from '@/lib/i18n-config';
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
-  const isPt = lang === 'pt';
+  const locale = lang || 'en';
+  const d = await getDictionary(locale);
   
   return {
-    title: isPt ? 'Ferramentas de PDF | TheNexTools' : 'Herramientas de PDF | TheNexTools',
-    description: isPt 
-      ? 'Mescle, divida, adicione marcas d’água e processe seus documentos PDF com segurança nativamente em seu navegador.' 
-      : 'Combina, divide, añade marcas de agua y procesa tus documentos PDF de forma segura y nativa en tu navegador.',
+    title: `${d.home.pdfToolkitTitle} | ${d.nav.brand}`,
+    description: d.home.pdfToolkitDesc,
     manifest: '/pdf-manifest.json',
     alternates: {
-      canonical: `/${lang}/pdf-tools`,
+      canonical: locale === 'en' ? '/pdf-tools' : `/${locale}/pdf-tools`,
       languages: {
-        'en': '/pdf-tools',
-        'es': '/es/pdf-tools',
-        'pt': '/pt/pdf-tools',
+        ...locales.reduce((acc, l) => {
+          acc[l] = l === 'en' ? '/pdf-tools' : `/${l}/pdf-tools`;
+          return acc;
+        }, {}),
         'x-default': '/pdf-tools',
       }
+    },
+    openGraph: {
+      title: `${d.home.pdfToolkitTitle} | ${d.nav.brand}`,
+      description: d.home.pdfToolkitDesc,
+      url: `https://thenextools.com/${locale}/pdf-tools`,
+      type: 'website',
     },
     robots: {
       index: false,

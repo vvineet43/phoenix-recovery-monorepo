@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { PdfUploadLandingWrapper } from '@/components/pdf-tools/PdfEditorWrapper';
 import { getDictionary } from '@/dictionaries';
+import { locales } from '@/lib/i18n-config';
 import { 
   Plus, Scissors, Minimize2, Type, ImageIcon, ShieldAlert, Lock, Unlock, EyeOff, 
   RotateCw, RefreshCw, Layers, Save, Camera, FileSearch, FileCode, FileText, ArrowRight, BookOpen, Layers2
@@ -19,11 +20,18 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: locale === 'en' ? '/pdf-toolkit' : `/${locale}/pdf-toolkit`,
       languages: {
-        'en': '/pdf-toolkit',
-        'es': '/es/pdf-toolkit',
-        'pt': '/pt/pdf-toolkit',
+        ...locales.reduce((acc, l) => {
+          acc[l] = l === 'en' ? '/pdf-toolkit' : `/${l}/pdf-toolkit`;
+          return acc;
+        }, {}),
         'x-default': '/pdf-toolkit',
       }
+    },
+    openGraph: {
+      title: d.meta.pdfToolkit.title,
+      description: d.pdfToolkit.heroDesc,
+      url: `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/pdf-toolkit`,
+      type: 'website',
     },
   };
 }

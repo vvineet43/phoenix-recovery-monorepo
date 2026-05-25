@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { locales } from '@/lib/i18n-config';
 
 const TRANSLATIONS = {
   es: {
@@ -84,9 +85,10 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `/${lang}/refund-policy`,
       languages: {
-        'en': '/refund-policy',
-        'es': '/es/refund-policy',
-        'pt': '/pt/refund-policy',
+        ...locales.reduce((acc, l) => {
+          acc[l] = l === 'en' ? '/refund-policy' : `/${l}/refund-policy`;
+          return acc;
+        }, {}),
         'x-default': '/refund-policy',
       }
     },

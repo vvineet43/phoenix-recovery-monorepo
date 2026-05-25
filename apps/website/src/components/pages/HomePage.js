@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getDictionary } from '@/dictionaries';
+import { locales } from '@/lib/i18n-config';
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
@@ -13,11 +14,18 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: locale === 'en' ? '/' : `/${locale}`,
       languages: {
-        'en': '/',
-        'es': '/es',
-        'pt': '/pt',
+        ...locales.reduce((acc, l) => {
+          acc[l] = l === 'en' ? '/' : `/${l}`;
+          return acc;
+        }, {}),
         'x-default': '/',
       }
+    },
+    openGraph: {
+      title: d.meta.home.title,
+      description: d.home.heroDesc,
+      url: `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}`,
+      type: 'website',
     }
   };
 }

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ImageBlurPageWrapper } from '../../components/image-tools/ImageCompressorWrapper';
+import { locales } from '@/lib/i18n-config';
 
 const REDACTOR_STEPS = [
   { title: 'Add Image', desc: 'Select or drag your image into the secure editor window.' },
@@ -14,9 +15,10 @@ export const metadata = {
   alternates: {
     canonical: '/image-redactor',
     languages: {
-      'en': '/image-redactor',
-      'es': '/es/image-redactor',
-      'pt': '/pt/image-redactor',
+      ...locales.reduce((acc, l) => {
+        acc[l] = l === 'en' ? '/image-redactor' : `/${l}/image-redactor`;
+        return acc;
+      }, {}),
       'x-default': '/image-redactor',
     }
   },

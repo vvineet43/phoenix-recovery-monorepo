@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { locales } from '@/lib/i18n-config';
 
 export const metadata = {
   title: 'Terms of Service | TheNexTools',
@@ -6,9 +7,10 @@ export const metadata = {
   alternates: {
     canonical: '/terms',
     languages: {
-      'en': '/terms',
-      'es': '/es/terms',
-      'pt': '/pt/terms',
+      ...locales.reduce((acc, l) => {
+        acc[l] = l === 'en' ? '/terms' : `/${l}/terms`;
+        return acc;
+      }, {}),
       'x-default': '/terms',
     }
   },
