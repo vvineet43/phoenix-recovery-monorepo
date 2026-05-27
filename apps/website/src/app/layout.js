@@ -76,7 +76,7 @@ export default async function RootLayout({ children, params }) {
         {/* Lemon Squeezy Affiliate Tracking Script */}
         <Script
           id="lemon-squeezy-config"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `window.lemonSqueezyAffiliateConfig = { store: "thenextools" };`
           }}
@@ -84,7 +84,7 @@ export default async function RootLayout({ children, params }) {
         <Script
           id="lemon-squeezy-affiliate"
           src="https://lmsqueezy.com/affiliate.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Navigation />
         {children}
