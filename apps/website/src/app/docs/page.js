@@ -37,7 +37,33 @@ export const metadata = {
 export default function DocsPage() {
   return (
     <>
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "headline": "TheNexTools Documentation",
+            "description": "Guides and quick-start tips for NexData Recovery, NexPDF Toolkit, and NexImage Toolkit.",
+            "url": "https://thenextools.com/docs",
+            "inLanguage": "en",
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "Data Recovery"
+              },
+              {
+                "@type": "Thing",
+                "name": "PDF Editing"
+              },
+              {
+                "@type": "Thing",
+                "name": "Image Editing"
+              }
+            ]
+          })
+        }}
+      />
 
       <main className="container" style={{ paddingTop: 'calc(var(--nav-h) + 4rem)', paddingBottom: '6rem', maxWidth: '800px' }}>
         <header style={{ marginBottom: '4rem' }}>
@@ -63,6 +89,17 @@ export default function DocsPage() {
               <li><strong>Merge:</strong> Combine multiple files in any order.</li>
               <li><strong>Sign:</strong> Place signatures as flattened vector elements.</li>
               <li><strong>Compress:</strong> Reduce file size with live quality presets.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>NexImage Toolkit</h3>
+            <p className="mt-sm">Process photos completely offline in your browser. Supported operations include:</p>
+            <ul style={{ paddingLeft: '1.25rem', marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <li><strong>EXIF Stripper:</strong> Remove GPS coordinates, camera model, and timestamp data before sharing.</li>
+              <li><strong>Compressor:</strong> Optimize image file sizes with real-time compression level previews.</li>
+              <li><strong>Converter:</strong> Convert between formats (JPG, PNG, WebP) in bulk.</li>
+              <li><strong>Redactor:</strong> Blur faces, license plates, and sensitive details.</li>
             </ul>
           </div>
 
