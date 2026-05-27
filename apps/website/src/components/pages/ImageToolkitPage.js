@@ -53,6 +53,26 @@ export default async function ImageToolkitPage({ params }) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "NexImage Toolkit",
+            "url": `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/image-toolkit`,
+            "applicationCategory": "UtilityApplication",
+            "operatingSystem": "All",
+            "browserRequirements": "Requires HTML5 and modern JS support",
+            "description": t.heroDesc,
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          })
+        }}
+      />
       <header className="hero container">
         <div className="badge">{t.heroBadge}</div>
         <h1>{t.heroTitle}</h1>

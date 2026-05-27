@@ -29,6 +29,7 @@ export async function proxy(request: NextRequest) {
         headers: {
           'Content-Type': 'text/markdown; charset=utf-8',
           'X-Markdown-Tokens': 'supported',
+          'Link': '</docs>; rel="service-doc"',
         },
       });
     } catch (err) {
@@ -36,7 +37,9 @@ export async function proxy(request: NextRequest) {
     }
   }
   
-  return NextResponse.next();
+  const response = NextResponse.next();
+  response.headers.set('Link', '</docs>; rel="service-doc"');
+  return response;
 }
 
 // Simple config to apply to all routes except api, static assets, etc.

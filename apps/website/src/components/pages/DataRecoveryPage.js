@@ -52,6 +52,27 @@ export default async function DataRecoveryPage({ params }) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "NexData Recovery",
+            "url": `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/data-recovery`,
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "macOS, Windows",
+            "description": t.heroDesc,
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "USD",
+              "lowPrice": "0",
+              "highPrice": "49.99",
+              "offerCount": "2"
+            }
+          })
+        }}
+      />
       <header className="hero container">
         <div className="badge">{t.heroBadge}</div>
         <h1>{t.heroTitle}</h1>
