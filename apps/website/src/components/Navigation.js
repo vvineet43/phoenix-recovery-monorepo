@@ -90,7 +90,10 @@ export default function Navigation() {
     <>
       <nav className="site-nav">
         <div className="container nav-inner">
-          <Link href={getLink('/')} className="brand">{t.brand}</Link>
+          <Link href={getLink('/')} className="brand" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+            <img src="/brand-logo.png" alt="TNT Logo" style={{ height: '24px', width: 'auto' }} />
+            <span>{t.brand}</span>
+          </Link>
           
           <div className="nav-links nav-desktop">
             <Link href={getLink('/data-recovery')} className="link">{t.dataRecovery}</Link>

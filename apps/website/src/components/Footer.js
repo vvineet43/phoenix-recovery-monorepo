@@ -56,7 +56,10 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <Link href={getLink('/')} className="brand">TheNexTools</Link>
+            <Link href={getLink('/')} className="brand" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem' }}>
+              <img src="/brand-logo.png" alt="TNT Logo" style={{ height: '24px', width: 'auto' }} />
+              <span>TheNexTools</span>
+            </Link>
             <p>{t.brandDesc}</p>
           </div>
           
