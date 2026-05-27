@@ -97,6 +97,53 @@ export function ExifStripperApp({ hideHeader }: { hideHeader?: boolean }) {
   const activeDict = dict || enDict;
   const t = activeDict.imageTools?.exifStripper || enDict.imageTools.exifStripper;
 
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'modelContext' in navigator) {
+      try {
+        const mc = (navigator as any).modelContext;
+        mc.provideContext({
+          tools: [
+            {
+              name: 'strip_exif',
+              description: 'Strips GPS, camera model, timestamps, and other EXIF metadata from an image locally.',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  imageBase64: {
+                    type: 'string',
+                    description: 'The source image file as a base64 encoded string.'
+                  }
+                },
+                required: ['imageBase64']
+              },
+              execute: async ({ imageBase64 }: any) => {
+                const res = await fetch(imageBase64.startsWith('data:') ? imageBase64 : `data:image/*;base64,${imageBase64}`);
+                const blob = await res.blob();
+                const file = new File([blob], 'input_image', { type: blob.type });
+                const metadata = await readExif(file);
+                const strippedBlob = await stripExif(file);
+                const reader = new FileReader();
+                const base64Promise = new Promise<string>((resolve) => {
+                  reader.onloadend = () => resolve(reader.result as string);
+                });
+                reader.readAsDataURL(strippedBlob);
+                return {
+                  success: true,
+                  strippedBase64: await base64Promise,
+                  detectedMetadata: metadata,
+                  originalSize: file.size,
+                  strippedSize: strippedBlob.size
+                };
+              }
+            }
+          ]
+        });
+      } catch (e) {
+        console.error('Failed to provide WebMCP context:', e);
+      }
+    }
+  }, []);
+
   const addFiles = useCallback(async (files: FileList | File[]) => {
     const arr = Array.from(files).filter(f => f.type.startsWith('image/'));
     if (!arr.length) return;
