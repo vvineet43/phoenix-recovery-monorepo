@@ -87,6 +87,62 @@ export function ImageCompressorApp({ hideHeader }: { hideHeader?: boolean }) {
   const activeDict = dict || enDict;
   const t = activeDict.imageTools?.compressor || enDict.imageTools.compressor;
 
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'modelContext' in navigator) {
+      try {
+        const mc = (navigator as any).modelContext;
+        mc.provideContext({
+          tools: [
+            {
+              name: 'compress_image',
+              description: 'Compresses a JPEG, PNG, or WebP image client-side to reduce its file size.',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  imageBase64: {
+                    type: 'string',
+                    description: 'The source image file as a base64 encoded string.'
+                  },
+                  quality: {
+                    type: 'integer',
+                    description: 'Compression quality from 10 to 100.',
+                    default: 80
+                  },
+                  format: {
+                    type: 'string',
+                    enum: ['jpeg', 'png', 'webp'],
+                    description: 'Output format.',
+                    default: 'jpeg'
+                  }
+                },
+                required: ['imageBase64']
+              },
+              execute: async ({ imageBase64, quality = 80, format = 'jpeg' }: any) => {
+                const res = await fetch(imageBase64.startsWith('data:') ? imageBase64 : `data:image/*;base64,${imageBase64}`);
+                const blob = await res.blob();
+                const file = new File([blob], 'input_image', { type: blob.type });
+                const result = await compressImage(file, quality, format);
+                const reader = new FileReader();
+                const base64Promise = new Promise<string>((resolve) => {
+                  reader.onloadend = () => resolve(reader.result as string);
+                });
+                reader.readAsDataURL(result.blob);
+                return {
+                  success: true,
+                  compressedBase64: await base64Promise,
+                  originalSize: file.size,
+                  compressedSize: result.blob.size
+                };
+              }
+            }
+          ]
+        });
+      } catch (e) {
+        console.error('Failed to provide WebMCP context:', e);
+      }
+    }
+  }, []);
+
   const processImage = async (id: string, file: File, quality: number, fmt: OutputFormat) => {
     setImages(prev => prev.map(i => i.id === id ? { ...i, status: 'compressing' } : i));
     try {
