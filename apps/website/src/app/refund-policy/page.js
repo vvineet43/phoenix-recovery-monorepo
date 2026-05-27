@@ -14,6 +14,24 @@ export const metadata = {
       'x-default': '/refund-policy',
     }
   },
+  openGraph: {
+    title: 'Refund Policy | TheNexTools',
+    description: 'Our refund policy for NexData Recovery Pro and other paid software. Learn how to request a refund and what is covered.',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thenextools.com/thenextools-com-og-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Refund Policy | TheNexTools',
+    description: 'Our refund policy for NexData Recovery Pro and other paid software. Learn how to request a refund and what is covered.',
+    images: ['https://thenextools.com/thenextools-com-og-image.png'],
+  }
 };
 
 export default function RefundPolicyPage() {

@@ -26,7 +26,6 @@ export async function generateMetadata({ params }) {
     metadataBase: new URL('https://thenextools.com'),
     title: d.meta.layout.title,
     description: d.meta.layout.description,
-    keywords: ['data recovery', 'file repair', 'mac data recovery', 'deep sector scan', 'utilities', 'TheNexTools', 'NexData Recovery'],
     alternates: {
       canonical: locale === 'en' ? '/' : `/${locale}`,
       languages: {
@@ -47,7 +46,7 @@ export async function generateMetadata({ params }) {
       siteName: 'TheNexTools Suite',
       images: [
         {
-          url: '/thenextools-com-og-image.png',
+          url: 'https://thenextools.com/thenextools-com-og-image.png',
           width: 1200,
           height: 630,
         },
@@ -59,7 +58,7 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title: d.meta.layout.title,
       description: d.meta.layout.description,
-      images: ['/thenextools-com-og-image.png'],
+      images: ['https://thenextools.com/thenextools-com-og-image.png'],
     },
   };
 }

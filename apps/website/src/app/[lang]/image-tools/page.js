@@ -25,13 +25,25 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${d.home.imageToolkitTitle} | ${d.nav.brand}`,
       description: d.home.imageToolkitDesc,
-      url: `https://thenextools.com/${locale}/image-tools`,
       type: 'website',
+      images: [
+        {
+          url: 'https://thenextools.com/thenextools-com-og-image.png',
+          width: 1200,
+          height: 630,
+        },
+      ],
     },
     robots: {
       index: false,
       follow: true,
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${d.home.imageToolkitTitle} | ${d.nav.brand}`,
+      description: d.home.imageToolkitDesc,
+      images: ['https://thenextools.com/thenextools-com-og-image.png'],
+    }
   };
 }
 

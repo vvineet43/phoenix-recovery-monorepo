@@ -22,6 +22,24 @@ export const metadata = {
       'x-default': '/image-converter',
     }
   },
+  openGraph: {
+    title: 'Image Format Converter — JPG to WebP, PNG to JPG, Locally | TheNexTools',
+    description: 'Convert images between JPG, PNG, and WebP without uploading them. Batch-convert entire folders, preserve transparency, and download as a ZIP — all in your browser.',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thenextools.com/thenextools-com-og-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Image Format Converter — JPG to WebP, PNG to JPG, Locally | TheNexTools',
+    description: 'Convert images between JPG, PNG, and WebP without uploading them. Batch-convert entire folders, preserve transparency, and download as a ZIP — all in your browser.',
+    images: ['https://thenextools.com/thenextools-com-og-image.png'],
+  }
 };
 
 export default function ImageConverterLanding() {

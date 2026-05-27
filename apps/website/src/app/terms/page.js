@@ -14,6 +14,24 @@ export const metadata = {
       'x-default': '/terms',
     }
   },
+  openGraph: {
+    title: 'Terms of Service | TheNexTools',
+    description: 'The terms of using TheNexTools suite of utilities.',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thenextools.com/thenextools-com-og-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Service | TheNexTools',
+    description: 'The terms of using TheNexTools suite of utilities.',
+    images: ['https://thenextools.com/thenextools-com-og-image.png'],
+  }
 };
 
 export default function TermsPage() {
