@@ -11,6 +11,15 @@ export const metadata = {
     index: false,
     follow: true,
   },
+  openGraph: {
+    title: 'PDF Toolkit | TheNexTools',
+    description: 'Merge, split, watermark, and securely process your PDF documents natively in your browser.',
+    type: 'website',
+  },
+  twitter: {
+    title: 'PDF Toolkit | TheNexTools',
+    description: 'Merge, split, watermark, and securely process your PDF documents natively in your browser.',
+  }
 };
 
 export default function PdfToolsPage() {

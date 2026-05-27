@@ -27,6 +27,10 @@ export async function generateMetadata({ params }) {
       url: `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/contact`,
       type: 'website',
     },
+    twitter: {
+      title: d.meta.contact.title,
+      description: d.contact.heroDesc,
+    }
   };
 }
 

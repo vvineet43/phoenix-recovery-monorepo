@@ -28,6 +28,10 @@ export async function generateMetadata({ params }) {
       url: `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/image-toolkit`,
       type: 'website',
     },
+    twitter: {
+      title: d.meta.imageToolkit.title,
+      description: d.imageToolkit.heroDesc,
+    }
   };
 }
 

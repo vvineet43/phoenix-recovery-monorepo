@@ -19,6 +19,15 @@ export const metadata = {
       'x-default': '/sitemap',
     }
   },
+  openGraph: {
+    title: 'Sitemap | TheNexTools',
+    description: 'Navigate through TheNexTools. Complete index of all our online PDF tools, image compressors, metadata strippers, and offline data recovery applications.',
+    type: 'website',
+  },
+  twitter: {
+    title: 'Sitemap | TheNexTools',
+    description: 'Navigate through TheNexTools. Complete index of all our online PDF tools, image compressors, metadata strippers, and offline data recovery applications.',
+  }
 };
 
 export default function SitemapPage() {

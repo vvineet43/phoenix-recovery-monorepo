@@ -27,6 +27,10 @@ export async function generateMetadata({ params }) {
       url: `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/data-recovery`,
       type: 'website',
     },
+    twitter: {
+      title: d.meta.dataRecovery.title,
+      description: d.dataRecovery.heroDesc,
+    }
   };
 }
 

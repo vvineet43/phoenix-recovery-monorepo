@@ -14,6 +14,15 @@ export const metadata = {
       'x-default': '/terms',
     }
   },
+  openGraph: {
+    title: 'Terms of Service | TheNexTools',
+    description: 'The terms of using TheNexTools suite of utilities.',
+    type: 'website',
+  },
+  twitter: {
+    title: 'Terms of Service | TheNexTools',
+    description: 'The terms of using TheNexTools suite of utilities.',
+  }
 };
 
 export default function TermsPage() {

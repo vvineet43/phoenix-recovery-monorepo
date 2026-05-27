@@ -22,6 +22,15 @@ export const metadata = {
       'x-default': '/exif-stripper',
     }
   },
+  openGraph: {
+    title: 'EXIF Metadata Stripper — Remove GPS & Camera Data from Photos | TheNexTools',
+    description: 'See the hidden data embedded in your photos — GPS location, device model, timestamps — and strip all of it before sharing. Runs locally in your browser.',
+    type: 'website',
+  },
+  twitter: {
+    title: 'EXIF Metadata Stripper — Remove GPS & Camera Data from Photos | TheNexTools',
+    description: 'See the hidden data embedded in your photos — GPS location, device model, timestamps — and strip all of it before sharing. Runs locally in your browser.',
+  }
 };
 
 export default function ExifStripperLanding() {

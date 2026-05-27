@@ -22,6 +22,15 @@ export const metadata = {
       'x-default': '/image-compressor',
     }
   },
+  openGraph: {
+    title: 'Image Compressor — Shrink JPG, PNG, WebP Locally | TheNexTools',
+    description: 'Compress images in your browser without uploading them. Adjust quality, compare before and after at full resolution, and download — individually or as a batch ZIP.',
+    type: 'website',
+  },
+  twitter: {
+    title: 'Image Compressor — Shrink JPG, PNG, WebP Locally | TheNexTools',
+    description: 'Compress images in your browser without uploading them. Adjust quality, compare before and after at full resolution, and download — individually or as a batch ZIP.',
+  }
 };
 
 export default function ImageCompressorLanding() {

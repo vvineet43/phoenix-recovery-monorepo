@@ -110,6 +110,10 @@ export async function generateMetadata({ params }) {
       url: `https://thenextools.com/${lang}/exif-stripper`,
       type: 'website',
     },
+    twitter: {
+      title: t.title,
+      description: t.description,
+    }
   };
 }
 

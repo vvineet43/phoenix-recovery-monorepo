@@ -64,6 +64,15 @@ export async function generateMetadata({ params }) {
         'x-default': '/docs',
       }
     },
+    openGraph: {
+      title: t.title,
+      description: t.description,
+      type: 'website',
+    },
+    twitter: {
+      title: t.title,
+      description: t.description,
+    }
   };
 }
 

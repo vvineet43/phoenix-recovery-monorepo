@@ -11,6 +11,15 @@ export const metadata = {
     index: false,
     follow: true,
   },
+  openGraph: {
+    title: 'Image Compressor | TheNexTools',
+    description: 'Compress JPG, PNG, and WebP images locally in your browser. Adjust quality, choose output format, and download — no uploads, no accounts, no watermarks.',
+    type: 'website',
+  },
+  twitter: {
+    title: 'Image Compressor | TheNexTools',
+    description: 'Compress JPG, PNG, and WebP images locally in your browser. Adjust quality, choose output format, and download — no uploads, no accounts, no watermarks.',
+  }
 };
 
 export default function ImageToolPage() {

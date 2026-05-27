@@ -58,6 +58,10 @@ export async function generateMetadata({ params }) {
       url: `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/pdf-toolkit/tools/${slug}`,
       type: 'website',
     },
+    twitter: {
+      title: tool.title,
+      description: tool.description,
+    }
   };
 }
 

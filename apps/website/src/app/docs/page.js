@@ -14,6 +14,15 @@ export const metadata = {
       'x-default': '/docs',
     }
   },
+  openGraph: {
+    title: 'Documentation | TheNexTools',
+    description: 'Learn how to use TheNexTools suite of privacy-first utilities.',
+    type: 'website',
+  },
+  twitter: {
+    title: 'Documentation | TheNexTools',
+    description: 'Learn how to use TheNexTools suite of privacy-first utilities.',
+  }
 };
 
 export default function DocsPage() {

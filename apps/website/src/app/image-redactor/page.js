@@ -22,6 +22,15 @@ export const metadata = {
       'x-default': '/image-redactor',
     }
   },
+  openGraph: {
+    title: 'Image Redactor — Blur Faces, Plates & Sensitive Areas Locally | TheNexTools',
+    description: 'Draw blur zones over faces, license plates, addresses, and sensitive data in your photos. The blur is permanent and irreversible. Runs locally in your browser — files never leave your device.',
+    type: 'website',
+  },
+  twitter: {
+    title: 'Image Redactor — Blur Faces, Plates & Sensitive Areas Locally | TheNexTools',
+    description: 'Draw blur zones over faces, license plates, addresses, and sensitive data in your photos. The blur is permanent and irreversible. Runs locally in your browser — files never leave your device.',
+  }
 };
 
 export default function ImageRedactorLanding() {

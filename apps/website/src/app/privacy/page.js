@@ -14,6 +14,15 @@ export const metadata = {
       'x-default': '/privacy',
     }
   },
+  openGraph: {
+    title: 'Privacy Policy | TheNexTools',
+    description: 'Our privacy policy is simple: we don\'t want your data. All tools run locally on your device.',
+    type: 'website',
+  },
+  twitter: {
+    title: 'Privacy Policy | TheNexTools',
+    description: 'Our privacy policy is simple: we don\'t want your data. All tools run locally on your device.',
+  }
 };
 
 export default function PrivacyPage() {

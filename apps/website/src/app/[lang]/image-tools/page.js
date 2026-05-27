@@ -32,6 +32,10 @@ export async function generateMetadata({ params }) {
       index: false,
       follow: true,
     },
+    twitter: {
+      title: `${d.home.imageToolkitTitle} | ${d.nav.brand}`,
+      description: d.home.imageToolkitDesc,
+    }
   };
 }
 
