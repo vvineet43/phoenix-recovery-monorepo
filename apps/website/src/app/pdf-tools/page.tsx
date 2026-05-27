@@ -15,10 +15,19 @@ export const metadata = {
     title: 'PDF Toolkit | TheNexTools',
     description: 'Merge, split, watermark, and securely process your PDF documents natively in your browser.',
     type: 'website',
+    images: [
+      {
+        url: 'https://thenextools.com/thenextools-com-og-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   twitter: {
+    card: 'summary_large_image',
     title: 'PDF Toolkit | TheNexTools',
     description: 'Merge, split, watermark, and securely process your PDF documents natively in your browser.',
+    images: ['https://thenextools.com/thenextools-com-og-image.png'],
   }
 };
 

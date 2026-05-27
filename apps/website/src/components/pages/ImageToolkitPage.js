@@ -25,12 +25,20 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: d.meta.imageToolkit.title,
       description: d.imageToolkit.heroDesc,
-      url: `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/image-toolkit`,
       type: 'website',
+      images: [
+        {
+          url: 'https://thenextools.com/thenextools-com-og-image.png',
+          width: 1200,
+          height: 630,
+        },
+      ],
     },
     twitter: {
+      card: 'summary_large_image',
       title: d.meta.imageToolkit.title,
       description: d.imageToolkit.heroDesc,
+      images: ['https://thenextools.com/thenextools-com-og-image.png'],
     }
   };
 }

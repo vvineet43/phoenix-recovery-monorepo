@@ -18,10 +18,19 @@ export const metadata = {
     title: 'Privacy Policy | TheNexTools',
     description: 'Our privacy policy is simple: we don\'t want your data. All tools run locally on your device.',
     type: 'website',
+    images: [
+      {
+        url: 'https://thenextools.com/thenextools-com-og-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   twitter: {
+    card: 'summary_large_image',
     title: 'Privacy Policy | TheNexTools',
     description: 'Our privacy policy is simple: we don\'t want your data. All tools run locally on your device.',
+    images: ['https://thenextools.com/thenextools-com-og-image.png'],
   }
 };
 

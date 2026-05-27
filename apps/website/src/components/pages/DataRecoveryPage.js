@@ -24,12 +24,20 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: d.meta.dataRecovery.title,
       description: d.dataRecovery.heroDesc,
-      url: `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/data-recovery`,
       type: 'website',
+      images: [
+        {
+          url: 'https://thenextools.com/thenextools-com-og-image.png',
+          width: 1200,
+          height: 630,
+        },
+      ],
     },
     twitter: {
+      card: 'summary_large_image',
       title: d.meta.dataRecovery.title,
       description: d.dataRecovery.heroDesc,
+      images: ['https://thenextools.com/thenextools-com-og-image.png'],
     }
   };
 }
