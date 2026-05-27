@@ -1,0 +1,131 @@
+{
+  "$schema": "https://agentskills.io/v0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "exif-stripper",
+      "type": "webmcp",
+      "description": "Inspects and removes hidden EXIF metadata (GPS coordinates, camera model, timestamps) from image files client-side.",
+      "url": "https://thenextools.com/exif-stripper"
+    },
+    {
+      "name": "image-compressor",
+      "type": "webmcp",
+      "description": "Reduces image file size (JPEG, PNG, WebP) using configurable quality compression levels locally.",
+      "url": "https://thenextools.com/image-compressor"
+    },
+    {
+      "name": "image-converter",
+      "type": "webmcp",
+      "description": "Performs bulk format conversion of images between JPEG, PNG, and WebP formats fully offline.",
+      "url": "https://thenextools.com/image-converter"
+    },
+    {
+      "name": "image-redactor",
+      "type": "webmcp",
+      "description": "Blurs faces, license plates, and other sensitive details in image files locally.",
+      "url": "https://thenextools.com/image-redactor"
+    },
+    {
+      "name": "compress-pdf",
+      "type": "webmcp",
+      "description": "Shrinks PDF file size locally in your browser using quality and resolution optimization levels.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/compress-pdf"
+    },
+    {
+      "name": "merge-pdf",
+      "type": "webmcp",
+      "description": "Combines multiple PDF documents into a single document with drag-and-drop page organization.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/merge-pdf"
+    },
+    {
+      "name": "split-pdf",
+      "type": "webmcp",
+      "description": "Extracts specific page ranges from a PDF or splits a document into separate files by chapter locally.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/split-pdf"
+    },
+    {
+      "name": "pdf-to-images",
+      "type": "webmcp",
+      "description": "Converts PDF pages into high-resolution JPEG or PNG images and packages them into a ZIP archive.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/pdf-to-images"
+    },
+    {
+      "name": "scan-to-pdf",
+      "type": "webmcp",
+      "description": "Transforms camera or scanner captures into enhanced, readable PDF documents offline.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/scan-to-pdf"
+    },
+    {
+      "name": "protect-pdf",
+      "type": "webmcp",
+      "description": "Encrypts PDF files with open/owner passwords and AES security settings locally.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/protect-pdf"
+    },
+    {
+      "name": "unlock-pdf",
+      "type": "webmcp",
+      "description": "Decrypts and removes password locks or copy/print restrictions from authorized PDFs.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/unlock-pdf"
+    },
+    {
+      "name": "watermark-pdf",
+      "type": "webmcp",
+      "description": "Stamps custom text watermark identifiers like 'CONFIDENTIAL' or 'DRAFT' across PDF pages.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/watermark-pdf"
+    },
+    {
+      "name": "ocr-pdf",
+      "type": "webmcp",
+      "description": "Runs local OCR on scanned documents using WebAssembly Tesseract.js to extract selectable text.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/ocr-pdf"
+    },
+    {
+      "name": "redact-pdf",
+      "type": "webmcp",
+      "description": "Permanently black-boxes and deletes sensitive names, numbers, or details in PDF layers.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/redact-pdf"
+    },
+    {
+      "name": "html-to-pdf",
+      "type": "webmcp",
+      "description": "Converts CSS-styled HTML code directly into standard, formatted PDF documents locally.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/html-to-pdf"
+    },
+    {
+      "name": "images-to-pdf",
+      "type": "webmcp",
+      "description": "Compiles a series of JPG, PNG, and WebP images into a single structured PDF file.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/images-to-pdf"
+    },
+    {
+      "name": "rotate-pdf",
+      "type": "webmcp",
+      "description": "Rotates sideways or upside-down PDF pages permanently by 90, 180, or 270 degrees.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/rotate-pdf"
+    },
+    {
+      "name": "rearrange-pdf",
+      "type": "webmcp",
+      "description": "Deletes, rearranges, or organizes pages visually within large PDF documents.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/rearrange-pdf"
+    },
+    {
+      "name": "sign-pdf",
+      "type": "webmcp",
+      "description": "Stamps handwritten or typed cursive electronic signatures onto contract pages securely.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/sign-pdf"
+    },
+    {
+      "name": "add-page-numbers",
+      "type": "webmcp",
+      "description": "Applies customized, sequential page numbers across headers or footers in PDFs.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/add-page-numbers"
+    },
+    {
+      "name": "text-to-pdf",
+      "type": "webmcp",
+      "description": "Converts plain text files into cleanly aligned, printable PDF documents.",
+      "url": "https://thenextools.com/pdf-toolkit/tools/text-to-pdf"
+    }
+  ]
+}
