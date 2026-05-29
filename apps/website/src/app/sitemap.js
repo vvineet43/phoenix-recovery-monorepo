@@ -3,6 +3,9 @@ import { locales, defaultLocale } from '@/lib/i18n-config';
 
 export default function sitemap() {
   const baseUrl = 'https://thenextools.com';
+  // Use a fixed date to avoid telling crawlers "everything changed" on every deploy.
+  // Update this manually when making significant site-wide content changes.
+  const lastModified = '2026-05-28T00:00:00.000Z';
 
   const staticRoutes = [
     '',
@@ -18,6 +21,7 @@ export default function sitemap() {
     '/privacy',
     '/terms',
     '/refund-policy',
+    '/sitemap',
   ];
 
   const dynamicRoutes = Object.keys(TOOLS_METADATA).map(
@@ -25,27 +29,38 @@ export default function sitemap() {
   );
 
   const baseRoutes = [...staticRoutes, ...dynamicRoutes];
-  const allRoutes = [];
 
-  baseRoutes.forEach((route) => {
-    // Add default prefixless route
-    allRoutes.push(route);
+  // Build sitemap entries with full hreflang alternate annotations per URL.
+  // Each entry gets <xhtml:link rel="alternate"> for every locale so Google
+  // can properly associate equivalent pages across languages.
+  return locales.flatMap((locale) => {
+    return baseRoutes.map((route) => {
+      const isHome = route === '';
+      const url = locale === defaultLocale
+        ? `${baseUrl}${route}`
+        : `${baseUrl}/${locale}${route}`;
 
-    // Add prefixed routes for non-default locales
-    locales.forEach((locale) => {
-      if (locale !== defaultLocale) {
-        allRoutes.push(`/${locale}${route}`);
-      }
+      // Build the alternates map: { en: "https://…/route", es: "https://…/es/route", … }
+      const languages = {};
+      locales.forEach((l) => {
+        if (l === defaultLocale) {
+          languages[l] = `${baseUrl}${route}`;
+        } else {
+          languages[l] = `${baseUrl}/${l}${route}`;
+        }
+      });
+      // x-default should point to the English/fallback version
+      languages['x-default'] = `${baseUrl}${route}`;
+
+      return {
+        url,
+        lastModified,
+        changeFrequency: 'weekly',
+        priority: isHome ? 1 : 0.8,
+        alternates: {
+          languages,
+        },
+      };
     });
-  });
-
-  return allRoutes.map((route) => {
-    const isHome = route === '' || locales.some((l) => l !== defaultLocale && route === `/${l}`);
-    return {
-      url: `${baseUrl}${route}`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'weekly',
-      priority: isHome ? 1 : 0.8,
-    };
   });
 }

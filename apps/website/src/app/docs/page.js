@@ -18,6 +18,7 @@ export const metadata = {
     title: 'Documentation | TheNexTools',
     description: 'Learn how to use TheNexTools suite of privacy-first utilities.',
     type: 'website',
+    url: 'https://thenextools.com/docs',
     images: [
       {
         url: 'https://thenextools.com/thenextools-com-og-image.png',

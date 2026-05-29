@@ -3,12 +3,52 @@ import { ExifStripperPageWrapper } from '@/components/image-tools/ImageCompresso
 import { locales } from '@/lib/i18n-config';
 
 const TRANSLATIONS = {
+  en: {
+    title: 'EXIF Metadata Stripper — Remove GPS & Camera Data from Photos | TheNexTools',
+    description: 'See the hidden data embedded in your photos — GPS location, device model, timestamps — and strip all of it before sharing. Runs locally in your browser.',
+    steps: [
+      { title: 'Drop Photos', desc: 'Select or drag your photos into the EXIF analyzer area.' },
+      { title: 'Inspect Metadata', desc: 'View all embedded GPS coordinates, camera models, and timestamps.' },
+      { title: 'Strip & Download', desc: 'Click strip EXIF to generate sanitized image files without any hidden fields.' }
+    ],
+    badge: 'NexStrip — Free & Private',
+    h1: 'Your photos know where you live. Seriously.',
+    p1: 'Every photo from your phone has GPS coordinates baked into the file — accurate to a few meters. It also has your device model, the exact time you took the shot, and sometimes your name. Most people have no idea this data is there. NexStrip shows you everything, then strips it out before you share the photo with anyone.',
+    schemaTitle: 'NexStrip EXIF Metadata Stripper',
+    schemaHome: 'Home',
+    schemaToolkit: 'Image Toolkit',
+    schemaTool: 'EXIF Stripper',
+    howToTitle: 'How to strip EXIF data offline',
+    diffTitle: 'What\'s actually hiding in your photos',
+    diffDesc: 'EXIF metadata was designed for camera manufacturers, not for social media. Here\'s what gets embedded by default.',
+    feat1Title: 'GPS coordinates',
+    feat1Desc: 'If location services were on when you took the photo (and on most phones, they are by default), the file contains exact latitude and longitude. Posting a photo of your living room? You just posted your home address to anyone who knows how to right-click and check file properties.',
+    feat2Title: 'Device fingerprint',
+    feat2Desc: 'Camera make, model, serial number, software version, lens data — all of it is stored in the image file. In legal or investigative contexts, this can directly link a photo to a specific device and person. Most people sharing vacation photos don\'t realize they\'re also sharing their phone\'s identity.',
+    feat3Title: 'Timestamps and capture settings',
+    feat3Desc: 'The original capture time, any editing timestamps, ISO, shutter speed, aperture — it\'s all there. If you\'d rather not broadcast exactly when and how you took every photo, stripping this is basic digital hygiene.',
+    feat4Title: 'Everything processed locally',
+    feat4Desc: 'NexStrip reads and removes metadata entirely inside your browser. No server involved. Batch-process a whole folder and download clean copies individually or as a ZIP. After the first page load, it even works offline.',
+    faqTitle: 'Frequently Asked Questions',
+    faqSubtitle: 'Everything you need to know about NexStrip metadata stripping.',
+    faqQ1: 'What is EXIF metadata?',
+    faqA1: 'EXIF (Exchangeable Image File Format) is data embedded directly inside image files when photos are captured. It contains details like camera models, timestamps, exposure settings, and sometimes exact GPS coordinates.',
+    faqQ2: 'How does NexStrip remove this data?',
+    faqA2: 'It loads the photo inside your local browser client, extracts the raw image canvas data, and re-exports it back as a clean image without copying the metadata headers. This destroys the EXIF data permanently.',
+    faqQ3: 'Is my privacy guaranteed?',
+    faqA3: 'Yes. NexStrip operates entirely client-side. The metadata parsing and stripping happen in your browser context. No data, files, or location coordinates are uploaded to any server.',
+    faqQ4: 'What image formats are supported by EXIF Stripper?',
+    faqA4: 'NexStrip supports JPEG, JPG, and PNG image files, which are the most common formats that embed camera metadata.',
+    ctaTitle: 'Ready to clean your photos?',
+    ctaDesc: 'Drop your files at the top of the page. All metadata is stripped in your browser.',
+    ctaButton: 'Back to Tool'
+  },
   es: {
     title: 'Limpiador de Metadatos EXIF — Eliminar Datos de GPS y Cámara de Fotos | TheNexTools',
     description: 'Mira los datos ocultos en tus fotos — ubicación GPS, modelo de dispositivo, marcas de tiempo — y elimínalos antes de compartir. Se ejecuta en tu navegador.',
     steps: [
       { title: 'Soltar Fotos', desc: 'Selecciona o arrastra tus fotos al área del analizador EXIF.' },
-      { title: 'Inspeccionar Metadatos', desc: 'Ver todas las coordenadas GPS incrustadas, modelos de cámara y marcas de tiempo.' },
+      { title: 'Inspeccionar Metadados', desc: 'Ver todas las coordenadas GPS incrustadas, modelos de cámara y marcas de tiempo.' },
       { title: 'Limpiar y Descargar', desc: 'Haz clic en limpiar EXIF para generar archivos de imagen sanitizados sin campos ocultos.' }
     ],
     badge: 'NexStrip — Gratis y Privado',
@@ -74,7 +114,7 @@ const TRANSLATIONS = {
     faqQ1: 'O que são metadatos EXIF?',
     faqA1: 'EXIF (Exchangeable Image File Format) são dados incorporados diretamente nos arquivos de imagem ao capturar fotos. Contém detalhes como modelos de câmera, carimbos de data/hora, configurações de exposição e, às vezes, coordenadas GPS exatas.',
     faqQ2: 'Como o NexStrip remove esses dados?',
-    faqA2: 'Ele carrega a foto no seu navegador local, extrai os dados brutos de pixels da imagem e a exporta de volta como uma imagem limpa sem copiar os cabeçalhos de metadados. Isso destrói os dados EXIF permanentemente.',
+    faqA2: 'Ele carrega a foto no seu navegador local, extrai os dados brutos de pixels da imagem e a exporta de volta como uma imagem limpa sem copiar os cabeçalhos de metadatos. Isso destrói os dados EXIF permanentemente.',
     faqQ3: 'Minha privacidade está garantida?',
     faqA3: 'Sim. NexStrip opera inteiramente do lado do cliente. A análise e remoção de metadatos acontecem no seu navegador. Nenhum arquivo, dado ou coordenada é enviado para qualquer servidor.',
     faqQ4: 'Quais formatos de imagem são suportados?',
@@ -88,7 +128,7 @@ const TRANSLATIONS = {
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.es;
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
   return {
     title: t.title,

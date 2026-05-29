@@ -26,6 +26,7 @@ export async function generateMetadata({ params }) {
       title: `${d.home.pdfToolkitTitle} | ${d.nav.brand}`,
       description: d.home.pdfToolkitDesc,
       type: 'website',
+      url: `https://thenextools.com/${locale}/pdf-tools`,
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',

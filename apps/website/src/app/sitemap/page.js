@@ -23,6 +23,7 @@ export const metadata = {
     title: 'Sitemap | TheNexTools',
     description: 'Navigate through TheNexTools. Complete index of all our online PDF tools, image compressors, metadata strippers, and offline data recovery applications.',
     type: 'website',
+    url: 'https://thenextools.com/sitemap',
     images: [
       {
         url: 'https://thenextools.com/thenextools-com-og-image.png',

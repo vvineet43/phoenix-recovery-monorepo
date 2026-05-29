@@ -1,0 +1,858 @@
+{
+  "nav": {
+    "brand": "TheNexTools",
+    "dataRecovery": "Urejeshaji Data",
+    "pdfEditing": "Uhariri wa PDF",
+    "imageEditing": "Uhariri wa Picha",
+    "ctaExplore": "Vinjari Zana Zote",
+    "ctaGetPro": "Pata NexData Pro",
+    "ctaCompress": "Anza Kubana",
+    "ctaConvert": "Anza Kubadilisha",
+    "ctaRedact": "Anza Kuficha",
+    "ctaStrip": "Anza Kusafisha",
+    "ctaPdf": "Anza Kuhariri PDF",
+    "ctaPdfTool": "Fungua Eneo la Kazi",
+    "mergePdfTitle": "Unganisha PDF",
+    "mergePdfDesc": "Changanya faili nyingi",
+    "splitPdfTitle": "Gawanya PDF",
+    "splitPdfDesc": "Kutoa kurasa maalum",
+    "compressPdfTitle": "Bana PDF",
+    "compressPdfDesc": "Punguza ukubwa wa faili nje ya mtandao",
+    "watermarkPdfTitle": "Alama ya Maji ya PDF",
+    "watermarkPdfDesc": "Weka alama za maandishi",
+    "pdfToImagesTitle": "PDF kuwa Picha",
+    "pdfToImagesDesc": "Badilisha kuwa JPG/PNG",
+    "redactPdfTitle": "Ficha PDF",
+    "redactPdfDesc": "Ficha maandishi nyeti",
+    "viewAllPdf": "Tazama Zana Zote 17",
+    "imageCompressTitle": "Bana",
+    "imageCompressDesc": "Punguza JPG, PNG, WebP",
+    "imageConvertTitle": "Badilisha Umbizo",
+    "imageConvertDesc": "JPG · PNG · WebP",
+    "imageRedactTitle": "Ficha & Futa",
+    "imageRedactDesc": "Ficha maeneo nyeti",
+    "exifStripperTitle": "Kiondoa EXIF",
+    "exifStripperDesc": "Ondoa metadata ya picha",
+    "viewAllImage": "Fungua NexImage Toolkit"
+  },
+  "footer": {
+    "brandDesc": "Zana za kompyuta za utendaji wa juu, za faragha zinazoendeshwa kikamilifu kwenye kifaa chako. Hakuna kupakia, hakuna akaunti, hakuna upuuzi.",
+    "product": "Bidhaa",
+    "resources": "Rasilimali",
+    "documentation": "Nyaraka",
+    "contact": "Wasiliana Nasi",
+    "refund": "Sera ya Urejeshaji Fedha",
+    "privacy": "Sera ya Faragha",
+    "terms": "Masharti ya Huduma",
+    "sitemap": "Ramani ya Tovuti"
+  },
+  "home": {
+    "heroBadge": "Programu ya Kitaalamu ya Kompyuta",
+    "heroTitle": "Zana zinazofanya kazi mahali ambapo mtandao hauwezi kufikia.",
+    "heroDesc": "Mkusanyiko mdogo, maalum wa zana zilizojengwa karibu na wazo moja: faili zako hazipaswi kuondoka kwenye mashine yako ili kufanya kazi. Uhariri wa PDF, usindikaji wa picha, kusafisha metadata, urejeshaji wa data — yote haya yanaendeshwa ndani ya nchi.",
+    "heroCta": "Tazama Kinachopatikana",
+    "whyTitle": "Imejengwa kwa ajili ya watu wanaoshughulikia faili nyeti",
+    "whySubtitle": "Zana nyingi hupakia data yako kwenye seva. Hilo ni chaguo baya la msingi.",
+    "whyCard1Title": "Faili zako zinabaki kwenye mashine yako",
+    "whyCard1Desc": "Nyaraka za kisheria, rekodi za kifedha, picha za wateja, nyaraka za matibabu — hakuna hata moja inayopaswa kupitia seva ya mtu mwingine ili tu kuunganisha PDF mbili. Kila zana hapa inasindika faili kwa kutumia kifaa chako mwenyewe. Hakuna telemetry, hakuna ulandanishi wa wingu, hakuna akaunti inayohitajika.",
+    "whyCard2Title": "Lipa mara moja, miliki daima",
+    "whyCard2Desc": "Usajili wa zana za msingi hauna maana. Zana kuu ni za bure na zitabaki hivyo daima. Unapohitaji huduma ya kina zaidi — kama kurejesha faili kutoka kwenye diski iliyokufa — hiyo ni ununuzi wa mara moja tu. Hakuna upyaji, hakuna muda wa mwisho.",
+    "whyCard3Title": "Kasi inayolingana na kifaa chako",
+    "whyCard3Desc": "Zana za mtandao zimepunguzwa kasi na kasi yako ya kupakia na foleni za seva zilizoshirikiwa. Hapa, PDF ya 500MB inabana kwa sekunde chache kwa sababu inatumia CPU yako moja kwa moja. Kikomo ni mashine yako, si miundombinu ya mtu mwingine.",
+    "lineupTitle": "Mstari wa sasa",
+    "lineupSubtitle": "Mkusanyiko wa zana tatu, zote zinaweza kufanya kazi nje ya mtandao, zote ni bure kuanza — kila moja imejengwa ili kuweka faili zako kwenye mashine yako.",
+    "dataRecoveryTitle": "Urejeshaji wa NexData",
+    "dataRecoveryDesc": "Inapata na kurejesha faili zilizofutwa kwa kusoma sekta za diski ghafi — ikipita mfumo wa faili kabisa. Inafanya kazi kwenye diski zilizofomatiwa, partitions zilizoharibika, na kadi za SD ambazo hazitaki kusoma.",
+    "dataRecoveryFeature1": "Inatafuta partitions zilizofutwa zamani na matukio ya kufomati",
+    "dataRecoveryFeature2": "Inarekebisha faili za video zilizoharibika za MP4 na MOV",
+    "dataRecoveryFeature3": "Tafuta bure, lipa tu unaporejesha kweli",
+    "pdfToolkitTitle": "NexPDF Toolkit",
+    "pdfToolkitDesc": "Mhariri kamili wa PDF unaoendeshwa kwenye kivinjari chako. Unganisha nyaraka, panga upya kurasa, saini mikataba, weka alama za tarehe, ficha maandishi nyeti, na ubane skani nzito — bila kupakia kitu.",
+    "pdfToolkitFeature1": "Usimamizi wa kurasa wa kuvuta na kuacha na maelezo",
+    "pdfToolkitFeature2": "Usaidizi wa saini ya kuchora na kuandika",
+    "pdfToolkitFeature3": "Kubana kwa hakikisho la ukubwa wa faili kwa wakati halisi",
+    "imageToolkitTitle": "NexImage Toolkit",
+    "imageToolkitDesc": "Zana nne za picha kwenye eneo moja la kazi — bana, badilisha umbizo, futa maeneo nyeti, na uondoe metadata iliyofichwa ya EXIF. Kila kitu kinaendeshwa kwenye kivinjari chako, hakuna kinachopakuliwa kwenye seva.",
+    "imageToolkitFeature1": "Bana JPG, PNG, na WebP na hakikisho la ubora wa wakati halisi",
+    "imageToolkitFeature2": "Badilisha kati ya umbizo na upakue kwa pamoja kama ZIP",
+    "imageToolkitFeature3": "Futa nyuso na nambari za magari, ondoa data ya GPS na kifaa kutoka kwenye picha",
+    "learnMore": "Jifunze zaidi →"
+  },
+  "dataRecovery": {
+    "heroBadge": "Urejeshaji wa NexData",
+    "heroTitle": "Kile kinachoonekana kimefutwa kabisa kawaida sivyo.",
+    "heroDesc": "Wakati diski inafomatiwa au partition inapotea, faili hazipotei — mfumo wa faili unasahau tu zilipo. NexData inasoma sekta ghafi moja kwa moja, inaunda upya kilichopo, na kukuruhusu kukirudisha. Tafuta bure. Hakiki kila kitu. Rejesha kinachohitajika.",
+    "heroCta": "Anza Bure Sasa",
+    "howTitle": "Jinsi NexData inavyopata kile ambacho zana zingine hukosa",
+    "howSubtitle": "Zana nyingi za urejeshaji zinategemea mfumo wa faili. Wakati huo haupo — umefomatiwa, umeharibika, au haupo tu — hazina kitu cha kufanya kazi nacho. NexData haihitaji.",
+    "howCard1Title": "Utafutaji wa sekta ghafi",
+    "howCard1Desc": "Badala ya kuuliza mfumo wa faili nini kilicho kwenye diski, NexData inasoma sekta za kimwili moja kwa moja. Inatambua aina za faili kwa vichwa vyao vya binary — JPEG, MP4, PDF, DOCX — na kuziunda upya bila kujali nini meza ya partition inasema. Hivi ndivyo urejeshaji unavyofanya kazi kwenye diski ambazo hata hazisomeki.",
+    "howCard2Title": "Ukarabati wa video kwa faili zilizoharibika",
+    "howCard2Desc": "Faili za video zilizorejeshwa kutoka kwenye diski zilizogawanyika karibu kila mara haziwezi kuchezwa — vichwa vya kontena huharibika wakati wa mchakato wa urejeshaji. Moduli ya ukarabati ya NexData inachukua video inayofanya kazi kutoka kwa kamera hiyo hiyo na kuitumia kujenga upya vichwa vilivyoharibika, na kufanya video ichezeke tena.",
+    "howCard3Title": "Usaidizi wa diski zilizosimbwa",
+    "howCard3Desc": "BitLocker, FileVault, usimbaji wa APFS — hivi si vizuizi mradi tu una ufunguo wa urejeshaji. NexData inaweza kufungua diski na kufanya utafutaji kamili wa sekta chini ya safu ya usimbaji, ikirejesha faili zilizofutwa kabla ya diski kusimbwa.",
+    "howCard4Title": "Nje ya mtandao kabisa",
+    "howCard4Desc": "NexData haipigi simu nyumbani. Kamwe. Matokeo ya utafutaji, hakikisho la faili, na faili zilizorejeshwa zinabaki kikamilifu kwenye mashine yako. Hakuna kinachotumwa, kuandikwa kwenye kumbukumbu, au kuripotiwa. Ikiwa unarejesha nyaraka nyeti — faili za kisheria, rekodi za matibabu, picha za kibinafsi — hii ndiyo msingi unaopaswa kutarajia.",
+    "pricingTitle": "Pakua & Bei",
+    "pricingSubtitle": "Tafuta diski yoyote na uhakiki kila faili inayoweza kurejeshwa bure. Pata toleo jipya unapohitaji kutoa faili kwenye diski.",
+    "freeTitle": "Toleo la Bure",
+    "freePrice": "$0",
+    "freeDuration": "/ milele",
+    "freeFeature1": "Utafutaji usio na kikomo wa sekta ghafi",
+    "freeFeature2": "Hakiki kila faili na video inayoweza kurejeshwa",
+    "freeFeature3": "Rejesha faili 1 (hadi 10MB)",
+    "freeFeature4": "Hifadhi na uendelee na vikao vya utafutaji",
+    "freeCtaMac": "Mac (.dmg)",
+    "freeCtaWin": "Windows (.exe)",
+    "freeInstallNote": "Sakinisha bure. Tafuta diski yako. Thibitisha faili ziko sawa kabisa kabla ya kulipa chochote.",
+    "proTitle": "NexData Pro",
+    "proPrice": "$49.99",
+    "proDuration": "/ mara moja",
+    "proFeature1": "Urejeshaji wa faili usio na kikomo",
+    "proFeature2": "Hakuna kikomo cha ukubwa wa faili",
+    "proFeature3": "Ukarabati wa video na picha zilizoharibika",
+    "proFeature4": "Usaidizi wa APFS, HFS+, NTFS, FAT32",
+    "proFeature5": "Leseni ya matumizi ya kibiashara",
+    "proFeature6": "Sasisho za bure za maisha yote",
+    "proCta": "Nunua Leseni ya Pro",
+    "proDeliveryNote": "Ufunguo wa leseni hutumwa mara moja kupitia barua pepe. Sera ya kurejesha fedha ya siku 10.",
+    "popular": "MAARUFU",
+    "installTitle": "Ujumbe wa usakinishaji",
+    "installDesc": "Sisi ni watengenezaji wadogo, kwa hivyo matoleo ya kwanza hayajasainiwa na vyeti vya Apple au Microsoft bado. Mfumo wako wa uendeshaji utaonyesha ujumbe wa usalama wa kawaida — hapa ni jinsi ya kuupita:",
+    "installMacDesc": "Buruta programu kwenda kwenye Applications. Fungua Terminal. Bandika hii na ubonyeze Enter: xattr -cr ... Bonyeza programu mara mbili ili kuifungua.",
+    "installWinDesc": "Fungua faili ya .exe iliyopakuliwa. Ikiwa unaona ujumbe wa bluu wa 'Windows protected your PC' — bonyeza 'More info', kisha 'Run anyway'.",
+    "cantTitle": "Nini NexData haiwezi kurejesha",
+    "cantSubtitle": "Hakuna zana ya urejeshaji inayoweza kufanya miujiza. Hapa kuna cha kujua mapema.",
+    "cantCard1Title": "Data iliyoandikwa juu yake",
+    "cantCard1Desc": "Mara tu data mpya inapoandikwa kwenye sekta zilezile za kimwili, maudhui ya awali yanaharibiwa katika kiwango cha kifaa cha kiufundi. Hakuna programu — ikiwa ni pamoja na yetu — inayoweza kubadilisha hilo. Hii ndiyo sababu unapaswa kuacha kuandika kwenye diski mara tu unapoona faili zimepotea.",
+    "cantCard2Title": "Diski zilizoharibika kimwili",
+    "cantCard2Desc": "Ikiwa diski imeharibika kiufundi — uharibifu wa kichwa, uharibifu wa maji, mizunguko iliyochomwa — programu haiwezi kupata sahani au chips. Hiyo inahitaji chumba safi na urejeshaji wa data wa kitaalamu, ambayo ni huduma tofauti kabisa.",
+    "cantCard3Title": "Vitalu vya SSD baada ya TRIM",
+    "cantCard3Desc": "SSD za kisasa zilizo na TRIM iliyowezeshwa zitafuta vitalu vilivyofutwa kwa nyuma, kawaida ndani ya dakika chache. Mara tu kidhibiti kinapoweka sifuri kwenye kitalu, data hiyo inapotea kimwili. TRIM imewashwa kwa chaguo-msingi kwa SSD nyingi, ndiyo sababu viwango vya urejeshaji wa HDD kawaida huwa juu zaidi.",
+    "cantCard4Title": "Diski zilizosimbwa bila ufunguo",
+    "cantCard4Desc": "Ikiwa diski ilisimbwa kwa BitLocker, FileVault, au usimbaji wa APFS na umepoteza nenosiri na ufunguo wa urejeshaji, data haiwezi kufunguliwa. Hakuna programu inayoweza kulazimisha usimbaji wa kisasa katika muda wowote unaofaa.",
+    "cantNote": "Matukio haya hayapo kwenye sera yetu ya kurejesha fedha. Tunapendekeza kutafuta na toleo la bure kwanza ili kuthibitisha kuwa faili zako zinaweza kurejesha kweli.",
+    "ctaTitle": "Tafuta kwanza. Angalia kilichopo. Amua baadaye.",
+    "ctaDesc": "Toleo la bure hufanya utafutaji kamili na kukuruhusu uhakiki kila faili inayoweza kurejeshwa — ili ujue hasa unachopata kabisa kabla ya kulipa.",
+    "ctaButton": "Pakua Toleo la Bure"
+  },
+  "contact": {
+    "heroBadge": "Wasiliana Nasi",
+    "heroTitle": "Tunasoma kila ujumbe.",
+    "heroDesc": "TheNexTools ni timu ndogo, kwa hivyo utasikia kutoka kwa mtu halisi — si roboti. Chagua anwani sahihi hapa chini na tutakujibu haraka iwezekanavyo.",
+    "supportTitle": "Msaada wa Kiufundi",
+    "supportDesc": "Zana haifanyi kazi kama ilivyotarajiwa? Ripoti za hitilafu, tabia isiyotarajiwa, au maswali kuhusu jinsi zana fulani inavyofanya kazi.",
+    "billingTitle": "Malipo & Urejeshaji Fedha",
+    "billingDesc": "Maswali kuhusu leseni yako ya NexData Pro, maombi ya kurejesha fedha, au masuala ya agizo. Kuwa na nambari yako ya agizo tayari ikiwezekana.",
+    "generalTitle": "Maswali ya Jumla",
+    "generalDesc": "Maoni, maombi ya vipengele, mawazo ya ushirikiano, au kitu kingine chochote ambacho hakilingani na kategoria zingine.",
+    "securityTitle": "Usalama & Faragha",
+    "securityDesc": "Umekuta udhaifu wa usalama au una wasiwasi kuhusu faragha? Tafadhali wasiliana nasi moja kwa moja — tunachukua haya kwa uzito.",
+    "directAddresses": "Anwani za moja kwa moja",
+    "directSupportLabel": "Msaada",
+    "directSupportDesc": "Masuala ya kiufundi, hitilafu, malipo & urejeshaji fedha, maswali ya leseni.",
+    "directGeneralLabel": "Jumla",
+    "directGeneralDesc": "Maoni, maombi ya vipengele, ushirikiano, vyombo vya habari, au kitu kingine.",
+    "responseTimeTitle": "Muda wa kujibu",
+    "responseTimeDesc": "Kawaida tunajibu ndani ya siku 1-2 za kazi. Sisi ni timu ndogo, kwa hivyo wakati wa vipindi vyenye shughuli nyingi inaweza kuchukua muda mrefu kidogo — lakini tutajibu.",
+    "refundRequestsTitle": "Maombi ya kurejesha fedha",
+    "refundRequestsDesc": "NexData Pro inakuja na dhamana ya kurejesha fedha ya siku 10. Tuma barua pepe kwa msaada ukiwa na nambari yako ya agizo na tutashughulikia mara moja. Tazama sera yetu ya kurejesha fedha kwa maelezo."
+  },
+  "imageToolkit": {
+    "heroBadge": "NexImage — Ndani ya Nchi & Faragha",
+    "heroTitle": "Zana nne za picha ambazo hazigusi seva kamwe.",
+    "heroDesc": "Bana, badilisha, ficha, na safisha metadata kwenye picha zako — yote haya ndani ya kichupo kimoja cha kivinjari. Hakuna kinachopakuliwa kwenye seva. Zana zinaendeshwa kwenye kifaa chako kwa kutumia Canvas API ya kivinjari chako, kwa hivyo zinafanya kazi hata baada ya kukata mtandao.",
+    "heroCta": "Fungua NexImage",
+    "includedTitle": "Nini kimejumuishwa",
+    "includedSubtitle": "Kila zana inafanya jambo moja vizuri. Pamoja zinashughulikia kazi za picha zinazojitokeza mara nyingi zaidi.",
+    "compressorTitle": "Kibana Picha",
+    "compressorDesc": "Punguza ukubwa wa faili kwa kitelezi cha ubora kinachoonyesha ukubwa unaokadiriwa wa pato kwa wakati halisi. Linganisha picha asili dhidi ya iliyobana kwa azimio kamili kabla ya kupakua. Usindike folda nzima kwa pamoja na uchukue matokeo kama ZIP.",
+    "compressorFeature1": "Pato la JPEG, PNG, na WebP",
+    "compressorFeature2": "Ulinganisho wa kando kwa kando kabla ya kupakua",
+    "compressorFeature3": "Jumla ya nafasi iliyohifadhiwa kwenye faili zote",
+    "compressorCta": "Fungua Kibana Picha →",
+    "converterTitle": "Kibadilisha Umbizo",
+    "converterDesc": "Badilisha kati ya JPG, PNG, na WebP — mwelekeo wowote. Buruta folda iliyochanganyika na ubadilishe kila kitu kuwa umbizo moja lengwa. Uazi unahifadhiwa wakati wa kubadilisha kuwa PNG. Ubora unaweza kubadilishwa kwa JPG na WebP.",
+    "converterFeature1": "Mchanganyiko wote wa umbizo unasaidiwa",
+    "converterFeature2": "Uazi umehifadhiwa kwa pato la PNG",
+    "converterFeature3": "Hakuna kikomo cha ukubwa wa faili au matumizi ya kila siku",
+    "converterCta": "Fungua Kibadilisha Umbizo →",
+    "redactorTitle": "Kifuta Maelezo Nyeti",
+    "redactorDesc": "Chora maeneo ya kufuta kwenye nyuso, nambari za magari, anwani, data ya kifedha — kitu chochote nyeti. Rekebisha nguvu ya kufuta kwa kila eneo. Pato ni picha tambarare ambapo ufutaji ni wa kudumu na hauwezi kurudishwa nyuma.",
+    "redactorFeature1": "Nguvu tofauti ya kufuta kwa kila eneo",
+    "redactorFeature2": "Maeneo mengi kwa kila picha",
+    "redactorFeature3": "Pato tambarare — hakuna tabaka zinazoweza kurejeshwa",
+    "redactorCta": "Fungua Kifuta Maelezo Nyeti →",
+    "stripperTitle": "Kiondoa Metadata ya EXIF",
+    "stripperDesc": "Kila picha kutoka kwenye simu yako inajumuisha uratibu wa GPS, alama za muda, habari za kifaa, na zaidi. NexStrip inakuonyesha kila uwanja, kisha inauondoa wote — ili picha unayoshiriki isibebe anwani ya nyumbani kwako kwenye mali ya faili.",
+    "stripperFeature1": "Inafunua na kuondoa data ya eneo la GPS",
+    "stripperFeature2": "Inaonyesha kila uwanja wa metadata kabla ya kuondoa",
+    "stripperFeature3": "Pakua nakala safi moja moja au kama ZIP",
+    "stripperCta": "Fungua Kiondoa EXIF →",
+    "whyTitle": "Kwa nini hii inaendeshwa ndani ya nchi badala ya seva",
+    "whySubtitle": "Picha si saizi tu. Zina data ambayo watu wengi hawajui kuihusu.",
+    "whyCard1Title": "Eneo lako lipo kwenye faili",
+    "whyCard1Desc": "Kupakia picha ili kuibana pia kunapakia uratibu wake wa GPS kwenye seva ya mtu mwingine. Ikiwa hiyo ni picha ya nyumbani kwako, shule ya mtoto wako, au ofisi yako — hilo ni tatizo. NexTools haipokei data hiyo kamwe.",
+    "whyCard2Title": "Faili za wateja zinapaswa kubaki ndani ya nchi",
+    "whyCard2Desc": "Kubana picha kwa ajili ya uwasilishaji kwa mteja, kufuta picha ya kisheria, kuondoa metadata kwenye nyaraka nyeti — hakuna hata moja inayopaswa kupitia miundombinu ya mtu mwingine, hata kwa ufupi.",
+    "whyCard3Title": "Hakuna kikomo inamaanisha hakuna msuguano",
+    "whyCard3Desc": "Zana za wingu zinazuia watumiaji wa bure kwa 5-10MB kwa kila faili. NexImage haina kikomo kama hicho — kivinjari chako kinaweza kushughulikia faili za mamia ya megabytes bila shida yoyote.",
+    "ctaTitle": "Kila kitu unachohitaji kwa kazi ya picha, bila kuondoka kwenye kivinjari.",
+    "ctaSubtitle": "Inafanya kazi kwenye Chrome, Firefox, Safari, na Edge kwenye Mac, Windows, na Linux."
+  },
+  "pdfToolkit": {
+    "heroBadge": "NexPDF — Bure & Faragha",
+    "heroTitle": "Hariri PDF bila kukabidhi faili zako kwenye seva ya mtu mwingine.",
+    "heroDesc": "Kila wakati unapotumia zana ya PDF ya mtandaoni ya bure, hati yako inapakiwa kwa kampuni ambayo haujawahi kusikia habari zake, inasindikwa kwenye mashine zao, na (labda) inafutwa baadaye. NexPDF inaruka yote hayo. Kuunganisha, kusaini, kubana, kufuta — yote yanatokea hapa hapa kwenye kivinjari chako. Hakuna akaunti. Hakuna kusubiri. Hakuna alama iliyoachwa nyuma.",
+    "includedTitle": "Nini unaweza kufanya nayo hasa",
+    "includedSubtitle": "Kazi za PDF zinazojitokeza kila wiki — zinashughulikiwa ndani ya nchi, jinsi inavyopaswa kuwa.",
+    "signTitle": "Saini na uweke maelezo",
+    "signDesc": "Chora saini yako kwa panya au kidole chako kwenye skrini ya kugusa. Au andika na uchague fonti inayoonekana kama imeandikwa kwa mkono. Weka popote kwenye ukurasa, badilisha ukubwa wake, kisha pakua PDF tambarare — hakuna tabaka zilizofichwa, hakuna uwanja wa saini unaoweza kuhaririwa ulioachwa nyuma.",
+    "assembleTitle": "Unganisha, panga upya, na utoe kurasa",
+    "assembleDesc": "Pakia PDF nyingi, buruta kurasa hadi ziwe kwenye mpangilio sahihi, geuza kitu chochote kilichokuja upande wa skana, na utoe kurasa maalum kama faili za pekee.",
+    "compressTitle": "Bana na hakikisho",
+    "compressDesc": "Wakati skani inapokuja ikiwa na 40MB na kikomo chako cha barua pepe ni 25MB, kibana kinakuruhusu kuchagua kiwango cha ubora na kuona ukubwa unaokadiriwa wa faili kabla ya kuhifadhi. Skani nyingi za azimio la juu zinabana hadi theluthi moja ya ukubwa wao wa asili bila kupoteza ubora unaoonekana.",
+    "offlineTitle": "Inafanya kazi nje ya mtandao",
+    "offlineDesc": "Baada ya kupakiwa kwa mara ya kwanza, NexPDF haihitaji mtandao. Unaweza kukata Wi-Fi yako na kuendelea kufanya kazi. Nyaraka za kisheria, taarifa za kifedha, karatasi za rasilimali watu — iwe ni nini, inabaki kati yako na faili.",
+    "utilitiesTitle": "Zana kumi na saba za PDF zilizojitolea",
+    "utilitiesSubtitle": "Ruka menyu ngumu. Fungua eneo la kazi salama na moduli uliyochagua ikiwa imewashwa tayari.",
+    "assemblyCategory": "Muundo wa Hati & Mkutano",
+    "assembly1Title": "Unganisha PDF",
+    "assembly1Desc": "Changanya nyaraka nyingi au kurasa kuwa faili moja, iliyopangwa kwa urahisi.",
+    "assembly2Title": "Gawanya PDF",
+    "assembly2Desc": "Toa safu maalum za kurasa au ugawanye hati kuwa faili za pekee.",
+    "assembly3Title": "Panga upya Kurasa",
+    "assembly3Desc": "Buruta na uache picha ndogo ili kupanga upya au kufuta kurasa kwa kuibua.",
+    "assembly4Title": "Geuza PDF",
+    "assembly4Desc": "Geuza kurasa binafsi au hati kamili kwa kudumu katika hatua.",
+    "conversionCategory": "Uboreshaji & Ubadilishaji",
+    "conversion1Title": "Bana PDF",
+    "conversion1Desc": "Punguza ukubwa wa faili kwa kitelezi cha wakati halisi na hakikisho la ukubwa wa ndani.",
+    "conversion2Title": "PDF kuwa Picha",
+    "conversion2Desc": "Badilisha kurasa kuwa faili za JPEG au PNG, moja moja au ZIP ya pamoja.",
+    "conversion3Title": "Picha kuwa PDF",
+    "conversion3Desc": "Kusanya picha za JPG, PNG, WebP kuwa hati safi ya PDF iliyopangwa vizuri.",
+    "conversion4Title": "HTML kuwa PDF",
+    "conversion4Desc": "Badilisha templeti za HTML kuwa hati zilizopangwa ndani ya nchi.",
+    "conversion5Title": "Maandishi kuwa PDF",
+    "conversion5Desc": "Panga faili za maandishi wazi, kumbukumbu, au nambari za siri kuwa fomati za PDF zinazoweza kuchapishwa.",
+    "securityCategory": "Usalama, Faragha & Stempu",
+    "security1Title": "Linda PDF",
+    "security1Desc": "Funga nyaraka kwa usimbaji wa nenosiri la ndani na vizuizi vya AES.",
+    "security2Title": "Fungua PDF",
+    "security2Desc": "Ondoa maneno ya siri na mipaka ya kutazama kutoka kwa faili zilizoidhinishwa.",
+    "security3Title": "Ficha PDF",
+    "security3Desc": "Futa kabisa maandishi ya faragha au nambari za siri kwa kubana picha tambarare.",
+    "security4Title": "Alama ya Maji ya PDF",
+    "security4Desc": "Weka stempu ya SIRI, rasimu, au maandishi yenye uwazi maalum.",
+    "signatureCategory": "Saini za Kidijitali & Picha za Skrini",
+    "signature1Title": "Saini PDF",
+    "signature1Desc": "Chora saini au andika maandishi ya laana ili kusaini hati tambarare.",
+    "signature2Title": "Skani kuwa PDF",
+    "signature2Desc": "Nasa kurasa za hati kupitia kamera ya kifaa na uongeze tofauti.",
+    "signature3Title": "OCR PDF",
+    "signature3Desc": "Skani na utoe maandishi ya wazi yanayoweza kunakiliwa kutoka kwa skani za nyaraka.",
+    "signature4Title": "Weka Nambari za Kurasa",
+    "signature4Desc": "Weka alama za nambari za kurasa za mfululizo kwenye vichwa/vijachwa.",
+    "faqTitle": "Maswali Yanayoulizwa Sana",
+    "faqSubtitle": "Kila kitu unachohitaji kujua kuhusu uhariri wa NexPDF nje ya mtandao.",
+    "faqQ1": "Je, uhariri wa PDF wa ndani unafanyaje kazi?",
+    "faqA1": "Inatumia WebAssembly na maktaba za uchezaji za PDF za JavaScript za upande wa mteja ili kuunda, kuhariri, kusaini, kuunganisha, na kugawanya faili ndani ya kivinjari chako. Hakuna faili zinazotumwa kwa seva ya nje.",
+    "faqQ2": "Je, hati zangu za PDF ziko salama na NexPDF?",
+    "faqA2": "Ndiyo, salama kabisa. Kwa sababu zana zote zinatekelezwa ndani ya kivinjari chako, faili nyeti kama mikataba, taarifa za benki, au hati za kodi haziondoki kwenye mashine yako.",
+    "faqQ3": "Je, naweza kuhariri PDF nje ya mtandao?",
+    "faqA3": "Ndiyo. NexPDF imejengwa kama Progressive Web App (PWA). Mara tu unapotembelea tovuti, zana zinahifadhiwa ndani ya nchi na kufanya kazi bila unganisho la mtandao linalofanya kazi.",
+    "faqQ4": "Je, kuna mipaka au alama za maji kwenye faili za pato?",
+    "faqA4": "Hapana. NexPDF haiongezi alama za maji, haiweki kikomo cha ukubwa wa faili, au kutekeleza kikomo cha matumizi ya kila siku. Unapata uhariri wa PDF wa kitaalamu bure kabisa.",
+    "ctaTitle": "Tayari ukiwa tayari.",
+    "ctaDesc": "Fungua mhariri, drop faili, na uanze kufanya kazi. Hakuna kujisajili, hakuna hesabu ya majaribio.",
+    "ctaButton": "Rudi kwenye Zana",
+    "upload": {
+      "selectFile": "Chagua Faili ya PDF",
+      "dragDrop": "Buruta na uache hati yako hapa, au bonyeza ili kuvinjari faili",
+      "preparing": "Inaandaa eneo lako la kazi salama...",
+      "loading": "Inapakia mazingira ya mhariri ndani ya nchi...",
+      "clientSide": "100% Upande wa Mteja",
+      "noUploads": "Hakuna Kupakia kwenye Seva",
+      "worksOffline": "Inafanya Kazi Nje ya Mtandao"
+    }
+  },
+  "pdfTools": {
+    "tools": {
+      "compress-pdf": {
+        "title": "Bana PDF Ndani ya Nchi — Punguza Ukubwa wa Faili Bila Kupakia | TheNexTools",
+        "description": "Punguza ukubwa wa faili za PDF kwenye kivinjari chako. Rekebisha ubora kwa kitelezi, angalia ukubwa unaokadiriwa kabla ya kupakua, na uweke hati zako faragha.",
+        "h1": "Fanya PDF hiyo iwe ndogo ya kutosha kutumwa kwa barua pepe.",
+        "p": "Una skani ya 40MB inayohitaji kuwa chini ya 10MB kwa kiambatisho cha barua pepe. Badala ya kuipakia kwenye tovuti ya kubana nasibu, NexPDF inaishughulikia ndani ya nchi — unaweka ubora, unaona ukubwa unaokadiriwa, na unapakua matokeo.",
+        "features": [
+          "Kitelezi cha ubora na makadirio ya ukubwa wa faili wa wakati halisi",
+          "Inafanya kazi kwenye skani, ripoti, na hati zenye picha nyingi",
+          "Hakuna kikomo cha ukubwa wa faili au viwango vya kila siku",
+          "Inajiendesha nje ya mtandao baada ya kupakiwa kwa mara ya kwanza"
+        ],
+        "howToTitle": "Jinsi ya kubana faili ya PDF",
+        "steps": [
+          {
+            "title": "Pakia Faili",
+            "desc": "Chagua au dondosha hati yako ya PDF kwenye eneo la kazi hapo juu."
+          },
+          {
+            "title": "Boresha Ukubwa",
+            "desc": "Tumia kitelezi cha ubora kupata uwiano unaopendelea wa ukubwa na azimio."
+          },
+          {
+            "title": "Hifadhi Hati",
+            "desc": "Tengeneza na upakue PDF iliyoboreshwa mara moja kwenye kifaa chako."
+          }
+        ],
+        "toolParam": "compress"
+      },
+      "merge-pdf": {
+        "title": "Unganisha PDFs Ndani ya Nchi — Changanya Hati Bila Kupakia | TheNexTools",
+        "description": "Changanya faili nyingi za PDF kuwa hati moja. Buruta ili kupanga upya kurasa, ongeza picha, na upakue — yote yanasindikwa kwenye kivinjari chako.",
+        "h1": "Changanya PDF nyingi kuwa hati moja.",
+        "p": "Pakia faili zote, buruta kurasa kuwa katika mpangilio sahihi, na unganisha. Kitu kizima kinatokea kwenye mashine yako — hakuna foleni ya kupakia, hakuna kikomo cha ukubwa wa faili, hakuna akaunti inayohitajika.",
+        "features": [
+          "Changanya PDF nyingi kama unavyohitaji kwa mara moja",
+          "Kupanga upya kurasa kwa kuvuta na kuacha kabla ya kuunganisha",
+          "Ingiza picha moja kwa moja kwenye hati ya mwisho",
+          "Hakuna vizuizi vya hesabu ya faili au ukubwa"
+        ],
+        "howToTitle": "Jinsi ya kuchanganya faili za PDF",
+        "steps": [
+          {
+            "title": "Ongeza Nyaraka",
+            "desc": "Chagua na uburute faili nyingi za PDF unazotaka kuunganisha."
+          },
+          {
+            "title": "Panga Mpangilio",
+            "desc": "Buruta picha ndogo za kurasa ili kuzipanga katika mfuatano unaopendelea."
+          },
+          {
+            "title": "Kusanya PDF",
+            "desc": "Bonyeza \"Unganisha\" ili kukusanya na kuhifadhi hati yako ya pamoja."
+          }
+        ],
+        "toolParam": "merge"
+      },
+      "split-pdf": {
+        "title": "Gawanya PDF Ndani ya Nchi — Toa Kurasa Bila Kupakia | TheNexTools",
+        "description": "Toa kurasa maalum kutoka kwa PDF au uigawe kuwa hati tofauti. Inafanya kazi kwenye kivinjari chako — hakuna seva inayohusika.",
+        "h1": "Toa kurasa unazohitaji.",
+        "p": "Una ripoti ya kurasa 200 lakini unahitaji kurasa 14 hadi 22 pekee. Au unataka kugawanya hati kuwa faili tatu tofauti kwa sura. NexPDF inashughulikia zote mbili bila kupakia chochote.",
+        "features": [
+          "Safu maalum za kurasa (k.m., 1-3, 7, 12-18)",
+          "Gawanya katika sehemu sawa moja kwa moja",
+          "Pakua kama PDF tofauti au ZIP moja",
+          "Inashughulikia hati zilizosimbwa na kubwa"
+        ],
+        "howToTitle": "Jinsi ya kutoa kurasa kutoka kwa PDF",
+        "steps": [
+          {
+            "title": "Fungua Hati",
+            "desc": "Pakia hati yako ya PDF kwenye eneo salama la kazi."
+          },
+          {
+            "title": "Chagua Kurasa",
+            "desc": "Bainisha nambari za kurasa au safu za kurasa unazotaka kutoa."
+          },
+          {
+            "title": "Hifadhi Pato",
+            "desc": "Tengeneza na upakue kurasa zilizochaguliwa kama PDF mpya."
+          }
+        ],
+        "toolParam": "split"
+      },
+      "pdf-to-images": {
+        "title": "PDF kuwa JPG/PNG Ndani ya Nchi — Badilisha Kurasa kuwa Picha | TheNexTools",
+        "description": "Badilisha kila ukurasa wa PDF kuwa picha ya hali ya juu ya JPEG au PNG. Inasindikwa kwenye kivinjari chako — hakuna kupakia kunahitajika.",
+        "h1": "Badilisha kurasa za PDF kuwa picha.",
+        "p": "Je, unahitaji kuingiza ukurasa kutoka kwa mkataba kwenye wasilisho? Au kuhifadhi muundo wa hati ya PDF kama PNG binafsi? NexPDF inabadilisha kila ukurasa kuwa picha ya azimio la juu — chagua JPEG kwa faili ndogo au PNG kwa ubora usio na upotevu.",
+        "features": [
+          "Pato la azimio la juu kwa DPI uliyochagua",
+          "Chaguzi za umbizo la JPEG na PNG",
+          "Pakua kurasa zote kwa pamoja kama ZIP",
+          "Hakuna seva inayohusika — kila kitu kinabaki kwenye kifaa chako"
+        ],
+        "howToTitle": "Jinsi ya kubadilisha kurasa za PDF kuwa JPEG au PNG",
+        "steps": [
+          {
+            "title": "Pakia PDF",
+            "desc": "Chagua hati ya PDF unayotaka kubadilisha."
+          },
+          {
+            "title": "Chagua Umbizo",
+            "desc": "Chagua JPEG kwa ubana au PNG kwa ubora wa picha usio na upotevu."
+          },
+          {
+            "title": "Hifadhi Picha",
+            "desc": "Badilisha na upakue kurasa zote moja moja au kama kumbukumbu moja ya ZIP."
+          }
+        ],
+        "toolParam": "images"
+      },
+      "scan-to-pdf": {
+        "title": "Skani kuwa PDF — Tumia Kamera Yako kama Skani ya Hati | TheNexTools",
+        "description": "Nasa hati za kimwili kwa kamera yako na uzibadilishe kuwa kurasa za PDF mara moja. Kila kitu kinabaki kwenye kifaa chako.",
+        "h1": "Tumia kamera ya simu yako kama skani ya hati.",
+        "p": "Elekeza kamera yako kwenye risiti, ubao, au fomu ya karatasi — NexPDF inainasa na kuibadilisha kuwa ukurasa safi wa PDF. Hakuna vifaa maalum vya skani vinavyohitajika, na picha haziondoki kwenye kifaa chako kamwe.",
+        "features": [
+          "Nasa moja kwa moja kutoka kwa kamera ya kifaa chako",
+          "Inafanya kazi vizuri kwenye simu na vidonge",
+          "Uboreshaji wa tofauti moja kwa moja kwa hati za maandishi",
+          "Changanya skani nyingi kuwa PDF moja"
+        ],
+        "howToTitle": "Jinsi ya skani hati kwa kutumia kamera yako",
+        "steps": [
+          {
+            "title": "Nasa Ukurasa",
+            "desc": "Toa ruhusa ya kamera na upige picha ya hati yako ya kimwili."
+          },
+          {
+            "title": "Kata & Boresha",
+            "desc": "Hakiki picha na uruhusu skani yetu kukata na kuboresha usomaji wa maandishi."
+          },
+          {
+            "title": "Tuma PDF",
+            "desc": "Kusanya skani zako kuwa hati moja safi ya PDF."
+          }
+        ],
+        "toolParam": "scan"
+      },
+      "protect-pdf": {
+        "title": "Linda PDF kwa Nenosiri Ndani ya Nchi — Simba Bila Kupakia | TheNexTools",
+        "description": "Ongeza ulinzi wa nenosiri na usimbaji wa AES kwenye PDF zako. Inafanya kazi kwenye kivinjari chako — nenosiri haligusi seva.",
+        "h1": "Funga PDF yako kwa nenosiri.",
+        "p": "Weka nenosiri wazi ili watu walioidhinishwa tu waweze kutazama hati, na kwa hiari weka nenosiri tofauti la mmiliki ili kuzuia uchapishaji na uhariri. Usimbaji unafanyika ndani ya nchi — nenosiri lako halitumwi popote.",
+        "features": [
+          "Usimbaji wa AES unatumika kwenye kivinjari chako",
+          "Maneno ya siri tofauti ya kufungua na mmiliki",
+          "Dhibiti ruhusa za kuchapisha, kunakili, na kuhariri",
+          "Nenosiri haliondoki kwenye kifaa chako kamwe"
+        ],
+        "howToTitle": "Jinsi ya kuongeza nenosiri kwenye PDF yako",
+        "steps": [
+          {
+            "title": "Pakia PDF",
+            "desc": "Chagua faili ya PDF unayotaka kusimba na kulinda."
+          },
+          {
+            "title": "Weka Nenosiri",
+            "desc": "Ingiza nenosiri thabiti na ubadilishe ruhusa za kuchapisha au kunakili."
+          },
+          {
+            "title": "Salama Faili",
+            "desc": "Tumia usimbaji wa ndani na upakue PDF yako iliyolindwa."
+          }
+        ],
+        "toolParam": "protect"
+      },
+      "unlock-pdf": {
+        "title": "Ondoa Nenosiri la PDF Ndani ya Nchi — Fungua Bila Kupakia | TheNexTools",
+        "description": "Ondoa ulinzi wa nenosiri kutoka kwa faili zako za PDF. Ingiza nenosiri mara moja na upakue nakala isiyolindwa — yote kwenye kivinjari chako.",
+        "h1": "Ondoa nenosiri kwenye PDF yako.",
+        "p": "Unajua nenosiri lakini umechoka kuliandika kila wakati unapofungua faili. Au unahitaji kushiriki toleo lisilolindwa na mtu. Ingiza nenosiri mara moja hapa na upakue nakala safi, isiyolindwa.",
+        "features": [
+          "Ondoa maneno ya siri ya kufungua hati mara moja",
+          "Inafungua vizuizi vya kuchapisha na kuhariri",
+          "Usimbaji unaendeshwa ndani ya nchi kwenye kivinjari chako",
+          "Hakuna haja ya kupakia faili mahali popote"
+        ],
+        "howToTitle": "Jinsi ya kufungua PDF iliyolindwa kwa nenosiri",
+        "steps": [
+          {
+            "title": "Chagua Faili",
+            "desc": "Pakia hati yako ya PDF iliyolindwa kwa nenosiri."
+          },
+          {
+            "title": "Ingiza Nenosiri",
+            "desc": "Toa nenosiri sahihi la hati ili kuidhinisha usimbaji."
+          },
+          {
+            "title": "Ondoa Kifungo",
+            "desc": "Bonyeza \"Fungua\" ili kuhifadhi nakala safi ya faili isiyolindwa."
+          }
+        ],
+        "toolParam": "unlock"
+      },
+      "watermark-pdf": {
+        "title": "Ongeza Alama ya Maji kwenye PDF Ndani ya Nchi — Weka Stempu ya Maandishi | TheNexTools",
+        "description": "Weka stempu ya \"SIRI\", \"RASIMU\", au maandishi maalum kwenye kurasa zako za PDF. Badilisha uwazi, ukubwa, na nafasi — yote kwenye kivinjari chako.",
+        "h1": "Weka stempu kwenye PDF zako kabla ya kuzishiriki.",
+        "p": "Weka alama kwenye rasimu kwa \"RASIMU\" ili kusiwe na mtu anayeitendea kama ya mwisho. Weka stempu ya \"SIRI\" kwenye ripoti ya ndani. Au ongeza jina la kampuni yako kama alama ya maji ya hila kwenye kila ukurasa. Rekebisha maandishi, ukubwa, uwazi, na nafasi ili kupata hasa mwonekano unaotaka.",
+        "features": [
+          "Maandishi maalum yenye ukubwa wa fonti na uwazi unaoweza kubadilishwa",
+          "Nafasi ya katikati, ya mlalo, kichwa, au kijachwa",
+          "Tumia kwenye kurasa maalum au hati nzima",
+          "Hakikisho la moja kwa moja kabla ya kuhifadhi"
+        ],
+        "howToTitle": "Jinsi ya kuweka alama ya maji kwenye hati ya PDF",
+        "steps": [
+          {
+            "title": "Pakia PDF",
+            "desc": "Pakia hati ya PDF unayotaka kuweka stempu."
+          },
+          {
+            "title": "Buni Stempu",
+            "desc": "Andika maandishi ya alama yako ya maji, rekebisha uwazi, ukubwa, na nafasi."
+          },
+          {
+            "title": "Weka Stempu",
+            "desc": "Rendesha stempu kwenye kurasa zako na upakue faili."
+          }
+        ],
+        "toolParam": "watermark"
+      },
+      "ocr-pdf": {
+        "title": "OCR PDF Ndani ya Nchi — Vuta Maandishi kutoka kwa Hati Zilizoskaniwa | TheNexTools",
+        "description": "Badilisha PDF zilizoskaniwa na picha kuwa maandishi yanayoweza kutafutwa, kuchaguliwa kwa kutumia OCR ya kivinjari. Hakuna kupakia kunahitajika.",
+        "h1": "Pata maandishi yanayoweza kutafutwa kutoka kwa hati iliyoskaniwa.",
+        "p": "Mtu alikutumia skani ya mkataba na unahitaji kunakili aya moja. Au una rundo la hati za zamani za karatasi zilizopigwa picha kama PDF na unahitaji kutafuta ndani yake. Injini ya OCR ya NexPDF inasoma maandishi kutoka kwenye picha na kukupa matokeo yanayoweza kunakiliwa.",
+        "features": [
+          "Inaendeshwa na Tesseract.js — inafanya kazi kwenye kivinjari chako",
+          "Inasaidia lugha nyingi",
+          "Hakuna seva inayohusika, kwa hivyo hati nyeti zinabaki faragha",
+          "Tuma maandishi yaliyotolewa kama faili ya .txt"
+        ],
+        "howToTitle": "Jinsi ya kutoa maandishi kutoka kwa PDF iliyoskaniwa",
+        "steps": [
+          {
+            "title": "Pakia Skani",
+            "desc": "Chagua PDF yako iliyoskaniwa au hati ya picha."
+          },
+          {
+            "title": "Weka Lugha",
+            "desc": "Chagua lugha ya hati ili kuboresha usahihi wa OCR."
+          },
+          {
+            "title": "Nakili Maandishi",
+            "desc": "Vuta maandishi na unakili matokeo au uyahifadhi kama faili ya maandishi wazi."
+          }
+        ],
+        "toolParam": "ocr"
+      },
+      "redact-pdf": {
+        "title": "Ficha PDF Ndani ya Nchi — Futa Kabisa Maandishi Nyeti | TheNexTools",
+        "description": "Chora visanduku vyeusi kwenye majina, nambari, na anwani kwenye PDF yako. Kuficha ni kwa kudumu — maandishi yaliyofichwa hayawezi kurejeshwa.",
+        "h1": "Futa kile kisichopaswa kuonekana.",
+        "p": "Chora visanduku vya kuficha kwenye nambari za hifadhi ya jamii, majina ya wateja, takwimu za kifedha, au kitu kingine chochote kinachohitaji kubaki siri. Pato limebanwa — maandishi yaliyo chini yanaharibiwa kabisa, si kufunikwa tu na sura.",
+        "features": [
+          "Ufutaji wa maeneo yenye upeo na kubana kwa kudumu",
+          "Maandishi yaliyofichwa hayawezi kunakiliwa au kutolewa",
+          "Inafaa kwa hati za kisheria, kifedha, na matibabu",
+          "Kila kitu kinasindikwa kwenye kifaa chako"
+        ],
+        "howToTitle": "Jinsi ya kufuta maandishi kwa kudumu kwenye PDF",
+        "steps": [
+          {
+            "title": "Fungua PDF",
+            "desc": "Chagua faili ya PDF iliyo na maelezo nyeti."
+          },
+          {
+            "title": "Chora Kisanduku",
+            "desc": "Chora visanduku vyeusi kwenye majina, nambari, na maandishi ya faragha."
+          },
+          {
+            "title": "Safisha Faili",
+            "desc": "Bonyeza \"Ficha\" ili kubana na kupakua faili yako kwa kudumu."
+          }
+        ],
+        "toolParam": "redact"
+      },
+      "html-to-pdf": {
+        "title": "HTML kuwa PDF Ndani ya Nchi — Badilisha Maudhui ya Mtandao kuwa PDF | TheNexTools",
+        "description": "Bandika nambari ya HTML na upate PDF iliyopangwa mara moja. Inasaidia muundo wa CSS. Inafanya kazi kwenye kivinjari chako.",
+        "h1": "Badilisha HTML kuwa PDF inayoweza kupakuliwa.",
+        "p": "Bandika HTML yako — templeti ya risiti, muundo wa ripoti, barua pepe iliyopangwa — na NexPDF inaionyesha kama PDF safi unayoweza kuhifadhi au kuchapisha. Rahisi kwa watengenezaji wanaohitaji hakikisho la haraka la PDF bila kuanzisha kivinjari kisicho na kichwa.",
+        "features": [
+          "Inaonyesha HTML yenye muundo wa CSS",
+          "Hakikisho la haraka kabla ya kubadilisha",
+          "Inafaa kwa risiti, ripoti, na templeti za barua pepe",
+          "Hakuna API ya nje au huduma inayohitajika"
+        ],
+        "howToTitle": "Jinsi ya kubadilisha HTML kuwa PDF",
+        "steps": [
+          {
+            "title": "Bandika Msimbo",
+            "desc": "Ingiza nambari yako ya HTML na CSS kwenye eneo la kazi."
+          },
+          {
+            "title": "Thibitisha Hakikisho",
+            "desc": "Hakiki dirisha la maonyesho ili kuangalia mpangilio."
+          },
+          {
+            "title": "Tuma PDF",
+            "desc": "Bonyeza \"Badilisha kuwa PDF\" ili kuhifadhi hati iliyopangwa."
+          }
+        ],
+        "toolParam": "html"
+      },
+      "images-to-pdf": {
+        "title": "Picha kuwa PDF Ndani ya Nchi — Kusanya Picha kuwa Hati | TheNexTools",
+        "description": "Badilisha picha za JPG, PNG, na WebP kuwa hati moja ya PDF. Panga upya kurasa, rekebisha pembezoni, na upakue — yote kwenye kivinjari chako.",
+        "h1": "Badilisha stack ya picha kuwa PDF moja.",
+        "p": "Ulipiga picha hati ya kurasa nyingi na simu yako na sasa unaihitaji kama PDF moja. Au una seti ya mifano ya muundo inayohitaji kwenda kama faili moja. Zidondoshe, panga mpangilio, na utume.",
+        "features": [
+          "Inakubali JPG, PNG, na WebP",
+          "Kupanga upya kurasa kwa kuvuta na kuacha",
+          "Pembezoni zinazoweza kubadilishwa na mwelekeo wa ukurasa",
+          "Hakuna kikomo cha hesabu ya picha au ukubwa wa faili"
+        ],
+        "howToTitle": "Jinsi ya kukusanya picha kuwa PDF",
+        "steps": [
+          {
+            "title": "Ongeza Picha",
+            "desc": "Chagua picha (JPG, PNG, au WebP) unazotaka kukusanya."
+          },
+          {
+            "title": "Panga Mpangilio",
+            "desc": "Buruta picha ndogo ili kupanga kurasa zao."
+          },
+          {
+            "title": "Kusanya PDF",
+            "desc": "Bonyeza \"Unda PDF\" ili kuhifadhi kurasa zilizokusanywa."
+          }
+        ],
+        "toolParam": "batch-upload"
+      },
+      "rotate-pdf": {
+        "title": "Geuza Kurasa za PDF Ndani ya Nchi — Rekebisha Skani za Mlalo | TheNexTools",
+        "description": "Geuza kurasa binafsi au PDF nzima kwa digrii 90, 180, au 270. Imehifadhiwa kwa kudumu. Hakuna kupakia kunahitajika.",
+        "h1": "Rekebisha kurasa zilizokuja upande wa mlalo.",
+        "p": "Hati zilizoskaniwa na picha za simu huishia katika mwelekeo usiofaa kila wakati. Bonyeza ili kugeuza kurasa binafsi au hati nzima, na uhifadhi toleo lililorekebishwa. Kugeuza ni kwa kudumu — si mpangilio wa mtazamaji tu.",
+        "features": [
+          "Geuza kurasa binafsi au hati nzima",
+          "Hakikisho la picha la kila mgeuko",
+          "Bila upotevu — hakuna kubana upya kwa maudhui",
+          "Inafanya kazi kwenye PDF yoyote bila kujali ukubwa"
+        ],
+        "howToTitle": "Jinsi ya kugeuza kurasa za PDF",
+        "steps": [
+          {
+            "title": "Fungua PDF",
+            "desc": "Pakia PDF yenye kurasa za mlalo au zilizogeuka chini."
+          },
+          {
+            "title": "Panga Mpangilio",
+            "desc": "Bonyeza vidhibiti vya kugeuza kwenye picha ndogo za kurasa ili kuzipanga."
+          },
+          {
+            "title": "Hifadhi Mgeuko",
+            "desc": "Pakua hati iliyorekebishwa mwelekeo ukiwa umeoka."
+          }
+        ],
+        "toolParam": "rotate"
+      },
+      "rearrange-pdf": {
+        "title": "Panga upya Kurasa za PDF Ndani ya Nchi — Kupanga Upya kwa Kuvuta na Kuacha | TheNexTools",
+        "description": "Panga upya, ondoa, na upange kurasa kwenye PDF yako kwa kuvuta na kuacha. Inafanya kazi kwenye kivinjari chako.",
+        "h1": "Weka kurasa katika mpangilio sahihi.",
+        "p": "Nyongeza iliishia kabla ya utangulizi, au kuna kurasa tatu tupu katikati zinazohitaji kuondolewa. Buruta picha ndogo ili kupanga upya, bonyeza ili kufuta, na upakue toleo lililosafishwa.",
+        "features": [
+          "Kupanga upya kurasa kwa kuvuta na kuacha",
+          "Futa kurasa zisizohitajika kwa bonyeza moja",
+          "Changanya na upange upya kwenye PDF nyingi",
+          "Inashughulikia hati kubwa vizuri"
+        ],
+        "howToTitle": "Jinsi ya kupanga upya kurasa za PDF",
+        "steps": [
+          {
+            "title": "Pakia PDF",
+            "desc": "Chagua faili ya PDF unayotaka kupanga."
+          },
+          {
+            "title": "Panga Kurasa",
+            "desc": "Buruta picha ndogo ili kupanga kurasa, au bonyeza kufuta ili kuziondoa."
+          },
+          {
+            "title": "Hifadhi Faili",
+            "desc": "Bonyeza \"Hifadhi\" ili kupakua hati iliyokamilika."
+          }
+        ],
+        "toolParam": "rearrange"
+      },
+      "sign-pdf": {
+        "title": "Saini PDF Ndani ya Nchi — Ongeza Saini Yako Bila Kuchapisha | TheNexTools",
+        "description": "Chora au andika saini yako kwenye ukurasa wowote wa PDF. Pato limebanwa ili saini ishindwe kuhamishwa au kuhaririwa. Hakuna kupakia kunahitajika.",
+        "h1": "Saini bila kuichapisha.",
+        "p": "Chora saini yako kwa panya au skrini ya kugusa, au andika na uchague fonti ya cursive. Iweke kwenye mstari sahihi, badilisha ukubwa wake, na utume PDF tambarare. Saini inakuwa sehemu ya ukurasa — haiwezi kuchaguliwa, kuhamishwa, au kuhaririwa na mpokeaji.",
+        "features": [
+          "Njia za saini za kuchora na kuandika",
+          "Hifadhi saini kwa ajili ya matumizi ya baadae kwenye hati",
+          "Pato tambarare — saini haiwezi kuchezewa",
+          "Inafaa kwa mikataba ya upangaji, mikataba ya kutosambaza taarifa, fomu za rasilimali watu, na zaidi"
+        ],
+        "howToTitle": "Jinsi ya kusaini hati ya PDF",
+        "steps": [
+          {
+            "title": "Pakia PDF",
+            "desc": "Pakia mkataba wa PDF au fomu inayohitaji saini yako."
+          },
+          {
+            "title": "Unda Saini",
+            "desc": "Chora saini yako kwenye skrini au andika ukitumia mitindo ya cursive."
+          },
+          {
+            "title": "Weka & Hifadhi",
+            "desc": "Buruta saini kwenye mstari wa kusaini na ubonyeze tuma."
+          }
+        ],
+        "toolParam": "sign"
+      },
+      "add-page-numbers": {
+        "title": "Ongeza Nambari za Kurasa kwenye PDF Ndani ya Nchi — Uwekaji Nambari Moja kwa Moja | TheNexTools",
+        "description": "Ongeza nambari za kurasa za mfululizo kwenye PDF yako. Chagua nafasi na mtindo. Inafanya kazi kwenye kivinjari chako.",
+        "h1": "Weka nambari kwenye kurasa zako moja kwa moja.",
+        "p": "Ripoti, hati za maandishi, majalada ya mahakama — kitu chochote kirefu kuliko kurasa chache kawaida kinahitaji nambari za kurasa. Chagua zinapoenda (chini katikati, juu kulia, n.k.) na NexPDF inaziweka kwenye kila ukurasa.",
+        "features": [
+          "Uwekaji nambari wa mfululizo kwenye kurasa zote",
+          "Chaguzi nyingi za nafasi (juu, chini, kushoto, kulia, katikati)",
+          "Inafanya kazi kwenye hati za urefu wowote",
+          "Inasindikwa ndani ya nchi kwa hati nyeti"
+        ],
+        "howToTitle": "Jinsi ya kuongeza nambari za kurasa kwenye PDF",
+        "steps": [
+          {
+            "title": "Pakia Hati",
+            "desc": "Chagua na upakie faili ya PDF unayotaka kuweka nambari."
+          },
+          {
+            "title": "Chagua Nafasi",
+            "desc": "Chagua mtindo, muundo, na nafasi ya mpangilio kwa nambari za kurasa."
+          },
+          {
+            "title": "Weka Nambari",
+            "desc": "Weka nambari kwenye hati na upakue."
+          }
+        ],
+        "toolParam": "page-numbers"
+      },
+      "text-to-pdf": {
+        "title": "Maandishi kuwa PDF Ndani ya Nchi — Badilisha Maandishi Wazi kuwa Hati Iliyopangwa | TheNexTools",
+        "description": "Bandika maandishi wazi na upate PDF safi iliyopangwa. Inahifadhi mapumziko ya mistari na nafasi. Inafanya kazi kwenye kivinjari chako.",
+        "h1": "Badilisha maandishi wazi kuwa PDF sahihi.",
+        "p": "Una muhtasari wa mkutano, kumbukumbu za seva, au nambari ya siri inayohitaji kwenda kama PDF. Bandika maandishi, angalia hakikisho, na upakue hati iliyopangwa vizuri. Mapumziko ya mistari na nafasi vinahifadhiwa hasa.",
+        "features": [
+          "Mwandiko safi wenye muundo thabiti",
+          "Inahifadhi mapumziko ya mistari, ujazo, na nafasi",
+          "Ubadilishaji wa haraka na hakikisho la moja kwa moja",
+          "Hakuna data inayotoka kwenye kivinjari chako"
+        ],
+        "howToTitle": "Jinsi ya kubadilisha faili za maandishi kuwa PDF",
+        "steps": [
+          {
+            "title": "Bandika Maandishi",
+            "desc": "Andika au ubandike maudhui yako ya maandishi kwenye mhariri."
+          },
+          {
+            "title": "Panga Ukurasa",
+            "desc": "Sanidi pembezoni za karatasi na uangalie mwandiko kwenye dirisha la hakikisho."
+          },
+          {
+            "title": "Tuma PDF",
+            "desc": "Bonyeza \"Badilisha kuwa PDF\" ili kuhifadhi hati iliyokamilika."
+          }
+        ],
+        "toolParam": "text"
+      }
+    },
+    "seoPage": {
+      "keyBenefits": "Faida Kuu",
+      "localPrivate": "Ndani ya Nchi & Faragha",
+      "localPrivateDesc": "Zana hii inasindika faili zako moja kwa moja kwenye kivinjari chako — hakuna kitu kinachopakuliwa kwenye seva. Unapofanya kazi na {tool}, hati inabaki kwenye mashine yako tangu mwanzo hadi mwisho.",
+      "privateBadge": "Faragha",
+      "secureBadge": "Salama",
+      "faqTitle": "Maswali Yanayoulizwa Sana",
+      "faqSubtitle": "Kila kitu unachohitaji kujua kuhusu {tool}.",
+      "readyTitle": "Tayari kuanza?",
+      "readyDesc": "Dondosha faili yako kwenye eneo la kazi lililo juu ya ukurasa. Hakuna usajili unaohitajika.",
+      "backToTool": "Rudi kwenye Zana",
+      "howToPrefix": "Jinsi ya ",
+      "faqQ1": "Je, ninafanyaje {tool} ndani ya nchi?",
+      "faqA1": "{steps} Haya yote yanafanyika kwenye mashine yako.",
+      "faqQ2": "Je, faili zangu za PDF ziko salama wakati wa mchakato huu?",
+      "faqA2": "Kabisa. Kwa sababu NexPDF inaendeshwa kikamilifu upande wa mteja kwa kutumia WebAssembly, hati haipakuliwi kwenye seva yoyote ya nje. Data yako nyeti inawekwa 100% faragha.",
+      "faqQ3": "Je, kuna kikomo cha ukubwa wa faili kwa {tool}?",
+      "faqA3": "Hapana, hakuna kikomo cha bandia cha ukubwa wa faili. Kikomo pekee cha kimwili ni kumbukumbu inayopatikana ya kivinjari cha kifaa chako, ambayo inashughulikia nyaraka kubwa kwa urahisi.",
+      "faqQ4": "Je, inafanya kazi nje ya mtandao?",
+      "faqA4": "Ndiyo, NexPDF inahifadhiwa kwenye kivinjari chako baada ya kupakiwa kwa mara ya kwanza. Unaweza kukata mtandao wako na kuendelea kutumia zana nje ya mtandao kabisa.",
+      "uploadSelect": "Chagua PDF ya {label}",
+      "uploadDrop": "Au idondoshe hapa ili kuanza mara moja",
+      "uploadLoading": "Inaandaa eneo la kazi..."
+    }
+  },
+  "meta": {
+    "layout": {
+      "title": "TheNexTools | Urejeshaji wa NexData & Zana Muhimu",
+      "description": "Mkusanyiko wa zana za kompyuta za utendaji wa juu zilizoundwa kuokoa data yako, kurekebisha faili zilizoharibika, na kufanya maisha yako ya kidijitali yaendelee vizuri.",
+      "ogLocale": "sw"
+    },
+    "home": {
+      "title": "TheNexTools — Zana za Kompyuta za Faragha, za Nje ya Mtandao"
+    },
+    "contact": {
+      "title": "Wasiliana Nasi | TheNexTools",
+      "subjectSupport": "Ombi la Msaada wa Kiufundi",
+      "subjectBilling": "Ombi la Malipo / Urejeshaji Fedha",
+      "subjectGeneral": "Swali la Jumla",
+      "subjectSecurity": "Wasiwasi wa Usalama / Faragha"
+    },
+    "dataRecovery": {
+      "title": "Urejeshaji wa NexData — Rejesha Faili Zilizofutwa kutoka kwenye Diski Zilizofomatiwa | TheNexTools"
+    },
+    "pdfToolkit": {
+      "title": "NexPDF — Hariri, Saini, Unganisha & Bana PDFs Nje ya Mtandao | TheNexTools",
+      "breadcrumbHome": "Nyumbani"
+    },
+    "imageToolkit": {
+      "title": "NexImage Toolkit — Bana, Badilisha, Ficha & Ondoa Metadata | TheNexTools"
+    }
+  },
+  "imageTools": {
+    "compressor": {
+      "uploadTitle": "Dondosha picha hapa",
+      "uploadSubtitle": "JPG, PNG, WebP — inasaidia pamoja",
+      "formatLabel": "Umbizo la Pato",
+      "qualityLabel": "Ubora:",
+      "losslessNotice": " (bila upotevu — inapuuzwa kwa PNG)",
+      "recompressBtn": "Bana Zote Upya",
+      "addBtn": "Ongeza",
+      "clearBtn": "Safisha",
+      "downloadAll": "Pakua Zote",
+      "downloading": "Inapakua..."
+    },
+    "converter": {
+      "uploadTitle": "Buruta & udondoshe picha hapa",
+      "uploadSubtitle": "Inasaidia PNG, JPG, JPEG, WEBP, na zaidi",
+      "browseBtn": "Vinjari Faili",
+      "settingsTitle": "Mipangilio ya Ubadilishaji",
+      "formatLabel": "Umbizo Lengwa",
+      "qualityLabel": "Ubora wa Kubana",
+      "reconvertBtn": "Badilisha Zote Upya",
+      "addBtn": "Ongeza Picha",
+      "clearBtn": "Safisha Zote",
+      "downloadAll": "Pakua Zote"
+    },
+    "redactor": {
+      "uploadTitle": "Buruta & udondoshe picha ya skrini/picha",
+      "uploadSubtitle": "Umbizo za PNG, JPG, WEBP zinasindikwa upande wa mteja pekee",
+      "chooseBtn": "Chagua Faili",
+      "blurMode": "Futa Eneo",
+      "redactMode": "Ficha Eneo (Kisanduku Cheusi)",
+      "resetBtn": "Weka Upya Canvas",
+      "downloadBtn": "Pakua Picha"
+    },
+    "exifStripper": {
+      "uploadTitle": "Dondosha picha hapa",
+      "uploadSubtitle": "JPG, PNG, WebP — moja au pamoja",
+      "processedInfo": "{done} kati ya {total} zinasindikwa",
+      "gpsDanger": "⚠ Uratibu wa GPS umetambuliwa na kuondolewa",
+      "noGpsSuccess": "✓ Hakuna data ya GPS iliyopatikana",
+      "scanning": "Inatafuta…",
+      "addMoreBtn": "Ongeza Zaidi",
+      "clearBtn": "Safisha",
+      "zipping": "Inatengeneza ZIP…",
+      "downloadAll": "Pakua Zote ({count})"
+    }
+  }
+}

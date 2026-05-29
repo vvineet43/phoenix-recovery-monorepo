@@ -25,6 +25,7 @@ export async function generateMetadata({ params }) {
       title: d.meta.dataRecovery.title,
       description: d.dataRecovery.heroDesc,
       type: 'website',
+      url: locale === 'en' ? 'https://thenextools.com/data-recovery' : `https://thenextools.com/${locale}/data-recovery`,
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',

@@ -1,8 +1,14 @@
 User-agent: *
 Allow: /
+
+# Block tool app pages (interactive SPA shells, not SEO landing pages)
+# These are noindex'd via meta tags as well, but robots.txt provides defense-in-depth
 Disallow: /pdf-tools
 Disallow: /exif-tools
 Disallow: /image-tools
+Disallow: /*/pdf-tools
+Disallow: /*/exif-tools
+Disallow: /*/image-tools
 
 Sitemap: https://thenextools.com/sitemap.xml
 

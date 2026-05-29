@@ -18,6 +18,7 @@ export const metadata = {
     title: 'Terms of Service | TheNexTools',
     description: 'The terms of using TheNexTools suite of utilities.',
     type: 'website',
+    url: 'https://thenextools.com/terms',
     images: [
       {
         url: 'https://thenextools.com/thenextools-com-og-image.png',

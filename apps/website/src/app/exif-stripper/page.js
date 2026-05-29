@@ -26,6 +26,7 @@ export const metadata = {
     title: 'EXIF Metadata Stripper — Remove GPS & Camera Data from Photos | TheNexTools',
     description: 'See the hidden data embedded in your photos — GPS location, device model, timestamps — and strip all of it before sharing. Runs locally in your browser.',
     type: 'website',
+    url: 'https://thenextools.com/exif-stripper',
     images: [
       {
         url: 'https://thenextools.com/thenextools-com-og-image.png',

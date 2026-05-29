@@ -1,0 +1,858 @@
+{
+  "nav": {
+    "brand": "TheNexTools",
+    "dataRecovery": "Dataherstel",
+    "pdfEditing": "PDF Bewerken",
+    "imageEditing": "Afbeelding Bewerken",
+    "ctaExplore": "Ontdek Alle Tools",
+    "ctaGetPro": "Koop NexData Pro",
+    "ctaCompress": "Start Comprimeren",
+    "ctaConvert": "Start Converteren",
+    "ctaRedact": "Start Anonimiseren",
+    "ctaStrip": "Verwijder Metadaten",
+    "ctaPdf": "Start PDF Bewerken",
+    "ctaPdfTool": "Open Werkruimte",
+    "mergePdfTitle": "PDF Samenvoegen",
+    "mergePdfDesc": "Meerdere bestanden combineren",
+    "splitPdfTitle": "PDF Splitsen",
+    "splitPdfDesc": "Specifieke pagina's extraheren",
+    "compressPdfTitle": "PDF Comprimeren",
+    "compressPdfDesc": "Bestandsgrootte offline verkleinen",
+    "watermarkPdfTitle": "PDF Watermerk",
+    "watermarkPdfDesc": "Tekststempels toevoegen",
+    "pdfToImagesTitle": "PDF naar Afbeeldingen",
+    "pdfToImagesDesc": "Converteren naar JPG/PNG",
+    "redactPdfTitle": "PDF Anonimiseren",
+    "redactPdfDesc": "Gevoelige tekst verbergen",
+    "viewAllPdf": "Bekijk Alle 17 Tools",
+    "imageCompressTitle": "Comprimeren",
+    "imageCompressDesc": "Verklein JPG, PNG, WebP",
+    "imageConvertTitle": "Formaat Converteren",
+    "imageConvertDesc": "JPG · PNG · WebP",
+    "imageRedactTitle": "Anonimiseren & Vervagen",
+    "imageRedactDesc": "Gevoelige gebieden verbergen",
+    "exifStripperTitle": "EXIF-Stripper",
+    "exifStripperDesc": "Foto-metadaten verwijderen",
+    "viewAllImage": "Open NexImage Toolkit"
+  },
+  "footer": {
+    "brandDesc": "Krachtige, private desktop-hulpprogramma's die volledig op uw apparaat worden uitgevoerd. Geen uploads, geen accounts, geen onzin.",
+    "product": "Product",
+    "resources": "Hulpbronnen",
+    "documentation": "Documentatie",
+    "contact": "Neem contact op",
+    "refund": "Terugbetalingsbeleid",
+    "privacy": "Privacybeleid",
+    "terms": "Algemene Voorwaarden",
+    "sitemap": "Sitemap"
+  },
+  "home": {
+    "heroBadge": "Professionele Desktop Software",
+    "heroTitle": "Tools die werken waar het internet ze niet kan bereiken.",
+    "heroDesc": "Een kleine, gerichte verzameling hulpprogramma's die rond één idee zijn gebouwd: uw bestanden hoeven uw machine niet te verlassen om hun werk te doen. PDF bewerken, afbeeldingen verwerken, metadaten opschonen, dataherstel — het draait allemaal lokaal.",
+    "heroCta": "Bekijk Wat Beschikbaar Is",
+    "whyTitle": "Gebouwd voor mensen die met gevoelige bestanden omgaan",
+    "whySubtitle": "De meeste tools uploaden uw gegevens naar een server. Dat is een slechte standaardinstelling.",
+    "whyCard1Title": "Uw bestanden blijven op uw machine",
+    "whyCard1Desc": "Juridische documenten, financiële administratie, klantfoto's, medische dossiers — niets hiervan zou via de server van een derde partij moeten gaan om twee PDF's samen te voegen. Elke tool hier verwerkt bestanden rechtstreeks op uw eigen hardware. Geen telemetrie, geen cloud-synchronisatie, geen account nodig.",
+    "whyCard2Title": "Eenmalig betalen, levenslang bezitten",
+    "whyCard2Desc": "Abonnementen voor eenvoudige tools zijn onlogisch. De basistools zijn gratis en zullen dat altijd blijven. Wanneer u geavanceerde functies nodig heeft — zoals het herstellen van bestanden van een beschadigde schijf —, is dit een eenmalige aankoop. Geen verlengingen, geen verloopdatum.",
+    "whyCard3Title": "Snelheid die past bij uw hardware",
+    "whyCard3Desc": "Web-tools worden beperkt door uw upload-snelheid en de wachtrij van een gedeelde server. Hier wordt een PDF van 500 MB in enkele seconden gecomprimeerd omdat het rechtstreeks uw CPU gebruikt. Het limiet is uw computer, niet de infrastructuur van een ander.",
+    "lineupTitle": "Het huidige aanbod",
+    "lineupSubtitle": "Drie toolkits, allemaal offline-compatibel, allemaal gratis om mee te beginnen — elk gebouwd om uw bestanden op uw machine te houden.",
+    "dataRecoveryTitle": "NexData Herstel",
+    "dataRecoveryDesc": "Vindt en herstelt verwijderde bestanden door onbewerkte schijfsectoren te lezen — het bestandssysteem wordt volledig omzeild. Werkt op geformatteerde schijven, beschadigde partities en SD-kaarten die niet willen mounten.",
+    "dataRecoveryFeature1": "Scant voorbij verwijderde partities en formattering",
+    "dataRecoveryFeature2": "Repareert beschadigde MP4- en MOV-videobestanden",
+    "dataRecoveryFeature3": "Gratis scannen, pas betalen als u daadwerkelijk herstelt",
+    "pdfToolkitTitle": "NexPDF Toolkit",
+    "pdfToolkitDesc": "Een PDF-editor met alle functies die in uw browser draait. Documenten samenvoegen, pagina's herschikken, contracten ondertekenen, datums stempelen, gevoelige tekst anonimiseren en zware scans comprimeren — zonder iets te uploaden.",
+    "pdfToolkitFeature1": "Drag-and-drop paginabeheer met annotaties",
+    "pdfToolkitFeature2": "Ondersteuning voor getekende en getypte handtekeningen",
+    "pdfToolkitFeature3": "Compressie met real-time bestandsgrootte preview",
+    "imageToolkitTitle": "NexImage Toolkit",
+    "imageToolkitDesc": "Vier afbeeldingstools in één werkruimte — comprimeren, formaat converteren, gevoelige gebieden vervagen en verborgen EXIF-metadaten verwijderen. Alles draait in uw browser, niets wordt geüpload.",
+    "imageToolkitFeature1": "JPG, PNG en WebP comprimeren met real-time kwaliteitspreview",
+    "imageToolkitFeature2": "Converteren tussen formaten en batch-download als ZIP",
+    "imageToolkitFeature3": "Gezichten en kentekens vervagen, GPS- en apparaatgegevens uit foto's verwijderen",
+    "learnMore": "Meer informatie →"
+  },
+  "dataRecovery": {
+    "heroBadge": "NexData Herstel",
+    "heroTitle": "Wat definitief verwijderd lijkt, is dat meestal niet.",
+    "heroDesc": "Wanneer een schijf wordt geformatteerd of een partitie verdwijnt, verdwijnen de bestanden niet — het bestandssysteem vergeet alleen waar ze staan. NexData leest de ruwe sectoren rechtstreeks uit, reconstrueert wat er nog is en stelt u in staat het terug te halen. Scan gratis. Bekijk alles in de preview. Herstel wat belangrijk is.",
+    "heroCta": "Gratis Aan de Slag",
+    "howTitle": "Hoe NexData vindt wat andere tools missen",
+    "howSubtitle": "De meeste herstel-tools vertrouwen op het bestandssysteem. Wanneer dat weg is — geformatteerd, corrupt of gewoon ontbrekend —, hebben ze niets om mee te werken. NexData heeft dat niet nodig.",
+    "howCard1Title": "Ruwe sector scanning",
+    "howCard1Desc": "In plaats van het bestandssysteem te vragen wat er op de schijf staat, leest NexData de fysieke sectoren rechtstreeks. Het herkent bestandstypen aan hun binaire headers — JPEG, MP4, PDF, DOCX — en reconstrueert ze ongeacht wat de partitietabel zegt. Dit is hoe herstel werkt op schijven die niet eens willen mounten.",
+    "howCard2Title": "Videoreparatie voor beschadigde opnames",
+    "howCard2Desc": "Videobestanden die zijn hersteld van gefragmenteerde schijven zijn bijna altijd onspeelbaar — de container-headers raken beschadigd tijdens het herstelproces. De reparatiemodule van NexData neemt een werkende referentieclip van dezelfde camera en gebruikt deze om de beschadigde headers opnieuw op te bouwen.",
+    "howCard3Title": "Ondersteuning voor gecodeerde volumes",
+    "howCard3Desc": "BitLocker, FileVault, APFS-encryptie — dit zijn geen obstakels zolang u de herstelsleutel heeft. NexData kan het volume ontgrendelen en een volledige sector-scan uitvoeren onder de encryptielaag, waardoor bestanden worden hersteld die zijn verwijderd voordat de schijf werd gecodeerd.",
+    "howCard4Title": "Volledig offline",
+    "howCard4Desc": "NexData maakt nooit verbinding met het internet. De scanresultaten, bestandsvoorbeelden en herstelde bestanden blijven volledig op uw machine. Niets wordt verzonden of gelogd. Als u gevoelige documenten herstelt, is dit de standaard die u mag verwachten.",
+    "pricingTitle": "Downloaden & Prijzen",
+    "pricingSubtitle": "Scan elke schijf en bekijk elk herstelbaar bestand gratis in de preview. Upgrade alleen als u daadwerkelijk bestanden van de schijf wilt halen.",
+    "freeTitle": "Gratis Versie",
+    "freePrice": "€ 0",
+    "freeDuration": "/ altijd",
+    "freeFeature1": "Onbeperkt scannen van ruwe sectoren",
+    "freeFeature2": "Preview van alle herstelbare bestanden en video's",
+    "freeFeature3": "1 bestand herstellen (tot 10 MB)",
+    "freeFeature4": "Scan-sessies opslaan en hervatten",
+    "freeCtaMac": "Mac (.dmg)",
+    "freeCtaWin": "Windows (.exe)",
+    "freeInstallNote": "Installeer gratis. Scan uw schijf. Controleer of de bestanden intact zijn voordat u iets uitgeeft.",
+    "proTitle": "NexData Pro",
+    "proPrice": "€ 49,99",
+    "proDuration": "/ eenmalig",
+    "proFeature1": "Onbeperkt bestandsherstel",
+    "proFeature2": "Geen limiet op bestandsgrootte",
+    "proFeature3": "Reparatie van beschadigde video's en foto's",
+    "proFeature4": "Ondersteuning voor APFS, HFS+, NTFS, FAT32",
+    "proFeature5": "Licentie voor commercieel gebruik",
+    "proFeature6": "Gratis levenslange updates",
+    "proCta": "Koop Pro Licentie",
+    "proDeliveryNote": "Licentiesleutel direct per e-mail geleverd. 10 dagen niet-goed-geld-terug-garantie.",
+    "popular": "POPULAIR",
+    "installTitle": "Installatie opmerking",
+    "installDesc": "We zijn een onafhankelijke ontwikkelaar, dus de eerste builds zijn nog niet ondertekend met Apple- of Microsoft-certificaten. Uw besturingssysteem toont een standaard veiligheidswaarschuwing — zo omzeilt u deze:",
+    "installMacDesc": "Sleep de app naar Applicaties. Open Terminal. Plak dit en druk op Enter: xattr -cr ... Dubbelklik op de app om deze te starten.",
+    "installWinDesc": "Voer het gedownloade .exe-bestand uit. Als u een blauwe Windows-waarschuwing ziet, klikt u op 'Meer informatie' en vervolgens op 'Toch uitvoeren'.",
+    "cantTitle": "Wat NexData niet kan herstellen",
+    "cantSubtitle": "Geen enkele herstel-tool kan wonderen verrichten. Dit is wat u vooraf moet weten.",
+    "cantCard1Title": "Overschreven gegevens",
+    "cantCard1Desc": "Zodra nieuwe gegevens in dezelfde fysieke sectoren worden geschreven, wordt de oorspronkelijke inhoud op hardwareniveau vernietigd. Geen enkele software kan dat ongedaan maken. Stop direct met het schrijven naar de schijf als u gegevensverlies opmerkt.",
+    "cantCard2Title": "Fysiek beschadigde schijven",
+    "cantCard2Desc": "Als een schijf een mechanisch defect heeft (bijv. lees/schrijfkop gecrasht, waterschade, doorgebrande circuits), kan software geen toegang krijgen tot de schijven of chips. Dat vereist een professioneel laboratorium.",
+    "cantCard3Title": "SSD-blokken na TRIM",
+    "cantCard3Desc": "Moderne SSD's met geactiveerd TRIM wissen verwijderde blokken in de achtergrond, meestal binnen enkele minuten. Zodra de controller een blok nul stelt, zijn de gegevens fysiek verloren. TRIM is bij de meeste SSD's standaard actief.",
+    "cantCard4Title": "Gecodeerde volumes zonder sleutel",
+    "cantCard4Desc": "Als een schijf is gecodeerd met BitLocker, FileVault of APFS-encryptie en u het wachtwoord en de herstelsleutel bent kwijtgeraakt, kunnen de gegevens niet worden gedecodeerd.",
+    "cantNote": "Deze scenario's vallen niet onder ons terugbetalingsbeleid. We raden aan om eerst te scannen mit de gratis versie om de herstelbaarheid te bevestigen.",
+    "ctaTitle": "Eerst scannen. Zien wat er is. Later beslissen.",
+    "ctaDesc": "De gratis versie voert een volledige scan uit en laat u elk herstelbaar bestand in de preview bekijken — zodat u precies weet wat u krijgt voordat u betaalt.",
+    "ctaButton": "Gratis Versie Downloaden"
+  },
+  "contact": {
+    "heroBadge": "Contact opnemen",
+    "heroTitle": "We lezen elk bericht.",
+    "heroDesc": "TheNexTools is een klein team, dus u hoort van een echt persoon — geen bot. Kies het juiste adres hieronder, en we nemen zo snel mogelijk contact met u op.",
+    "supportTitle": "Technische Ondersteuning",
+    "supportDesc": "Werkt de tool niet zoals verwacht? Foutrapporten, onverwacht gedrag of vragen over de werking van specifieke tools.",
+    "billingTitle": "Facturering & Terugbetalingen",
+    "billingDesc": "Vragen over uw NexData Pro licentie, terugbetalingsverzoeken of problemen met uw bestelling. Houd uw bestelnummer bij de hand.",
+    "generalTitle": "Algemene Vragen",
+    "generalDesc": "Feedback, functieverzoeken, partnerideeën of iets anders dat niet in de andere categorieën past.",
+    "securityTitle": "Veiligheid & Privacy",
+    "securityDesc": "Heeft u een kwetsbaarheid in de beveiliging gevonden of heeft u zorgen over privacy? Neem dan rechtstreeks contact met ons op.",
+    "directAddresses": "Directe e-mailadressen",
+    "directSupportLabel": "Support",
+    "directSupportDesc": "Technische problemen, bugs, facturering, terugbetalingen, licentievragen.",
+    "directGeneralLabel": "Algemeen",
+    "directGeneralDesc": "Feedback, suggesties, partnerschappen, persvragen.",
+    "responseTimeTitle": "Reactietijd",
+    "responseTimeDesc": "We reageren doorgaans binnen 1-2 werkdagen. Tijdens drukke periodes kan het iets langer duren, but we reageren gegarandeerd.",
+    "refundRequestsTitle": "Terugbetalingsverzoeken",
+    "refundRequestsDesc": "NexData Pro wordt geleverd met een 10-dagen-niet-goed-geld-terug-garantie. Stuur een e-mail naar support met uw bestelnummer, dan verwerken we dit snel."
+  },
+  "imageToolkit": {
+    "heroBadge": "NexImage — Lokaal & Privé",
+    "heroTitle": "Vier afbeeldingstools die nooit een server aanraken.",
+    "heroDesc": "Afbeeldingen comprimeren, formaat converteren, anonimiseren en metadaten verwijderen — allemaal in één tabblad van uw browser. Er wordt niets geüpload. De tools gebruiken de native Canvas API van uw browser en werken ook offline.",
+    "heroCta": "Open NexImage",
+    "includedTitle": "Wat inbegrepen is",
+    "includedSubtitle": "Elke tool doet één ding uitzonderlijk goed. Samen dekken ze de meest voorkomende taken voor afbeeldingsverwerking.",
+    "compressorTitle": "Afbeeldingscompressor",
+    "compressorDesc": "Verklein bestandsgroottes met een kwaliteitsregler die de geschatte uitgabegrootte in real-time toont. Vergelijk origineel en gecomprimeerd in volledige resolutie. Hele mappen in batch verwerken en als ZIP downloaden.",
+    "compressorFeature1": "Uitvoer als JPEG, PNG en WebP",
+    "compressorFeature2": "Directe vergelijking voor het downloaden",
+    "compressorFeature3": "Totale opslagbesparing van alle bestanden tonen",
+    "compressorCta": "Open Compressor →",
+    "converterTitle": "Formaat-Converter",
+    "converterDesc": "Converteer lokaal tussen JPG, PNG en WebP — in elke richting. Drop een gemengde map en converteer alles naar één doelformaat. Transparantie blijft behouden bij conversie naar PNG.",
+    "converterFeature1": "Alle formaatcombinaties ondersteund",
+    "converterFeature2": "Alpha-kanaal behouden bij PNG-uitvoer",
+    "converterFeature3": "Geen groottebeperkingen of dagelijkse limieten",
+    "converterCta": "Open Converter →",
+    "redactorTitle": "Privacy-Anonimiser",
+    "redactorDesc": "Teken vervagingen over gezichten, kentekens, adressen en financiële gegevens. Pas de vervagingsintensiteit aan. Het resultaat is een platte afbeelding waarbij de vervaging permanent en onomkeerbaar is.",
+    "redactorFeature1": "Variabele vervagingssterkte per zone",
+    "redactorFeature2": "Meerdere zones per afbeelding mogelijk",
+    "redactorFeature3": "Platte uitvoer — geen reconstrueerbare lagen",
+    "redactorCta": "Open Anonimiser →",
+    "stripperTitle": "EXIF-Metadaten-Stripper",
+    "stripperDesc": "Elke foto van uw smartphone bevat GPS-coördinaten, tijdstempels, apparaatinfo en meer. NexStrip toont u alle velden en verwijdert ze volledig, zodat gedeelde foto's geen privé-informatie zoals uw woonadres bevatten.",
+    "stripperFeature1": "Herkent en verwijdert GPS-locatiegegevens",
+    "stripperFeature2": "Toont alle metadatenvelden voor het verwijderen",
+    "stripperFeature3": "Opgeschoonde kopieën individueel of als ZIP downloaden",
+    "stripperCta": "Open EXIF-Stripper →",
+    "whyTitle": "Waarom dit lokaal draait en nicht op een server",
+    "whySubtitle": "Afbeeldingen zijn niet alleen pixels. Ze bevatten gegevens waarvan velen niets weten.",
+    "whyCard1Title": "Uw locatie zit in het bestand",
+    "whyCard1Desc": "Het uploaden van een foto om te comprimeren uploadt ook de GPS-coördinaten naar een server van derden. Als dat een foto is van uw huis of de school van uw kinderen, is dat een risico. NexTools ontvangt deze gegevens nooit.",
+    "whyCard2Title": "Client-bestanden moeten lokaal blijven",
+    "whyCard2Desc": "Het comprimeren van foto's van klanten, het vervagen van een juridische screenshot of het verwijderen van metadaten uit gevoelige documenten zou nooit via de infrastructuur van derden mogen lopen.",
+    "whyCard3Title": "Geen limieten betekent soepel gebruik",
+    "whyCard3Desc": "Cloud-tools beperken gratis gebruikers vaak tot 5-10 MB per bestand. NexImage heeft geen dergelijk limiet — uw browser kan gemakkelijk bestanden van honderden megabytes verwerken.",
+    "ctaTitle": "Alles wat u nodig heeft voor de bewerking van afbeeldingen, rechtstreeks in de browser.",
+    "ctaSubtitle": "Werkt in Chrome, Firefox, Safari en Edge onder Mac, Windows en Linux."
+  },
+  "pdfToolkit": {
+    "heroBadge": "NexPDF — Gratis & Privé",
+    "heroTitle": "PDF's bewerken, zonder uw bestanden naar een externe server te sturen.",
+    "heroDesc": "Elke keer dat u een gratis online PDF-tool gebruikt, wordt uw document geüpload. NexPDF slaat dat over. Samenvoegen, ondertekenen, comprimeren, anonimiseren — alles gebeurt direct in uw browser. Geen account. Geen wachttijd. Geen sporen.",
+    "includedTitle": "Wat u ermee kunt doen",
+    "includedSubtitle": "De PDF-taken die elke week voorkomen — lokaal verwerkt, zoals het hoort.",
+    "signTitle": "Ondertekenen en annoteren",
+    "signDesc": "Teken uw handtekening met de muis of uw vinger op een touchscreen, of typ deze in. Plaats deze op een willekeurige plek en exporteer een platte PDF, waarbij de handtekening niet meer kan worden verwijderd.",
+    "assembleTitle": "Pagina's samenvoegen, ordenen en extraheren",
+    "assembleDesc": "Laad meerdere PDF's, sleep pagina's via drag-and-drop in de juiste volgorde, draai verkeerd uitgelijnde scans en extraheer specifieke pagina's als afzonderlijke bestanden.",
+    "compressTitle": "Comprimeren met preview",
+    "compressDesc": "Als een scan 40 MB groot is en uw e-maillimiet bij 25 MB ligt, kunt u met de compressor de kwaliteit aanpassen en de geschatte uitgabegrootte voor het opslaan zien.",
+    "offlineTitle": "Werkt offline",
+    "offlineDesc": "Na de eerste keer laden heeft NexPDF geen internetverbinding meer nodig. U kunt uw wifi verbreken en doorwerken. Vertrouwelijke documenten blijven volledig beschermd.",
+    "utilitiesTitle": "Zeventien specifieke PDF-tools",
+    "utilitiesSubtitle": "Sla complexe menu's over. Start direct in de gewenste module.",
+    "assemblyCategory": "Documentstructuur & Samenstelling",
+    "assembly1Title": "PDF samenvoegen",
+    "assembly1Desc": "Meerdere documenten of pagina's in één bestand combineren.",
+    "assembly2Title": "PDF splitsen",
+    "assembly2Desc": "Paginabereiken extraheren of het document in afzonderlijke bestanden splitsen.",
+    "assembly3Title": "Pagina's herschikken",
+    "assembly3Desc": "Vorschauboxen via drag-and-drop verschuiven om pagina's visueel opnieuw te ordenen.",
+    "assembly4Title": "PDF roteren",
+    "assembly4Desc": "Afzonderlijke pagina's of het hele document permanent roteren.",
+    "conversionCategory": "Optimalisatie & Conversie",
+    "conversion1Title": "PDF comprimeren",
+    "conversion1Desc": "Bestandsgrootte met real-time regelaar en lokale grootte-preview verkleinen.",
+    "conversion2Title": "PDF naar Afbeeldingen",
+    "conversion2Desc": "PDF-pagina's naar JPEG- of PNG-afbeeldingen converteren (individueel of als ZIP).",
+    "conversion3Title": "Bilder naar PDF",
+    "conversion3Desc": "Foto's van de formaten JPG, PNG en WebP lokaal in een PDF-bestand converteren.",
+    "conversion4Title": "HTML naar PDF",
+    "conversion4Desc": "HTML-code lokaal in geformatteerde PDF-documenten renderen.",
+    "conversion5Title": "Text naar PDF",
+    "conversion5Desc": "Platte tekstbestanden, logbestanden of broncode in printklaar PDF-formaat brengen.",
+    "securityCategory": "Beveiliging, Privacy & Stempels",
+    "security1Title": "PDF beveiligen",
+    "security1Desc": "Documenten lokaal met wachtwoord versleutelen (AES-encryptie).",
+    "security2Title": "PDF ontgrendelen",
+    "security2Desc": "Wachtwoorden en weergavebeperkingen uit geautoriseerde PDF-bestanden verwijderen.",
+    "security3Title": "PDF anonimiseren",
+    "security3Desc": "Gevoelige tekst permanent zwart maken door fysiek samenvoegen van de afbeeldingslaag.",
+    "security4Title": "PDF-Watermerk",
+    "security4Desc": "CONFIDENTIAL-stempel, concept-overlays of tekst met aangepaste transparantie toevoegen.",
+    "signatureCategory": "Digitale Handtekeningen & Captures",
+    "signature1Title": "PDF ondertekenen",
+    "signature1Desc": "Handtekeningen tekenen of typen om documentvelden plat te ondertekenen.",
+    "signature2Title": "Scannen naar PDF",
+    "signature2Desc": "Documentpagina's met de camera vastleggen en het contrast optimaliseren.",
+    "signature3Title": "PDF-OCR",
+    "signature3Desc": "Kopieerbare tekst uit gescannte PDF-documenten extraheren.",
+    "signature4Title": "Paginanummering toevoegen",
+    "signature4Desc": "Sequentiële paginanummers in kop- of voettekst invoegen.",
+    "faqTitle": "Veelgestelde Vragen",
+    "faqSubtitle": "Alles wat u over offline-bewerking met NexPDF moet weten.",
+    "faqQ1": "Hoe werkt lokale PDF-bewerking?",
+    "faqA1": "Het gebruikt WebAssembly en client-side JavaScript-bibliotheken om PDF's direct in de browser te bewerken. Er worden geen bestanden naar externe servers gestuurd.",
+    "faqQ2": "Zijn mijn PDF-documenten bij NexPDF veilig?",
+    "faqA2": "Ja, absoluut. Omdat alles lokaal in uw browser wordt uitgevoerd, verlassen gevoelige bestanden zoals contracten of belastingformulieren nooit uw apparaat.",
+    "faqQ3": "Is er een limiet voor de bestandsgrootte bij {tool}?",
+    "faqA3": "Nee. De enige grens is het beschikbare werkgeheugen van uw apparaat, dat grote documenten probleemloos kan verwerken.",
+    "faqQ4": "Werkt het offline?",
+    "faqA4": "Ja, NexPDF wordt na het eerste laden in de browser gecached en werkt volledig zonder internetverbinding.",
+    "ctaTitle": "Klaar als u dat bent.",
+    "ctaDesc": "Open de editor, sleep een document erin en ga aan de slag. Geen registratie vereist.",
+    "ctaButton": "Terug naar Tool",
+    "upload": {
+      "selectFile": "PDF-bestand selecteren",
+      "dragDrop": "Sleep uw document hierheen of klik om te bladeren",
+      "preparing": "Veilige werkruimte voorbereiden...",
+      "loading": "Editor-omgeving lokaal laden...",
+      "clientSide": "100% Client-side",
+      "noUploads": "Geen Server-uploads",
+      "worksOffline": "Werkt offline"
+    }
+  },
+  "pdfTools": {
+    "tools": {
+      "compress-pdf": {
+        "title": "PDF lokaal comprimeren — Bestandsgrootte verkleinen zonder upload | TheNexTools",
+        "description": "Verklein PDF-bestanden direct in uw browser. Pas de kwaliteit aan met een regelaar, bekijk de geschatte grootte voor het opslaan.",
+        "h1": "Maak de PDF klein genoeg om te e-mailen.",
+        "p": "U heeft een scan van 40 MB die voor een e-mailbijlage kleiner dan 10 MB moet zijn. In plaats van deze naar een online platform te uploaden, doet NexPDF dit lokaal.",
+        "features": [
+          "Kwaliteitsregelaar met real-time grootteschatting",
+          "Werkt bij scans, rapporten en afbeelding-zware documenten",
+          "Geen bestandsgroottebeperkingen of dagelijkse quota's",
+          "Werkt offline na de eerste keer laden"
+        ],
+        "howToTitle": "Hoe een PDF te comprimeren",
+        "steps": [
+          {
+            "title": "Bestand uploaden",
+            "desc": "Selecteer uw PDF-document of sleep het naar de werkruimte hierboven."
+          },
+          {
+            "title": "Grootte optimieren",
+            "desc": "Gebruik de kwaliteitsregelaar om de juiste balans te vinden tussen bestandsgrootte en beeldkwaliteit."
+          },
+          {
+            "title": "Document opslaan",
+            "desc": "Genereer en download de geoptimaliseerde PDF direct naar uw apparaat."
+          }
+        ],
+        "toolParam": "compress"
+      },
+      "merge-pdf": {
+        "title": "PDFs lokaal samenvoegen — Documenten combineren zonder upload | TheNexTools",
+        "description": "Combineer meerdere PDF-bestanden tot één document. Pagina's via drag-and-drop ordenen, afbeeldingen toevoegen — alles in de browser.",
+        "h1": "Meerdere PDF's combineren tot één document.",
+        "p": "Laad alle bestanden, sleep de pagina's in de juiste volgorde en voeg ze samen. Het hele proces draait lokaal op uw machine.",
+        "features": [
+          "Zoveel PDF's als u wilt in één keer samenvoegen",
+          "Drag-and-drop paginavolgorde voor het samenvoegen",
+          "Bilder direct in het finale document invoegen",
+          "Geen beperkingen op het aantal bestanden of pagina's"
+        ],
+        "howToTitle": "Hoe PDF-bestanden samen te voegen",
+        "steps": [
+          {
+            "title": "Bestanden toevoegen",
+            "desc": "Selecteer de PDF-bestanden die u wilt samenvoegen of sleep ze erin."
+          },
+          {
+            "title": "Lay-out ordenen",
+            "desc": "Sleep de paginavoorbeelden om ze in de gewenste volgorde te zetten."
+          },
+          {
+            "title": "PDF genereren",
+            "desc": "Klik op \"Samenvoegen\" om het finale document te maken en op te slaan."
+          }
+        ],
+        "toolParam": "merge"
+      },
+      "split-pdf": {
+        "title": "PDF lokaal splitsen — Pagina's extraheren zonder upload | TheNexTools",
+        "description": "Extraheer specifieke pagina's uit een PDF-bestand of splits het in afzonderlijke documenten. Draait lokaal in de browser.",
+        "h1": "Haal precies de pagina's eruit die u nodig heeft.",
+        "p": "U heeft een rapport van 200 pagina's, maar heeft alleen pagina's 14 tot 22 nodig. Of u wilt een document per hoofdstuk splitsen. NexPDF regelt dit lokaal.",
+        "features": [
+          "Aangepaste paginabereiken (bijv. 1-3, 7, 12-18)",
+          "Automatisch splitsen in gelijke delen",
+          "Downloaden als afzonderlijke PDF's of als ZIP-archief",
+          "Ondersteunt grote en gecodeerde documenten"
+        ],
+        "howToTitle": "Hoe pagina's uit een PDF te extraheren",
+        "steps": [
+          {
+            "title": "Document openen",
+            "desc": "Upload uw PDF-document naar de veilige werkruimte."
+          },
+          {
+            "title": "Pagina's selecteren",
+            "desc": "Gef de paginanummers op die u wilt extraheren."
+          },
+          {
+            "title": "Uitvoer opslaan",
+            "desc": "Genereer en download het nieuwe document."
+          }
+        ],
+        "toolParam": "split"
+      },
+      "pdf-to-images": {
+        "title": "PDF naar JPG/PNG lokaal omzetten — Pagina's als afbeelding opslaan | TheNexTools",
+        "description": "Converteer PDF-pagina's in hoogwaardige JPEG- of PNG-afbeeldingen direct in uw browser. Geen server-upload vereist.",
+        "h1": "PDF-pagina's in afbeeldingen omzetten.",
+        "p": "Moet u een pagina uit een contract in een presentatie invoegen? NexPDF converteert elke pagina in een hoge-resolutie afbeelding — kies JPEG voor kleinere bestanden of PNG for verliesvrije kwaliteit.",
+        "features": [
+          "Hoge-resolutie uitvoer met selecteerbare DPI",
+          "Opties voor de formaten JPEG en PNG",
+          "Volledig document als ZIP-archief downloaden",
+          "Alles draait lokaal op uw apparaat"
+        ],
+        "howToTitle": "Hoe PDF-pagina's in JPEG of PNG te converteren",
+        "steps": [
+          {
+            "title": "PDF uploaden",
+            "desc": "Selecteer het PDF-document dat u wilt converteren."
+          },
+          {
+            "title": "Formaat kiezen",
+            "desc": "Kies JPEG voor geoptimaliseerde bestandsgroottes of PNG voor verliesvrije beeldkwaliteit."
+          },
+          {
+            "title": "Bilder opslaan",
+            "desc": "Download de pagina's afzonderlijk of als geconsolideerd ZIP-archief."
+          }
+        ],
+        "toolParam": "images"
+      },
+      "scan-to-pdf": {
+        "title": "Scannen naar PDF — Camera als documentenscanner gebruiken | TheNexTools",
+        "description": "Leg fysieke documenten vast met uw camera en converteer ze direct in PDF-pagina's. Alles lokaal.",
+        "h1": "Gebruik uw telefooncamera als scanner.",
+        "p": "Richt uw camera op een beleg, een whiteboard of een document. NexPDF legt het vast en maakt er een schone PDF-pagina van.",
+        "features": [
+          "Vastleggen direct via de camera van uw apparaat",
+          "Werkt uitstekend op telefoons en tablets",
+          "Automatische contrastoptimalisatie voor tekstdocumenten",
+          "Meerdere scans in één PDF samenvoegen"
+        ],
+        "howToTitle": "Hoe documenten met de camera te scannen",
+        "steps": [
+          {
+            "title": "Pagina vastleggen",
+            "desc": "Geef de camera toestemming en fotografeer uw document."
+          },
+          {
+            "title": "Bijsnijden & Optimieren",
+            "desc": "Controleer de afbeelding en laat deze automatisch uitlijnen en optimeren."
+          },
+          {
+            "title": "PDF exportieren",
+            "desc": "Voeg uw scans samen tot een schone PDF-document."
+          }
+        ],
+        "toolParam": "scan"
+      },
+      "protect-pdf": {
+        "title": "PDF lokaal versleutelen — Wachtwoordbeveiliging toevoegen | TheNexTools",
+        "description": "Voeg een wachtwoordbeveiliging met AES-encryptie toe aan uw PDF's. Het wachtwoord verlaat nooit uw browser.",
+        "h1": "Beveilig uw PDF met een wachtwoord.",
+        "p": "Stel een gebruikerswachtwoord in om weergave te blokkeren, en een optioneel eigenaarswachtwoord om afdrukken of kopiëren te voorkomen.",
+        "features": [
+          "AES-encryptie direct in de browser uitgevoerd",
+          "Separate wachtwoorden voor openen en machtigingen",
+          "Afdruk-, kopieer- en bewerkingsrechten beperken",
+          "Het wachtwoord wordt nooit verzonden"
+        ],
+        "howToTitle": "Hoe een PDF met een wachtwoord te beveiligen",
+        "steps": [
+          {
+            "title": "PDF uploaden",
+            "desc": "Selecteer het PDF-bestand dat u wilt versleutelen."
+          },
+          {
+            "title": "Wachtwoord instellen",
+            "desc": "Voer een sterk wachtwoord in en pas de machtigingen aan."
+          },
+          {
+            "title": "Bestand beveiligen",
+            "desc": "Pas de versleuteling toe en download de beveiligde PDF."
+          }
+        ],
+        "toolParam": "protect"
+      },
+      "unlock-pdf": {
+        "title": "PDF-wachtwoord lokaal entfernen — Document ontgrendelen | TheNexTools",
+        "description": "Verwijder de wachtwoordbeveiliging uit uw PDF-bestanden. Wachtwoord eenmalig invoeren en onbeveiligde kopie downloaden.",
+        "h1": "Wachtwoord uit PDF verwijderen.",
+        "p": "U kent het wachtwoord, maar wilt het niet bij elke opening opnieuw hoeven in te voeren? Ontgrendel het document permanent lokaal.",
+        "features": [
+          "Verwijdert gebruikerswachtwoorden direct",
+          "Heft afdruk- en bewerkingsbeperkingen op",
+          "Ontsleuteling draait lokaal in de browser",
+          "Geen upload van het bestand vereist"
+        ],
+        "howToTitle": "Hoe een wachtwoordbeveiligde PDF te ontgrendelen",
+        "steps": [
+          {
+            "title": "Bestand selecteren",
+            "desc": "Upload uw wachtwoordbeveiligde PDF."
+          },
+          {
+            "title": "Wachtwoord invoeren",
+            "desc": "Voer het juiste wachtwoord in om de ontsleuteling te autoriseren."
+          },
+          {
+            "title": "Beveiliging opheben",
+            "desc": "Klik op \"Ontgrendelen\" um de vrije PDF op te slaan."
+          }
+        ],
+        "toolParam": "unlock"
+      },
+      "watermark-pdf": {
+        "title": "PDF-watermerk lokaal toevoegen — Tekst op pagina's stempelen | TheNexTools",
+        "description": "Voeg tekst zoals \"CONCEPT\" of \"VERTROUWELIJK\" toe aan uw PDF. Deckkraft, grootte en positie instellen.",
+        "h1": "Stempel uw PDF's voor het delen.",
+        "p": "Markeer concepten of vertrouwelijke rapporten met een aanpasbare stempel. Grootte, transparantie en hoek zijn vrij in te stellen.",
+        "features": [
+          "Eigen tekst met aanpasbare lettergrootte en deckkraft",
+          "Uitlijning in het midden, diagonaal of in kop-/voettekst",
+          "Op specifieke pagina's of het hele document toepassen",
+          "Live-preview voor het opslaan"
+        ],
+        "howToTitle": "Hoe een PDF van een watermerk te voorzien",
+        "steps": [
+          {
+            "title": "PDF laden",
+            "desc": "Upload het PDF-document dat u wilt stempelen."
+          },
+          {
+            "title": "Stempel ontwerpen",
+            "desc": "Gef de tekst in, pas transparantie, hoek en positie aan."
+          },
+          {
+            "title": "Bestand stempelen",
+            "desc": "Breng het watermerk aan en download het bestand."
+          }
+        ],
+        "toolParam": "watermark"
+      },
+      "ocr-pdf": {
+        "title": "PDF-OCR lokaal uitvoeren — Tekst uit scans extraheren | TheNexTools",
+        "description": "Converteer gescande PDF's in doorzoekbare tekst met browser-gebaseerde OCR. Geen upload vereist.",
+        "h1": "Kopieerbare tekst uit een gescand document extraheren.",
+        "p": "U heeft een scan ontvangen en moet een alinea kopiëren? De OCR-engine van NexPDF leest de tekst direct in de browser uit.",
+        "features": [
+          "Gebaseerd op Tesseract.js — draait direct in uw browser",
+          "Ondersteunt verschillende talen",
+          "Geen server-upload, vertrouwelijk documenten blijven privé",
+          "Extraheerde tekst als .txt-bestand exporteren"
+        ],
+        "howToTitle": "Hoe tekst uit een gescand PDF te extraheren",
+        "steps": [
+          {
+            "title": "Scan uploaden",
+            "desc": "Selecteer uw gescande PDF of afbeelding."
+          },
+          {
+            "title": "Taal instellen",
+            "desc": "Kies de taal van het document om de nauwkeurigheid te verhogen."
+          },
+          {
+            "title": "Tekst kopiëren",
+            "desc": "Kopieer de extraheerde tekst of sla deze op als tekstbestand."
+          }
+        ],
+        "toolParam": "ocr"
+      },
+      "redact-pdf": {
+        "title": "PDF lokaal anonimiseren — Gevoelige inhoud permanent wissen | TheNexTools",
+        "description": "Anonimiser namen, adressen en nummers in uw PDF permanent. De gegevens worden fysiek verwijderd en zijn niet herstelbaar.",
+        "h1": "Anonimiser inhoud die privé moet blijven.",
+        "p": "Teken anonimiseringsboxen over vertrouwelijke gegevens. De uitvoer wordt plat gerenderd — de tekst eronder wordt permanent gewist.",
+        "features": [
+          "Vlakgebaseerde anonimisering met permanente verwijdering",
+          "Geanonimiseerde tekst kan niet worden geëxtraheerd",
+          "Ideaal voor juridische, financiële en medische documenten",
+          "De verwerking vindt volledig op uw apparaat plaats"
+        ],
+        "howToTitle": "Hoe tekst in een PDF permanent te anonimiseren",
+        "steps": [
+          {
+            "title": "PDF openen",
+            "desc": "Selecteer de PDF-datei met de gevoelige details."
+          },
+          {
+            "title": "Boxen tekenen",
+            "desc": "Teken zwarte boxen over namen, nummers of datums."
+          },
+          {
+            "title": "Bestand opschonen",
+            "desc": "Klik op \"Anonimiseren\", om de PDF plat te leggen and op te slaan."
+          }
+        ],
+        "toolParam": "redact"
+      },
+      "html-to-pdf": {
+        "title": "HTML in PDF lokaal converteren — Webpagina-code rendern | TheNexTools",
+        "description": "HTML-code invoegen en direct een geformatteerde PDF ontvangen. Ondersteunt CSS-styling. Draait lokaal in de browser.",
+        "h1": "HTML-code in een opslaanbare PDF converteren.",
+        "p": "Voeg uw HTML-code in en NexPDF rendert deze als PDF. Handig voor ontwikkelaars om snel facturen of rapporten te testen.",
+        "features": [
+          "Rendert HTML met volledige CSS-styling",
+          "Directe preview voor de conversie",
+          "Ideaal voor factuur-, rapport- en e-mailsjablonen",
+          "Geen externe API's of services nodig"
+        ],
+        "howToTitle": "Hoe HTML in PDF te converteren",
+        "steps": [
+          {
+            "title": "Code invoegen",
+            "desc": "Voer uw HTML- en CSS-code in de editor in."
+          },
+          {
+            "title": "Preview controleren",
+            "desc": "Controleer de gerenderde lay-out in het previewvenster."
+          },
+          {
+            "title": "PDF exporteren",
+            "desc": "Klik op \"In PDF converteren\", om het document op te slaan."
+          }
+        ],
+        "toolParam": "html"
+      },
+      "images-to-pdf": {
+        "title": "Bilder in PDF lokaal converteren — Foto's samenvoegen | TheNexTools",
+        "description": "Converteer JPG, PNG en WebP in een PDF-document. Pagina's ordenen, rander aanpassen en downloaden — alles in de browser.",
+        "h1": "Bilder in een PDF-bestand samenvoegen.",
+        "p": "Heeft u documentpagina's met de mobiel gefotografeerd en wilt u deze als PDF samenvoegen? Bilder droppen, ordenen en PDF maken.",
+        "features": [
+          "Ondersteunt JPG, PNG en WebP",
+          "Drag-and-drop paginavolgorde",
+          "Aanpasbare randen en paginarichting",
+          "Geen beperkingen op het aantal afbeeldingen of bestandsgrootte"
+        ],
+        "howToTitle": "Hoe afbeeldingen in een PDF te converteren",
+        "steps": [
+          {
+            "title": "Bilder toevoegen",
+            "desc": "Selecteer de afbeeldingen die u wilt compileren."
+          },
+          {
+            "title": "Reihenfolge sortieren",
+            "desc": "Orden de paginavoorbeelden naar wens."
+          },
+          {
+            "title": "PDF maken",
+            "desc": "Klik op \"PDF maken\" om het document te genereren."
+          }
+        ],
+        "toolParam": "batch-upload"
+      },
+      "rotate-pdf": {
+        "title": "PDF-pagina's lokaal roteren — Richting corrigeren | TheNexTools",
+        "description": "Roteer afzonderlijke PDF-pagina's permanent met 90, 180 of 270 graden. Geen bestandsgroottebeperkingen. Draait lokaal.",
+        "h1": "Verkeerd om gescande pagina's corrigeren.",
+        "p": "Scans eindigen vaak in de verkeerde richting. Roteer afzonderlijke pagina's of het gehele document en sla het resultaat op.",
+        "features": [
+          "Afzonderlijke pagina's of het gehele document roteren",
+          "Visuele preview van elke wijziging",
+          "Verliesvrij — geen recomprimering van inhoud",
+          "Werkt met elke PDF ongeacht de grootte"
+        ],
+        "howToTitle": "Hoe PDF-pagina's te roteren",
+        "steps": [
+          {
+            "title": "PDF openen",
+            "desc": "Upload de PDF met de verkeerd uitgelijnde pagina's."
+          },
+          {
+            "title": "Richting aanpassen",
+            "desc": "Klik op de roteren-iconen op de paginavoorbeelden."
+          },
+          {
+            "title": "Rotatie opslaan",
+            "desc": "Download het gecorrigeerde document met vast opgeslagen richting."
+          }
+        ],
+        "toolParam": "rotate"
+      },
+      "rearrange-pdf": {
+        "title": "PDF-pagina's lokaal reorganiseren — Drag-and-drop-sortering | TheNexTools",
+        "description": "Pagina's in uw PDF per drag-and-drop opnieuw ordenen of wissen. Draait volledig lokaal in uw browser.",
+        "h1": "Breng de pagina's in de juiste volgorde.",
+        "p": "Een bijlage is op de verkeerde plaats of lege pagina's moeten worden gewist? Sorteer de pagina's visueel per drag-and-drop.",
+        "features": [
+          "Visuele drag-and-drop-sortering van PDF-pagina's",
+          "Unerwünschte pagina's met één klik wissen",
+          "Pagina's uit meerdere PDF's mengen en ordenen",
+          "Verwerkt ook grote documenten snel"
+        ],
+        "howToTitle": "Hoe PDF-pagina's opnieuw te ordenen",
+        "steps": [
+          {
+            "title": "PDF uploaden",
+            "desc": "Selecteer het PDF-bestand dat u wilt structureren."
+          },
+          {
+            "title": "Pagina's sortieren",
+            "desc": "Verschuif de thumbnails of wis ongewenste pagina's."
+          },
+          {
+            "title": "Bestand opslaan",
+            "desc": "Klik op \"Opslaan\", om het nieuwe PDF te downloaden."
+          }
+        ],
+        "toolParam": "rearrange"
+      },
+      "sign-pdf": {
+        "title": "PDF lokaal ondertekenen — Handtekening toevoegen zonder printen | TheNexTools",
+        "description": "Onderteken PDF's direct in de browser. Teken of typ uw handtekening. Uitvoer wordt plat geëxporteerd.",
+        "h1": "Onderteken documenten digitaal.",
+        "p": "Teken uw handtekening of typ deze in en kies een cursief lettertype. Plaatsen, schalen en plat exporteren.",
+        "features": [
+          "Modi voor getekende and getypte handtekeningen",
+          "Handtekeningen voor hergebruik in uw browser beveiligen",
+          "Platte uitvoer voorkomt de achteraf manipulatie van de handtekening",
+          "Ideaal voor contracten, huurovereenkomsten, formulieren en meer"
+        ],
+        "howToTitle": "Hoe een PDF te ondertekenen",
+        "steps": [
+          {
+            "title": "PDF laden",
+            "desc": "Selecteer het PDF-formulier dat u wilt ondertekenen."
+          },
+          {
+            "title": "Handtekening maken",
+            "desc": "Teken uw handtekening op het scherm of typ deze in."
+          },
+          {
+            "title": "Plaatsen & Beveiligen",
+            "desc": "Sleep de handtekening naar de juiste plaats en exporteer de PDF."
+          }
+        ],
+        "toolParam": "sign"
+      },
+      "add-page-numbers": {
+        "title": "Paginanummers lokaal toevoegen — Automatische paginering | TheNexTools",
+        "description": "Voeg paginanummers toe aan uw PDF. Kies de positie en de stijl. Draait lokaal in de browser.",
+        "h1": "Paginanummers automatisch toevoegen.",
+        "p": "Langere documenten hebben paginanummers nodig. Kies de positie en NexPDF pagineert de gehele PDF.",
+        "features": [
+          "Sequentiële nummering van alle pagina's",
+          "Meerdere positioneringsopties (boven, unten, links, rechts, mitte)",
+          "Ondersteunt documenten van elke lengte",
+          "Lokale uitvoering voor maximale privacy"
+        ],
+        "howToTitle": "Hoe paginanummers aan een PDF toe te voegen",
+        "steps": [
+          {
+            "title": "Document uploaden",
+            "desc": "Selecteer de PDF-datei die u wilt pagineren."
+          },
+          {
+            "title": "Plaatsing kiezen",
+            "desc": "Kies stijl, formatierung en positie van de paginanummers."
+          },
+          {
+            "title": "Pagina's stempelen",
+            "desc": "Paginanummers toepassen en het gepagineerde document downloaden."
+          }
+        ],
+        "toolParam": "page-numbers"
+      },
+      "text-to-pdf": {
+        "title": "Text in PDF lokaal converteren — Platte tekst formatteren | TheNexTools",
+        "description": "Voeg tekst in en ontvang een geformatteerde PDF terug. Behält Zeilenumbrüche und Abstände bei. Draait in de browser.",
+        "h1": "Van platte tekst een fatsoenlijke PDF maken.",
+        "p": "U heeft notities, broncode of logs, die u als PDF wilt verdelen. Text invoegen, lay-out controleren en PDF exporteren.",
+        "features": [
+          "Schone typografie met consistente formatierung",
+          "Behoudt regeleinden, inspringen en spaties exact",
+          "Directe conversie met live-preview",
+          "Geen gegevens verlassen uw browser"
+        ],
+        "howToTitle": "Hoe tekstbestanden in PDF te converteren",
+        "steps": [
+          {
+            "title": "Text invoegen",
+            "desc": "Voer uw tekst in de editor in."
+          },
+          {
+            "title": "Pagina formatteren",
+            "desc": "Pas de paginaranden aan en controleer de preview."
+          },
+          {
+            "title": "PDF exporteren",
+            "desc": "Klik op \"In PDF converteren\", om het document op te slaan."
+          }
+        ],
+        "toolParam": "text"
+      }
+    },
+    "seoPage": {
+      "keyBenefits": "Belangrijkste voordelen",
+      "localPrivate": "Lokaal & Veilig",
+      "localPrivateDesc": "Deze tool verwerkt uw bestanden rechtstreeks in uw browser — er wordt niets geüpload naar een server. Uw documenten blijven van begin tot eind op uw apparaat.",
+      "privateBadge": "Privé",
+      "secureBadge": "Veilig",
+      "faqTitle": "Veelgestelde Vragen",
+      "faqSubtitle": "Alles wat u over {tool} moet weten.",
+      "readyTitle": "Klaar om te starten?",
+      "readyDesc": "Sleep uw bestand naar de werkruimte bovenaan de pagina. Geen registratie vereist.",
+      "backToTool": "Terug naar Tool",
+      "howToPrefix": "Hoe ",
+      "faqQ1": "Hoe pas ik {tool} lokaal toe?",
+      "faqA1": "{steps} Het hele proces wordt op uw apparaat uitgevoerd.",
+      "faqQ2": "Zijn mijn PDF-bestanden tijdens dit proces veilig?",
+      "faqA2": "Absoluut. Omdat NexPDF volledig client-side via WebAssembly draait, wordt het document nooit geüpload naar een server. Uw privégegevens blijven 100% beschermd.",
+      "faqQ3": "Is er een bestandsgroottelimiet voor {tool}?",
+      "faqA3": "Nee, er zijn geen künstliche groottebeperkingen. De enige grens is het werkgeheugen van uw apparaat, dat scans probleemloos kan verwerken.",
+      "faqQ4": "Werkt het offline?",
+      "faqA4": "Ja, NexPDF wordt na de eerste keer laden in de browser gecached. U kunt uw internet verbreken en de tool compleet offline gebruiken.",
+      "uploadSelect": "Selecteer een PDF om te {label}",
+      "uploadDrop": "Of sleep deze hierheen om direct te starten",
+      "uploadLoading": "Werkruimte wordt voorbereid..."
+    }
+  },
+  "meta": {
+    "layout": {
+      "title": "TheNexTools | NexData Recovery & Belangrijke Desktop Tools",
+      "description": "Een suite van krachtige desktop-hulpprogramma's voor dataherstel, bestandsreparatie en productiviteitsverhoging offline.",
+      "ogLocale": "nl_NL"
+    },
+    "home": {
+      "title": "TheNexTools — Private, Offline Desktop Tools"
+    },
+    "contact": {
+      "title": "Contact | TheNexTools",
+      "subjectSupport": "Supportaanvraag",
+      "subjectBilling": "Facturering / Terugbetaling",
+      "subjectGeneral": "Algemene Vraag",
+      "subjectSecurity": "Zorgen over Beveiliging / Privacy"
+    },
+    "dataRecovery": {
+      "title": "NexData Recovery — Gelöschte bestanden van geformatteerde schijven redden | TheNexTools"
+    },
+    "pdfToolkit": {
+      "title": "NexPDF — PDF's offline bewerken, ondertekenen, samenvoegen & comprimeren | TheNexTools",
+      "breadcrumbHome": "Start"
+    },
+    "imageToolkit": {
+      "title": "NexImage Toolkit — Afbeeldingen comprimeren, converteren, anonimiseren & metadaten opschonen | TheNexTools"
+    }
+  },
+  "imageTools": {
+    "compressor": {
+      "uploadTitle": "Sleep afbeeldingen hierheen",
+      "uploadSubtitle": "JPG, PNG, WebP — batchverwerking ondersteund",
+      "formatLabel": "Uitvoerformaat",
+      "qualityLabel": "Kwaliteit:",
+      "losslessNotice": " (verliesvrij — genegeerd voor PNG)",
+      "recompressBtn": "Alle neu comprimeren",
+      "addBtn": "Toevoegen",
+      "clearBtn": "Wissen",
+      "downloadAll": "Alles downloaden",
+      "downloading": "Downloaden..."
+    },
+    "converter": {
+      "uploadTitle": "Sleep afbeeldingen hierheen of drop ze",
+      "uploadSubtitle": "Ondersteunt PNG, JPG, JPEG, WEBP en meer",
+      "browseBtn": "Bestanden doorzoeken",
+      "settingsTitle": "Conversie-instellingen",
+      "formatLabel": "Doelformaat",
+      "qualityLabel": "Compressiekwaliteit",
+      "reconvertBtn": "Alle neu converteren",
+      "addBtn": "Afbeeldingen toevoegen",
+      "clearBtn": "Alles wissen",
+      "downloadAll": "Alles downloaden"
+    },
+    "redactor": {
+      "uploadTitle": "Screenshot of afbeelding hierheen slepen",
+      "uploadSubtitle": "PNG, JPG, WEBP — verwerking geschiedt 100% client-side",
+      "chooseBtn": "Bestand kiezen",
+      "blurMode": "Bereik vervagen",
+      "redactMode": "Bereik anonimiseren (Blackout)",
+      "resetBtn": "Canvas herstellen",
+      "downloadBtn": "Afbeelding downloaden"
+    },
+    "exifStripper": {
+      "uploadTitle": "Sleep afbeeldingen hierheen",
+      "uploadSubtitle": "JPG, PNG, WebP — enkel of batch",
+      "processedInfo": "{done} van {total} verwerkt",
+      "gpsDanger": "⚠ GPS-locatiegegevens gedetecteerd en verwijderd",
+      "noGpsSuccess": "✓ Geen GPS-locatiegegevens gevonden",
+      "scanning": "Scannen…",
+      "addMoreBtn": "Meer toevoegen",
+      "clearBtn": "Wissen",
+      "zipping": "Zippen…",
+      "downloadAll": "Alles downloaden ({count})"
+    }
+  }
+}

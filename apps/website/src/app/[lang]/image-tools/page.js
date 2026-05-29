@@ -26,6 +26,7 @@ export async function generateMetadata({ params }) {
       title: `${d.home.imageToolkitTitle} | ${d.nav.brand}`,
       description: d.home.imageToolkitDesc,
       type: 'website',
+      url: `https://thenextools.com/${locale}/image-tools`,
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',
