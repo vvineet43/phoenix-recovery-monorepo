@@ -26,6 +26,7 @@ export async function generateMetadata({ params }) {
       title: `${d.imageToolkit.stripperTitle} | ${d.nav.brand}`,
       description: d.imageToolkit.stripperDesc,
       type: 'website',
+      url: `https://thenextools.com/${locale}/exif-tools`,
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',

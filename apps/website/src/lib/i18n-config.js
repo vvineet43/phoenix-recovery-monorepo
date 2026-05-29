@@ -1,4 +1,4 @@
-export const locales = ['en', 'es', 'pt', 'hi', 'tr', 'fr'];
+export const locales = ['en', 'es', 'pt', 'hi', 'tr', 'fr', 'sw', 'bn', 'de', 'nl', 'it', 'ja'];
 export const defaultLocale = 'en';
 
 export const localeNames = {
@@ -8,4 +8,10 @@ export const localeNames = {
   hi: 'हिन्दी',
   tr: 'Türkçe',
   fr: 'Français',
+  sw: 'Kiswahili',
+  bn: 'বাংলা',
+  de: 'Deutsch',
+  nl: 'Nederlands',
+  it: 'Italiano',
+  ja: '日本語',
 };

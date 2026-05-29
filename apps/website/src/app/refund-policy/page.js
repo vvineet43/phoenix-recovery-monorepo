@@ -18,6 +18,7 @@ export const metadata = {
     title: 'Refund Policy | TheNexTools',
     description: 'Our refund policy for NexData Recovery Pro and other paid software. Learn how to request a refund and what is covered.',
     type: 'website',
+    url: 'https://thenextools.com/refund-policy',
     images: [
       {
         url: 'https://thenextools.com/thenextools-com-og-image.png',

@@ -3,6 +3,46 @@ import { ImageConverterPageWrapper } from '@/components/image-tools/ImageCompres
 import { locales } from '@/lib/i18n-config';
 
 const TRANSLATIONS = {
+  en: {
+    title: 'Image Format Converter — JPG to WebP, PNG to JPG, Locally | TheNexTools',
+    description: 'Convert images between JPG, PNG, and WebP without uploading them. Batch-convert entire folders, preserve transparency, and download as a ZIP — all in your browser.',
+    steps: [
+      { title: 'Select Files', desc: 'Select or drag raw images of any format into the workspace.' },
+      { title: 'Select Format', desc: 'Choose output format (JPG, PNG, WebP) and define quality options.' },
+      { title: 'Batch Export', desc: 'Click convert and download the converted files as a clean ZIP package.' }
+    ],
+    badge: 'NexConvert — Local & Private',
+    h1: 'Stop uploading images just to change the format.',
+    p1: 'You have a folder of PNGs that need to be WebP for your website. Or a batch of WebPs that a client needs as JPEGs. Every online converter wants you to upload them one at a time, wait, download, repeat. NexConvert handles the whole folder at once — locally, in your browser, with no queue and no file size cap.',
+    schemaTitle: 'NexConvert Image Converter',
+    schemaHome: 'Home',
+    schemaToolkit: 'Image Toolkit',
+    schemaTool: 'Image Converter',
+    howToTitle: 'How to convert images offline',
+    diffTitle: 'How it works',
+    diffDesc: 'Your browser already knows how to decode and re-encode images through the Canvas API. NexConvert just gives you a proper interface for it.',
+    feat1Title: 'Every format combination',
+    feat1Desc: 'JPG to WebP, PNG to JPG, WebP to PNG — any direction. Drop a mixed folder and convert everything to one target format in a single operation. Adjust quality for JPG and WebP output with a slider.',
+    feat2Title: 'Transparency handled correctly',
+    feat2Desc: 'Converting to PNG? Alpha channels are preserved exactly. You won\'t end up with a white rectangle where your transparent logo used to be. Converting from PNG to JPG? The background is filled cleanly instead of turning black.',
+    feat3Title: 'No upload, no sign-up, no daily limit',
+    feat3Desc: 'Most free converters cap at 5MB or 20 files per day. NexConvert has no limits because there\'s no server involved — it\'s just your CPU doing the work. The only practical ceiling is your browser\'s available memory.',
+    feat4Title: 'Works offline after first visit',
+    feat4Desc: 'NexConvert is a Progressive Web App. Load it once, and it works without an internet connection going forward. Pin it to your dock or home screen and it behaves like a native app.',
+    faqTitle: 'Frequently Asked Questions',
+    faqSubtitle: 'Everything you need to know about NexConvert format conversion.',
+    faqQ1: 'How does browser-based image conversion work?',
+    faqA1: 'It uses the HTML5 Canvas API in your browser to decode the uploaded image format (like PNG, JPG, or WebP) and re-encode it directly to your desired target format. The process executes locally on your CPU.',
+    faqQ2: 'Will image transparency be preserved during conversion?',
+    faqA2: 'Yes. If converting to PNG or WebP, transparency is fully preserved. When converting transparent images to JPEG (which does not support alpha channels), transparency is cleanly filled with a solid white background.',
+    faqQ3: 'How many files can I convert at once?',
+    faqA3: 'You can select and convert dozens or hundreds of files simultaneously. Since processing occurs locally on your machine, there are no cloud queuing delays or daily caps.',
+    faqQ4: 'Are my files safe during format conversion?',
+    faqA4: 'Completely. Because the utility runs purely inside your browser client without server-side uploads, your photos never leave your device.',
+    ctaTitle: 'Ready to convert your images?',
+    ctaDesc: 'Drop your files at the top of the page. Runs in any modern browser offline.',
+    ctaButton: 'Back to Tool'
+  },
   es: {
     title: 'Convertidor de Formatos de Imagen — JPG a WebP, PNG a JPG, Localmente | TheNexTools',
     description: 'Convierte imágenes entre JPG, PNG y WebP sin subirlas. Convierte carpetas enteras por lotes, conserva la transparencia y descarga en ZIP.',
@@ -88,7 +128,7 @@ const TRANSLATIONS = {
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.es;
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
   return {
     title: t.title,

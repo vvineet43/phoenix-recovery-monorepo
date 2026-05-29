@@ -56,6 +56,7 @@ export async function generateMetadata({ params }) {
       title: tool.title,
       description: tool.description,
       type: 'website',
+      url: locale === 'en' ? `https://thenextools.com/pdf-toolkit/tools/${slug}` : `https://thenextools.com/${locale}/pdf-toolkit/tools/${slug}`,
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',

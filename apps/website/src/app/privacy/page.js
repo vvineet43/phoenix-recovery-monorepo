@@ -18,6 +18,7 @@ export const metadata = {
     title: 'Privacy Policy | TheNexTools',
     description: 'Our privacy policy is simple: we don\'t want your data. All tools run locally on your device.',
     type: 'website',
+    url: 'https://thenextools.com/privacy',
     images: [
       {
         url: 'https://thenextools.com/thenextools-com-og-image.png',

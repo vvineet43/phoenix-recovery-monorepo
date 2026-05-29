@@ -14,6 +14,72 @@ interface RedactBox {
   type: 'blur' | 'blackout';
 }
 
+async function redactImageHelper(file: File, boxes: RedactBox[]): Promise<Blob> {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) {
+        URL.revokeObjectURL(url);
+        reject(new Error('Canvas unavailable'));
+        return;
+      }
+      ctx.drawImage(img, 0, 0);
+      URL.revokeObjectURL(url);
+
+      for (const box of boxes) {
+        const bx = box.x * img.naturalWidth;
+        const by = box.y * img.naturalHeight;
+        const bw = box.w * img.naturalWidth;
+        const bh = box.h * img.naturalHeight;
+
+        if (box.type === 'blackout') {
+          ctx.fillStyle = '#000000';
+          ctx.fillRect(bx, by, bw, bh);
+        } else if (box.type === 'blur') {
+          const tempCanvas = document.createElement('canvas');
+          tempCanvas.width = bw;
+          tempCanvas.height = bh;
+          const tempCtx = tempCanvas.getContext('2d');
+          if (tempCtx) {
+            tempCtx.drawImage(canvas, bx, by, bw, bh, 0, 0, bw, bh);
+            const scale = 0.08;
+            const sw = Math.max(1, Math.round(bw * scale));
+            const sh = Math.max(1, Math.round(bh * scale));
+            const scaleCanvas = document.createElement('canvas');
+            scaleCanvas.width = sw;
+            scaleCanvas.height = sh;
+            const scaleCtx = scaleCanvas.getContext('2d');
+            if (scaleCtx) {
+              scaleCtx.drawImage(tempCanvas, 0, 0, sw, sh);
+              ctx.imageSmoothingEnabled = false;
+              ctx.drawImage(scaleCanvas, 0, 0, sw, sh, bx, by, bw, bh);
+              ctx.imageSmoothingEnabled = true;
+            }
+          }
+        }
+      }
+
+      canvas.toBlob((blob) => {
+        if (!blob) {
+          reject(new Error('Redaction failed'));
+        } else {
+          resolve(blob);
+        }
+      }, 'image/png');
+    };
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      reject(new Error('Image load failed'));
+    };
+    img.src = url;
+  });
+}
+
 export function ImageBlurApp({ hideHeader }: { hideHeader?: boolean }) {
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [imageSrc, setImageSrc] = useState<string | null>(null);
@@ -45,6 +111,72 @@ export function ImageBlurApp({ hideHeader }: { hideHeader?: boolean }) {
 
   const activeDict = dict || enDict;
   const t = activeDict.imageTools?.redactor || enDict.imageTools.redactor;
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'modelContext' in navigator) {
+      try {
+        const mc = (navigator as any).modelContext;
+        mc.provideContext({
+          tools: [
+            {
+              name: 'redact_image',
+              description: 'Blurs or blacks out specific regions of an image client-side for privacy.',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  imageBase64: {
+                    type: 'string',
+                    description: 'The source image file as a base64 encoded string.'
+                  },
+                  redactions: {
+                    type: 'array',
+                    description: 'List of bounding boxes to redact, with coordinates as decimals from 0 to 1.',
+                    items: {
+                      type: 'object',
+                      properties: {
+                        x: { type: 'number', description: 'Left coordinate percentage (0-1)' },
+                        y: { type: 'number', description: 'Top coordinate percentage (0-1)' },
+                        w: { type: 'number', description: 'Width percentage (0-1)' },
+                        h: { type: 'number', description: 'Height percentage (0-1)' },
+                        type: { type: 'string', enum: ['blur', 'blackout'], description: 'Redaction style' }
+                      },
+                      required: ['x', 'y', 'w', 'h', 'type']
+                    }
+                  }
+                },
+                required: ['imageBase64', 'redactions']
+              },
+              execute: async ({ imageBase64, redactions }: any) => {
+                const res = await fetch(imageBase64.startsWith('data:') ? imageBase64 : `data:image/*;base64,${imageBase64}`);
+                const blob = await res.blob();
+                const file = new File([blob], 'input_image', { type: blob.type });
+                
+                const boxes: RedactBox[] = redactions.map((r: any, idx: number) => ({
+                  id: `temp-${idx}`,
+                  x: r.x, y: r.y, w: r.w, h: r.h, type: r.type
+                }));
+                
+                const resultBlob = await redactImageHelper(file, boxes);
+                const reader = new FileReader();
+                const base64Promise = new Promise<string>((resolve) => {
+                  reader.onloadend = () => resolve(reader.result as string);
+                });
+                reader.readAsDataURL(resultBlob);
+                return {
+                  success: true,
+                  redactedBase64: await base64Promise,
+                  originalSize: file.size,
+                  redactedSize: resultBlob.size
+                };
+              }
+            }
+          ]
+        });
+      } catch (e) {
+        console.error('Failed to provide WebMCP context:', e);
+      }
+    }
+  }, []);
   
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);

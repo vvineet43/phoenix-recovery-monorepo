@@ -31,6 +31,7 @@ export async function generateMetadata({ params }) {
       title: d.meta.pdfToolkit.title,
       description: d.pdfToolkit.heroDesc,
       type: 'website',
+      url: locale === 'en' ? 'https://thenextools.com/pdf-toolkit' : `https://thenextools.com/${locale}/pdf-toolkit`,
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',

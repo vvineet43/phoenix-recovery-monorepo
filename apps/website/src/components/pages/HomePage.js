@@ -25,6 +25,7 @@ export async function generateMetadata({ params }) {
       title: d.meta.home.title,
       description: d.home.heroDesc,
       type: 'website',
+      url: locale === 'en' ? 'https://thenextools.com/' : `https://thenextools.com/${locale}`,
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',

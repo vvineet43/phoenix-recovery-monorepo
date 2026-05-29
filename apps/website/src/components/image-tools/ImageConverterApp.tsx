@@ -55,6 +55,70 @@ export function ImageConverterApp({ hideHeader }: { hideHeader?: boolean }) {
   const activeDict = dict || enDict;
   const t = activeDict.imageTools?.converter || enDict.imageTools.converter;
 
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'modelContext' in navigator) {
+      try {
+        const mc = (navigator as any).modelContext;
+        mc.provideContext({
+          tools: [
+            {
+              name: 'convert_image',
+              description: 'Converts an image from one format (JPEG, PNG, WebP) to another client-side.',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  imageBase64: {
+                    type: 'string',
+                    description: 'The source image file as a base64 encoded string.'
+                  },
+                  format: {
+                    type: 'string',
+                    enum: ['jpeg', 'png', 'webp'],
+                    description: 'The target format to convert to.',
+                    default: 'webp'
+                  }
+                },
+                required: ['imageBase64']
+              },
+              execute: async ({ imageBase64, format = 'webp' }: any) => {
+                const res = await fetch(imageBase64.startsWith('data:') ? imageBase64 : `data:image/*;base64,${imageBase64}`);
+                const blob = await res.blob();
+                const file = new File([blob], 'input_image', { type: blob.type });
+                
+                const mockItem: ConversionItem = {
+                  id: 'temp',
+                  file,
+                  originalSize: file.size,
+                  previewUrl: '',
+                  status: 'pending',
+                  targetFormat: format,
+                  convertedBlob: null,
+                  convertedSize: 0,
+                  convertedPreviewUrl: null
+                };
+                
+                const result = await convertSingle(mockItem, format);
+                const reader = new FileReader();
+                const base64Promise = new Promise<string>((resolve) => {
+                  reader.onloadend = () => resolve(reader.result as string);
+                });
+                reader.readAsDataURL(result.blob);
+                return {
+                  success: true,
+                  convertedBase64: await base64Promise,
+                  originalSize: file.size,
+                  convertedSize: result.blob.size
+                };
+              }
+            }
+          ]
+        });
+      } catch (e) {
+        console.error('Failed to provide WebMCP context:', e);
+      }
+    }
+  }, []);
+
   const convertSingle = async (item: ConversionItem, format: TargetFormat): Promise<{ blob: Blob; url: string }> => {
     return new Promise((resolve, reject) => {
       const img = new Image();

@@ -3,6 +3,46 @@ import { ImageBlurPageWrapper } from '@/components/image-tools/ImageCompressorWr
 import { locales } from '@/lib/i18n-config';
 
 const TRANSLATIONS = {
+  en: {
+    title: 'Image Redactor — Blur Faces, Plates & Sensitive Areas Locally | TheNexTools',
+    description: 'Draw blur zones over faces, license plates, addresses, and sensitive data in your photos. The blur is permanent and irreversible. Runs locally in your browser — files never leave your device.',
+    steps: [
+      { title: 'Add Image', desc: 'Select or drag your image into the secure editor window.' },
+      { title: 'Censor Fields', desc: 'Draw blur areas over faces, names, plates, or private details.' },
+      { title: 'Export Flattened', desc: 'Download a clean, flattened file where original data is permanently destroyed.' }
+    ],
+    badge: 'NexRedact — Private by Default',
+    h1: 'Some things in a photo aren\'t meant to be shared.',
+    p1: 'You\'re selling a car and need to blur the plates. You\'re sharing a screenshot of a receipt but the card number is visible. You took a great event photo but a stranger\'s kid is in frame. NexRedact lets you draw blur zones over anything sensitive, then saves a flattened image where the blur is permanent and cannot be undone.',
+    schemaTitle: 'NexRedact Image Redactor',
+    schemaHome: 'Home',
+    schemaToolkit: 'Image Toolkit',
+    schemaTool: 'Redact & Blur',
+    howToTitle: 'How to redact images offline',
+    diffTitle: 'Simple redaction that actually works',
+    diffDesc: 'No layers, no Photoshop, no uploading sensitive images to someone else\'s server. Just draw, blur, download.',
+    feat1Title: 'Draw blur zones with your mouse',
+    feat1Desc: 'Click and drag to select a rectangular area. Adjust the blur intensity — from a subtle gaussian to a heavy pixelation that makes text completely unreadable. Add as many zones as you need before saving.',
+    feat2Title: 'Permanent, irreversible redaction',
+    feat2Desc: 'The downloaded image is flattened. The blurred pixels are baked into the file — there\'s no hidden layer underneath that someone could extract. This matters for legal, medical, and journalistic work where partial redaction isn\'t acceptable.',
+    feat3Title: 'Common use cases',
+    feat3Desc: 'Blurring license plates in vehicle listings. Redacting account numbers on invoice screenshots. Hiding bystander faces in crowd photos for news use. Removing your address from a photo before posting it to a marketplace. All of this takes about ten seconds.',
+    feat4Title: 'Nothing gets uploaded',
+    feat4Desc: 'The image stays in your browser the entire time. NexRedact uses the Canvas API to apply the blur filter locally — no server, no account, no file size cap. Download the result as JPG or PNG and you\'re done.',
+    faqTitle: 'Frequently Asked Questions',
+    faqSubtitle: 'Everything you need to know about NexRedact privacy redaction.',
+    faqQ1: 'Is the blur permanent on my redacted images?',
+    faqA1: 'Yes, completely. The blur and blackout zones are permanently drawn and rasterized onto the image canvas before download. There are no layers, masks, or metadata tags left behind that could be undone.',
+    faqQ2: 'Can someone extract the unblurred image?',
+    faqA2: 'No. Unlike PDF editors that sometimes hide original text under a black box, NexRedact performs a destructive pixel edit. The original pixels in the blurred/blackout zones are completely replaced and destroyed.',
+    faqQ3: 'What image formats are supported?',
+    faqA3: 'NexRedact supports JPG, PNG, WebP, and other standard browser-compatible image formats.',
+    faqQ4: 'Are my sensitive screenshots uploaded to a server?',
+    faqA4: 'No, they never touch any server. The redaction is done entirely inside your local browser client to guarantee maximum privacy for financial, legal, or personal data.',
+    ctaTitle: 'Ready to redact your images?',
+    ctaDesc: 'Drop your files at the top of the page. Everything is processed purely client-side.',
+    ctaButton: 'Back to Tool'
+  },
   es: {
     title: 'Redactor de Privacidad — Difuminar Rostros, Matrículas y Datos Sensibles | TheNexTools',
     description: 'Dibuja zonas de difuminado sobre rostros, matrículas, direcciones y datos confidenciales en tus fotos de forma permanente e irreversible. Se ejecuta en tu navegador.',
@@ -66,7 +106,7 @@ const TRANSLATIONS = {
     feat2Title: 'Redação permanente e irreversível',
     feat2Desc: 'A imagem baixada é achatada. Os pixels desfocados são gravados no arquivo — não há nenhuma camada oculta por baixo que alguém possa extrair. Isso importa para trabalhos jurídicos e médicos.',
     feat3Title: 'Casos de uso comuns',
-    feat3Desc: 'Desfocar placas de veículos em anúncios. Ocultar números de contas em capturas de faturas. Ocultar rostos de transeuntes em fotos de multidões para fins jornalísticos. Remover seu endereço de fotos.',
+    feat3Desc: 'Desfocar placas de veículos em anúncios. Ocultar números de contas em capturas de faturas. Ocultar rostros de transeuntes em fotos de multidões para fins jornalísticos. Remover seu endereço de fotos.',
     feat4Title: 'Nada é carregado',
     feat4Desc: 'A imagem permanece no seu navegador o tempo todo. NexRedact usa a API Canvas para aplicar o filtro de desfoque localmente — sem servidor, sem conta, sem limite de tamanho de arquivo. Baixe como JPG ou PNG.',
     faqTitle: 'Perguntas Frequentes',
@@ -88,7 +128,7 @@ const TRANSLATIONS = {
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.es;
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
   return {
     title: t.title,

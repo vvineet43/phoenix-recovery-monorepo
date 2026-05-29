@@ -26,16 +26,6 @@ export async function generateMetadata({ params }) {
     metadataBase: new URL('https://thenextools.com'),
     title: d.meta.layout.title,
     description: d.meta.layout.description,
-    alternates: {
-      canonical: locale === 'en' ? '/' : `/${locale}`,
-      languages: {
-        ...locales.reduce((acc, l) => {
-          acc[l] = l === 'en' ? '/' : `/${l}`;
-          return acc;
-        }, {}),
-        'x-default': '/',
-      }
-    },
     icons: {
       apple: '/thenextools-com-apple-icon.png',
     },
