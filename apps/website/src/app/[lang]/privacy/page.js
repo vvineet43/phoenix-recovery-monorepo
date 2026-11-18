@@ -6,7 +6,7 @@ import { locales } from '@/lib/i18n-config';
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.es;
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
   return {
     title: t.title,
@@ -43,6 +43,82 @@ export async function generateMetadata({ params }) {
 }
 
 const TRANSLATIONS = {
+  en: {
+    title: 'Privacy Policy | TheNexTools',
+    description: 'Our privacy policy is simple: we do not want your data. All tools run locally on your device.',
+    h1: 'Privacy Policy',
+    effectiveDate: 'Effective Date:',
+    localeString: 'en-US',
+    sec1Title: 'The Core Principle',
+    sec1Desc: 'We sell software, not data. Our tools process everything on your device, and we have no interest in seeing, storing, or monetizing what you work on.',
+    sec2Title: 'No File Uploads',
+    sec2Desc: 'Every web-based tool in our suite (NexPDF, NexStrip, NexCompress) uses modern browser APIs to process your files <strong>locally</strong> in your browser tab. Your files never transit our servers. We cannot see them, and we certainly do not store them.',
+    sec3Title: 'No Accounts or Tracking',
+    sec3Desc: 'We do not require accounts to use our free utilities. We do not use invasive tracking pixels or third-party cookies for advertising. We may collect minimal, anonymized server logs (like page views) purely for performance monitoring and to prevent abuse of our infrastructure.',
+    sec4Title: 'Local Storage',
+    sec4Desc: 'Some tools may use your browser\'s local storage or IndexedDB to save your preferences or temporary working files (like a PDF being edited). This data stays on your device and is never synced with any cloud service by us.',
+    sec5Title: 'NexData Desktop App',
+    sec5Desc: 'Our desktop application, NexData Recovery, is designed to run entirely offline. It does not require an internet connection to scan or recover files. License verification happens via a secure, local-first mechanism.',
+    sec6Title: 'Contact',
+    sec6Desc: 'Questions about this privacy policy? Email us at '
+  },
+  fr: {
+    title: 'Politique de Confidentialité | TheNexTools',
+    description: 'Notre politique de confidentialité est simple : nous ne voulons pas de vos données. Tous nos outils fonctionnent localement sur votre appareil.',
+    h1: 'Politique de Confidentialité',
+    effectiveDate: 'Date d\'entrée en vigueur :',
+    localeString: 'fr-FR',
+    sec1Title: 'Le Principe Fondamental',
+    sec1Desc: 'Nous vendons des logiciels, pas des données. Nos outils traitent tout sur votre appareil et nous n\'avons aucun intérêt à voir, stocker ou monétiser le contenu sur lequel vous travaillez.',
+    sec2Title: 'Aucun Téléversement de Fichiers',
+    sec2Desc: 'Chaque outil web de notre suite (NexPDF, NexStrip, NexCompress) utilise les API modernes du navigateur pour traiter vos fichiers <strong>localement</strong> dans votre onglet. Vos fichiers ne transitent jamais par nos serveurs. Nous ne pouvons pas les voir et nous ne les stockons pas.',
+    sec3Title: 'Aucun Compte ni Suivi',
+    sec3Desc: 'Nous n\'exigeons aucun compte pour utiliser nos utilitaires gratuits. Nous n\'utilisons pas de pixels de suivi intrusifs ni de cookies tiers à des fins publicitaires. Nous pouvons collecter des journaux serveur minimaux et anonymisés uniquement pour surveiller les performances et prévenir les abus.',
+    sec4Title: 'Stockage Local',
+    sec4Desc: 'Certains outils peuvent utiliser le stockage local de votre navigateur ou IndexedDB pour enregistrer vos préférences ou des fichiers de travail temporaires. Ces données restent sur votre appareil et ne sont jamais synchronisées avec un service cloud.',
+    sec5Title: 'Application de Bureau NexData',
+    sec5Desc: 'Notre application de bureau, NexData Recovery, est conçue pour fonctionner entièrement hors ligne. Elle ne nécessite pas de connexion Internet pour analyser ou récupérer des fichiers.',
+    sec6Title: 'Contact',
+    sec6Desc: 'Des questions concernant cette politique de confidentialité ? Écrivez-nous à '
+  },
+  hi: {
+    title: 'गोपनीयता नीति | TheNexTools',
+    description: 'हमारी गोपनीयता नीति सरल है: हमें आपका डेटा नहीं चाहिए। सभी टूल्स आपके डिवाइस पर स्थानीय रूप से चलते हैं।',
+    h1: 'गोपनीयता नीति',
+    effectiveDate: 'प्रभावी तिथि:',
+    localeString: 'hi-IN',
+    sec1Title: 'मूल सिद्धांत',
+    sec1Desc: 'हम सॉफ़्टवेयर बेचते हैं, डेटा नहीं। हमारे टूल्स आपके डिवाइस पर ही सब कुछ प्रोसेस करते हैं, और आप जिस सामग्री पर काम करते हैं उसे देखने, संग्रहीत करने या मुद्रीकृत करने में हमारी कोई रुचि नहीं है।',
+    sec2Title: 'कोई फ़ाइल अपलोड नहीं',
+    sec2Desc: 'हमारे सुइट का प्रत्येक वेब-आधारित टूल (NexPDF, NexStrip, NexCompress) आपके ब्राउज़र टैब में <strong>स्थानीय रूप से</strong> आपकी फ़ाइलों को प्रोसेस करने के लिए आधुनिक ब्राउज़र API का उपयोग करता है। आपकी फ़ाइलें कभी भी हमारे सर्वर से होकर नहीं गुजरती हैं।',
+    sec3Title: 'कोई खाता या ट्रैकिंग नहीं',
+    sec3Desc: 'हमारी निःशुल्क उपयोगिताओं का उपयोग करने के लिए किसी खाते की आवश्यकता नहीं है। हम विज्ञापन के लिए आक्रामक ट्रैकिंग पिक्सेल या तृतीय-पक्ष कुकीज़ का उपयोग नहीं करते हैं।',
+    sec4Title: 'लोकल स्टोरेज',
+    sec4Desc: 'कुछ टूल्स आपकी प्राथमिकताओं या अस्थायी कार्यशील फ़ाइलों को सहेजने के लिए आपके ब्राउज़र के लोकल स्टोरेज या IndexedDB का उपयोग कर सकते हैं। यह डेटा आपके डिवाइस पर ही रहता है।',
+    sec5Title: 'NexData डेस्कटॉप ऐप',
+    sec5Desc: 'हमारा डेस्कटॉप एप्लिकेशन, NexData Recovery, पूरी तरह से ऑफ़लाइन चलने के लिए डिज़ाइन किया गया है। फ़ाइलों को स्कैन या रिकवर करने के लिए इंटरनेट कनेक्शन की आवश्यकता नहीं होती है।',
+    sec6Title: 'संपर्क करें',
+    sec6Desc: 'इस गोपनीयता नीति के बारे में कोई प्रश्न हैं? हमें ईमेल करें: '
+  },
+  tr: {
+    title: 'Gizlilik Politikası | TheNexTools',
+    description: 'Gizlilik politikamız basittir: verilerinizi istemiyoruz. Tüm araçlar cihazınızda yerel olarak çalışır.',
+    h1: 'Gizlilik Politikası',
+    effectiveDate: 'Yürürlük tarihi:',
+    localeString: 'tr-TR',
+    sec1Title: 'Temel İlke',
+    sec1Desc: 'Biz veri değil, yazılım satıyoruz. Araçlarımız her şeyi cihazınızda işler; üzerinde çalıştığınız içerikleri görmek, saklamak veya bunlardan gelir elde etmek gibi bir amacımız yoktur.',
+    sec2Title: 'Dosya Yükleme Yok',
+    sec2Desc: 'Paketimizdeki her web tabanlı araç (NexPDF, NexStrip, NexCompress), dosyalarınızı tarayıcı sekmenizde <strong>yerel olarak</strong> işlemek için modern tarayıcı API\'lerini kullanır. Dosyalarınız asla sunucularımızdan geçmez.',
+    sec3Title: 'Hesap veya İzleme Yok',
+    sec3Desc: 'Ücretsiz araçlarımızı kullanmak için hesap açmanızı istemiyoruz. Reklam amacıyla izleme pikselleri veya üçüncü taraf çerezleri kullanmıyoruz.',
+    sec4Title: 'Yerel Depolama',
+    sec4Desc: 'Bazı araçlar tercihlerinizi veya geçici çalışma dosyalarınızı kaydetmek için tarayıcınızın yerel depolama alanını veya IndexedDB\'yi kullanabilir. Bu veriler cihazınızda kalır ve hiçbir bulut hizmetiyle senkronize edilmez.',
+    sec5Title: 'NexData Masaüstü Uygulaması',
+    sec5Desc: 'Masaüstü uygulamamız NexData Recovery tamamen çevrimdışı çalışacak şekilde tasarlanmıştır. Dosyaları taramak veya kurtarmak için internet bağlantısı gerektirmez.',
+    sec6Title: 'İletişim',
+    sec6Desc: 'Bu gizlilik politikası hakkında sorularınız mı var? Bize yazın: '
+  },
   es: {
     title: 'Política de Privacidad | TheNexTools',
     description: 'Nuestra política de privacidad es sencilla: no queremos tus datos. Todas las herramientas se ejecutan localmente en tu dispositivo.',
@@ -202,7 +278,7 @@ const TRANSLATIONS = {
 export default async function PrivacyPage({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.es;
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
   return (
     <main className="container" style={{ paddingTop: 'calc(var(--nav-h) + 4rem)', paddingBottom: '6rem', maxWidth: '800px' }}>

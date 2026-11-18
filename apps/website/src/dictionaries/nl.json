@@ -260,7 +260,7 @@
     "faqA1": "Het gebruikt WebAssembly en client-side JavaScript-bibliotheken om PDF's direct in de browser te bewerken. Er worden geen bestanden naar externe servers gestuurd.",
     "faqQ2": "Zijn mijn PDF-documenten bij NexPDF veilig?",
     "faqA2": "Ja, absoluut. Omdat alles lokaal in uw browser wordt uitgevoerd, verlassen gevoelige bestanden zoals contracten of belastingformulieren nooit uw apparaat.",
-    "faqQ3": "Is er een limiet voor de bestandsgrootte bij {tool}?",
+    "faqQ3": "Is er een limiet voor de bestandsgrootte bij NexPDF?",
     "faqA3": "Nee. De enige grens is het beschikbare werkgeheugen van uw apparaat, dat grote documenten probleemloos kan verwerken.",
     "faqQ4": "Werkt het offline?",
     "faqA4": "Ja, NexPDF wordt na het eerste laden in de browser gecached en werkt volledig zonder internetverbinding.",

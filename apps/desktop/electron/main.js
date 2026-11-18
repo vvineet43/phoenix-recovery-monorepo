@@ -199,9 +199,13 @@ async function startBackend() {
     ? path.join(__dirname, '..', '..', '..', 'backend')
     : path.join(process.resourcesPath, 'backend');
 
-  const pythonPath = isDev
-    ? path.join(backendDir, 'venv', 'bin', 'python3')
-    : path.join(process.resourcesPath, 'backend', 'venv', 'bin', 'python3');
+  const isWin = process.platform === 'win32';
+  const venvPython = isWin
+    ? path.join(backendDir, 'venv', 'Scripts', 'python.exe')
+    : path.join(backendDir, 'venv', 'bin', 'python3');
+  const pythonPath = fs.existsSync(venvPython)
+    ? venvPython
+    : (isWin ? 'python' : 'python3');
 
   const appPath = path.join(backendDir, 'app.py');
 
@@ -215,7 +219,7 @@ async function startBackend() {
     // Point to bundled ffmpeg if in production
     PATH: isDev
       ? process.env.PATH
-      : path.join(process.resourcesPath, 'bin') + ':' + process.env.PATH,
+      : path.join(process.resourcesPath, 'bin') + path.delimiter + process.env.PATH,
   };
 
   backendProcess = spawn(pythonPath, [appPath], {

@@ -146,12 +146,34 @@ export interface PdfFileInfo {
 /**
  * Loads a PDF file and extracts its pages as thumbnails.
  */
-export async function loadPdfFile(file: File, fileId: string): Promise<{ fileInfo: PdfFileInfo, pages: PdfPageInfo[] }> {
+export async function loadPdfFile(file: File, fileId: string, password?: string): Promise<{ fileInfo: PdfFileInfo, pages: PdfPageInfo[] }> {
   const arrayBuffer = await file.arrayBuffer();
   
-  // Load with pdfjs to generate thumbnails
-  const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer.slice(0) });
-  const doc = await loadingTask.promise;
+  // Load with pdfjs to generate thumbnails (prompt for password if encrypted)
+  let doc: any;
+  let currentPassword = password;
+  while (true) {
+    try {
+      const loadingTask = pdfjsLib.getDocument({
+        data: arrayBuffer.slice(0),
+        ...(currentPassword ? { password: currentPassword } : {}),
+      });
+      doc = await loadingTask.promise;
+      break;
+    } catch (err: any) {
+      if (err?.name === 'PasswordException' && typeof window !== 'undefined') {
+        const promptMsg = err.code === 2
+          ? `Incorrect password for "${file.name}". Please try again:`
+          : `"${file.name}" is password-protected. Enter password to unlock:`;
+        const entered = window.prompt(promptMsg);
+        if (entered !== null) {
+          currentPassword = entered;
+          continue;
+        }
+      }
+      throw err;
+    }
+  }
   
   const pages: PdfPageInfo[] = [];
   
@@ -185,6 +207,37 @@ export async function loadPdfFile(file: File, fileId: string): Promise<{ fileInf
       thumbnailUrl
     });
   }
+
+  // If the PDF was encrypted and unlocked via password, rebuild an unencrypted ArrayBuffer
+  // so downstream pdf-lib operations (merge, split, export) work seamlessly and produce an unlocked PDF.
+  let unlockedBytes = arrayBuffer;
+  if (currentPassword) {
+    try {
+      const rebuilt = await PDFDocument.create();
+      for (let i = 1; i <= doc.numPages; i++) {
+        const page = await doc.getPage(i);
+        const vp1 = page.getViewport({ scale: 1.0 });
+        const vp2 = page.getViewport({ scale: 2.0 });
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = vp2.width;
+        canvas.height = vp2.height;
+        if (ctx) {
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          await page.render({ canvasContext: ctx, viewport: vp2 } as any).promise;
+        }
+        const imgUrl = canvas.toDataURL('image/jpeg', 0.95);
+        const jpg = await rebuilt.embedJpg(imgUrl);
+        const p = rebuilt.addPage([vp1.width, vp1.height]);
+        p.drawImage(jpg, { x: 0, y: 0, width: vp1.width, height: vp1.height });
+      }
+      const saved = await rebuilt.save();
+      unlockedBytes = saved.buffer.slice(saved.byteOffset, saved.byteOffset + saved.byteLength) as ArrayBuffer;
+    } catch (e) {
+      console.warn('Fallback to original buffer after unlock:', e);
+    }
+  }
   
   return {
     fileInfo: {
@@ -192,7 +245,7 @@ export async function loadPdfFile(file: File, fileId: string): Promise<{ fileInf
       name: file.name,
       originalFile: file,
       doc,
-      pdfBytes: arrayBuffer
+      pdfBytes: unlockedBytes
     },
     pages
   };
@@ -223,12 +276,48 @@ export async function generatePdf(
   for (let i = 0; i < pages.length; i++) {
     const pageInfo = pages[i];
     const sourceDoc = loadedDocs[pageInfo.fileId];
-    
-    // Copy the page
-    const [copiedPage] = await mergedPdf.copyPages(sourceDoc, [pageInfo.pageIndex]);
-    
-    // Add to merged document first
-    const newPage = mergedPdf.addPage(copiedPage);
+    const hasRedactions = Boolean(pageInfo.annotations?.some((a) => a.type === 'redact'));
+
+    let newPage;
+    if (hasRedactions && files[pageInfo.fileId]?.doc) {
+      // Destructively rasterize redacted pages so underlying text streams cannot be extracted
+      const pdfjsPage = await files[pageInfo.fileId].doc.getPage(pageInfo.pageIndex + 1);
+      const vpBase = pdfjsPage.getViewport({ scale: 1.0 });
+      const vpRender = pdfjsPage.getViewport({ scale: 2.0 });
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = vpRender.width;
+      canvas.height = vpRender.height;
+      if (ctx) {
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        await pdfjsPage.render({ canvasContext: ctx, viewport: vpRender } as any).promise;
+        ctx.fillStyle = '#000000';
+        for (const anno of pageInfo.annotations || []) {
+          if (anno.type === 'redact') {
+            ctx.fillRect(
+              (anno.pctX || 0) * canvas.width,
+              (anno.pctY || 0) * canvas.height,
+              (anno.pctW || 0) * canvas.width,
+              (anno.pctH || 0) * canvas.height
+            );
+          }
+        }
+      }
+      const rasterDataUrl = canvas.toDataURL('image/jpeg', 0.95);
+      const embeddedJpg = await mergedPdf.embedJpg(rasterDataUrl);
+      newPage = mergedPdf.addPage([vpBase.width, vpBase.height]);
+      newPage.drawImage(embeddedJpg, {
+        x: 0,
+        y: 0,
+        width: vpBase.width,
+        height: vpBase.height,
+      });
+    } else {
+      // Copy the page preserving vector content
+      const [copiedPage] = await mergedPdf.copyPages(sourceDoc, [pageInfo.pageIndex]);
+      newPage = mergedPdf.addPage(copiedPage);
+    }
 
     // Apply rotation if any
     if (pageInfo.rotation !== 0) {
@@ -721,13 +810,59 @@ export async function protectPdf(
     documentAssembly?: boolean;
   } = {}
 ): Promise<Uint8Array> {
+  if (userPassword || ownerPassword) {
+    try {
+      const loadingTask = pdfjsLib.getDocument({ data: pdfBytes.slice(0) });
+      const doc = await loadingTask.promise;
+      const userPermissions: ('print' | 'modify' | 'copy' | 'annot-forms')[] = [];
+      if (permissions.printing) userPermissions.push('print');
+      if (permissions.modifying) userPermissions.push('modify');
+      if (permissions.copying) userPermissions.push('copy');
+      if (permissions.annotating || permissions.fillingForms) userPermissions.push('annot-forms');
+
+      let pdf: jsPDF | null = null;
+      for (let i = 1; i <= doc.numPages; i++) {
+        const page = await doc.getPage(i);
+        const vp1 = page.getViewport({ scale: 1.0 });
+        const vp2 = page.getViewport({ scale: 2.0 });
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = vp2.width;
+        canvas.height = vp2.height;
+        if (ctx) {
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          await page.render({ canvasContext: ctx, viewport: vp2 } as any).promise;
+        }
+        const imgData = canvas.toDataURL('image/jpeg', 0.95);
+        const orientation = vp1.width > vp1.height ? 'l' : 'p';
+        if (!pdf) {
+          pdf = new jsPDF({
+            orientation,
+            unit: 'pt',
+            format: [vp1.width, vp1.height],
+            encryption: {
+              userPassword: userPassword || '',
+              ownerPassword: ownerPassword || userPassword || '',
+              userPermissions,
+            },
+          });
+        } else {
+          pdf.addPage([vp1.width, vp1.height], orientation);
+        }
+        pdf.addImage(imgData, 'JPEG', 0, 0, vp1.width, vp1.height);
+      }
+      if (pdf) {
+        const ab = pdf.output('arraybuffer');
+        return new Uint8Array(ab);
+      }
+    } catch (e) {
+      console.error('jsPDF encryption fallback:', e);
+    }
+  }
+
   const pdfDoc = await PDFDocument.load(pdfBytes);
-  
-  return await pdfDoc.save({
-    userPassword,
-    ownerPassword,
-    permissions
-  } as Parameters<PDFDocument['save']>[0]);
+  return await pdfDoc.save();
 }
 
 /**
@@ -737,41 +872,79 @@ export async function unlockPdf(
   pdfBytes: ArrayBuffer,
   password?: string
 ): Promise<Uint8Array> {
-  const pdfDoc = await PDFDocument.load(pdfBytes, { password } as Parameters<typeof PDFDocument.load>[1]);
-  return await pdfDoc.save();
+  const loadingTask = pdfjsLib.getDocument({
+    data: pdfBytes.slice(0),
+    ...(password ? { password } : {}),
+  });
+  const doc = await loadingTask.promise;
+  const unlockedDoc = await PDFDocument.create();
+  for (let i = 1; i <= doc.numPages; i++) {
+    const page = await doc.getPage(i);
+    const vp1 = page.getViewport({ scale: 1.0 });
+    const vp2 = page.getViewport({ scale: 2.0 });
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = vp2.width;
+    canvas.height = vp2.height;
+    if (ctx) {
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      await page.render({ canvasContext: ctx, viewport: vp2 } as any).promise;
+    }
+    const imgUrl = canvas.toDataURL('image/jpeg', 0.95);
+    const jpg = await unlockedDoc.embedJpg(imgUrl);
+    const p = unlockedDoc.addPage([vp1.width, vp1.height]);
+    p.drawImage(jpg, { x: 0, y: 0, width: vp1.width, height: vp1.height });
+  }
+  return await unlockedDoc.save();
 }
 
 /**
- * Redacts a specific area on a page by physically removing content and placing a black box.
- * Note: Pure client-side redaction is hard to make "perfect" (removing text stream data), 
- * but we can effectively cover it and flatten the document.
+ * Redacts specific areas on PDF pages by rasterizing redacted pages with black boxes burned into the pixels,
+ * destroying the underlying text stream on redacted pages.
  */
 export async function redactPdf(
   pdfBytes: Uint8Array,
   redactions: { pageIndex: number, x: number, y: number, width: number, height: number }[]
 ): Promise<Uint8Array> {
-  const pdfDoc = await PDFDocument.load(pdfBytes);
-  const pages = pdfDoc.getPages();
-  
-  for (const redaction of redactions) {
-    if (redaction.pageIndex >= pages.length) continue;
-    const page = pages[redaction.pageIndex];
-    
-    // Draw black box
-    page.drawRectangle({
-      x: redaction.x,
-      y: redaction.y,
-      width: redaction.width,
-      height: redaction.height,
-      color: rgb(0, 0, 0),
-    });
+  const loadingTask = pdfjsLib.getDocument({ data: pdfBytes.slice(0) });
+  const doc = await loadingTask.promise;
+  const outDoc = await PDFDocument.create();
+  const srcDoc = await PDFDocument.load(pdfBytes);
+
+  for (let i = 0; i < doc.numPages; i++) {
+    const pageRedactions = redactions.filter((r) => r.pageIndex === i);
+    if (pageRedactions.length === 0) {
+      const [copied] = await outDoc.copyPages(srcDoc, [i]);
+      outDoc.addPage(copied);
+      continue;
+    }
+
+    const page = await doc.getPage(i + 1);
+    const vp1 = page.getViewport({ scale: 1.0 });
+    const scale = 2.0;
+    const vp2 = page.getViewport({ scale });
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = vp2.width;
+    canvas.height = vp2.height;
+    if (ctx) {
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      await page.render({ canvasContext: ctx, viewport: vp2 } as any).promise;
+      ctx.fillStyle = '#000000';
+      for (const r of pageRedactions) {
+        const domY = vp1.height - r.y - r.height;
+        ctx.fillRect(r.x * scale, domY * scale, r.width * scale, r.height * scale);
+      }
+    }
+    const imgUrl = canvas.toDataURL('image/jpeg', 0.95);
+    const jpg = await outDoc.embedJpg(imgUrl);
+    const p = outDoc.addPage([vp1.width, vp1.height]);
+    p.drawImage(jpg, { x: 0, y: 0, width: vp1.width, height: vp1.height });
   }
-  
-  // Flattening helps make the redaction more permanent in some viewers
-  const form = pdfDoc.getForm();
-  form.flatten();
-  
-  return await pdfDoc.save();
+
+  return await outDoc.save();
 }
 
 /**

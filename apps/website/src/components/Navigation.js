@@ -25,6 +25,9 @@ export default function Navigation() {
   const [d, setD] = useState(lang === 'en' ? enDict : null);
 
   useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = lang;
+    }
     if (lang === 'en') {
       setD(enDict);
     } else {

@@ -65,78 +65,11 @@ export function PdfEditorApp({ initialTool, hideHeader }: { initialTool?: string
   const fileInputRef = useRef<HTMLInputElement>(null);
   const batchImageInputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    // Check for tool parameter in prop or URL
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      const tool = initialTool || params.get('tool');
-      const isPreloaded = params.get('preloaded') === 'true';
-
-      const handlePreload = async () => {
-        if (isPreloaded) {
-          const file = await getFileFromTransition();
-          if (file) {
-            void processFiles([file]);
-            void clearTransitionFile();
-          }
-        }
-      };
-
-      void handlePreload();
-
-      if (tool) {
-        // Small delay to ensure everything is ready
-        setTimeout(() => {
-          switch (tool) {
-            case 'compress': setShowCompressModal(true); break;
-            case 'split': setShowSplitModal(true); break;
-            case 'watermark': setShowWatermarkModal(true); break;
-            case 'protect': setShowProtectModal(true); break;
-            case 'scan': void startScan(); break;
-            case 'html': setShowHtmlModal(true); break;
-            case 'text': setShowTextModal(true); break;
-            case 'merge': fileInputRef.current?.click(); break;
-            case 'images': setShowImageExportModal(true); break;
-            case 'ocr': void handleOcr(); break;
-            case 'redact': if (pages.length > 0) setEditingPageId(pages[0].id); else alert("Please upload a PDF first to use Redact."); break;
-            case 'rotate': if (pages.length > 0) handleRotate(pages[0].id); else alert("Please upload a PDF first to use Rotate."); break;
-            case 'sign': if (pages.length > 0) setEditingPageId(pages[0].id); else alert("Please upload a PDF first to use Sign."); break;
-            case 'rearrange': setIsSidebarOpen(true); break;
-            case 'page-numbers': setExportOptions(prev => ({...prev, addPageNumbers: true})); break;
-            case 'batch-upload': batchImageInputRef.current?.click(); break;
-            case 'unlock': alert("Upload a password-protected PDF to begin unlocking."); fileInputRef.current?.click(); break;
-          }
-        }, 300);
-      }
-    }
-  }, []); // Run once on mount
-
-  const sensors = useSensors(
-    useSensor(PointerSensor, {
-      activationConstraint: {
-        distance: 5,
-      },
-    }),
-    useSensor(KeyboardSensor, {
-      coordinateGetter: sortableKeyboardCoordinates,
-    })
-  );
-
-  const handleDragOver = useCallback((e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDraggingOver(true);
-  }, []);
-
-  const handleDragLeave = useCallback((e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDraggingOver(false);
-  }, []);
-
-  const processFiles = useCallback(async (newFiles: FileList | File[]) => {
+  const processFiles = useCallback(async (newFiles: FileList | File[]): Promise<{ files: Record<string, PdfFileInfo>; pages: PdfPageInfo[] } | null> => {
     const fileArray = Array.from(newFiles).filter(isImportableFile);
     if (fileArray.length === 0) {
       alert('No PDF or supported image files were selected.');
-      return;
+      return null;
     }
 
     setIsLoading(true);
@@ -168,20 +101,118 @@ export function PdfEditorApp({ initialTool, hideHeader }: { initialTool?: string
 
       if (mergedPages.length === 0) {
         alert('Could not import any files. Try PDF, JPEG, PNG, GIF, or WebP.');
-        return;
+        return null;
       }
 
       setFiles((prev) => ({ ...prev, ...mergedFiles }));
       setPages((prev) => [...prev, ...mergedPages]);
+      return { files: mergedFiles, pages: mergedPages };
     } catch (error) {
       console.error('Error processing files:', error);
       alert('Error processing one or more files. Please try again.');
+      return null;
     } finally {
       setIsLoading(false);
       setLoadingText('');
       if (fileInputRef.current) fileInputRef.current.value = '';
       if (batchImageInputRef.current) batchImageInputRef.current.value = '';
     }
+  }, []);
+
+  useEffect(() => {
+    // Check for tool parameter in prop or URL
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const tool = initialTool || params.get('tool');
+      const isPreloaded = params.get('preloaded') === 'true';
+
+      const initFromParams = async () => {
+        let loadedResult: { files: Record<string, PdfFileInfo>; pages: PdfPageInfo[] } | null = null;
+        if (isPreloaded) {
+          const file = await getFileFromTransition();
+          if (file) {
+            loadedResult = await processFiles([file]);
+            await clearTransitionFile();
+          }
+        }
+
+        const activePages = loadedResult?.pages || [];
+        const activeFiles = loadedResult?.files || {};
+
+        if (tool) {
+          setTimeout(() => {
+            switch (tool) {
+              case 'compress': setShowCompressModal(true); break;
+              case 'split':
+                if (activePages.length > 0) {
+                  setSplitConfig(prev => ({ ...prev, rangeEnd: activePages.length }));
+                }
+                setShowSplitModal(true);
+                break;
+              case 'watermark': setShowWatermarkModal(true); break;
+              case 'protect': setShowProtectModal(true); break;
+              case 'scan': void startScan(); break;
+              case 'html': setShowHtmlModal(true); break;
+              case 'text': setShowTextModal(true); break;
+              case 'merge': if (!isPreloaded) fileInputRef.current?.click(); break;
+              case 'images': setShowImageExportModal(true); break;
+              case 'ocr':
+                if (activePages.length > 0) {
+                  void handleOcr(activeFiles, activePages);
+                }
+                break;
+              case 'redact':
+                if (activePages.length > 0) setEditingPageId(activePages[0].id);
+                else alert("Please upload a PDF first to use Redact.");
+                break;
+              case 'rotate':
+                if (activePages.length > 0) {
+                  setPages(prev => prev.map((p, idx) => idx === 0 ? { ...p, rotation: (p.rotation + 90) % 360 } : p));
+                } else {
+                  alert("Please upload a PDF first to use Rotate.");
+                }
+                break;
+              case 'sign':
+                if (activePages.length > 0) setEditingPageId(activePages[0].id);
+                else alert("Please upload a PDF first to use Sign.");
+                break;
+              case 'rearrange': setIsSidebarOpen(true); break;
+              case 'page-numbers': setExportOptions(prev => ({ ...prev, addPageNumbers: true })); break;
+              case 'batch-upload': if (!isPreloaded) batchImageInputRef.current?.click(); break;
+              case 'unlock':
+                if (!isPreloaded) {
+                  alert("Upload a password-protected PDF to begin unlocking.");
+                  fileInputRef.current?.click();
+                }
+                break;
+            }
+          }, 150);
+        }
+      };
+
+      void initFromParams();
+    }
+  }, [initialTool, processFiles]); // Run once on mount
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 5,
+      },
+    }),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
+  const handleDragOver = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDraggingOver(true);
+  }, []);
+
+  const handleDragLeave = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDraggingOver(false);
   }, []);
 
   const handleDrop = useCallback((e: React.DragEvent) => {
@@ -553,12 +584,14 @@ export function PdfEditorApp({ initialTool, hideHeader }: { initialTool?: string
     }
   };
 
-  const handleOcr = async () => {
-    if (pages.length === 0) return;
+  const handleOcr = async (overrideFiles?: Record<string, PdfFileInfo>, overridePages?: PdfPageInfo[]) => {
+    const targetFiles = overrideFiles || files;
+    const targetPages = overridePages || pages;
+    if (targetPages.length === 0) return;
     setIsLoading(true);
     setLoadingText('Starting OCR Engine...');
     try {
-      const text = await performOcr(files, pages, (progress, status) => {
+      const text = await performOcr(targetFiles, targetPages, (progress, status) => {
         setLoadingText(`${status} (${Math.round(progress)}%)`);
       });
       

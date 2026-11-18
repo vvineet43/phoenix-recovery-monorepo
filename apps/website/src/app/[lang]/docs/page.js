@@ -2,6 +2,33 @@ import Link from 'next/link';
 import { locales } from '@/lib/i18n-config';
 
 const TRANSLATIONS = {
+  en: {
+    title: 'Documentation | TheNexTools',
+    description: 'Learn how to use TheNexTools suite of privacy-first utilities.',
+    h1: 'Documentation',
+    textMuted: 'Guides and quick-start tips for TheNexTools.',
+    sec1Title: 'NexData Recovery',
+    sec1Desc: 'NexData works by scanning physical drive sectors. For best results:',
+    sec1Li1: 'Connect the target drive via a stable USB or SATA connection.',
+    sec1Li2: 'Ensure you have enough space on a <strong>separate</strong> drive to save recovered files.',
+    sec1Li3: 'Avoid writing any new data to the drive you are scanning.',
+    sec2Title: 'NexPDF Toolkit',
+    sec2Desc: 'All PDF operations happen in your browser using the local CPU. Supported features include:',
+    sec2Li1: '<strong>Merge:</strong> Combine multiple files in any order.',
+    sec2Li2: '<strong>Sign:</strong> Place signatures as flattened vector elements.',
+    sec2Li3: '<strong>Compress:</strong> Reduce file size with live quality presets.',
+    secImgTitle: 'NexImage Toolkit',
+    secImgDesc: 'Process photos completely offline in your browser. Supported operations include:',
+    secImgLi1: '<strong>EXIF Stripper:</strong> Remove GPS coordinates, camera model, and timestamp data before sharing.',
+    secImgLi2: '<strong>Compressor:</strong> Optimize image file sizes with real-time compression level previews.',
+    secImgLi3: '<strong>Converter:</strong> Convert between formats (JPG, PNG, WebP) in bulk.',
+    secImgLi4: '<strong>Redactor:</strong> Blur faces, license plates, and sensitive details.',
+    sec3Title: 'Troubleshooting PWAs',
+    sec3Desc: 'To install our tools as standalone apps:',
+    sec3Li1: '<strong>Chrome:</strong> Look for the &quot;Install&quot; icon in the right side of the address bar.',
+    sec3Li2: '<strong>iOS Safari:</strong> Tap Share &rarr; Add to Home Screen.',
+    sec3Li3: '<strong>Android:</strong> Tap the &quot;Add to Home Screen&quot; banner or browser menu.'
+  },
   es: {
     title: 'Documentación | TheNexTools',
     description: 'Aprende cómo usar la suite de utilidades de TheNexTools con prioridad en la privacidad.',
@@ -10,7 +37,7 @@ const TRANSLATIONS = {
     sec1Title: 'NexData Recovery',
     sec1Desc: 'NexData funciona escaneando sectores físicos del disco. Para obtener mejores resultados:',
     sec1Li1: 'Conecta la unidad de destino mediante una conexión USB o SATA estable.',
-    sec1Li2: 'Asegúrate de tener suficiente espacio libre en un disco **diferente** para guardar los archivos recuperados.',
+    sec1Li2: 'Asegúrate de tener suficiente espacio libre en un disco <strong>diferente</strong> para guardar los archivos recuperados.',
     sec1Li3: 'Evita escribir cualquier dato nuevo en la unidad que estás escaneando.',
     sec2Title: 'NexPDF Toolkit',
     sec2Desc: 'Todas las operaciones de PDF se realizan en tu navegador utilizando la CPU local. Las características compatibles incluyen:',
@@ -37,7 +64,7 @@ const TRANSLATIONS = {
     sec1Title: 'NexData Recovery',
     sec1Desc: 'NexData funciona escaneando setores físicos do disco. Para obter melhores resultados:',
     sec1Li1: 'Conecte a unidade de destino usando uma conexão USB ou SATA estável.',
-    sec1Li2: 'Certifique-se de ter espaço livre suficiente em um disco **diferente** para salvar os arquivos recuperados.',
+    sec1Li2: 'Certifique-se de ter espaço livre suficiente em um disco <strong>diferente</strong> para salvar os arquivos recuperados.',
     sec1Li3: 'Evite gravar qualquer dado novo na unidade que você está escaneando.',
     sec2Title: 'NexPDF Toolkit',
     sec2Desc: 'Todas as operações de PDF ocorrem no seu navegador usando a CPU local. Os recursos suportados incluem:',
@@ -64,7 +91,7 @@ const TRANSLATIONS = {
     sec1Title: 'NexData रिकवरी',
     sec1Desc: 'NexData भौतिक डिस्क सेक्टर्स को स्कैन करके काम करता है। सर्वोत्तम परिणामों के लिए:',
     sec1Li1: 'लक्षित ड्राइव को एक स्थिर USB या SATA कनेक्शन के माध्यम से कनेक्ट करें।',
-    sec1Li2: 'सुनिश्चित करें कि आपके पास बरामद फ़ाइलों को सहेजने के लिए एक **अलग** ड्राइव पर पर्याप्त जगह है।',
+    sec1Li2: 'सुनिश्चित करें कि आपके पास बरामद फ़ाइलों को सहेजने के लिए एक <strong>अलग</strong> ड्राइव पर पर्याप्त जगह है।',
     sec1Li3: 'जिस ड्राइव को आप स्कैन कर रहे हैं, उस पर कोई नया डेटा लिखने से बचें।',
     sec2Title: 'NexPDF टूलकिट',
     sec2Desc: 'सभी PDF प्रक्रियाएं आपके स्थानीय CPU का उपयोग करके आपके ब्राउज़र में होती हैं। समर्थित सुविधाओं में शामिल हैं:',
@@ -91,7 +118,7 @@ const TRANSLATIONS = {
     sec1Title: 'NexData Recovery',
     sec1Desc: 'NexData, fiziksel disk sektörlerini tarayarak çalışır. En iyi sonuçlar için:',
     sec1Li1: 'Hedef sürücüyü sabit bir USB veya SATA bağlantısı üzerinden bağlayın.',
-    sec1Li2: 'Kurtarılan dosyaları kaydetmek için **farklı** bir sürücüde yeterli boş alan olduğundan emin olun.',
+    sec1Li2: 'Kurtarılan dosyaları kaydetmek için <strong>farklı</strong> bir sürücüde yeterli boş alan olduğundan emin olun.',
     sec1Li3: 'Taradığınız sürücüye yeni veri yazmaktan kaçının.',
     sec2Title: 'NexPDF Toolkit',
     sec2Desc: 'Tüm PDF işlemleri, yerel işlemciniz kullanılarak tarayıcınızda gerçekleşir. Desteklenen özellikler:',
@@ -118,7 +145,7 @@ const TRANSLATIONS = {
     sec1Title: 'NexData Recovery',
     sec1Desc: 'NexData fonctionne en analysant les secteurs physiques du disque. Pour de meilleurs résultats :',
     sec1Li1: 'Connectez le disque cible via une connexion USB ou SATA stable.',
-    sec1Li2: 'Assurez-vous de disposer de suffisamment d\'espace sur un disque **différent** pour sauvegarder les fichiers récupérés.',
+    sec1Li2: 'Assurez-vous de disposer de suffisamment d\'espace sur un disque <strong>différent</strong> pour sauvegarder les fichiers récupérés.',
     sec1Li3: 'Évitez d\'écrire de nouvelles données sur le disque en cours d\'analyse.',
     sec2Title: 'NexPDF Toolkit',
     sec2Desc: 'Toutes les opérations PDF s\'effectuent dans votre navigateur en utilisant votre processeur local. Fonctionnalités prises en charge :',
@@ -145,7 +172,7 @@ const TRANSLATIONS = {
     sec1Title: 'NexData Recovery',
     sec1Desc: 'NexData scannt die physischen Sektoren der Festplatte. Für beste Ergebnisse:',
     sec1Li1: 'Schließen Sie das Ziellaufwerk über eine stabile USB- oder SATA-Verbindung an.',
-    sec1Li2: 'Stellen Sie sicher, dass Sie auf einem **anderen** Laufwerk genügend freien Speicherplatz haben, um die wiederhergestellten Dateien zu speichern.',
+    sec1Li2: 'Stellen Sie sicher, dass Sie auf einem <strong>anderen</strong> Laufwerk genügend freien Speicherplatz haben, um die wiederhergestellten Dateien zu speichern.',
     sec1Li3: 'Vermeiden Sie es, neue Daten auf das Laufwerk zu schreiben, das Sie scannen.',
     sec2Title: 'NexPDF Toolkit',
     sec2Desc: 'Alle PDF-Operationen werden in Ihrem Browser unter Verwendung der lokalen CPU ausgeführt. Zu den unterstützten Funktionen gehören:',
@@ -172,7 +199,7 @@ const TRANSLATIONS = {
     sec1Title: 'NexData Herstel',
     sec1Desc: 'NexData scant fysieke schijfsectoren. Voor de beste resultaten:',
     sec1Li1: 'Sluit de doelschijf aan via een stabiele USB- of SATA-verbinding.',
-    sec1Li2: 'Zorg ervoor dat u voldoende vrije ruimte heeft op een **andere** schijf om de herstelde bestanden op te slaan.',
+    sec1Li2: 'Zorg ervoor dat u voldoende vrije ruimte heeft op een <strong>andere</strong> schijf om de herstelde bestanden op te slaan.',
     sec1Li3: 'Schrijf geen nieuwe gegevens naar de schijf die u scant.',
     sec2Title: 'NexPDF Toolkit',
     sec2Desc: 'Alle PDF-bewerkingen vinden plaats in uw browser met behulp van de lokale CPU. Ondersteunde functies zijn onder meer:',
@@ -199,7 +226,7 @@ const TRANSLATIONS = {
     sec1Title: 'NexData Recovery',
     sec1Desc: 'NexData funziona scansionando i settori fisici del disco. Per ottenere i migliori risultati:',
     sec1Li1: 'Collega l\'unità di destinazione tramite una connessione USB o SATA stabile.',
-    sec1Li2: 'Assicurati di avere abbastanza spazio libero su un disco **diverso** per salvare i file recuperati.',
+    sec1Li2: 'Assicurati di avere abbastanza spazio libero su un disco <strong>diverso</strong> per salvare i file recuperati.',
     sec1Li3: 'Evita di scrivere nuovi dati sull\'unità che stai scansionando.',
     sec2Title: 'NexPDF Toolkit',
     sec2Desc: 'Tutte le operazioni PDF avvengono nel tuo browser utilizzando la CPU locale. Le funzionalità supportate includono:',
@@ -226,7 +253,7 @@ const TRANSLATIONS = {
     sec1Title: 'NexData Recovery',
     sec1Desc: 'NexDataは、物理ディスクセクタをスキャンして動作します。最良の結果を得るために：',
     sec1Li1: '安定したUSBまたはSATA接続を使用してターゲットドライブを接続します。',
-    sec1Li2: '復元されたファイルを保存するために、**別の**ドライブに十分な空き容量があることを確認してください。',
+    sec1Li2: '復元されたファイルを保存するために、<strong>別の</strong>ドライブに十分な空き容量があることを確認してください。',
     sec1Li3: 'スキャン中のドライブに新しいデータを書き込まないでください。',
     sec2Title: 'NexPDF Toolkit',
     sec2Desc: 'すべてのPDF操作は、ローカルCPUを使用してブラウザ内で行われます。サポートされている機能は以下の通りです：',
@@ -253,7 +280,7 @@ const TRANSLATIONS = {
     sec1Title: 'Urejeshaji wa NexData',
     sec1Desc: 'NexData inafanya kazi kwa kutafuta sekta za kimwili za diski. Kwa matokeo bora zaidi:',
     sec1Li1: 'Unganisha diski inayolengwa kupitia muunganisho thabiti wa USB au SATA.',
-    sec1Li2: 'Hakikisha una nafasi ya kutosha kwenye diski **tofauti** ili kuhifadhi faili zilizorejeshwa.',
+    sec1Li2: 'Hakikisha una nafasi ya kutosha kwenye diski <strong>tofauti</strong> ili kuhifadhi faili zilizorejeshwa.',
     sec1Li3: 'Epuka kuandika data yoyote mpya kwenye diski unayotafuta.',
     sec2Title: 'NexPDF Toolkit',
     sec2Desc: 'Shughuli zote za PDF zinafanyika kwenye kivinjari chako kwa kutumia CPU ya ndani. Vipengele vinavyosaidiwa ni pamoja na:',
@@ -280,7 +307,7 @@ const TRANSLATIONS = {
     sec1Title: 'NexData পুনরুদ্ধার',
     sec1Desc: 'NexData ফিজিক্যাল ড্রাইভ সেক্টর স্ক্যান করে কাজ করে। সেরা ফলাফলের জন্য:',
     sec1Li1: 'একটি স্থিতিশীল USB বা SATA সংযোগের মাধ্যমে টার্গেট ড্রাইভটি সংযুক্ত করুন।',
-    sec1Li2: 'উদ্ধারকৃত ফাইলগুলো সংরক্ষণ করার জন্য একটি **ভিন্ন** ড্রাইভে পর্যাপ্ত খালি জায়গা রয়েছে কিনা তা নিশ্চিত করুন।',
+    sec1Li2: 'উদ্ধারকৃত ফাইলগুলো সংরক্ষণ করার জন্য একটি <strong>ভিন্ন</strong> ড্রাইভে পর্যাপ্ত খালি জায়গা রয়েছে কিনা তা নিশ্চিত করুন।',
     sec1Li3: 'আপনি যে ড্রাইভটি স্ক্যান করছেন তাতে নতুন কোনো ডেটা লেখা এড়িয়ে চলুন।',
     sec2Title: 'NexPDF টুলকিট',
     sec2Desc: 'সব পিডিএফ অপারেশন আপনার লোকাল সিপিইউ ব্যবহার করে ব্রাউজারের ভেতরে সম্পন্ন হয়। সমর্থিত বৈশিষ্ট্যগুলো হলো:',
@@ -304,7 +331,7 @@ const TRANSLATIONS = {
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.es;
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
   return {
     title: t.title,
@@ -344,7 +371,7 @@ export async function generateMetadata({ params }) {
 export default async function DocsPage({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.es;
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
   return (
     <>
@@ -388,7 +415,7 @@ export default async function DocsPage({ params }) {
             <p className="mt-sm">{t.sec1Desc}</p>
             <ul style={{ paddingLeft: '1.25rem', marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <li>{t.sec1Li1}</li>
-              <li>{t.sec1Li2}</li>
+              <li dangerouslySetInnerHTML={{ __html: t.sec1Li2 }} />
               <li>{t.sec1Li3}</li>
             </ul>
           </div>

@@ -305,7 +305,7 @@
             "desc": "Optimize edilmiş PDF'yi anında oluşturun ve cihazınıza indirin."
           }
         ],
-        "toolParam": "kompres"
+        "toolParam": "compress"
       },
       "merge-pdf": {
         "title": "PDF'leri Yerel Olarak Birleştirin — Belgeleri Yüklemeden Birleştirin | TheNexTools",
@@ -333,7 +333,7 @@
             "desc": "Birleştirilmiş belgenizi derleyip kaydetmek için \"Birleştir\"i tıklayın."
           }
         ],
-        "toolParam": "birleştirme"
+        "toolParam": "merge"
       },
       "split-pdf": {
         "title": "PDF'yi Yerel Olarak Böl — Sayfaları Yüklemeden Çıkart | TheNexTools",
@@ -361,7 +361,7 @@
             "desc": "Seçilen sayfaları yeni bir PDF olarak oluşturun ve indirin."
           }
         ],
-        "toolParam": "bölmek"
+        "toolParam": "split"
       },
       "pdf-to-images": {
         "title": "PDF'yi Yerel Olarak JPG/PNG'ye Dönüştürme — Sayfaları Görüntülere Dönüştürme | TheNexTools",
@@ -389,7 +389,7 @@
             "desc": "Tüm sayfaları tek tek veya tek bir ZIP arşivi olarak dönüştürün ve indirin."
           }
         ],
-        "toolParam": "görseller"
+        "toolParam": "images"
       },
       "scan-to-pdf": {
         "title": "PDF'ye Tara — Kameranızı Belge Tarayıcı Olarak Kullanın | TheNexTools",
@@ -417,7 +417,7 @@
             "desc": "Taramalarınızı tek, temiz bir PDF belgesinde derleyin."
           }
         ],
-        "toolParam": "tarama"
+        "toolParam": "scan"
       },
       "protect-pdf": {
         "title": "PDF'yi Yerel Olarak Parolayla Koruyun — Yüklemeden Şifreleyin | TheNexTools",
@@ -445,7 +445,7 @@
             "desc": "Yerel şifreleme uygulayın ve güvenli PDF'nizi indirin."
           }
         ],
-        "toolParam": "korumak"
+        "toolParam": "protect"
       },
       "unlock-pdf": {
         "title": "PDF Parolasını Yerel Olarak Kaldırma — Yüklemeden Kilidini Açma | TheNexTools",
@@ -473,7 +473,7 @@
             "desc": "Dosyanın temiz, korumasız bir kopyasını kaydetmek için \"Kilidi Aç\"a tıklayın."
           }
         ],
-        "toolParam": "kilidini açmak"
+        "toolParam": "unlock"
       },
       "watermark-pdf": {
         "title": "PDF'ye Yerel Olarak Filigran Ekleme — Sayfalara Metin Damgalama | TheNexTools",
@@ -501,7 +501,7 @@
             "desc": "Damgayı sayfalarınıza işleyin ve dosyayı indirin."
           }
         ],
-        "toolParam": "filigran"
+        "toolParam": "watermark"
       },
       "ocr-pdf": {
         "title": "OCR PDF Yerel Olarak — Taranan Belgelerden Metin Çıkarma | TheNexTools",
@@ -557,7 +557,7 @@
             "desc": "Dosyanızı kalıcı olarak düzleştirmek ve indirmek için \"Redaksiyon Yap\"ı tıklayın."
           }
         ],
-        "toolParam": "yazıya dökmek"
+        "toolParam": "redact"
       },
       "html-to-pdf": {
         "title": "HTML'yi Yerel Olarak PDF'ye Dönüştürme — Web İçeriğini PDF'ye Dönüştürme | TheNexTools",
@@ -585,7 +585,7 @@
             "desc": "Biçimlendirilmiş belgeyi kaydetmek için \"PDF'ye Dönüştür\"e tıklayın."
           }
         ],
-        "toolParam": "HTML"
+        "toolParam": "html"
       },
       "images-to-pdf": {
         "title": "Görüntüleri Yerel Olarak PDF'ye Dönüştürme — Fotoğrafları Bir Belgede Birleştirme | TheNexTools",
@@ -613,7 +613,7 @@
             "desc": "Derlenen sayfaları kaydetmek için \"PDF Oluştur\"a tıklayın."
           }
         ],
-        "toolParam": "toplu yükleme"
+        "toolParam": "batch-upload"
       },
       "rotate-pdf": {
         "title": "PDF Sayfalarını Yerel Olarak Döndürün — Yan Taramaları Düzeltin | TheNexTools",
@@ -641,7 +641,7 @@
             "desc": "Düzeltilmiş belgeyi yönelimi önceden hazırlanmış olarak indirin."
           }
         ],
-        "toolParam": "döndürmek"
+        "toolParam": "rotate"
       },
       "rearrange-pdf": {
         "title": "PDF Sayfalarını Yerel Olarak Yeniden Düzenleme — Sürükleyip Bırakarak Yeniden Sıralama | TheNexTools",
@@ -669,7 +669,7 @@
             "desc": "Sonlandırılmış belgeyi indirmek için \"Kaydet\"i tıklayın."
           }
         ],
-        "toolParam": "yeniden düzenlemek"
+        "toolParam": "rearrange"
       },
       "sign-pdf": {
         "title": "PDF'yi Yerel Olarak İmzalayın — İmzanızı Yazdırmadan Ekleyin | TheNexTools",
@@ -697,7 +697,7 @@
             "desc": "İmzayı imzalama satırına sürükleyin ve dışa aktar'a tıklayın."
           }
         ],
-        "toolParam": "imza"
+        "toolParam": "sign"
       },
       "add-page-numbers": {
         "title": "PDF'ye Yerel Olarak Sayfa Numaraları Ekleme — Otomatik Sayfalandırma | TheNexTools",
@@ -725,7 +725,7 @@
             "desc": "Belgeye sayıları uygulayın ve indirin."
           }
         ],
-        "toolParam": "sayfa numaraları"
+        "toolParam": "page-numbers"
       },
       "text-to-pdf": {
         "title": "Metni Yerel Olarak PDF'ye Dönüştürme — Düz Metni Biçimlendirilmiş Bir Belgeye Dönüştürme | TheNexTools",
@@ -753,22 +753,22 @@
             "desc": "Tamamlanan belgeyi kaydetmek için \"PDF'ye Dönüştür\"e tıklayın."
           }
         ],
-        "toolParam": "metin"
+        "toolParam": "text"
       }
     },
     "seoPage": {
       "keyBenefits": "Temel Faydalar",
       "localPrivate": "Yerel ve Özel",
-      "localPrivateDesc": "Bu araç, dosyalarınızı doğrudan tarayıcınızda işler; sunucuya hiçbir şey yüklenmez. Birlikte çalıştığınızda{tool}belge baştan sona makinenizde kalır.",
+      "localPrivateDesc": "Bu araç, dosyalarınızı doğrudan tarayıcınızda işler; sunucuya hiçbir şey yüklenmez. Birlikte çalıştığınızda {tool} belge baştan sona makinenizde kalır.",
       "privateBadge": "Özel",
       "secureBadge": "Güvenli",
       "faqTitle": "Sıkça Sorulan Sorular",
-      "faqSubtitle": "Hakkında bilmeniz gereken her şey{tool}.",
+      "faqSubtitle": "Hakkında bilmeniz gereken her şey {tool}.",
       "readyTitle": "Başlamaya hazır mısınız?",
       "readyDesc": "Dosyanızı sayfanın üst kısmındaki çalışma alanına bırakın. Kayıt gerekli değildir.",
       "backToTool": "Araca Geri Dön",
       "howToPrefix": "Nasıl yapılır",
-      "faqQ1": "Nasıl yaparım{tool}yerel olarak mı?",
+      "faqQ1": "Nasıl yaparım {tool} yerel olarak mı?",
       "faqA1": "{steps}Bunların hepsi makinenizde yapılır.",
       "faqQ2": "Bu işlem sırasında PDF dosyalarım güvende mi?",
       "faqA2": "Kesinlikle. NexPDF, WebAssembly kullanarak tamamen istemci tarafında çalıştığından, belge hiçbir zaman herhangi bir harici sunucuya yüklenmez. Hassas verileriniz %100 gizli tutulur.",
@@ -776,7 +776,7 @@
       "faqA3": "Hayır, yapay dosya boyutu sınırı yoktur. Tek fiziksel sınır, cihazınızın büyük belgeleri kolayca işleyebilen kullanılabilir tarayıcı belleğidir.",
       "faqQ4": "Çevrimdışı çalışıyor mu?",
       "faqA4": "Evet, NexPDF ilk yüklemeden sonra tarayıcınızın içinde önbelleğe alınır. İnternet bağlantınızı kesebilir ve aracı tamamen çevrimdışı kullanmaya devam edebilirsiniz.",
-      "uploadSelect": "için bir PDF seçin{label}",
+      "uploadSelect": "için bir PDF seçin {label}",
       "uploadDrop": "Veya hemen başlamak için buraya bırakın",
       "uploadLoading": "Çalışma alanı hazırlanıyor..."
     }

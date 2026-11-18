@@ -52,6 +52,11 @@ export default async function ImageToolkitPage({ params }) {
   const d = await getDictionary(locale);
   const t = d.imageToolkit;
 
+  const getLink = (path) => {
+    if (locale === 'en') return path;
+    return `/${locale}${path === '/' ? '' : path}`;
+  };
+
   return (
     <>
       <script
@@ -79,7 +84,7 @@ export default async function ImageToolkitPage({ params }) {
         <h1>{t.heroTitle}</h1>
         <p>{t.heroDesc}</p>
         <div className="hero-actions">
-          <Link href="/image-compressor" className="btn btn-primary">{t.heroCta}</Link>
+          <Link href={getLink('/image-compressor')} className="btn btn-primary">{t.heroCta}</Link>
         </div>
       </header>
 
@@ -99,7 +104,7 @@ export default async function ImageToolkitPage({ params }) {
                 <li>{t.compressorFeature2}</li>
                 <li>{t.compressorFeature3}</li>
               </ul>
-              <Link href="/image-compressor" className="btn btn-outline" style={{ width: 'fit-content' }}>
+              <Link href={getLink('/image-compressor')} className="btn btn-outline" style={{ width: 'fit-content' }}>
                 {t.compressorCta}
               </Link>
             </div>
@@ -112,7 +117,7 @@ export default async function ImageToolkitPage({ params }) {
                 <li>{t.converterFeature2}</li>
                 <li>{t.converterFeature3}</li>
               </ul>
-              <Link href="/image-converter" className="btn btn-outline" style={{ width: 'fit-content' }}>
+              <Link href={getLink('/image-converter')} className="btn btn-outline" style={{ width: 'fit-content' }}>
                 {t.converterCta}
               </Link>
             </div>
@@ -125,7 +130,7 @@ export default async function ImageToolkitPage({ params }) {
                 <li>{t.redactorFeature2}</li>
                 <li>{t.redactorFeature3}</li>
               </ul>
-              <Link href="/image-redactor" className="btn btn-outline" style={{ width: 'fit-content' }}>
+              <Link href={getLink('/image-redactor')} className="btn btn-outline" style={{ width: 'fit-content' }}>
                 {t.redactorCta}
               </Link>
             </div>
@@ -138,7 +143,7 @@ export default async function ImageToolkitPage({ params }) {
                 <li>{t.stripperFeature2}</li>
                 <li>{t.stripperFeature3}</li>
               </ul>
-              <Link href="/exif-stripper" className="btn btn-outline" style={{ width: 'fit-content' }}>
+              <Link href={getLink('/exif-stripper')} className="btn btn-outline" style={{ width: 'fit-content' }}>
                 {t.stripperCta}
               </Link>
             </div>
@@ -174,7 +179,7 @@ export default async function ImageToolkitPage({ params }) {
         <div className="container">
           <h2>{t.ctaTitle}</h2>
           <p>{t.ctaSubtitle}</p>
-          <Link href="/image-compressor" className="btn btn-primary">{t.heroCta}</Link>
+          <Link href={getLink('/image-compressor')} className="btn btn-primary">{t.heroCta}</Link>
         </div>
       </section>
     </>

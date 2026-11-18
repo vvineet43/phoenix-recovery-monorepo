@@ -2,6 +2,82 @@ import Link from 'next/link';
 import { locales } from '@/lib/i18n-config';
 
 const TRANSLATIONS = {
+  en: {
+    title: 'Terms of Service | TheNexTools',
+    description: 'The terms of use for TheNexTools utility suite.',
+    h1: 'Terms of Service',
+    lastUpdated: 'Last updated:',
+    localeString: 'en-US',
+    sec1Title: 'Acceptance of Terms',
+    sec1Desc: 'By accessing or using TheNexTools (the &quot;Site&quot; and &quot;Software&quot;), you agree to be bound by these Terms of Service. If you do not agree with these terms, please do not use our services.',
+    sec2Title: 'License to Use',
+    sec2Desc: 'We grant you a non-exclusive, non-transferable license to use our web utilities for personal or commercial purposes. You may not attempt to decompile, reverse-engineer, or extract the source code of our tools without our express written permission.',
+    sec3Title: 'Software Provided &quot;As-Is&quot;',
+    sec3Desc: 'While we strive for the highest quality and reliability, all tools provided by TheNexTools are offered &quot;as-is&quot; without warranty of any kind. We are not liable for any data loss or hardware damage that may occur while using our software, particularly during data recovery operations.',
+    sec4Title: 'Paid Software &amp; Licensing',
+    sec4Desc: 'Certain tools, such as NexData Recovery, may require a paid license for full functionality. Licenses are typically tied to specific hardware. Refunds are handled on a case-by-case basis as outlined in our Refund Policy.',
+    sec5Title: 'Modifications',
+    sec5Desc: 'We reserve the right to modify these terms at any time. Continued use of the site following such changes constitutes acceptance of the new terms.',
+    sec6Title: 'Contact',
+    sec6Desc: 'Questions about these terms? Contact us at '
+  },
+  fr: {
+    title: 'Conditions d\'Utilisation | TheNexTools',
+    description: 'Les conditions d\'utilisation de la suite d\'utilitaires TheNexTools.',
+    h1: 'Conditions d\'Utilisation',
+    lastUpdated: 'Dernière mise à jour :',
+    localeString: 'fr-FR',
+    sec1Title: 'Acceptation des Conditions',
+    sec1Desc: 'En accédant ou en utilisant TheNexTools (le &quot;Site&quot; et le &quot;Logiciel&quot;), vous acceptez d\'être lié par les présentes Conditions d\'Utilisation. Si vous n\'acceptez pas ces conditions, veuillez ne pas utiliser nos services.',
+    sec2Title: 'Licence d\'Utilisation',
+    sec2Desc: 'Nous vous accordons une licence non exclusive et non transférable pour utiliser nos utilitaires web à des fins personnelles ou commerciales. Vous ne devez pas tenter de décompiler, d\'effectuer une ingénierie inverse ou d\'extraire le code source de nos outils sans notre autorisation écrite expresse.',
+    sec3Title: 'Logiciel Fourni &quot;Tel Quel&quot;',
+    sec3Desc: 'Bien que nous nous efforcions d\'offrir la plus haute qualité et fiabilité, tous les outils fournis par TheNexTools sont proposés &quot;tels quels&quot; sans garantie d\'aucune sorte. Nous ne sommes pas responsables des pertes de données ou dommages matériels pouvant survenir lors de l\'utilisation de nos logiciels.',
+    sec4Title: 'Logiciels Payants et Licences',
+    sec4Desc: 'Certains outils, tels que NexData Recovery, peuvent nécessiter une licence payante pour débloquer toutes les fonctionnalités. Les licences sont généralement liées à un matériel spécifique. Les remboursements sont traités conformément à notre Politique de Remboursement.',
+    sec5Title: 'Modifications',
+    sec5Desc: 'Nous nous réservons le droit de modifier ces conditions à tout moment. L\'utilisation continue du site après de telles modifications vaut acceptation des nouvelles conditions.',
+    sec6Title: 'Contact',
+    sec6Desc: 'Des questions sur ces conditions ? Contactez-nous à '
+  },
+  hi: {
+    title: 'सेवा की शर्तें | TheNexTools',
+    description: 'TheNexTools उपयोगिता सुइट के उपयोग की शर्तें।',
+    h1: 'सेवा की शर्तें',
+    lastUpdated: 'अंतिम अपडेट:',
+    localeString: 'hi-IN',
+    sec1Title: 'शर्तों की स्वीकृति',
+    sec1Desc: 'TheNexTools (&quot;साइट&quot; और &quot;सॉफ़्टवेयर&quot;) का उपयोग करके, आप इन सेवा की शर्तों से बंधे होने के लिए सहमत होते हैं। यदि आप इन शर्तों से सहमत नहीं हैं, तो कृपया हमारी सेवाओं का उपयोग न करें।',
+    sec2Title: 'उपयोग का लाइसेंस',
+    sec2Desc: 'हम आपको व्यक्तिगत या व्यावसायिक उद्देश्यों के लिए हमारी वेब उपयोगिताओं का उपयोग करने के लिए एक गैर-अनन्य, गैर-हस्तांतरणीय लाइसेंस प्रदान करते हैं। आप हमारी लिखित अनुमति के बिना हमारे टूल्स के सोर्स कोड को डीकंपाइल या रिवर्स-इंजीनियर करने का प्रयास नहीं कर सकते।',
+    sec3Title: 'सॉफ़्टवेयर &quot;जैसा है&quot; (As-Is) के रूप में',
+    sec3Desc: 'यद्यपि हम उच्चतम गुणवत्ता और विश्वसनीयता के लिए प्रयास करते हैं, TheNexTools द्वारा प्रदत्त सभी टूल्स बिना किसी वारंटी के &quot;जैसे हैं&quot; के आधार पर प्रदान किए जाते हैं। हमारे सॉफ़्टवेयर के उपयोग के दौरान होने वाले किसी भी डेटा नुकसान या हार्डवेयर क्षति के लिए हम उत्तरदायी नहीं हैं।',
+    sec4Title: 'सशुल्क सॉफ़्टवेयर और लाइसेंसिंग',
+    sec4Desc: 'कुछ टूल्स, जैसे NexData Recovery, को पूर्ण कार्यक्षमता के लिए सशुल्क लाइसेंस की आवश्यकता हो सकती है। लाइसेंस आमतौर पर विशिष्ट हार्डवेयर से जुड़े होते हैं। रिफंड हमारी रिफंड नीति के अनुसार प्रबंधित किए जाते हैं।',
+    sec5Title: 'संशोधन',
+    sec5Desc: 'हम किसी भी समय इन शर्तों को संशोधित करने का अधिकार सुरक्षित रखते हैं। ऐसे परिवर्तनों के बाद साइट का निरंतर उपयोग नई शर्तों की स्वीकृति माना जाएगा।',
+    sec6Title: 'संपर्क करें',
+    sec6Desc: 'इन शर्तों के बारे में कोई प्रश्न हैं? हमसे संपर्क करें: '
+  },
+  tr: {
+    title: 'Hizmet Şartları | TheNexTools',
+    description: 'TheNexTools araç paketi kullanım şartları.',
+    h1: 'Hizmet Şartları',
+    lastUpdated: 'Son güncelleme:',
+    localeString: 'tr-TR',
+    sec1Title: 'Şartların Kabulü',
+    sec1Desc: 'TheNexTools\'a (&quot;Site&quot; ve &quot;Yazılım&quot;) erişerek veya bunları kullanarak bu Hizmet Şartları\'na bağlı kalmayı kabul edersiniz. Bu şartları kabul etmiyorsanız lütfen hizmetlerimizi kullanmayın.',
+    sec2Title: 'Kullanım Lisansı',
+    sec2Desc: 'Web araçlarımızı kişisel veya ticari amaçlarla kullanmanız için size münhasır olmayan, devredilemez bir lisans veriyoruz. Açık yazılı iznimiz olmadan araçlarımızın kaynak kodunu tersine mühendislikle çözmeye veya çıkarmaya çalışamazsınız.',
+    sec3Title: '&quot;Olduğu Gibi&quot; (As-Is) Yazılım',
+    sec3Desc: 'En yüksek kalite ve güvenilirlik için çaba göstersek de TheNexTools tarafından sağlanan tüm araçlar hiçbir garanti olmaksızın &quot;olduğu gibi&quot; sunulmaktadır. Yazılımımızın kullanımı sırasında oluşabilecek veri kaybı veya donanım hasarlarından sorumlu değiliz.',
+    sec4Title: 'Ücretli Yazılım ve Lisanslama',
+    sec4Desc: 'NexData Recovery gibi bazı araçlar tam işlevsellik için ücretli bir lisans gerektirebilir. Lisanslar genellikle belirli bir donanıma bağlıdır. İadeler İade Politikamızda belirtilen kurallara göre değerlendirilir.',
+    sec5Title: 'Değişiklikler',
+    sec5Desc: 'Bu şartları istediğimiz zaman değiştirme hakkımızı saklı tutarız. Değişikliklerden sonra siteyi kullanmaya devam etmeniz yeni şartları kabul ettiğiniz anlamına gelir.',
+    sec6Title: 'İletişim',
+    sec6Desc: 'Bu şartlar hakkında sorularınız mı var? Bize ulaşın: '
+  },
   es: {
     title: 'Términos de Servicio | TheNexTools',
     description: 'Los términos de uso de la suite de utilidades de TheNexTools.',
@@ -159,7 +235,7 @@ const TRANSLATIONS = {
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.es;
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
   return {
     title: t.title,
@@ -198,7 +274,7 @@ export async function generateMetadata({ params }) {
 export default async function TermsPage({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.es;
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
   return (
     <main className="container" style={{ paddingTop: 'calc(var(--nav-h) + 4rem)', paddingBottom: '6rem', maxWidth: '800px' }}>

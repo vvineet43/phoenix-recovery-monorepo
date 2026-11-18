@@ -122,6 +122,447 @@ const TRANSLATIONS = {
     ctaTitle: 'Pronto para reduzir o tamanho de suas imagens?',
     ctaDesc: 'Solte seus arquivos no topo da página. Funciona no Chrome, Firefox, Safari e Edge. Nada para instalar.',
     ctaButton: 'Voltar à Ferramenta'
+  },
+  fr: {
+      "title": "Compresseur d'Images — Réduire JPG, PNG, WebP Localement | TheNexTools",
+      "description": "Compressez des images dans votre navigateur sans les téléverser. Ajustez la qualité, comparez avant/après en pleine résolution et téléchargez en ZIP.",
+      "steps": [
+          {
+              "title": "Ajouter des Images",
+              "desc": "Sélectionnez ou glissez des fichiers JPG, PNG ou WebP dans le compresseur."
+          },
+          {
+              "title": "Ajuster la Compression",
+              "desc": "Réglez le curseur de qualité et comparez l'original et l'image compressée côte à côte."
+          },
+          {
+              "title": "Télécharger",
+              "desc": "Enregistrez vos images compressées individuellement ou dans une archive ZIP unique."
+          }
+      ],
+      "badge": "NexCompress — Local et Privé",
+      "h1": "Compressez vos images sans les envoyer nulle part.",
+      "p1": "Les autres compresseurs envoient vos fichiers sur un serveur distant. NexCompress exécute les algorithmes de compression directement dans votre navigateur : plus rapide, sans limite de taille, et rien ne quitte votre appareil.",
+      "schemaTitle": "Compresseur d'Images NexCompress",
+      "schemaHome": "Accueil",
+      "schemaToolkit": "Boîte à Outils Image",
+      "schemaTool": "Compresseur d'Images",
+      "howToTitle": "Comment compresser des images hors ligne",
+      "diffTitle": "Ce qui nous différencie de TinyPNG",
+      "diffDesc": "Les fonctionnalités essentielles lorsque vous compressez des images régulièrement.",
+      "feat1Title": "Sortie en JPEG, PNG ou WebP",
+      "feat1Desc": "Choisissez votre format de sortie. Les PNG transparents restent sans perte. Pour JPEG et WebP, réglez la qualité de 10 % à 100 % avec estimation de taille en temps réel.",
+      "feat2Title": "Comparaison côte à côte en pleine résolution",
+      "feat2Desc": "Chaque image compressée dispose d'une vue comparative — original à gauche, compressé à droite — avant tout téléchargement.",
+      "feat3Title": "Traitement par lots et total économisé",
+      "feat3Desc": "Déposez un dossier entier d'un coup. Téléchargez les fichiers individuellement ou récupérez tout le lot en un seul fichier ZIP.",
+      "feat4Title": "Sans compte, sans envoi, sans limites artificielles",
+      "feat4Desc": "Aucune limite de 5 Mo ni filigrane. La seule limite est la mémoire disponible de votre navigateur.",
+      "faqTitle": "Questions Fréquentes",
+      "faqSubtitle": "Tout savoir sur la compression locale avec NexCompress.",
+      "faqQ1": "Comment fonctionne la compression d'images locale ?",
+      "faqA1": "Elle utilise l'API Canvas native de votre navigateur pour décoder l'image, traiter les pixels au niveau de qualité choisi et l'exporter en JPEG, PNG ou WebP sans serveur externe.",
+      "faqQ2": "Mes images sont-elles en sécurité avec NexCompress ?",
+      "faqA2": "Oui, totalement. Vos images ne sont jamais envoyées sur un serveur. Tout le traitement est exécuté localement sur votre appareil.",
+      "faqQ3": "Y a-t-il une limite de taille de fichier ?",
+      "faqA3": "Non, il n'y a aucune limite artificielle. Seule la mémoire de votre navigateur fixe la limite physique.",
+      "faqQ4": "NexCompress fonctionne-t-il hors ligne ?",
+      "faqA4": "Oui. NexCompress est une Progressive Web App (PWA) qui fonctionne entièrement sans connexion Internet une fois chargée.",
+      "ctaTitle": "Prêt à réduire la taille de vos images ?",
+      "ctaDesc": "Déposez vos fichiers en haut de la page. Fonctionne sur Chrome, Firefox, Safari et Edge.",
+      "ctaButton": "Retour à l'outil"
+  },
+  de: {
+      "title": "Bildkompressor — JPG, PNG, WebP Lokal Verkleinern | TheNexTools",
+      "description": "Komprimieren Sie Bilder direkt im Browser ohne Upload. Qualität anpassen, Vorher-Nachher in voller Auflösung vergleichen und einzeln oder als ZIP herunterladen.",
+      "steps": [
+          {
+              "title": "Bilder Hinzufügen",
+              "desc": "Wählen Sie JPG-, PNG- oder WebP-Dateien aus oder ziehen Sie sie in den Kompressor."
+          },
+          {
+              "title": "Komprimierung Anpassen",
+              "desc": "Passen Sie den Qualitätsregler an und vergleichen Sie Original und Komprimierung nebeneinander."
+          },
+          {
+              "title": "Herunterladen",
+              "desc": "Speichern Sie komprimierte Bilder einzeln oder gesammelt als ZIP-Archiv."
+          }
+      ],
+      "badge": "NexCompress — Lokal & Privat",
+      "h1": "Bilder komprimieren, ohne sie irgendwo hochzuladen.",
+      "p1": "Andere Bildkompressoren senden Ihre Dateien an einen Server. NexCompress führt die Komprimierung direkt in Ihrem Browser aus — schneller, ohne Größenlimits und ohne dass Daten Ihr Gerät verlassen.",
+      "schemaTitle": "NexCompress Bildkompressor",
+      "schemaHome": "Startseite",
+      "schemaToolkit": "Bild-Toolkit",
+      "schemaTool": "Bildkompressor",
+      "howToTitle": "So komprimieren Sie Bilder offline",
+      "diffTitle": "Was uns von TinyPNG unterscheidet",
+      "diffDesc": "Die Funktionen, auf die es bei regelmäßiger Bildkomprimierung wirklich ankommt.",
+      "feat1Title": "Ausgabe als JPEG, PNG oder WebP",
+      "feat1Desc": "Wählen Sie Ihr Ausgabeformat direkt beim Komprimieren. PNGs mit Transparenz bleiben verlustfrei. Für JPEG und WebP regeln Sie die Qualität von 10 % bis 100 %.",
+      "feat2Title": "Direkter Vergleich in voller Auflösung",
+      "feat2Desc": "Jedes komprimierte Bild bietet eine Vergleichsansicht — Original links, komprimiert rechts — bevor Sie etwas herunterladen.",
+      "feat3Title": "Stapelverarbeitung mit Gesamtersparnis",
+      "feat3Desc": "Legen Sie ganze Ordner auf einmal ab und laden Sie alle Bilder einzeln oder als ZIP-Datei herunter.",
+      "feat4Title": "Kein Konto, kein Upload, keine künstlichen Limits",
+      "feat4Desc": "Keine 5-MB-Sperre und keine Wasserzeichen. Das einzige Limit ist der Arbeitsspeicher Ihres Browsers.",
+      "faqTitle": "Häufig gestellte Fragen",
+      "faqSubtitle": "Alles über die lokale Bildkomprimierung mit NexCompress.",
+      "faqQ1": "Wie funktioniert die lokale Bildkomprimierung?",
+      "faqA1": "Sie nutzt die native Canvas-API Ihres Browsers, um das Bild lokal zu dekodieren und in der gewählten Qualitätsstufe als JPEG, PNG oder WebP zu exportieren.",
+      "faqQ2": "Sind meine Bilder bei NexCompress sicher?",
+      "faqA2": "Ja, vollständig. Ihre Bilder werden niemals an einen Server gesendet. Alle Schritte erfolgen lokal auf Ihrem Gerät.",
+      "faqQ3": "Gibt es ein Dateigrößenlimit?",
+      "faqA3": "Nein, es gibt keine künstlichen Größenbeschränkungen.",
+      "faqQ4": "Funktioniert NexCompress offline?",
+      "faqA4": "Ja. Als Progressive Web App (PWA) funktioniert NexCompress nach dem ersten Laden komplett ohne Internetverbindung.",
+      "ctaTitle": "Bereit, Ihre Bilder zu verkleinern?",
+      "ctaDesc": "Legen Sie Ihre Dateien oben auf der Seite ab. Läuft in Chrome, Firefox, Safari und Edge.",
+      "ctaButton": "Zurück zum Tool"
+  },
+  nl: {
+      "title": "Afbeelding Compressor — Verklein JPG, PNG, WebP Lokaal | TheNexTools",
+      "description": "Comprimeer afbeeldingen in uw browser zonder uploaden. Pas kwaliteit aan, vergelijk voor en na op volledige resolutie en download los of als ZIP.",
+      "steps": [
+          {
+              "title": "Afbeeldingen Toevoegen",
+              "desc": "Selecteer of sleep JPG-, PNG- of WebP-bestanden naar de compressor."
+          },
+          {
+              "title": "Compressie Afstemmen",
+              "desc": "Pas de kwaliteitsschuifregelaar aan en vergelijk origineel en gecomprimeerd naast elkaar."
+          },
+          {
+              "title": "Downloaden",
+              "desc": "Sla uw gecomprimeerde afbeeldingen afzonderlijk of als één ZIP-bestand op."
+          }
+      ],
+      "badge": "NexCompress — Lokaal & Privé",
+      "h1": "Comprimeer afbeeldingen zonder ze ergens te uploaden.",
+      "p1": "Andere compressors sturen uw bestanden naar een server. NexCompress voert de compressie rechtstreeks in uw browser uit — sneller, zonder groottebeperkingen en er verlaat niets uw apparaat.",
+      "schemaTitle": "NexCompress Afbeelding Compressor",
+      "schemaHome": "Home",
+      "schemaToolkit": "Afbeelding Toolkit",
+      "schemaTool": "Afbeelding Compressor",
+      "howToTitle": "Hoe afbeeldingen offline te comprimeren",
+      "diffTitle": "Wat dit anders maakt dan TinyPNG",
+      "diffDesc": "De zaken die er echt toe doen wanneer u regelmatig afbeeldingen comprimeert.",
+      "feat1Title": "Uitvoer naar JPEG, PNG of WebP",
+      "feat1Desc": "Kies uw uitvoerformaat. PNG's met transparantie blijven verliesvrij. Voor JPEG en WebP stelt u de kwaliteit in van 10% tot 100%.",
+      "feat2Title": "Vergelijking naast elkaar op volledige resolutie",
+      "feat2Desc": "Elke gecomprimeerde afbeelding krijgt een vergelijkingsweergave voordat u iets downloadt.",
+      "feat3Title": "Batchverwerking met totaaloverzicht",
+      "feat3Desc": "Sleep een hele map tegelijk en download bestanden één voor één of allemaal samen als één ZIP.",
+      "feat4Title": "Geen account, geen upload, geen kunstmatige limieten",
+      "feat4Desc": "Geen limiet van 5 MB en geen watermerken. De enige limiet is het beschikbare geheugen van uw browser.",
+      "faqTitle": "Veelgestelde Vragen",
+      "faqSubtitle": "Alles wat u moet weten over lokale compressie met NexCompress.",
+      "faqQ1": "Hoe werkt lokale beeldcompressie?",
+      "faqA1": "Het gebruikt de native Canvas API van uw browser om de afbeelding lokaal te decoderen en te exporteren als gecomprimeerde JPEG, PNG of WebP.",
+      "faqQ2": "Zijn mijn afbeeldingen veilig bij NexCompress?",
+      "faqA2": "Ja, volledig. Uw afbeeldingen worden nooit naar een server verzonden.",
+      "faqQ3": "Is er een limiet voor de bestandsgrootte?",
+      "faqA3": "Nee, er zijn geen kunstmatige limieten voor de bestandsgrootte.",
+      "faqQ4": "Werkt NexCompress offline?",
+      "faqA4": "Ja. NexCompress is een Progressive Web App (PWA) en werkt na het laden volledig zonder internetverbinding.",
+      "ctaTitle": "Klaar om uw afbeeldingen te verkleinen?",
+      "ctaDesc": "Sleep uw bestanden naar de bovenkant van de pagina. Werkt in Chrome, Firefox, Safari en Edge.",
+      "ctaButton": "Terug naar Tool"
+  },
+  it: {
+      "title": "Compressore Immagini — Riduci JPG, PNG, WebP Localmente | TheNexTools",
+      "description": "Comprimi immagini nel browser senza caricarle. Regola la qualità, confronta prima e dopo a piena risoluzione e scarica singolarmente o in ZIP.",
+      "steps": [
+          {
+              "title": "Aggiungi Immagini",
+              "desc": "Seleziona o trascina file JPG, PNG o WebP nel compressore."
+          },
+          {
+              "title": "Regola Compressione",
+              "desc": "Regola il cursore della qualità e confronta originale e compresso fianco a fianco."
+          },
+          {
+              "title": "Scarica Risultato",
+              "desc": "Salva le immagini compresse singolarmente o in un unico pacchetto ZIP."
+          }
+      ],
+      "badge": "NexCompress — Locale e Privato",
+      "h1": "Comprimi le immagini senza caricarle da nessuna parte.",
+      "p1": "Gli altri compressori inviano i tuoi file a un server remoto. NexCompress esegue gli algoritmi di compressione direttamente nel tuo browser: più veloce, senza limiti di dimensione e nulla esce dal tuo dispositivo.",
+      "schemaTitle": "Compressore Immagini NexCompress",
+      "schemaHome": "Home",
+      "schemaToolkit": "Toolkit Immagini",
+      "schemaTool": "Compressore Immagini",
+      "howToTitle": "Come comprimere immagini offline",
+      "diffTitle": "Cosa ci rende diversi da TinyPNG",
+      "diffDesc": "Le funzionalità che contano davvero quando comprimi immagini regolarmente.",
+      "feat1Title": "Output in JPEG, PNG o WebP",
+      "feat1Desc": "Scegli il formato di output. I PNG con trasparenza restano lossless. Per JPEG e WebP regola la qualità dal 10% al 100% con stima in tempo reale.",
+      "feat2Title": "Confronto fianco a fianco a piena risoluzione",
+      "feat2Desc": "Ogni immagine compressa offre una vista comparativa — originale a sinistra, compressa a destra — prima del download.",
+      "feat3Title": "Elaborazione in batch con totale risparmiato",
+      "feat3Desc": "Trascina un'intera cartella in una volta. Scarica i file singolarmente o l'intero gruppo come singolo ZIP.",
+      "feat4Title": "Nessun account, nessun upload, nessun limite artificiale",
+      "feat4Desc": "Nessun limite di 5 MB o filigrana. L'unico limite è la memoria disponibile del browser.",
+      "faqTitle": "Domande Frequenti",
+      "faqSubtitle": "Tutto quello che devi sapere sulla compressione locale con NexCompress.",
+      "faqQ1": "Come funziona la compressione locale delle immagini?",
+      "faqA1": "Utilizza l'API Canvas nativa del browser per decodificare l'immagine ed esportarla localmente come JPEG, PNG o WebP compresso.",
+      "faqQ2": "Le mie immagini sono al sicuro con NexCompress?",
+      "faqA2": "Sì, completamente. Le tue immagini non vengono mai inviate a nessun server.",
+      "faqQ3": "C'è un limite alle dimensioni del file?",
+      "faqA3": "No, non ci sono limiti artificiali alle dimensioni dei file.",
+      "faqQ4": "NexCompress funziona offline?",
+      "faqA4": "Sì. NexCompress è una Progressive Web App (PWA) e funziona interamente offline dopo il primo caricamento.",
+      "ctaTitle": "Pronto a ridurre le tue immagini?",
+      "ctaDesc": "Trascina i tuoi file in cima alla pagina. Funziona su Chrome, Firefox, Safari ed Edge.",
+      "ctaButton": "Torna allo Strumento"
+  },
+  ja: {
+      "title": "画像圧縮ツール — JPG・PNG・WebPをローカルで軽量化 | TheNexTools",
+      "description": "画像をアップロードせずにブラウザ内で圧縮。品質調整、フル解像度での前後比較、個別または一括ZIPダウンロードに対応。",
+      "steps": [
+          {
+              "title": "画像を追加",
+              "desc": "JPG、PNG、またはWebPファイルを選択するかドラッグ＆ドロップします。"
+          },
+          {
+              "title": "圧縮率を調整",
+              "desc": "品質スライダーを調整し、元画像と圧縮後の画像を並べてプレビューします。"
+          },
+          {
+              "title": "ダウンロード",
+              "desc": "圧縮した画像を個別に、または1つのZIPファイルとして保存します。"
+          }
+      ],
+      "badge": "NexCompress — ローカル＆プライベート",
+      "h1": "画像をどこにもアップロードせずに圧縮。",
+      "p1": "他の画像圧縮ツールはファイルを外部サーバーに送信しますが、NexCompressはブラウザ内で直接圧縮アルゴリズムを実行します。高速でサイズ制限もなく、データが端末から外部へ出ることはありません。",
+      "schemaTitle": "NexCompress 画像圧縮ツール",
+      "schemaHome": "ホーム",
+      "schemaToolkit": "画像ツールキット",
+      "schemaTool": "画像圧縮ツール",
+      "howToTitle": "オフラインで画像を圧縮する方法",
+      "diffTitle": "TinyPNGとの違い",
+      "diffDesc": "日常的に画像を圧縮する際に本当に重要な機能を備えています。",
+      "feat1Title": "JPEG、PNG、WebPへの出力に対応",
+      "feat1Desc": "圧縮と同時に出力形式を選択可能。透過PNGはロスレスを維持し、JPEGとWebPは10%〜100%で品質を調整できます。",
+      "feat2Title": "フル解像度での並列比較",
+      "feat2Desc": "ダウンロード前に左側に元画像、右側に圧縮後画像を並べて画質の違いを確認できます。",
+      "feat3Title": "一括処理と削減容量の集計",
+      "feat3Desc": "フォルダごと一括でドロップ可能。個別ダウンロードまたはZIP一括ダウンロードに対応しています。",
+      "feat4Title": "アカウント不要・アップロード不要・容量制限なし",
+      "feat4Desc": "5MBの制限や透かしは一切ありません。ブラウザのメモリが許す限り大容量ファイルも処理できます。",
+      "faqTitle": "よくある質問",
+      "faqSubtitle": "NexCompressのローカル画像圧縮に関するよくある質問。",
+      "faqQ1": "ローカル画像圧縮はどのように機能しますか？",
+      "faqA1": "ブラウザ標準のCanvas APIを使用して画像をデコードし、指定された品質でJPEG、PNG、WebPとして再エンコードします。外部サーバーとは通信しません。",
+      "faqQ2": "画像のプライバシーは安全ですか？",
+      "faqA2": "はい、完全に安全です。画像がサーバーに送信されることは一切ありません。",
+      "faqQ3": "ファイルサイズの制限はありますか？",
+      "faqA3": "いいえ、人為的なファイルサイズ制限はありません。",
+      "faqQ4": "オフラインでも動作しますか？",
+      "faqA4": "はい。プログレッシブウェブアプリ（PWA）として動作するため、一度読み込めばインターネット接続なしで利用できます。",
+      "ctaTitle": "画像を軽量化する準備はできましたか？",
+      "ctaDesc": "ページ上部にファイルをドロップしてください。Chrome、Firefox、Safari、Edgeで動作します。",
+      "ctaButton": "ツールに戻る"
+  },
+  hi: {
+      "title": "इमेज कंप्रेसर — JPG, PNG, WebP को लोकली छोटा करें | TheNexTools",
+      "description": "अपलोड किए बिना अपने ब्राउज़र में इमेज कंप्रेस करें। क्वालिटी सेट करें, पहले और बाद की तुलना करें, और अकेले या ZIP में डाउनलोड करें।",
+      "steps": [
+          {
+              "title": "इमेज जोड़ें",
+              "desc": "कंप्रेसर में JPG, PNG या WebP फ़ाइलें चुनें या ड्रैग करें।"
+          },
+          {
+              "title": "कंप्रेशन सेट करें",
+              "desc": "क्वालिटी स्लाइडर समायोजित करें और मूल बनाम कंप्रेस्ड इमेज की तुलना करें।"
+          },
+          {
+              "title": "आउटपुट डाउनलोड करें",
+              "desc": "अपनी कंप्रेस्ड इमेज को अलग-अलग या एकल ZIP फ़ाइल के रूप में सहेजें।"
+          }
+      ],
+      "badge": "NexCompress — लोकल और प्राइवेट",
+      "h1": "इमेज को कहीं भी अपलोड किए बिना कंप्रेस करें।",
+      "p1": "अन्य इमेज कंप्रेसर आपकी फ़ाइलों को सर्वर पर भेजते हैं। NexCompress सीधे आपके ब्राउज़र में कंप्रेशन एल्गोरिदम चलाता है — तेज़, बिना किसी साइज़ सीमा के, और आपकी फ़ाइलें आपके डिवाइस से बाहर नहीं जातीं।",
+      "schemaTitle": "NexCompress इमेज कंप्रेसर",
+      "schemaHome": "होम",
+      "schemaToolkit": "इमेज टूलकिट",
+      "schemaTool": "इमेज कंप्रेसर",
+      "howToTitle": "ऑफ़लाइन इमेज कैसे कंप्रेस करें",
+      "diffTitle": "यह TinyPNG से अलग कैसे है",
+      "diffDesc": "जब आप नियमित रूप से इमेज कंप्रेस करते हैं तो वास्तव में मायने रखने वाली सुविधाएँ।",
+      "feat1Title": "JPEG, PNG या WebP में आउटपुट",
+      "feat1Desc": "कंप्रेशन चरण के भाग के रूप में अपना आउटपुट फ़ॉर्मेट चुनें। JPEG और WebP के लिए क्वालिटी स्लाइडर को 10% से 100% तक सेट करें।",
+      "feat2Title": "पूर्ण रेज़ोल्यूशन पर आमने-सामने तुलना",
+      "feat2Desc": "डाउनलोड करने से पहले बाईं ओर मूल और दाईं ओर कंप्रेस्ड इमेज की गुणवत्ता में अंतर देखें।",
+      "feat3Title": "बैच प्रोसेसिंग और कुल बचत",
+      "feat3Desc": "एक साथ कई फ़ाइलें ड्रॉप करें और उन्हें अलग-अलग या एक ZIP के रूप में डाउनलोड करें।",
+      "feat4Title": "कोई अकाउंट नहीं, कोई अपलोड नहीं, कोई सीमा नहीं",
+      "feat4Desc": "कोई 5MB सीमा या वॉटरमार्क नहीं। एकमात्र सीमा आपके ब्राउज़र की उपलब्ध मेमोरी है।",
+      "faqTitle": "अक्सर पूछे जाने वाले प्रश्न",
+      "faqSubtitle": "NexCompress लोकल इमेज कंप्रेशन के बारे में सब कुछ।",
+      "faqQ1": "लोकल इमेज कंप्रेशन कैसे काम करता है?",
+      "faqA1": "यह आपके ब्राउज़र के मूल Canvas API का उपयोग करके इमेज को डिकोड करता है और आपके चुने गए क्वालिटी स्तर पर कंप्रेस्ड JPEG, PNG या WebP के रूप में एक्सपोर्ट करता है।",
+      "faqQ2": "क्या NexCompress के साथ मेरी तस्वीरें सुरक्षित हैं?",
+      "faqA2": "हाँ, पूरी तरह से। आपकी तस्वीरें कभी किसी सर्वर पर नहीं भेजी जातीं।",
+      "faqQ3": "क्या फ़ाइल आकार की कोई सीमा है?",
+      "faqA3": "नहीं, कोई कृत्रिम फ़ाइल आकार सीमा नहीं है।",
+      "faqQ4": "क्या NexCompress ऑफ़लाइन काम करता है?",
+      "faqA4": "हाँ। एक बार लोड होने के बाद यह बिना इंटरनेट कनेक्शन के पूरी तरह से काम करता है।",
+      "ctaTitle": "अपनी इमेज का आकार कम करने के लिए तैयार हैं?",
+      "ctaDesc": "पृष्ठ के शीर्ष पर अपनी फ़ाइलें ड्रॉप करें। किसी इंस्टॉलेशन की आवश्यकता नहीं।",
+      "ctaButton": "टूल पर वापस जाएं"
+  },
+  tr: {
+      "title": "Görsel Sıkıştırıcı — JPG, PNG, WebP Dosyalarını Yerel Olarak Küçültün | TheNexTools",
+      "description": "Görsellerinizi hiçbir yere yüklemeden tarayıcınızda sıkıştırın. Kaliteyi ayarlayın, tam çözünürlükte karşılaştırın ve tek tek veya ZIP olarak indirin.",
+      "steps": [
+          {
+              "title": "Görselleri Ekleyin",
+              "desc": "JPG, PNG veya WebP dosyalarını seçin veya sıkıştırıcıya sürükleyin."
+          },
+          {
+              "title": "Sıkıştırmayı Ayarlayın",
+              "desc": "Kalite kaydırıcısını ayarlayın ve orijinal ile sıkıştırılmış görseli yan yana karşılaştırın."
+          },
+          {
+              "title": "Çıktıyı İndirin",
+              "desc": "Sıkıştırılmış görsellerinizi tek tek veya tek bir ZIP arşivi olarak kaydedin."
+          }
+      ],
+      "badge": "NexCompress — Yerel ve Gizli",
+      "h1": "Görselleri hiçbir yere yüklemeden sıkıştırın.",
+      "p1": "Diğer görsel sıkıştırıcılar dosyalarınızı uzak bir sunucuya gönderir. NexCompress aynı sıkıştırma algoritmalarını doğrudan tarayıcınızda çalıştırır — daha hızlıdır, boyut sınırı yoktur ve hiçbir veri cihazınızdan çıkmaz.",
+      "schemaTitle": "NexCompress Görsel Sıkıştırıcı",
+      "schemaHome": "Ana Sayfa",
+      "schemaToolkit": "Görsel Araç Seti",
+      "schemaTool": "Görsel Sıkıştırıcı",
+      "howToTitle": "Görseller çevrimdışı nasıl sıkıştırılır",
+      "diffTitle": "Bizi TinyPNG'den ayıran nedir",
+      "diffDesc": "Düzenli olarak görsel sıkıştırırken gerçekten önem taşıyan özellikler.",
+      "feat1Title": "JPEG, PNG veya WebP çıktısı",
+      "feat1Desc": "Çıktı formatınızı seçin. Şeffaf PNG'ler kayıpsız kalır. JPEG ve WebP için kaliteyi %10 ile %100 arasında ayarlayın.",
+      "feat2Title": "Tam çözünürlükte yan yana karşılaştırma",
+      "feat2Desc": "İndirmeden önce solda orijinal, sağda sıkıştırılmış görseli tam genişlikte karşılaştırın.",
+      "feat3Title": "Toplu işleme ve toplam tasarruf sayacı",
+      "feat3Desc": "Tüm klasörü tek seferde bırakın. Dosyaları tek tek veya tek bir ZIP olarak indirin.",
+      "feat4Title": "Hesap yok, yükleme yok, yapay sınır yok",
+      "feat4Desc": "5 MB sınırı veya filigran yoktur. Tek sınır tarayıcınızın kullanılabilir belleğidir.",
+      "faqTitle": "Sıkça Sorulan Sorular",
+      "faqSubtitle": "NexCompress yerel görsel sıkıştırma hakkında bilmeniz gereken her şey.",
+      "faqQ1": "Yerel görsel sıkıştırma nasıl çalışır?",
+      "faqA1": "Tarayıcınızın yerleşik Canvas API'sini kullanarak görseli yerel olarak işler ve seçtiğiniz kalitede JPEG, PNG veya WebP olarak dışa aktarır.",
+      "faqQ2": "Görsellerim NexCompress ile güvende mi?",
+      "faqA2": "Evet, tamamen. Görselleriniz asla bir sunucuya gönderilmez.",
+      "faqQ3": "Dosya boyutu sınırı var mı?",
+      "faqA3": "Hayır, yapay bir dosya boyutu sınırı yoktur.",
+      "faqQ4": "NexCompress çevrimdışı çalışır mı?",
+      "faqA4": "Evet. Yükledikten sonra internet bağlantısı olmadan tamamen çevrimdışı çalışır.",
+      "ctaTitle": "Görsellerinizi küçültmeye hazır mısınız?",
+      "ctaDesc": "Dosyalarınızı sayfanın üst kısmına bırakın. Kurulum gerektirmez.",
+      "ctaButton": "Araca Dön"
+  },
+  sw: {
+      "title": "Kibana Picha — Punguza Ukubwa wa JPG, PNG, WebP Ndani ya Kifaa | TheNexTools",
+      "description": "Bana picha kwenye kivinjari chako bila kuzipakia mtandaoni. Rekebisha ubora, linganisha kabla na baada, na pakua moja moja au kama ZIP.",
+      "steps": [
+          {
+              "title": "Ongeza Picha",
+              "desc": "Chagua au buruta faili za JPG, PNG, au WebP kwenye kibana picha."
+          },
+          {
+              "title": "Rekebisha Ubora",
+              "desc": "Rekebisha kiwango cha ubora na ulinganishe picha halisi na iliyobanwa."
+          },
+          {
+              "title": "Pakua Matokeo",
+              "desc": "Hifadhi picha zilizobanwa moja moja au kama kifurushi kimoja cha ZIP."
+          }
+      ],
+      "badge": "NexCompress — Ndani na Faragha",
+      "h1": "Bana picha bila kuzipakia popote.",
+      "p1": "Vibana picha vingine hutuma faili zako kwenye seva. NexCompress huendesha kanuni za ubanaji moja kwa moja kwenye kivinjari chako — haraka zaidi, bila kikomo cha ukubwa, na hakuna kinachotoka kwenye kifaa chako.",
+      "schemaTitle": "NexCompress Kibana Picha",
+      "schemaHome": "Nyumbani",
+      "schemaToolkit": "Zana za Picha",
+      "schemaTool": "Kibana Picha",
+      "howToTitle": "Jinsi ya kubana picha nje ya mtandao",
+      "diffTitle": "Kinachotutofautisha na TinyPNG",
+      "diffDesc": "Vipengele muhimu unavyohitaji unapobana picha mara kwa mara.",
+      "feat1Title": "Toa kama JPEG, PNG, au WebP",
+      "feat1Desc": "Chagua umbizo la matokeo. Rekebisha ubora wa JPEG na WebP kuanzia 10% hadi 100% ukiona makadirio ya ukubwa papo hapo.",
+      "feat2Title": "Ulinganisho wa ana kwa ana",
+      "feat2Desc": "Kila picha iliyobanwa ina mwonekano wa kulinganisha kabla hujapakua chochote.",
+      "feat3Title": "Uchakataji wa kundi kwa pamoja",
+      "feat3Desc": "Weka folda nzima kwa wakati mmoja na upakue faili moja moja au zote kama ZIP.",
+      "feat4Title": "Hakuna akaunti, hakuna kupakia, hakuna vikomo",
+      "feat4Desc": "Hakuna kikomo cha MB 5. Kikomo pekee ni kumbukumbu ya kivinjari chako.",
+      "faqTitle": "Maswali Yanayoulizwa Mara kwa Mara",
+      "faqSubtitle": "Kila kitu unachohitaji kujua kuhusu ubanaji wa picha wa NexCompress.",
+      "faqQ1": "Ubanaji wa picha wa ndani unafanyaje kazi?",
+      "faqA1": "Inatumia Canvas API ya kivinjari chako kuchakata picha kwenye kifaa chako bila kuwasiliana na seva yoyote ya nje.",
+      "faqQ2": "Je, picha zangu ziko salama na NexCompress?",
+      "faqA2": "Ndiyo, kabisa. Picha zako hazitumwi kwenye seva yoyote.",
+      "faqQ3": "Je, kuna kikomo cha ukubwa wa faili?",
+      "faqA3": "Hapana, hakuna vikomo bandia vya ukubwa wa faili.",
+      "faqQ4": "Je, NexCompress inafanya kazi nje ya mtandao?",
+      "faqA4": "Ndiyo. Baada ya kufunguliwa mara ya kwanza, inafanya kazi bila mtandao.",
+      "ctaTitle": "Uko tayari kupunguza ukubwa wa picha zako?",
+      "ctaDesc": "Weka faili zako juu ya ukurasa. Inafanya kazi kwenye Chrome, Firefox, Safari na Edge.",
+      "ctaButton": "Rudi kwenye Zana"
+  },
+  bn: {
+      "title": "ইমেজ কম্প্রেসর — লোকালি JPG, PNG, WebP সাইজ কমান | TheNexTools",
+      "description": "আপলোড ছাড়াই আপনার ব্রাউজারে ছবি কম্প্রেস করুন। কোয়ালিটি অ্যাডজাস্ট করুন, আগে ও পরে তুলনা করুন এবং আলাদাভাবে বা ZIP হিসেবে ডাউনলোড করুন।",
+      "steps": [
+          {
+              "title": "ছবি যোগ করুন",
+              "desc": "JPG, PNG বা WebP ফাইল নির্বাচন করুন অথবা কম্প্রেসরে ড্র্যাগ করুন।"
+          },
+          {
+              "title": "কম্প্রেশন টিউন করুন",
+              "desc": "কোয়ালিটি স্লাইডার সমন্বয় করুন এবং আসল ও কম্প্রেসড ছবি পাশাপাশি তুলনা করুন।"
+          },
+          {
+              "title": "ডাউনলোড করুন",
+              "desc": "কম্প্রেস করা ছবিগুলো আলাদাভাবে বা একটি একক ZIP ফাইল হিসেবে সেভ করুন।"
+          }
+      ],
+      "badge": "NexCompress — লোকাল ও প্রাইভেট",
+      "h1": "কোথাও আপলোড না করেই ছবি কম্প্রেস করুন।",
+      "p1": "অন্যান্য ইমেজ কম্প্রেসর আপনার ফাইল সার্ভারে পাঠায়। NexCompress সরাসরি আপনার ব্রাউজারে কম্প্রেশন অ্যালগরিদম চালায় — দ্রুততর, কোনো সাইজ লিমিট নেই এবং আপনার ফাইল কখনোই আপনার ডিভাইস ছেড়ে যায় না।",
+      "schemaTitle": "NexCompress ইমেজ কম্প্রেসর",
+      "schemaHome": "হোম",
+      "schemaToolkit": "ইমেজ টুলকিট",
+      "schemaTool": "ইমেজ কম্প্রেসর",
+      "howToTitle": "কীভাবে অফলাইনে ছবি কম্প্রেস করবেন",
+      "diffTitle": "TinyPNG থেকে এটি কেন আলাদা",
+      "diffDesc": "নিয়মিত ছবি কম্প্রেস করার সময় যে সুবিধাগুলো সত্যিই প্রয়োজন।",
+      "feat1Title": "JPEG, PNG বা WebP ফরম্যাটে আউটপুট",
+      "feat1Desc": "আউটপুট ফরম্যাট বেছে নিন। JPEG ও WebP-এর জন্য ১০% থেকে ১০০% পর্যন্ত কোয়ালিটি স্লাইডার অ্যাডজাস্ট করুন।",
+      "feat2Title": "পূর্ণ রেজোলিউশনে পাশাপাশি তুলনা",
+      "feat2Desc": "ডাউনলোড করার আগেই বাম পাশে আসল এবং ডান পাশে কম্প্রেসড ছবির পার্থক্য দেখুন।",
+      "feat3Title": "ব্যাচ প্রসেসিং ও মোট সাশ্রয়",
+      "feat3Desc": "একসাথে পুরো ফোল্ডার ড্রপ করুন এবং আলাদাভাবে বা একটি ZIP হিসেবে ডাউনলোড করুন।",
+      "feat4Title": "কোনো অ্যাকাউন্ট নেই, আপলোড নেই, কৃত্রিম লিমিট নেই",
+      "feat4Desc": "৫ এমবি লিমিট বা ওয়াটারমার্ক নেই। একমাত্র সীমা আপনার ব্রাউজারের মেমরি।",
+      "faqTitle": "সচরাচর জিজ্ঞাসিত প্রশ্নাবলী",
+      "faqSubtitle": "NexCompress ইমেজ কম্প্রেশন সম্পর্কে যা জানা প্রয়োজন।",
+      "faqQ1": "লোকাল ইমেজ কম্প্রেশন কীভাবে কাজ করে?",
+      "faqA1": "এটি আপনার ব্রাউজারের নেটিভ Canvas API ব্যবহার করে লোকালি ছবি প্রসেস করে এবং কম্প্রেসড JPEG, PNG বা WebP হিসেবে এক্সপোর্ট করে।",
+      "faqQ2": "NexCompress-এ আমার ছবিগুলো কি নিরাপদ?",
+      "faqA2": "হ্যাঁ, সম্পূর্ণ নিরাপদ। আপনার ছবি কখনোই কোনো সার্ভারে পাঠানো হয় না।",
+      "faqQ3": "ফাইল সাইজের কি কোনো সীমা আছে?",
+      "faqA3": "না, কোনো কৃত্রিম ফাইল সাইজ সীমা নেই।",
+      "faqQ4": "NexCompress কি অফলাইনে কাজ করে?",
+      "faqA4": "হ্যাঁ। একবার লোড হওয়ার পর এটি ইন্টারনেট ছাড়াই সম্পূর্ণ অফলাইনে কাজ করে।",
+      "ctaTitle": "আপনার ছবির সাইজ কমাতে প্রস্তুত?",
+      "ctaDesc": "পেজের উপরের অংশে ফাইল ড্রপ করুন। Chrome, Firefox, Safari ও Edge-এ কাজ করে।",
+      "ctaButton": "টুলে ফিরে যান"
   }
 };
 
@@ -168,7 +609,7 @@ export async function generateMetadata({ params }) {
 export default async function ImageCompressorLanding({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.es;
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
   return (
     <>
