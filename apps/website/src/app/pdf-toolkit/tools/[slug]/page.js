@@ -99,7 +99,7 @@ export default async function ToolSeoPage({ params }) {
   }
 
   const ToolIcon = ICON_MAP[originalTool.toolParam] || FileText;
-  const localizedLabel = tool.h1.toLowerCase().replace('.', '');
+  const localizedLabel = tool.h1.toLowerCase().replace(/[.।。]+$/g, '');
 
   // Helper to replace templates like {tool} and {steps}
   const t = (str, replacements = {}) => {
@@ -159,7 +159,7 @@ export default async function ToolSeoPage({ params }) {
             {
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              "name": `NexPDF ${tool.h1.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ').replace('.', '')}`,
+              "name": `NexPDF ${tool.h1.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ').replace(/[.।。]+$/g, '')}`,
               "url": `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/pdf-toolkit/tools/${slug}`,
               "applicationCategory": "UtilityApplication",
               "operatingSystem": "All",
@@ -190,7 +190,7 @@ export default async function ToolSeoPage({ params }) {
                 {
                   "@type": "ListItem",
                   "position": 3,
-                  "name": tool.h1.replace('.', ''),
+                  "name": tool.h1.replace(/[.।。]+$/g, ''),
                   "item": `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/pdf-toolkit/tools/${slug}`
                 }
               ]

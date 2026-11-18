@@ -18,8 +18,15 @@ contextBridge.exposeInMainWorld('phoenixAPI', {
   // License management
   validateLicense: (key, machineId) => ipcRenderer.invoke('validate-license', { key, machineId }),
   getStoredLicense: () => ipcRenderer.invoke('get-stored-license'),
+  getLicense: () => ipcRenderer.invoke('get-stored-license'),
   storeLicense: (licenseData) => ipcRenderer.invoke('store-license', licenseData),
+  saveLicense: (licenseData) => ipcRenderer.invoke('store-license', licenseData),
   clearLicense: () => ipcRenderer.invoke('clear-license'),
+  onOpenSubscription: (callback) => {
+    const handler = () => callback();
+    ipcRenderer.on('open-subscription', handler);
+    return () => ipcRenderer.removeListener('open-subscription', handler);
+  },
 
   // OS / App info
   getPlatform: () => process.platform,

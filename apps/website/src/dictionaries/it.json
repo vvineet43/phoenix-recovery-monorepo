@@ -759,52 +759,29 @@
         "toolParam": "text"
       }
     },
-    "imageTools": {
-      "compressor": {
-        "uploadTitle": "Rilascia le immagini qui",
-        "uploadSubtitle": "JPG, PNG, WebP — supporto batch",
-        "formatLabel": "Formato di Output",
-        "qualityLabel": "Qualità:",
-        "losslessNotice": " (senza perdita — ignorato per PNG)",
-        "recompressBtn": "Ricomprimi Tutti",
-        "addBtn": "Aggiungi",
-        "clearBtn": "Cancella",
-        "downloadAll": "Scarica Tutto",
-        "downloading": "Scaricamento in corso..."
-      },
-      "converter": {
-        "uploadTitle": "Trascina e rilascia le immagini qui",
-        "uploadSubtitle": "Supporta PNG, JPG, JPEG, WEBP e altri",
-        "browseBtn": "Sfoglia File",
-        "settingsTitle": "Impostazioni di Conversione",
-        "formatLabel": "Formato di Destinazione",
-        "qualityLabel": "Qualità di Compressione",
-        "reconvertBtn": "Riconverti Tutto",
-        "addBtn": "Aggiungi Immagini",
-        "clearBtn": "Cancella Tutto",
-        "downloadAll": "Scarica Tutto"
-      },
-      "redactor": {
-        "uploadTitle": "Trascina e rilascia screenshot/immagine",
-        "uploadSubtitle": "I formati PNG, JPG, WEBP sono elaborati puramente lato client",
-        "chooseBtn": "Scegli File",
-        "blurMode": "Sfoca Area",
-        "redactMode": "Redigi Area (Oscuramento)",
-        "resetBtn": "Reimposta Tela",
-        "downloadBtn": "Scarica Immagine"
-      },
-      "exifStripper": {
-        "uploadTitle": "Rilascia le immagini qui",
-        "uploadSubtitle": "JPG, PNG, WebP — singolo o batch",
-        "processedInfo": "{done} di {total} elaborati",
-        "gpsDanger": "⚠ Coordinate GPS rilevate e rimosse",
-        "noGpsSuccess": "✓ Nessun dato GPS trovato",
-        "scanning": "Scansione in corso…",
-        "addMoreBtn": "Aggiungi Altro",
-        "clearBtn": "Cancella",
-        "zipping": "Compressione in corso…",
-        "downloadAll": "Scarica Tutto ({count})"
-      }
+    "seoPage": {
+      "keyBenefits": "Vantaggi Principali",
+      "localPrivate": "Locale e Privato",
+      "localPrivateDesc": "Questo strumento elabora i tuoi file direttamente nel browser — nulla viene caricato su un server. Quando usi {tool}, il documento rimane sul tuo computer dall'inizio alla fine.",
+      "privateBadge": "Privato",
+      "secureBadge": "Sicuro",
+      "faqTitle": "Domande Frequenti",
+      "faqSubtitle": "Tutto quello che c'è da sapere su {tool}.",
+      "readyTitle": "Pronto per iniziare?",
+      "readyDesc": "Trascina il tuo file nell'area di lavoro in cima alla pagina. Nessuna registrazione richiesta.",
+      "backToTool": "Torna allo Strumento",
+      "howToPrefix": "Come ",
+      "faqQ1": "Come posso eseguire {tool} localmente?",
+      "faqA1": "{steps} Tutto questo avviene direttamente sul tuo dispositivo.",
+      "faqQ2": "I miei file PDF sono al sicuro durante questo processo?",
+      "faqA2": "Assolutamente sì. Poiché NexPDF funziona interamente lato client tramite WebAssembly, il documento non viene mai caricato su alcun server esterno. I tuoi dati sensibili restano privati al 100%.",
+      "faqQ3": "C'è un limite alle dimensioni del file per {tool}?",
+      "faqA3": "No, non ci sono limiti artificiali alle dimensioni dei file. L'unico limite fisico è la memoria disponibile del browser sul tuo dispositivo, che gestisce facilmente documenti di grandi dimensioni.",
+      "faqQ4": "Funziona offline?",
+      "faqA4": "Sì, NexPDF viene memorizzato nella cache del browser dopo il primo caricamento. Puoi disconnetterti da Internet e continuare a utilizzare lo strumento completamente offline.",
+      "uploadSelect": "Seleziona un PDF per {label}",
+      "uploadDrop": "Oppure trascinalo qui per iniziare subito",
+      "uploadLoading": "Preparazione dell'area di lavoro..."
     }
   },
   "meta": {
@@ -832,6 +809,53 @@
     },
     "imageToolkit": {
       "title": "NexImage Toolkit — Comprimi, Converti, Redigi e Rimuovi Metadati | TheNexTools"
+    }
+  },
+  "imageTools": {
+    "compressor": {
+      "uploadTitle": "Rilascia le immagini qui",
+      "uploadSubtitle": "JPG, PNG, WebP — supporto batch",
+      "formatLabel": "Formato di Output",
+      "qualityLabel": "Qualità:",
+      "losslessNotice": " (senza perdita — ignorato per PNG)",
+      "recompressBtn": "Ricomprimi Tutti",
+      "addBtn": "Aggiungi",
+      "clearBtn": "Cancella",
+      "downloadAll": "Scarica Tutto",
+      "downloading": "Scaricamento in corso..."
+    },
+    "converter": {
+      "uploadTitle": "Trascina e rilascia le immagini qui",
+      "uploadSubtitle": "Supporta PNG, JPG, JPEG, WEBP e altri",
+      "browseBtn": "Sfoglia File",
+      "settingsTitle": "Impostazioni di Conversione",
+      "formatLabel": "Formato di Destinazione",
+      "qualityLabel": "Qualità di Compressione",
+      "reconvertBtn": "Riconverti Tutto",
+      "addBtn": "Aggiungi Immagini",
+      "clearBtn": "Cancella Tutto",
+      "downloadAll": "Scarica Tutto"
+    },
+    "redactor": {
+      "uploadTitle": "Trascina e rilascia screenshot/immagine",
+      "uploadSubtitle": "I formati PNG, JPG, WEBP sono elaborati puramente lato client",
+      "chooseBtn": "Scegli File",
+      "blurMode": "Sfoca Area",
+      "redactMode": "Redigi Area (Oscuramento)",
+      "resetBtn": "Reimposta Tela",
+      "downloadBtn": "Scarica Immagine"
+    },
+    "exifStripper": {
+      "uploadTitle": "Rilascia le immagini qui",
+      "uploadSubtitle": "JPG, PNG, WebP — singolo o batch",
+      "processedInfo": "{done} di {total} elaborati",
+      "gpsDanger": "⚠ Coordinate GPS rilevate e rimosse",
+      "noGpsSuccess": "✓ Nessun dato GPS trovato",
+      "scanning": "Scansione in corso…",
+      "addMoreBtn": "Aggiungi Altro",
+      "clearBtn": "Cancella",
+      "zipping": "Compressione in corso…",
+      "downloadAll": "Scarica Tutto ({count})"
     }
   }
 }

@@ -60,8 +60,14 @@ export default async function RootLayout({ children, params }) {
   const locale = lang || 'en';
 
   return (
-    <html lang={locale}>
-      <head />
+    <html lang={locale} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var s=location.pathname.split('/')[1];var l=${JSON.stringify(locales)};if(l.indexOf(s)!==-1){document.documentElement.lang=s;}}catch(e){}})();`
+          }}
+        />
+      </head>
       <body className={`${inter.variable} ${outfit.variable}`}>
         {/* Lemon Squeezy Affiliate Tracking Script */}
         <Script

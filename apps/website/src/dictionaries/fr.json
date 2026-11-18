@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "LesOutilsNex",
+    "brand": "TheNexTools",
     "dataRecovery": "Récupération de données",
     "pdfEditing": "Édition de PDF",
     "imageEditing": "Édition d'images",
@@ -280,7 +280,7 @@
   "pdfTools": {
     "tools": {
       "compress-pdf": {
-        "title": "Compresser le PDF localement – ​​Réduisez la taille du fichier sans le télécharger | LesOutilsNex",
+        "title": "Compresser le PDF localement – ​​Réduisez la taille du fichier sans le télécharger | TheNexTools",
         "description": "Réduisez les fichiers PDF lourds directement dans votre navigateur. Ajustez la qualité avec un curseur, consultez la taille estimée avant le téléchargement et gardez vos documents privés.",
         "h1": "Faites en sorte que ce PDF soit suffisamment petit pour être envoyé par courrier électronique.",
         "p": "Vous disposez d'une analyse de 40 Mo qui doit être inférieure à 10 Mo pour une pièce jointe à un e-mail. Au lieu de le télécharger sur un site de compression aléatoire, NexPDF le gère localement : vous définissez la qualité, voyez la taille estimée et téléchargez le résultat.",
@@ -305,10 +305,10 @@
             "desc": "Générez et téléchargez instantanément le PDF optimisé sur votre appareil."
           }
         ],
-        "toolParam": "compresse"
+        "toolParam": "compress"
       },
       "merge-pdf": {
-        "title": "Fusionner des PDF localement – Combiner des documents sans les télécharger | LesOutilsNex",
+        "title": "Fusionner des PDF localement – Combiner des documents sans les télécharger | TheNexTools",
         "description": "Combinez plusieurs fichiers PDF en un seul document. Faites glisser pour réorganiser les pages, ajouter des images et télécharger, le tout traité dans votre navigateur.",
         "h1": "Combinez plusieurs PDF en un seul document.",
         "p": "Chargez tous les fichiers, faites glisser les pages dans le bon ordre et fusionnez. Tout se passe sur votre machine : pas de file d'attente de téléchargement, pas de limite de taille de fichier, aucun compte requis.",
@@ -333,10 +333,10 @@
             "desc": "Cliquez sur \"Fusionner\" pour compiler et enregistrer votre document unifié."
           }
         ],
-        "toolParam": "fusionner"
+        "toolParam": "merge"
       },
       "split-pdf": {
-        "title": "Diviser un PDF localement : extraire des pages sans les télécharger | LesOutilsNex",
+        "title": "Diviser un PDF localement : extraire des pages sans les télécharger | TheNexTools",
         "description": "Extrayez des pages spécifiques d'un PDF ou divisez-le en documents distincts. S'exécute localement dans votre navigateur — aucun serveur impliqué.",
         "h1": "Retirez les pages dont vous avez besoin.",
         "p": "Vous disposez d'un rapport de 200 pages mais vous n'avez besoin que des pages 14 à 22. Ou vous souhaitez diviser un document en trois fichiers distincts par chapitre. NexPDF gère les deux sans rien télécharger.",
@@ -361,10 +361,10 @@
             "desc": "Générez et téléchargez les pages sélectionnées sous forme de nouveau PDF."
           }
         ],
-        "toolParam": "diviser"
+        "toolParam": "split"
       },
       "pdf-to-images": {
-        "title": "PDF en JPG/PNG localement — Convertir des pages en images | LesOutilsNex",
+        "title": "PDF en JPG/PNG localement — Convertir des pages en images | TheNexTools",
         "description": "Transformez chaque page d'un PDF en une image JPEG ou PNG de haute qualité. Traité dans votre navigateur — aucun téléchargement requis.",
         "h1": "Transformez les pages PDF en images.",
         "p": "Besoin d'intégrer une page d'un contrat dans une présentation ? Ou enregistrer une maquette de conception PDF au format PNG individuel ? NexPDF convertit chaque page en une image haute résolution : choisissez JPEG pour les fichiers plus petits ou PNG pour une qualité sans perte.",
@@ -389,10 +389,10 @@
             "desc": "Convertissez et téléchargez toutes les pages individuellement ou sous forme d'archive ZIP unique."
           }
         ],
-        "toolParam": "photos"
+        "toolParam": "images"
       },
       "scan-to-pdf": {
-        "title": "Numériser vers PDF — Utilisez votre appareil photo comme scanner de documents | LesOutilsNex",
+        "title": "Numériser vers PDF — Utilisez votre appareil photo comme scanner de documents | TheNexTools",
         "description": "Capturez des documents physiques avec votre appareil photo et convertissez-les instantanément en pages PDF. Tout reste sur votre appareil.",
         "h1": "Utilisez l'appareil photo de votre téléphone comme scanner de documents.",
         "p": "Pointez votre appareil photo vers un reçu, un tableau blanc ou un formulaire papier : NexPDF le capture et le convertit en une page PDF propre. Aucun matériel de scanner dédié n'est nécessaire et les images ne quittent jamais votre appareil.",
@@ -417,10 +417,10 @@
             "desc": "Compilez vos numérisations dans un seul document PDF propre."
           }
         ],
-        "toolParam": "balayage"
+        "toolParam": "scan"
       },
       "protect-pdf": {
-        "title": "Protégez le PDF localement par mot de passe – Chiffrez sans télécharger | LesOutilsNex",
+        "title": "Protégez le PDF localement par mot de passe – Chiffrez sans télécharger | TheNexTools",
         "description": "Ajoutez une protection par mot de passe et un cryptage AES à vos PDF. S'exécute entièrement dans votre navigateur : le mot de passe ne touche jamais un serveur.",
         "h1": "Verrouillez votre PDF avec un mot de passe.",
         "p": "Définissez un mot de passe ouvert afin que seules les personnes autorisées puissent consulter le document et, éventuellement, définissez un mot de passe propriétaire distinct pour restreindre l'impression et la modification. Le cryptage s'effectue localement : votre mot de passe n'est jamais transmis nulle part.",
@@ -445,10 +445,10 @@
             "desc": "Appliquez le cryptage local et téléchargez votre PDF sécurisé."
           }
         ],
-        "toolParam": "protéger"
+        "toolParam": "protect"
       },
       "unlock-pdf": {
-        "title": "Supprimer le mot de passe PDF localement – ​​Déverrouiller sans téléchargement | LesOutilsNex",
+        "title": "Supprimer le mot de passe PDF localement – ​​Déverrouiller sans téléchargement | TheNexTools",
         "description": "Supprimez la protection par mot de passe de vos fichiers PDF. Entrez le mot de passe une fois et téléchargez une copie non protégée, le tout dans votre navigateur.",
         "h1": "Supprimez le mot de passe de votre PDF.",
         "p": "Vous connaissez le mot de passe mais vous en avez assez de le saisir à chaque fois que vous ouvrez le fichier. Ou vous devez partager une version déverrouillée avec quelqu'un. Entrez le mot de passe une fois ici et téléchargez une copie propre et non protégée.",
@@ -473,10 +473,10 @@
             "desc": "Cliquez sur \"Déverrouiller\" pour enregistrer une copie propre et non protégée du fichier."
           }
         ],
-        "toolParam": "ouvrir"
+        "toolParam": "unlock"
       },
       "watermark-pdf": {
-        "title": "Ajouter un filigrane au PDF localement – ​​Tamponner le texte sur les pages | LesOutilsNex",
+        "title": "Ajouter un filigrane au PDF localement – ​​Tamponner le texte sur les pages | TheNexTools",
         "description": "Tamponnez « CONFIDENTIEL », « PROJET » ou du texte personnalisé sur vos pages PDF. Personnalisez l'opacité, la taille et la position, le tout dans votre navigateur.",
         "h1": "Tamponnez vos PDF avant de les partager.",
         "p": "Marquez un brouillon avec « DRAFT » pour que personne ne le traite comme final. Estampillez « CONFIDENTIEL » sur un rapport interne. Ou ajoutez le nom de votre entreprise sous forme de filigrane subtil sur chaque page. Ajustez le texte, la taille, l'opacité et la position pour obtenir exactement l'apparence souhaitée.",
@@ -501,10 +501,10 @@
             "desc": "Affichez le tampon sur vos pages et téléchargez le fichier."
           }
         ],
-        "toolParam": "filigrane"
+        "toolParam": "watermark"
       },
       "ocr-pdf": {
-        "title": "OCR PDF localement — Extraire le texte des documents numérisés | LesOutilsNex",
+        "title": "OCR PDF localement — Extraire le texte des documents numérisés | TheNexTools",
         "description": "Convertissez les PDF et les images numérisés en texte consultable et sélectionnable à l'aide de l'OCR basé sur un navigateur. Aucun téléchargement requis.",
         "h1": "Obtenez du texte consultable à partir d’un document numérisé.",
         "p": "Quelqu'un vous a envoyé un scan d'un contrat et vous devez copier un paragraphe. Ou vous avez une pile de vieux documents papier photographiés au format PDF et devez les parcourir. Le moteur OCR de NexPDF lit le texte de l'image et vous donne un résultat copiable et consultable.",
@@ -557,10 +557,10 @@
             "desc": "Cliquez sur « Expurger » pour aplatir et télécharger définitivement votre fichier."
           }
         ],
-        "toolParam": "caviarder"
+        "toolParam": "redact"
       },
       "html-to-pdf": {
-        "title": "HTML en PDF localement — Convertir le contenu Web en PDF | LesOutilsNex",
+        "title": "HTML en PDF localement — Convertir le contenu Web en PDF | TheNexTools",
         "description": "Collez le code HTML et récupérez instantanément un PDF formaté. Prend en charge le style CSS. S'exécute dans votre navigateur.",
         "h1": "Transformez le HTML en un PDF téléchargeable.",
         "p": "Collez votre HTML (un modèle de facture, une mise en page de rapport, un e-mail stylisé) et NexPDF le restitue sous la forme d'un PDF propre que vous pouvez enregistrer ou imprimer. Pratique pour les développeurs qui ont besoin d’un aperçu rapide du PDF sans configurer de navigateur sans tête.",
@@ -585,10 +585,10 @@
             "desc": "Cliquez sur \"Convertir en PDF\" pour enregistrer le document formaté."
           }
         ],
-        "toolParam": "HTML"
+        "toolParam": "html"
       },
       "images-to-pdf": {
-        "title": "Images au format PDF localement — Combinez des photos dans un document | LesOutilsNex",
+        "title": "Images au format PDF localement — Combinez des photos dans un document | TheNexTools",
         "description": "Convertissez les images JPG, PNG et WebP en un seul document PDF. Réorganisez les pages, ajustez les marges et téléchargez, le tout dans votre navigateur.",
         "h1": "Transformez une pile d'images en un seul PDF.",
         "p": "Vous avez photographié un document de plusieurs pages avec votre téléphone et vous en avez maintenant besoin sous forme de PDF unique. Ou vous disposez d’un ensemble de maquettes de conception qui doivent être éditées sous forme d’un seul fichier. Déposez-les, organisez la commande et exportez.",
@@ -613,10 +613,10 @@
             "desc": "Cliquez sur \"Créer un PDF\" pour enregistrer les pages compilées."
           }
         ],
-        "toolParam": "téléchargement par lots"
+        "toolParam": "batch-upload"
       },
       "rotate-pdf": {
-        "title": "Faire pivoter les pages PDF localement – Corriger les analyses latérales | LesOutilsNex",
+        "title": "Faire pivoter les pages PDF localement – Corriger les analyses latérales | TheNexTools",
         "description": "Faites pivoter des pages individuelles ou l'intégralité du PDF de 90, 180 ou 270 degrés. Enregistré définitivement. Aucun téléchargement requis.",
         "h1": "Réparez les pages qui sont passées de côté.",
         "p": "Les documents numérisés et les photos du téléphone finissent toujours dans la mauvaise orientation. Cliquez pour faire pivoter des pages individuelles ou l'ensemble du document et enregistrer la version corrigée. La rotation est permanente : il ne s'agit pas uniquement d'un paramètre de visualisation.",
@@ -641,10 +641,10 @@
             "desc": "Téléchargez le document corrigé avec l'orientation intégrée."
           }
         ],
-        "toolParam": "tourner"
+        "toolParam": "rotate"
       },
       "rearrange-pdf": {
-        "title": "Réorganiser les pages PDF localement – ​​Réorganisation par glisser-déposer | LesOutilsNex",
+        "title": "Réorganiser les pages PDF localement – ​​Réorganisation par glisser-déposer | TheNexTools",
         "description": "Réorganisez, supprimez et réorganisez les pages de votre PDF par glisser-déposer. S'exécute localement dans votre navigateur.",
         "h1": "Mettez les pages dans le bon ordre.",
         "p": "L'annexe s'est retrouvée avant l'introduction, ou il y a trois pages vierges au milieu qui doivent disparaître. Faites glisser les vignettes pour les réorganiser, cliquez pour supprimer et téléchargez la version nettoyée.",
@@ -669,10 +669,10 @@
             "desc": "Cliquez sur \"Enregistrer\" pour télécharger le document finalisé."
           }
         ],
-        "toolParam": "réarranger"
+        "toolParam": "rearrange"
       },
       "sign-pdf": {
-        "title": "Signez un PDF localement — Ajoutez votre signature sans imprimer | LesOutilsNex",
+        "title": "Signez un PDF localement — Ajoutez votre signature sans imprimer | TheNexTools",
         "description": "Dessinez ou tapez votre signature sur n'importe quelle page PDF. La sortie est aplatie afin que la signature ne puisse pas être déplacée ou modifiée. Aucun téléchargement requis.",
         "h1": "Signez-le sans l’imprimer.",
         "p": "Dessinez votre signature avec une souris ou un écran tactile, ou saisissez-la et choisissez une police cursive. Placez-le sur la ligne de droite, redimensionnez-le et exportez un PDF aplati. La signature fait partie de la page : elle ne peut pas être sélectionnée, déplacée ou modifiée par le destinataire.",
@@ -697,10 +697,10 @@
             "desc": "Faites glisser la signature sur la ligne de signature et cliquez sur exporter."
           }
         ],
-        "toolParam": "signe"
+        "toolParam": "sign"
       },
       "add-page-numbers": {
-        "title": "Ajouter des numéros de page au PDF localement — Pagination automatique | LesOutilsNex",
+        "title": "Ajouter des numéros de page au PDF localement — Pagination automatique | TheNexTools",
         "description": "Ajoutez des numéros de page séquentiels à votre PDF. Choisissez la position et le style. S'exécute localement dans votre navigateur.",
         "h1": "Numérotez automatiquement vos pages.",
         "p": "Rapports, manuscrits, dossiers judiciaires – tout ce qui dépasse quelques pages nécessite généralement des numéros de page. Choisissez où ils vont (en bas au centre, en haut à droite, etc.) et NexPDF les tamponne sur chaque page.",
@@ -725,10 +725,10 @@
             "desc": "Appliquez des numéros sur tout le document et téléchargez-le."
           }
         ],
-        "toolParam": "numéros de page"
+        "toolParam": "page-numbers"
       },
       "text-to-pdf": {
-        "title": "Texte en PDF localement — Convertir du texte brut en un document formaté | LesOutilsNex",
+        "title": "Texte en PDF localement — Convertir du texte brut en un document formaté | TheNexTools",
         "description": "Collez du texte brut et obtenez un PDF propre et formaté. Préserve les sauts de ligne et l’espacement. S'exécute dans votre navigateur.",
         "h1": "Transformez du texte brut en un véritable PDF.",
         "p": "Vous avez des notes de réunion, des journaux de serveur ou un extrait de code qui doit être publié au format PDF. Collez le texte, vérifiez l'aperçu et téléchargez un document proprement formaté. Les sauts de ligne et l’espacement sont conservés exactement.",
@@ -753,30 +753,30 @@
             "desc": "Cliquez sur \"Convertir en PDF\" pour enregistrer le document terminé."
           }
         ],
-        "toolParam": "texte"
+        "toolParam": "text"
       }
     },
     "seoPage": {
       "keyBenefits": "Avantages clés",
       "localPrivate": "Local & Privé",
-      "localPrivateDesc": "Cet outil traite vos fichiers directement dans votre navigateur : rien n'est téléchargé sur un serveur. Quand vous travaillez avec{tool}, le document reste sur votre ordinateur du début à la fin.",
+      "localPrivateDesc": "Cet outil traite vos fichiers directement dans votre navigateur : rien n'est téléchargé sur un serveur. Quand vous travaillez avec {tool}, le document reste sur votre ordinateur du début à la fin.",
       "privateBadge": "Privé",
       "secureBadge": "Sécurisé",
       "faqTitle": "Foire aux questions",
-      "faqSubtitle": "Tout ce que vous devez savoir sur{tool}.",
+      "faqSubtitle": "Tout ce que vous devez savoir sur {tool}.",
       "readyTitle": "Prêt à commencer ?",
       "readyDesc": "Déposez votre fichier dans l'espace de travail en haut de la page. Aucune inscription requise.",
       "backToTool": "Retour à l'outil",
       "howToPrefix": "Comment",
-      "faqQ1": "Comment puis-je{tool}localement?",
+      "faqQ1": "Comment puis-je {tool} localement?",
       "faqA1": "{steps}Tout cela se fait sur votre machine.",
       "faqQ2": "Mes fichiers PDF sont-ils en sécurité pendant ce processus ?",
       "faqA2": "Absolument. Étant donné que NexPDF s'exécute entièrement côté client à l'aide de WebAssembly, le document n'est jamais téléchargé sur un serveur externe. Vos données sensibles restent 100% privées.",
-      "faqQ3": "Y a-t-il une limite de taille de fichier pour{tool}?",
+      "faqQ3": "Y a-t-il une limite de taille de fichier pour {tool}?",
       "faqA3": "Non, il n’y a pas de limite artificielle de taille de fichier. La seule limite physique est la mémoire disponible du navigateur de votre appareil, qui gère facilement les documents volumineux.",
       "faqQ4": "Est-ce que ça marche hors ligne ?",
       "faqA4": "Oui, NexPDF est mis en cache dans votre navigateur après le premier chargement. Vous pouvez déconnecter votre connexion Internet et continuer à utiliser l'outil complètement hors ligne.",
-      "uploadSelect": "Sélectionnez un PDF à{label}",
+      "uploadSelect": "Sélectionnez un PDF à {label}",
       "uploadDrop": "Ou déposez-le ici pour commencer immédiatement",
       "uploadLoading": "Préparation de l'espace de travail..."
     }
@@ -785,7 +785,7 @@
     "layout": {
       "title": "LesOutilsNex | Récupération NexData et utilitaires essentiels",
       "description": "Une suite d'utilitaires de bureau hautes performances conçus pour récupérer vos données, réparer les fichiers corrompus et assurer le bon fonctionnement de votre vie numérique.",
-      "ogLocale": "fr_US"
+      "ogLocale": "fr_FR"
     },
     "home": {
       "title": "TheNexTools — Utilitaires de bureau privés et hors ligne"
@@ -805,7 +805,7 @@
       "breadcrumbHome": "Maison"
     },
     "imageToolkit": {
-      "title": "NexImage Toolkit — Compresser, convertir, caviarder et supprimer les métadonnées | LesOutilsNex"
+      "title": "NexImage Toolkit — Compresser, convertir, caviarder et supprimer les métadonnées | TheNexTools"
     }
   },
   "imageTools": {

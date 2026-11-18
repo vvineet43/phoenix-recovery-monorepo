@@ -13,5 +13,5 @@ export const localeNames = {
   de: 'Deutsch',
   nl: 'Nederlands',
   it: 'Italiano',
-  ja: '日本語',
+  ja: '日本語'
 };

@@ -759,24 +759,24 @@
     "seoPage": {
       "keyBenefits": "Principais benefícios",
       "localPrivate": "Local e privado",
-      "localPrivateDesc": "Esta ferramenta processa seus arquivos diretamente no seu navegador – nada é carregado em um servidor. Quando você trabalha com{tool}, o documento permanece na sua máquina do início ao fim.",
+      "localPrivateDesc": "Esta ferramenta processa seus arquivos diretamente no seu navegador – nada é carregado em um servidor. Quando você trabalha com {tool}, o documento permanece na sua máquina do início ao fim.",
       "privateBadge": "Privado",
       "secureBadge": "Seguro",
       "faqTitle": "Perguntas frequentes",
-      "faqSubtitle": "Tudo o que você precisa saber sobre{tool}.",
+      "faqSubtitle": "Tudo o que você precisa saber sobre {tool}.",
       "readyTitle": "Pronto para começar?",
       "readyDesc": "Solte seu arquivo na área de trabalho no topo da página. Não é necessário registro.",
       "backToTool": "Voltar à ferramenta",
       "howToPrefix": "Como fazer",
-      "faqQ1": "Como faço para{tool}localmente?",
+      "faqQ1": "Como faço para {tool} localmente?",
       "faqA1": "{steps}Tudo isso é feito na sua máquina.",
       "faqQ2": "Meus arquivos PDF estão seguros durante esse processo?",
       "faqA2": "Absolutamente. Como o NexPDF é executado inteiramente no lado do cliente usando WebAssembly, o documento nunca é carregado em nenhum servidor externo. Seus dados confidenciais são mantidos 100% privados.",
-      "faqQ3": "Existe um limite de tamanho de arquivo para{tool}?",
+      "faqQ3": "Existe um limite de tamanho de arquivo para {tool}?",
       "faqA3": "Não, não há limites artificiais de tamanho de arquivo. O único limite físico é a memória disponível do navegador do seu dispositivo, que lida facilmente com documentos grandes.",
       "faqQ4": "Funciona off-line?",
       "faqA4": "Sim, o NexPDF é armazenado em cache no seu navegador após o primeiro carregamento. Você pode desconectar sua internet e continuar usando a ferramenta totalmente offline.",
-      "uploadSelect": "Selecione um PDF para{label}",
+      "uploadSelect": "Selecione um PDF para {label}",
       "uploadDrop": "Ou deixe-o aqui para começar imediatamente",
       "uploadLoading": "Preparando espaço de trabalho..."
     }
@@ -785,7 +785,7 @@
     "layout": {
       "title": "TheNexTools | Recuperação NexData e utilitários essenciais",
       "description": "Um conjunto de utilitários de desktop de alto desempenho projetados para resgatar seus dados, reparar arquivos corrompidos e manter sua vida digital funcionando perfeitamente.",
-      "ogLocale": "en_US"
+      "ogLocale": "pt_PT"
     },
     "home": {
       "title": "TheNexTools – Utilitários de desktop offline e privados"

@@ -4,8 +4,249 @@ import {
   FileText, Image, ArrowRight, ShieldCheck, Home
 } from 'lucide-react';
 import { locales } from '@/lib/i18n-config';
+import { getDictionary } from '@/dictionaries';
 
 const TRANSLATIONS = {
+  en: {
+    title: 'Sitemap | TheNexTools',
+    description: 'Navigate through TheNexTools. Complete index of all our online PDF tools, image compressors, metadata strippers, and offline data recovery applications.',
+    badge: 'Index',
+    h1: 'Sitemap',
+    sub: 'Find direct links to every utility, tool, documentation page, and policy document across TheNexTools.',
+    sec1Title: 'Core Pages',
+    homeTitle: 'Home Page',
+    homeDesc: 'Welcome to TheNexTools. Free web utilities and offline data recovery software.',
+    recoveryTitle: 'NexData Recovery',
+    recoveryDesc: 'Professional offline data recovery desktop application for macOS and Windows.',
+    docsTitle: 'Documentation',
+    docsDesc: 'Guides, support resources, FAQs, and integration docs for all utilities.',
+    contactTitle: 'Contact Us',
+    contactDesc: 'Get in touch with support, billing enquiries, or general feedback.',
+    sec2Title: 'NexPDF Toolkit',
+    sec2Sub: 'All PDF tools run 100% locally in your web browser. No files are uploaded to any server.',
+    pdfWorkspaceTitle: 'NexPDF Toolkit Workspace',
+    pdfWorkspaceDesc: 'Open the comprehensive PDF Editing Suite interface with file previews and drag-and-drop workspace.',
+    sec3Title: 'NexImage Toolkit',
+    imageWorkspaceTitle: 'NexImage Dashboard',
+    imageWorkspaceDesc: 'Access our localized suite of batch image processing and compression tools.',
+    compressorTitle: 'Image Compressor',
+    compressorDesc: 'Shrink JPG, PNG, and WebP files locally with real-time compression ratio previews.',
+    converterTitle: 'Image Converter',
+    converterDesc: 'Convert images locally between formats including JPEG, PNG, and WebP.',
+    redactorTitle: 'Image Redactor & Blur',
+    redactorDesc: 'Permanently blur faces, license plates, or confidential text in images before sharing.',
+    stripperTitle: 'EXIF Stripper',
+    stripperDesc: 'Remove private EXIF metadata (GPS coordinates, camera model, lens) from photographs.',
+    sec4Title: 'Policies & Legal',
+    privacyTitle: 'Privacy Policy',
+    privacyDesc: 'Learn about our local-first data processing policy. We never upload your documents.',
+    termsTitle: 'Terms of Service',
+    termsDesc: 'Terms, conditions, license details, and liability terms for using our software.',
+    refundTitle: 'Refund Policy',
+    refundDesc: 'Information on our 10-day refund guarantee for NexData Recovery Pro licenses.',
+    sitemapTitle: 'HTML Sitemap',
+    sitemapDesc: 'You are currently viewing the HTML sitemap page of TheNexTools.'
+  },
+  fr: {
+    title: 'Plan du Site | TheNexTools',
+    description: 'Parcourez TheNexTools. Index complet de tous nos outils PDF en ligne, compresseurs d\'images, nettoyeurs de métadonnées et applications de récupération de données hors ligne.',
+    badge: 'Index',
+    h1: 'Plan du Site',
+    sub: 'Trouvez des liens directs vers chaque utilitaire, outil, page de documentation et politique sur TheNexTools.',
+    sec1Title: 'Pages Principales',
+    homeTitle: 'Page d\'Accueil',
+    homeDesc: 'Bienvenue sur TheNexTools. Utilitaires web gratuits et logiciel de récupération de données hors ligne.',
+    recoveryTitle: 'NexData Recovery',
+    recoveryDesc: 'Application de bureau professionnelle pour la récupération de données hors ligne sur macOS et Windows.',
+    docsTitle: 'Documentation',
+    docsDesc: 'Guides, ressources d\'assistance, FAQ et documentation pour tous nos utilitaires.',
+    contactTitle: 'Contactez-nous',
+    contactDesc: 'Contactez le support, posez des questions sur la facturation ou partagez vos commentaires.',
+    sec2Title: 'Boîte à outils NexPDF',
+    sec2Sub: 'Tous les outils PDF s\'exécutent à 100 % localement dans votre navigateur. Aucun fichier n\'est envoyé sur un serveur.',
+    pdfWorkspaceTitle: 'Espace de Travail NexPDF',
+    pdfWorkspaceDesc: 'Ouvrez la suite complète d\'édition PDF avec aperçu des fichiers et espace glisser-déposer.',
+    sec3Title: 'Boîte à outils NexImage',
+    imageWorkspaceTitle: 'Tableau de bord NexImage',
+    imageWorkspaceDesc: 'Accédez à notre suite d\'outils locaux de traitement et de compression d\'images par lots.',
+    compressorTitle: 'Compresseur d\'Images',
+    compressorDesc: 'Réduisez localement vos fichiers JPG, PNG et WebP avec aperçu du taux de compression en temps réel.',
+    converterTitle: 'Convertisseur d\'Images',
+    converterDesc: 'Convertissez vos images localement entre les formats JPEG, PNG et WebP.',
+    redactorTitle: 'Caviardage & Floutage',
+    redactorDesc: 'Floutez définitivement les visages, plaques d\'immatriculation ou textes confidentiels avant partage.',
+    stripperTitle: 'Nettoyeur EXIF',
+    stripperDesc: 'Supprimez les métadonnées EXIF privées (coordonnées GPS, modèle d\'appareil, objectif) de vos photos.',
+    sec4Title: 'Politiques et Mentions Légales',
+    privacyTitle: 'Politique de Confidentialité',
+    privacyDesc: 'Découvrez notre politique de traitement local des données. Nous ne téléchargeons jamais vos documents.',
+    termsTitle: 'Conditions d\'Utilisation',
+    termsDesc: 'Conditions générales, détails de licence et responsabilité liés à l\'utilisation de nos logiciels.',
+    refundTitle: 'Politique de Remboursement',
+    refundDesc: 'Informations sur notre garantie de remboursement de 10 jours pour les licences NexData Recovery Pro.',
+    sitemapTitle: 'Plan du Site HTML',
+    sitemapDesc: 'Vous consultez actuellement la page du plan du site HTML en français.'
+  },
+  hi: {
+    title: 'साइटमैप | TheNexTools',
+    description: 'TheNexTools पर नेविगेट करें। हमारे सभी ऑनलाइन PDF टूल्स, इमेज कंप्रेसर, मेटाडेटा स्ट्रिपर्स और ऑफ़लाइन डेटा रिकवरी ऐप्स की पूरी सूची।',
+    badge: 'सूची',
+    h1: 'साइटमैप',
+    sub: 'TheNexTools के प्रत्येक टूल, दस्तावेज़ पृष्ठ और नीति दस्तावेज़ के लिए सीधे लिंक प्राप्त करें।',
+    sec1Title: 'मुख्य पृष्ठ',
+    homeTitle: 'होम पेज',
+    homeDesc: 'TheNexTools में आपका स्वागत है। निःशुल्क वेब उपयोगिताएँ और ऑफ़लाइन डेटा रिकवरी सॉफ़्टवेयर।',
+    recoveryTitle: 'NexData Recovery',
+    recoveryDesc: 'macOS और Windows के लिए पेशेवर ऑफ़लाइन डेटा रिकवरी डेस्कटॉप एप्लिकेशन।',
+    docsTitle: 'डॉक्यूमेंटेशन',
+    docsDesc: 'सभी उपयोगिताओं के लिए गाइड, सहायता संसाधन और सामान्य प्रश्न।',
+    contactTitle: 'संपर्क करें',
+    contactDesc: 'सहायता, बिलिंग पूछताछ या सामान्य प्रतिक्रिया के लिए संपर्क करें।',
+    sec2Title: 'NexPDF टूलकिट',
+    sec2Sub: 'सभी PDF टूल्स आपके ब्राउज़र में 100% स्थानीय रूप से चलते हैं। कोई भी फ़ाइल सर्वर पर अपलोड नहीं की जाती है।',
+    pdfWorkspaceTitle: 'NexPDF कार्यक्षेत्र',
+    pdfWorkspaceDesc: 'फ़ाइल पूर्वावलोकन और ड्रैग-एंड-ड्रॉप कार्यक्षेत्र के साथ संपूर्ण PDF संपादन सुइट खोलें।',
+    sec3Title: 'NexImage टूलकिट',
+    imageWorkspaceTitle: 'NexImage डैशबोर्ड',
+    imageWorkspaceDesc: 'बैच इमेज प्रोसेसिंग और कंप्रेशन टूल्स के हमारे स्थानीय सुइट तक पहुँचें।',
+    compressorTitle: 'इमेज कंप्रेसर',
+    compressorDesc: 'रीयल-टाइम कंप्रेशन पूर्वावलोकन के साथ स्थानीय रूप से JPG, PNG और WebP फ़ाइलों का आकार घटाएं।',
+    converterTitle: 'इमेज कन्वर्टर',
+    converterDesc: 'JPEG, PNG और WebP सहित प्रारूपों के बीच स्थानीय रूप से छवियों को बदलें।',
+    redactorTitle: 'इमेज रेडैक्टर और ब्लर',
+    redactorDesc: 'साझा करने से पहले छवियों में चेहरे, लाइसेंस प्लेट या गोपनीय टेक्स्ट को स्थायी रूप से धुंधला करें।',
+    stripperTitle: 'EXIF स्ट्रिपर',
+    stripperDesc: 'तस्वीरों से निजी EXIF मेटाडेटा (GPS निर्देशांक, कैमरा मॉडल, लेंस) हटाएं।',
+    sec4Title: 'नीतियाँ और कानूनी जानकारी',
+    privacyTitle: 'गोपनीयता नीति',
+    privacyDesc: 'हमारी लोकल-फ़र्स्ट डेटा प्रोसेसिंग नीति के बारे में जानें। हम आपके दस्तावेज़ कभी अपलोड नहीं करते।',
+    termsTitle: 'सेवा की शर्तें',
+    termsDesc: 'हमारे सॉफ़्टवेयर के उपयोग के लिए नियम, शर्तें, लाइसेंस विवरण और दायित्व की शर्तें।',
+    refundTitle: 'रिफंड नीति',
+    refundDesc: 'NexData Recovery Pro लाइसेंस के लिए हमारी 10-दिन की रिफंड गारंटी की जानकारी।',
+    sitemapTitle: 'HTML साइटमैप',
+    sitemapDesc: 'आप वर्तमान में हिंदी में HTML साइटमैप पृष्ठ देख रहे हैं।'
+  },
+  tr: {
+    title: 'Site Haritası | TheNexTools',
+    description: 'TheNexTools içinde gezinin. Tüm çevrimiçi PDF araçlarımızın, görsel sıkıştırıcıların, meta veri temizleyicilerin ve çevrimdışı veri kurtarma uygulamalarının tam dizini.',
+    badge: 'Dizin',
+    h1: 'Site Haritası',
+    sub: 'TheNexTools üzerindeki her yardımcı programa, araca, dokümantasyon sayfasına ve politika belgesine doğrudan bağlantılar bulun.',
+    sec1Title: 'Ana Sayfalar',
+    homeTitle: 'Ana Sayfa',
+    homeDesc: 'TheNexTools\'a hoş geldiniz. Ücretsiz web araçları ve çevrimdışı veri kurtarma yazılımı.',
+    recoveryTitle: 'NexData Recovery',
+    recoveryDesc: 'macOS ve Windows için profesyonel çevrimdışı veri kurtarma masaüstü uygulaması.',
+    docsTitle: 'Dokümantasyon',
+    docsDesc: 'Tüm araçlar için kılavuzlar, destek kaynakları ve SSS.',
+    contactTitle: 'İletişim',
+    contactDesc: 'Destek, faturalandırma soruları veya genel geri bildirim için bizimle iletişime geçin.',
+    sec2Title: 'NexPDF Araç Seti',
+    sec2Sub: 'Tüm PDF araçları tarayıcınızda %100 yerel olarak çalışır. Hiçbir dosya sunucuya yüklenmez.',
+    pdfWorkspaceTitle: 'NexPDF Çalışma Alanı',
+    pdfWorkspaceDesc: 'Dosya önizlemeleri ve sürükle-bırak çalışma alanıyla kapsamlı PDF düzenleme paketini açın.',
+    sec3Title: 'NexImage Araç Seti',
+    imageWorkspaceTitle: 'NexImage Paneli',
+    imageWorkspaceDesc: 'Toplu görsel işleme ve sıkıştırma araçlarımızın yerel paketine erişin.',
+    compressorTitle: 'Görsel Sıkıştırıcı',
+    compressorDesc: 'JPG, PNG ve WebP dosyalarını gerçek zamanlı sıkıştırma önizlemeleriyle yerel olarak küçültün.',
+    converterTitle: 'Görsel Dönüştürücü',
+    converterDesc: 'Görselleri JPEG, PNG ve WebP dahil formatlar arasında yerel olarak dönüştürün.',
+    redactorTitle: 'Gizlilik Bulanıklaştırıcı',
+    redactorDesc: 'Paylaşmadan önce fotoğraflardaki yüzleri, plakaları veya gizli metinleri kalıcı olarak bulanıklaştırın.',
+    stripperTitle: 'EXIF Temizleyici',
+    stripperDesc: 'Fotoğraflardan özel EXIF meta verilerini (GPS koordinatları, kamera modeli, lens) kaldırın.',
+    sec4Title: 'Politikalar ve Yasal',
+    privacyTitle: 'Gizlilik Politikası',
+    privacyDesc: 'Yerel öncelikli veri işleme politikamız hakkında bilgi edinin. Belgelerinizi asla yüklemeyiz.',
+    termsTitle: 'Hizmet Şartları',
+    termsDesc: 'Yazılımımızı kullanmaya ilişkin şartlar, koşullar, lisans ayrıntıları ve sorumluluk hükümleri.',
+    refundTitle: 'İade Politikası',
+    refundDesc: 'NexData Recovery Pro lisansları için 10 günlük iade garantimiz hakkında bilgiler.',
+    sitemapTitle: 'HTML Site Haritası',
+    sitemapDesc: 'Şu anda Türkçe HTML site haritası sayfasını görüntülüyorsunuz.'
+  },
+  sw: {
+    title: 'Ramani ya Tovuti | TheNexTools',
+    description: ' Vinjari TheNexTools. Faharasa kamili ya zana zetu zote za PDF mtandaoni, vibana picha, viondoa metadata, na programu za kurejesha data nje ya mtandao.',
+    badge: 'Faharasa',
+    h1: 'Ramani ya Tovuti',
+    sub: 'Pata viungo vya moja kwa moja kwa kila zana, ukurasa wa nyaraka, na sera kwenye TheNexTools.',
+    sec1Title: 'Kurasa Kuu',
+    homeTitle: 'Ukurasa wa Kwanza',
+    homeDesc: 'Karibu TheNexTools. Zana za bure za mtandaoni na programu ya kurejesha data nje ya mtandao.',
+    recoveryTitle: 'NexData Recovery',
+    recoveryDesc: 'Programu ya kitaalamu ya kompyuta ya kurejesha data nje ya mtandao kwa macOS na Windows.',
+    docsTitle: 'Nyaraka',
+    docsDesc: 'Miongozo, rasilimali za msaada, na maswali yanayoulizwa mara kwa mara.',
+    contactTitle: 'Wasiliana Nasi',
+    contactDesc: 'Wasiliana na usaidizi, maswali ya malipo, au maoni ya jumla.',
+    sec2Title: 'NexPDF Toolkit',
+    sec2Sub: 'Zana zote za PDF zinaendeshwa 100% ndani ya kivinjari chako. Hakuna faili zinazopakiwa kwenye seva.',
+    pdfWorkspaceTitle: 'Eneo la Kazi la NexPDF',
+    pdfWorkspaceDesc: 'Fungua mfumo kamili wa kuhariri PDF wenye hakikisho la faili.',
+    sec3Title: 'NexImage Toolkit',
+    imageWorkspaceTitle: 'Dashibodi ya NexImage',
+    imageWorkspaceDesc: 'Fikia mkusanyiko wetu wa zana za kuchakata na kubana picha kwa pamoja.',
+    compressorTitle: 'Kibana Picha',
+    compressorDesc: 'Punguza ukubwa wa faili za JPG, PNG, na WebP ndani ya kivinjari chako.',
+    converterTitle: 'Kibadilisha Picha',
+    converterDesc: 'Badilisha picha kati ya umbizo za JPEG, PNG, na WebP.',
+    redactorTitle: 'Kifuta na Kufifisha Picha',
+    redactorDesc: 'Fifisha kabisa nyuso, nambari za magari, au maandishi ya siri kwenye picha.',
+    stripperTitle: 'Kiondoa EXIF',
+    stripperDesc: 'Ondoa metadata ya siri ya EXIF (GPS, aina ya kamera) kutoka kwenye picha.',
+    sec4Title: 'Sera na Sheria',
+    privacyTitle: 'Sera ya Faragha',
+    privacyDesc: 'Jifunze kuhusu sera yetu ya kuchakata data kwenye kifaa chako. Hatupakii hati zako kamwe.',
+    termsTitle: 'Masharti ya Huduma',
+    termsDesc: 'Masharti, maelezo ya leseni, na wajibu wa kutumia programu zetu.',
+    refundTitle: 'Sera ya Urejeshaji Fedha',
+    refundDesc: 'Taarifa kuhusu dhamana yetu ya siku 10 ya kurejeshewa fedha kwa leseni za NexData Recovery Pro.',
+    sitemapTitle: 'Ramani ya Tovuti ya HTML',
+    sitemapDesc: 'Unaangalia ukurasa wa ramani ya tovuti ya HTML kwa Kiswahili.'
+  },
+  bn: {
+    title: 'সাইটম্যাপ | TheNexTools',
+    description: 'TheNexTools ব্রাউজ করুন। আমাদের সকল অনলাইন পিডিএফ টুল, ইমেজ কম্প্রেসর, মেটাডেটা স্ট্রিপার এবং অফলাইন ডেটা রিকভারি অ্যাপের সম্পূর্ণ তালিকা।',
+    badge: 'সূচী',
+    h1: 'সাইটম্যাপ',
+    sub: 'TheNexTools-এর প্রতিটি ইউটিলিটি, টুল, ডকুমেন্টেশন পেজ এবং পলিসি ডকুমেন্টের সরাসরি লিংক খুঁজুন।',
+    sec1Title: 'প্রধান পাতা',
+    homeTitle: 'হোম পেজ',
+    homeDesc: 'TheNexTools-এ স্বাগতম। ফ্রি ওয়েব ইউটিলিটি এবং অফলাইন ডেটা রিকভারি সফটওয়্যার।',
+    recoveryTitle: 'NexData Recovery',
+    recoveryDesc: 'macOS এবং Windows-এর জন্য পেশাদার অফলাইন ডেটা রিকভারি ডেস্কটপ অ্যাপ্লিকেশন।',
+    docsTitle: 'ডকুমেন্টেশন',
+    docsDesc: 'সকল ইউটিলিটির জন্য গাইড, সাপোর্ট রিসোর্স এবং সাধারণ জিজ্ঞাসা।',
+    contactTitle: 'যোগাযোগ করুন',
+    contactDesc: 'সাপোর্ট, বিলিং সংক্রান্ত প্রশ্ন বা সাধারণ মতামতের জন্য আমাদের সাথে যোগাযোগ করুন।',
+    sec2Title: 'NexPDF টুলকিট',
+    sec2Sub: 'সব পিডিএফ টুল আপনার ওয়েব ব্রাউজারে ১০০% লোকালি চলে। কোনো ফাইল সার্ভারে আপলোড করা হয় না।',
+    pdfWorkspaceTitle: 'NexPDF ওয়ার্কস্পেস',
+    pdfWorkspaceDesc: 'ফাইল প্রিভিউ এবং ড্র্যাগ-অ্যান্ড-ড্রপ ওয়ার্কস্পেস সহ সম্পূর্ণ পিডিএফ এডিটিং স্যুট খুলুন।',
+    sec3Title: 'NexImage টুলকিট',
+    imageWorkspaceTitle: 'NexImage ড্যাশবোর্ড',
+    imageWorkspaceDesc: 'ব্যাচ ইমেজ প্রসেসিং এবং কম্প্রেশন টুলের লোকাল স্যুটে প্রবেশ করুন।',
+    compressorTitle: 'ইমেজ কম্প্রেসর',
+    compressorDesc: 'রিয়েল-টাইম কম্প্রেশন প্রিভিউ সহ লোকালি JPG, PNG এবং WebP ফাইলের সাইজ কমান।',
+    converterTitle: 'ইমেজ কনভার্টার',
+    converterDesc: 'JPEG, PNG এবং WebP ফরম্যাটের মধ্যে লোকালি ছবি রূপান্তর করুন।',
+    redactorTitle: 'ইমেজ রিডাক্টর ও ব্লার',
+    redactorDesc: 'শেয়ার করার আগে ছবির মুখমণ্ডল, লাইসেন্স প্লেট বা গোপনীয় টেক্সট স্থায়ীভাবে ব্লার করুন।',
+    stripperTitle: 'EXIF স্ট্রিপার',
+    stripperDesc: 'ছবি থেকে ব্যক্তিগত EXIF মেটাডেটা (GPS স্থানাঙ্ক, ক্যামেরা মডেল, লেন্স) মুছে ফেলুন।',
+    sec4Title: 'পলিসি ও আইনি তথ্য',
+    privacyTitle: 'প্রাইভেসি পলিসি',
+    privacyDesc: 'আমাদের লোকাল-ফার্স্ট ডেটা প্রসেসিং পলিসি সম্পর্কে জানুন। আমরা কখনোই আপনার ডকুমেন্ট আপলোড করি না।',
+    termsTitle: 'ব্যবহারের শর্তাবলী',
+    termsDesc: 'আমাদের সফটওয়্যার ব্যবহারের শর্তাবলী, লাইসেন্সের বিবরণ এবং দায়বদ্ধতার নিয়ম।',
+    refundTitle: 'রিফান্ড পলিসি',
+    refundDesc: 'NexData Recovery Pro লাইসেন্সের জন্য আমাদের ১০ দিনের রিফান্ড গ্যারান্টি সম্পর্কিত তথ্য।',
+    sitemapTitle: 'HTML সাইটম্যাপ',
+    sitemapDesc: 'আপনি বর্তমানে বাংলায় HTML সাইটম্যাপ পেজটি দেখছেন।'
+  },
   es: {
     title: 'Mapa del Sitio | TheNexTools',
     description: 'Navega por TheNexTools. Índice completo de todas nuestras herramientas de PDF en línea, compresores de imágenes, limpiadores de metadatos y aplicaciones de recuperación de datos sin conexión.',
@@ -251,7 +492,7 @@ const TRANSLATIONS = {
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.es;
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
   return {
     title: t.title,
@@ -290,13 +531,19 @@ export async function generateMetadata({ params }) {
 export default async function SitemapPage({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.es;
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
-  const pdfTools = Object.entries(TOOLS_METADATA).map(([slug, meta]) => ({
-    slug,
-    title: slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
-    desc: meta.description.split('.')[0] + '.',
-  }));
+  const d = await getDictionary(lang);
+  const pdfTools = Object.entries(TOOLS_METADATA).map(([slug, meta]) => {
+    const locTool = d?.pdfTools?.tools?.[slug];
+    const fallbackTitle = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    const cleanTitle = locTool?.title ? locTool.title.split('—')[0].split('–')[0].split('|')[0].trim() : fallbackTitle;
+    return {
+      slug,
+      title: cleanTitle,
+      desc: locTool?.description ? locTool.description.split('.')[0] + '.' : meta.description.split('.')[0] + '.',
+    };
+  });
 
   const getLink = (path) => {
     return `/${lang}${path}`;
@@ -375,13 +622,7 @@ export default async function SitemapPage({ params }) {
               {pdfTools.map((tTool) => (
                 <Link key={tTool.slug} href={getLink(`/pdf-toolkit/tools/${tTool.slug}`)} className="dashboard-card">
                   <div className="dashboard-card-header">
-                    <h3>{
-                      lang === 'es' ? (
-                        tTool.title === 'Merge Pdf' ? 'Combinar PDF' : tTool.title === 'Split Pdf' ? 'Dividir PDF' : tTool.title === 'Compress Pdf' ? 'Comprimir PDF' : tTool.title === 'Watermark Pdf' ? 'Marca de Agua PDF' : tTool.title === 'Protect Pdf' ? 'Proteger PDF' : tTool.title === 'Unlock Pdf' ? 'Desbloquear PDF' : tTool.title === 'Sign Pdf' ? 'Firmar PDF' : tTool.title
-                      ) : (
-                        tTool.title === 'Merge Pdf' ? 'Mesclar PDF' : tTool.title === 'Split Pdf' ? 'Dividir PDF' : tTool.title === 'Compress Pdf' ? 'Compactar PDF' : tTool.title === 'Watermark Pdf' ? 'Marca de Água PDF' : tTool.title === 'Protect Pdf' ? 'Proteger PDF' : tTool.title === 'Unlock Pdf' ? 'Desbloquear PDF' : tTool.title === 'Sign Pdf' ? 'Assinar PDF' : tTool.title
-                      )
-                    }</h3>
+                    <h3>{tTool.title}</h3>
                     <span className="dashboard-card-arrow"><ArrowRight size={16} /></span>
                   </div>
                   <p>{tTool.desc}</p>

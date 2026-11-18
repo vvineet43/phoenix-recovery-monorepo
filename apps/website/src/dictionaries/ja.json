@@ -759,52 +759,29 @@
         "toolParam": "text"
       }
     },
-    "imageTools": {
-      "compressor": {
-        "uploadTitle": "画像をここにドロップ",
-        "uploadSubtitle": "JPG, PNG, WebP — 一括処理に対応",
-        "formatLabel": "出力フォーマット",
-        "qualityLabel": "品質:",
-        "losslessNotice": "（PNGの場合はロスレスのため無視されます）",
-        "recompressBtn": "すべて再圧縮",
-        "addBtn": "追加",
-        "clearBtn": "クリア",
-        "downloadAll": "すべてダウンロード",
-        "downloading": "ダウンロード中..."
-      },
-      "converter": {
-        "uploadTitle": "画像をここにドラッグ＆ドロップ",
-        "uploadSubtitle": "PNG, JPG, JPEG, WEBPなどに対応",
-        "browseBtn": "ファイルを選択",
-        "settingsTitle": "変換設定",
-        "formatLabel": "ターゲットフォーマット",
-        "qualityLabel": "圧縮品質",
-        "reconvertBtn": "すべて再変換",
-        "addBtn": "画像を追加",
-        "clearBtn": "すべてクリア",
-        "downloadAll": "すべてダウンロード"
-      },
-      "redactor": {
-        "uploadTitle": "スクリーンショット/画像をドラッグ＆ドロップ",
-        "uploadSubtitle": "PNG, JPG, WEBP形式をすべてクライアント側で処理します",
-        "chooseBtn": "ファイルを選択",
-        "blurMode": "ぼかし領域",
-        "redactMode": "黒塗り領域（墨消し）",
-        "resetBtn": "キャンバスをリセット",
-        "downloadBtn": "画像をダウンロード"
-      },
-      "exifStripper": {
-        "uploadTitle": "画像をここにドロップ",
-        "uploadSubtitle": "JPG, PNG, WebP — 個別または一括",
-        "processedInfo": "{total}個中 {done}個を処理完了",
-        "gpsDanger": "⚠ GPS位置情報を検出・削除しました",
-        "noGpsSuccess": "✓ GPSデータは見つかりませんでした",
-        "scanning": "スキャン中…",
-        "addMoreBtn": "さらに追加",
-        "clearBtn": "クリア",
-        "zipping": "ZIP圧縮中…",
-        "downloadAll": "すべてダウンロード ({count})"
-      }
+    "seoPage": {
+      "keyBenefits": "主なメリット",
+      "localPrivate": "ローカル＆プライベート",
+      "localPrivateDesc": "このツールはブラウザ内で直接ファイルを処理するため、サーバーにアップロードされることはありません。{tool}を使用する際、ドキュメントは最初から最後までお使いの端末内に留まります。",
+      "privateBadge": "プライベート",
+      "secureBadge": "セキュア",
+      "faqTitle": "よくある質問",
+      "faqSubtitle": "{tool}について知っておくべきすべてのこと。",
+      "readyTitle": "始める準備はできましたか？",
+      "readyDesc": "ページ上部のワークスペースにファイルをドロップしてください。登録は不要です。",
+      "backToTool": "ツールに戻る",
+      "howToPrefix": "使い方：",
+      "faqQ1": "ローカル環境で{tool}にはどうすればよいですか？",
+      "faqA1": "{steps} これらすべての処理はお使いの端末上で行われます。",
+      "faqQ2": "処理中のPDFファイルは安全ですか？",
+      "faqA2": "はい、完全に安全です。NexPDFはWebAssemblyを使用してクライアント側で動作するため、外部サーバーにドキュメントがアップロードされることは一切ありません。",
+      "faqQ3": "{tool}にファイルサイズの制限はありますか？",
+      "faqA3": "いいえ、人為的なファイルサイズ制限はありません。唯一の制限はお使いのブラウザの利用可能なメモリ容量のみで、大容量のドキュメントも簡単に処理できます。",
+      "faqQ4": "オフラインでも動作しますか？",
+      "faqA4": "はい。NexPDFは初回読み込み後にブラウザにキャッシュされるため、インターネットを切断してもオフラインでそのままご利用いただけます。",
+      "uploadSelect": "{label}するPDFを選択",
+      "uploadDrop": "またはここにドロップしてすぐに開始",
+      "uploadLoading": "ワークスペースを準備中..."
     }
   },
   "meta": {
@@ -832,6 +809,53 @@
     },
     "imageToolkit": {
       "title": "NexImage Toolkit — 画像の圧縮、フォーマット変換、ぼかし処理、メタデータ削除 | TheNexTools"
+    }
+  },
+  "imageTools": {
+    "compressor": {
+      "uploadTitle": "画像をここにドロップ",
+      "uploadSubtitle": "JPG, PNG, WebP — 一括処理に対応",
+      "formatLabel": "出力フォーマット",
+      "qualityLabel": "品質:",
+      "losslessNotice": "（PNGの場合はロスレスのため無視されます）",
+      "recompressBtn": "すべて再圧縮",
+      "addBtn": "追加",
+      "clearBtn": "クリア",
+      "downloadAll": "すべてダウンロード",
+      "downloading": "ダウンロード中..."
+    },
+    "converter": {
+      "uploadTitle": "画像をここにドラッグ＆ドロップ",
+      "uploadSubtitle": "PNG, JPG, JPEG, WEBPなどに対応",
+      "browseBtn": "ファイルを選択",
+      "settingsTitle": "変換設定",
+      "formatLabel": "ターゲットフォーマット",
+      "qualityLabel": "圧縮品質",
+      "reconvertBtn": "すべて再変換",
+      "addBtn": "画像を追加",
+      "clearBtn": "すべてクリア",
+      "downloadAll": "すべてダウンロード"
+    },
+    "redactor": {
+      "uploadTitle": "スクリーンショット/画像をドラッグ＆ドロップ",
+      "uploadSubtitle": "PNG, JPG, WEBP形式をすべてクライアント側で処理します",
+      "chooseBtn": "ファイルを選択",
+      "blurMode": "ぼかし領域",
+      "redactMode": "黒塗り領域（墨消し）",
+      "resetBtn": "キャンバスをリセット",
+      "downloadBtn": "画像をダウンロード"
+    },
+    "exifStripper": {
+      "uploadTitle": "画像をここにドロップ",
+      "uploadSubtitle": "JPG, PNG, WebP — 個別または一括",
+      "processedInfo": "{total}個中 {done}個を処理完了",
+      "gpsDanger": "⚠ GPS位置情報を検出・削除しました",
+      "noGpsSuccess": "✓ GPSデータは見つかりませんでした",
+      "scanning": "スキャン中…",
+      "addMoreBtn": "さらに追加",
+      "clearBtn": "クリア",
+      "zipping": "ZIP圧縮中…",
+      "downloadAll": "すべてダウンロード ({count})"
     }
   }
 }
