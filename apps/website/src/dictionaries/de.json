@@ -759,7 +759,7 @@
     "seoPage": {
       "keyBenefits": "Hauptvorteile",
       "localPrivate": "Lokal & Sicher",
-      "localPrivateDesc": "Dieses Werkzeug verarbeitet Ihre Dateien direkt in Ihrem Browser — es wird nichts auf einen Server hochgeladen. Ihre Dokumente bleiben von Anfang bis Ende auf Ihrem Gerät.",
+      "localPrivateDesc": "Dieses Werkzeug verarbeitet Ihre Dateien direkt in Ihrem Browser — es wird nichts auf einen Server hochgeladen. Wenn Sie mit {tool} arbeiten, bleibt Ihr Dokument von Anfang bis Ende auf Ihrem Gerät.",
       "privateBadge": "Privat",
       "secureBadge": "Sicher",
       "faqTitle": "Häufig gestellte Fragen",

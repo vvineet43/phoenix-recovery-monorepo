@@ -1,13 +1,18 @@
 'use client';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { saveFileForTransition } from '../../../../lib/db';
+import { registerPdfWebMcp } from '../../../../lib/pdf-webmcp';
 import { FileUp, ArrowRight, Loader2, Plus } from 'lucide-react';
 
 export function LaunchSection({ toolParam, label, translations, locale = 'en' }) {
   const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef(null);
   const router = useRouter();
+
+  useEffect(() => {
+    registerPdfWebMcp(toolParam);
+  }, [toolParam]);
 
   // Dynamic localization labels fallback to English if not provided
   const txtSelect = translations?.uploadSelect || "Select a PDF to {label}";
@@ -33,10 +38,12 @@ export function LaunchSection({ toolParam, label, translations, locale = 'en' })
     }
   };
 
+  const isImageTool = toolParam === 'batch-upload';
+
   const handleDrop = async (e) => {
     e.preventDefault();
     const file = e.dataTransfer.files[0];
-    if (file && file.type === 'application/pdf') {
+    if (file && (file.type === 'application/pdf' || (isImageTool && file.type.startsWith('image/')))) {
       setIsUploading(true);
       try {
         await saveFileForTransition(file);
@@ -56,7 +63,7 @@ export function LaunchSection({ toolParam, label, translations, locale = 'en' })
         type="file" 
         ref={fileInputRef} 
         onChange={handleFileChange} 
-        accept=".pdf" 
+        accept={isImageTool ? 'image/*,.pdf' : '.pdf'} 
         style={{ display: 'none' }} 
       />
       

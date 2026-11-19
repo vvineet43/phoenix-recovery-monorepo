@@ -759,7 +759,7 @@
     "seoPage": {
       "keyBenefits": "Belangrijkste voordelen",
       "localPrivate": "Lokaal & Veilig",
-      "localPrivateDesc": "Deze tool verwerkt uw bestanden rechtstreeks in uw browser — er wordt niets geüpload naar een server. Uw documenten blijven van begin tot eind op uw apparaat.",
+      "localPrivateDesc": "Deze tool verwerkt uw bestanden rechtstreeks in uw browser — er wordt niets geüpload naar een server. Wanneer u met {tool} werkt, blijft uw document van begin tot eind op uw apparaat.",
       "privateBadge": "Privé",
       "secureBadge": "Veilig",
       "faqTitle": "Veelgestelde Vragen",
