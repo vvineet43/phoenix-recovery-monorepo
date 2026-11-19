@@ -3,11 +3,10 @@ import { locales, defaultLocale } from '@/lib/i18n-config';
 
 export default function sitemap() {
   const baseUrl = 'https://thenextools.com';
-  // Use a fixed date to avoid telling crawlers "everything changed" on every deploy.
-  // Update this manually when making significant site-wide content changes.
-  const lastModified = '2026-05-28T00:00:00.000Z';
+  // Update when making significant site-wide content changes.
+  const lastModified = '2026-11-19T00:00:00.000Z';
 
-  const staticRoutes = [
+  const coreStaticRoutes = [
     '',
     '/pdf-toolkit',
     '/exif-stripper',
@@ -16,51 +15,84 @@ export default function sitemap() {
     '/image-redactor',
     '/image-toolkit',
     '/data-recovery',
-    '/contact',
+  ];
+
+  const resourceRoutes = [
     '/docs',
+    '/contact',
+  ];
+
+  const legalRoutes = [
     '/privacy',
     '/terms',
     '/refund-policy',
-    '/sitemap',
   ];
 
   const dynamicRoutes = Object.keys(TOOLS_METADATA).map(
     (slug) => `/pdf-toolkit/tools/${slug}`
   );
 
-  const baseRoutes = [...staticRoutes, ...dynamicRoutes];
+  const highValueRoutes = [...coreStaticRoutes, ...dynamicRoutes];
 
-  // Build sitemap entries with full hreflang alternate annotations per URL.
-  // Each entry gets <xhtml:link rel="alternate"> for every locale so Google
-  // can properly associate equivalent pages across languages.
-  return locales.flatMap((locale) => {
-    return baseRoutes.map((route) => {
+  const buildAlternates = (route) => {
+    const languages = {};
+    locales.forEach((l) => {
+      if (l === defaultLocale) {
+        languages[l] = route === '' ? `${baseUrl}/` : `${baseUrl}${route}`;
+      } else {
+        languages[l] = `${baseUrl}/${l}${route}`;
+      }
+    });
+    languages['x-default'] = route === '' ? `${baseUrl}/` : `${baseUrl}${route}`;
+    return { languages };
+  };
+
+  const entries = [];
+
+  // 1. Core toolkits and tool landing pages across all locales (highest crawl priority)
+  for (const locale of locales) {
+    for (const route of highValueRoutes) {
       const isHome = route === '';
-      const url = locale === defaultLocale
-        ? `${baseUrl}${route}`
+      const isDefault = locale === defaultLocale;
+      const url = isDefault
+        ? (isHome ? `${baseUrl}/` : `${baseUrl}${route}`)
         : `${baseUrl}/${locale}${route}`;
 
-      // Build the alternates map: { en: "https://…/route", es: "https://…/es/route", … }
-      const languages = {};
-      locales.forEach((l) => {
-        if (l === defaultLocale) {
-          languages[l] = `${baseUrl}${route}`;
-        } else {
-          languages[l] = `${baseUrl}/${l}${route}`;
-        }
-      });
-      // x-default should point to the English/fallback version
-      languages['x-default'] = `${baseUrl}${route}`;
-
-      return {
+      entries.push({
         url,
         lastModified,
         changeFrequency: 'weekly',
-        priority: isHome ? 1 : 0.8,
-        alternates: {
-          languages,
-        },
-      };
+        priority: isHome ? (isDefault ? 1.0 : 0.9) : (isDefault ? 0.9 : 0.7),
+        alternates: buildAlternates(route),
+      });
+    }
+  }
+
+  // 2. Documentation & contact pages (medium priority, English + localized)
+  for (const locale of locales) {
+    for (const route of resourceRoutes) {
+      const isDefault = locale === defaultLocale;
+      const url = isDefault ? `${baseUrl}${route}` : `${baseUrl}/${locale}${route}`;
+      entries.push({
+        url,
+        lastModified,
+        changeFrequency: 'monthly',
+        priority: isDefault ? 0.5 : 0.3,
+        alternates: buildAlternates(route),
+      });
+    }
+  }
+
+  // 3. Legal pages (low priority, canonical English only to preserve crawl budget for tool pages)
+  for (const route of legalRoutes) {
+    entries.push({
+      url: `${baseUrl}${route}`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.2,
+      alternates: buildAlternates(route),
     });
-  });
+  }
+
+  return entries;
 }

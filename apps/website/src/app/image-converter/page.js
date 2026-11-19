@@ -10,7 +10,7 @@ const CONVERTER_STEPS = [
 
 export const metadata = {
   title: 'Image Format Converter — JPG to WebP, PNG to JPG, Locally | TheNexTools',
-  description: 'Convert images between JPG, PNG, and WebP without uploading them. Batch-convert entire folders, preserve transparency, and download as a ZIP — all in your browser.',
+  description: 'Convert JPG, PNG, and WebP images offline in your browser. Batch-convert folders, preserve transparency, and download as a ZIP with zero uploads.',
   manifest: '/image-manifest.json',
   alternates: {
     canonical: '/image-converter',
@@ -24,7 +24,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'Image Format Converter — JPG to WebP, PNG to JPG, Locally | TheNexTools',
-    description: 'Convert images between JPG, PNG, and WebP without uploading them. Batch-convert entire folders, preserve transparency, and download as a ZIP — all in your browser.',
+    description: 'Convert JPG, PNG, and WebP images offline in your browser. Batch-convert folders, preserve transparency, and download as a ZIP with zero uploads.',
     type: 'website',
     images: [
       {
@@ -37,7 +37,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Image Format Converter — JPG to WebP, PNG to JPG, Locally | TheNexTools',
-    description: 'Convert images between JPG, PNG, and WebP without uploading them. Batch-convert entire folders, preserve transparency, and download as a ZIP — all in your browser.',
+    description: 'Convert JPG, PNG, and WebP images offline in your browser. Batch-convert folders, preserve transparency, and download as a ZIP with zero uploads.',
     images: ['https://thenextools.com/thenextools-com-og-image.png'],
   }
 };
@@ -231,11 +231,23 @@ export default function ImageConverterLanding() {
         </div>
       </section>
 
+            <section className="divider" style={{ background: 'var(--bg-2)', padding: '3rem 0' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <h2 style={{ fontSize: '1.35rem', marginBottom: '1.25rem' }}>More Image Tools</h2>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center' }}>
+              <Link href="/image-compressor" className="badge" style={{ textDecoration: 'none' }}>Image Compressor</Link>
+              <Link href="/image-redactor" className="badge" style={{ textDecoration: 'none' }}>Image Redactor & Blur</Link>
+              <Link href="/exif-stripper" className="badge" style={{ textDecoration: 'none' }}>EXIF Metadata Stripper</Link>
+              <Link href="/image-toolkit" className="badge" style={{ textDecoration: 'none' }}>All Image Tools</Link>
+          </div>
+        </div>
+      </section>
+
       <section className="cta-section">
         <div className="container">
           <h2>Ready to convert your images?</h2>
           <p>Drop your files at the top of the page. Runs in any modern browser offline.</p>
-          <a href="#" className="btn btn-primary">Back to Tool</a>
+          <a href="#tool" className="btn btn-primary">Back to Tool</a>
         </div>
       </section>
     </>

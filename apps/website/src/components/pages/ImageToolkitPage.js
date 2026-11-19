@@ -8,9 +8,11 @@ export async function generateMetadata({ params }) {
   const locale = lang || 'en';
   const d = await getDictionary(locale);
 
+  const desc = d.meta.imageToolkit.description || d.imageToolkit.heroDesc;
+
   return {
     title: d.meta.imageToolkit.title,
-    description: d.imageToolkit.heroDesc,
+    description: desc,
     manifest: '/image-manifest.json',
     alternates: {
       canonical: locale === 'en' ? '/image-toolkit' : `/${locale}/image-toolkit`,
@@ -24,7 +26,7 @@ export async function generateMetadata({ params }) {
     },
     openGraph: {
       title: d.meta.imageToolkit.title,
-      description: d.imageToolkit.heroDesc,
+      description: desc,
       type: 'website',
       url: locale === 'en' ? 'https://thenextools.com/image-toolkit' : `https://thenextools.com/${locale}/image-toolkit`,
       images: [
@@ -38,7 +40,7 @@ export async function generateMetadata({ params }) {
     twitter: {
       card: 'summary_large_image',
       title: d.meta.imageToolkit.title,
-      description: d.imageToolkit.heroDesc,
+      description: desc,
       images: ['https://thenextools.com/thenextools-com-og-image.png'],
     }
   };

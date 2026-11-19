@@ -8,9 +8,11 @@ export async function generateMetadata({ params }) {
   const locale = lang || 'en';
   const d = await getDictionary(locale);
 
+  const desc = d.meta.home.description || d.home.heroDesc;
+
   return {
     title: d.meta.home.title,
-    description: d.home.heroDesc,
+    description: desc,
     alternates: {
       canonical: locale === 'en' ? '/' : `/${locale}`,
       languages: {
@@ -23,7 +25,7 @@ export async function generateMetadata({ params }) {
     },
     openGraph: {
       title: d.meta.home.title,
-      description: d.home.heroDesc,
+      description: desc,
       type: 'website',
       url: locale === 'en' ? 'https://thenextools.com/' : `https://thenextools.com/${locale}`,
       images: [
@@ -37,7 +39,7 @@ export async function generateMetadata({ params }) {
     twitter: {
       card: 'summary_large_image',
       title: d.meta.home.title,
-      description: d.home.heroDesc,
+      description: desc,
       images: ['https://thenextools.com/thenextools-com-og-image.png'],
     }
   };
@@ -58,6 +60,32 @@ export default async function HomePage({ params }) {
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "TheNexTools",
+              "url": "https://thenextools.com/",
+              "logo": "https://thenextools.com/thenextools-com-icon-512.png",
+              "sameAs": [
+                "https://x.com/TheNexTool",
+                "https://www.facebook.com/TheNexTools/"
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "TheNexTools",
+              "url": locale === 'en' ? "https://thenextools.com/" : `https://thenextools.com/${locale}`,
+              "description": t.heroDesc,
+              "inLanguage": locale
+            }
+          ])
+        }}
+      />
       <header className="hero container">
         <div className="badge">{t.heroBadge}</div>
         <h1>{t.heroTitle}</h1>
@@ -139,6 +167,19 @@ export default async function HomePage({ params }) {
               </Link>
             </div>
 
+          </div>
+
+          {/* Direct quick-links to core tool landing pages for fast discovery & crawl depth */}
+          <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid var(--border)', display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center' }}>
+            <Link href={getLink('/pdf-toolkit/tools/merge-pdf')} className="badge" style={{ textDecoration: 'none' }}>{d.nav.mergePdfTitle}</Link>
+            <Link href={getLink('/pdf-toolkit/tools/compress-pdf')} className="badge" style={{ textDecoration: 'none' }}>{d.nav.compressPdfTitle}</Link>
+            <Link href={getLink('/pdf-toolkit/tools/split-pdf')} className="badge" style={{ textDecoration: 'none' }}>{d.nav.splitPdfTitle}</Link>
+            <Link href={getLink('/pdf-toolkit/tools/pdf-to-images')} className="badge" style={{ textDecoration: 'none' }}>{d.nav.pdfToImagesTitle}</Link>
+            <Link href={getLink('/pdf-toolkit/tools/redact-pdf')} className="badge" style={{ textDecoration: 'none' }}>{d.nav.redactPdfTitle}</Link>
+            <Link href={getLink('/image-compressor')} className="badge" style={{ textDecoration: 'none' }}>{d.nav.imageCompressTitle}</Link>
+            <Link href={getLink('/image-converter')} className="badge" style={{ textDecoration: 'none' }}>{d.nav.imageConvertTitle}</Link>
+            <Link href={getLink('/image-redactor')} className="badge" style={{ textDecoration: 'none' }}>{d.nav.imageRedactTitle}</Link>
+            <Link href={getLink('/exif-stripper')} className="badge" style={{ textDecoration: 'none' }}>{d.nav.exifStripperTitle}</Link>
           </div>
         </div>
       </section>

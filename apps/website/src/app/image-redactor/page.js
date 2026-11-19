@@ -10,7 +10,7 @@ const REDACTOR_STEPS = [
 
 export const metadata = {
   title: 'Image Redactor — Blur Faces, Plates & Sensitive Areas Locally | TheNexTools',
-  description: 'Draw blur zones over faces, license plates, addresses, and sensitive data in your photos. The blur is permanent and irreversible. Runs locally in your browser — files never leave your device.',
+  description: 'Blur faces, license plates, and sensitive data in photos offline. Permanent, flattened pixel redaction in your browser — files never leave your device.',
   manifest: '/image-manifest.json',
   alternates: {
     canonical: '/image-redactor',
@@ -24,7 +24,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'Image Redactor — Blur Faces, Plates & Sensitive Areas Locally | TheNexTools',
-    description: 'Draw blur zones over faces, license plates, addresses, and sensitive data in your photos. The blur is permanent and irreversible. Runs locally in your browser — files never leave your device.',
+    description: 'Blur faces, license plates, and sensitive data in photos offline. Permanent, flattened pixel redaction in your browser — files never leave your device.',
     type: 'website',
     images: [
       {
@@ -37,7 +37,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Image Redactor — Blur Faces, Plates & Sensitive Areas Locally | TheNexTools',
-    description: 'Draw blur zones over faces, license plates, addresses, and sensitive data in your photos. The blur is permanent and irreversible. Runs locally in your browser — files never leave your device.',
+    description: 'Blur faces, license plates, and sensitive data in photos offline. Permanent, flattened pixel redaction in your browser — files never leave your device.',
     images: ['https://thenextools.com/thenextools-com-og-image.png'],
   }
 };
@@ -231,11 +231,23 @@ export default function ImageRedactorLanding() {
         </div>
       </section>
 
+            <section className="divider" style={{ background: 'var(--bg-2)', padding: '3rem 0' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <h2 style={{ fontSize: '1.35rem', marginBottom: '1.25rem' }}>More Image Tools</h2>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center' }}>
+              <Link href="/image-compressor" className="badge" style={{ textDecoration: 'none' }}>Image Compressor</Link>
+              <Link href="/image-converter" className="badge" style={{ textDecoration: 'none' }}>Image Converter</Link>
+              <Link href="/exif-stripper" className="badge" style={{ textDecoration: 'none' }}>EXIF Metadata Stripper</Link>
+              <Link href="/image-toolkit" className="badge" style={{ textDecoration: 'none' }}>All Image Tools</Link>
+          </div>
+        </div>
+      </section>
+
       <section className="cta-section">
         <div className="container">
           <h2>Ready to redact your images?</h2>
           <p>Drop your files at the top of the page. Everything is processed purely client-side.</p>
-          <a href="#" className="btn btn-primary">Back to Tool</a>
+          <a href="#tool" className="btn btn-primary">Back to Tool</a>
         </div>
       </section>
     </>

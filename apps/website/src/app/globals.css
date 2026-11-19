@@ -400,8 +400,8 @@ section { padding: 5rem 0; }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr repeat(2, 1fr);
-  gap: 4rem;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 3rem;
   margin-bottom: 4rem;
 }
 

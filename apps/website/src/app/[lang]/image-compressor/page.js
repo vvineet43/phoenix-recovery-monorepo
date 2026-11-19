@@ -589,6 +589,7 @@ export async function generateMetadata({ params }) {
       title: t.title,
       description: t.description,
       type: 'website',
+      url: `https://thenextools.com/${lang}/image-compressor`,
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',
@@ -660,6 +661,7 @@ export default async function ImageCompressorLanding({ params }) {
               "@type": "WebApplication",
               "name": t.schemaTitle,
               "url": `https://thenextools.com/${lang}/image-compressor`,
+              "inLanguage": lang,
               "applicationCategory": "UtilityApplication",
               "operatingSystem": "All",
               "browserRequirements": "Requires HTML5 Canvas support",
@@ -797,11 +799,23 @@ export default async function ImageCompressorLanding({ params }) {
         </div>
       </section>
 
+            <section className="divider related-image-tools" style={{ background: 'var(--bg-2)', padding: '3rem 0' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <h2 style={{ fontSize: '1.35rem', marginBottom: '1.25rem' }}>{t.schemaToolkit}</h2>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center' }}>
+              <Link href={`/${lang}/image-converter`} className="badge" style={{ textDecoration: 'none' }}>Image Converter</Link>
+              <Link href={`/${lang}/image-redactor`} className="badge" style={{ textDecoration: 'none' }}>Image Redactor & Blur</Link>
+              <Link href={`/${lang}/exif-stripper`} className="badge" style={{ textDecoration: 'none' }}>EXIF Metadata Stripper</Link>
+              <Link href={`/${lang}/image-toolkit`} className="badge" style={{ textDecoration: 'none' }}>All Image Tools</Link>
+          </div>
+        </div>
+      </section>
+
       <section className="cta-section">
         <div className="container">
           <h2>{t.ctaTitle}</h2>
           <p>{t.ctaDesc}</p>
-          <a href="#" className="btn btn-primary">{t.ctaButton}</a>
+          <a href="#tool" className="btn btn-primary">{t.ctaButton}</a>
         </div>
       </section>
     </>

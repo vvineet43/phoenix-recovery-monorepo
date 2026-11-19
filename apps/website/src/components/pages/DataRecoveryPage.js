@@ -8,9 +8,11 @@ export async function generateMetadata({ params }) {
   const locale = lang || 'en';
   const d = await getDictionary(locale);
 
+  const desc = d.meta.dataRecovery.description || d.dataRecovery.heroDesc;
+
   return {
     title: d.meta.dataRecovery.title,
-    description: d.dataRecovery.heroDesc,
+    description: desc,
     alternates: {
       canonical: locale === 'en' ? '/data-recovery' : `/${locale}/data-recovery`,
       languages: {
@@ -23,7 +25,7 @@ export async function generateMetadata({ params }) {
     },
     openGraph: {
       title: d.meta.dataRecovery.title,
-      description: d.dataRecovery.heroDesc,
+      description: desc,
       type: 'website',
       url: locale === 'en' ? 'https://thenextools.com/data-recovery' : `https://thenextools.com/${locale}/data-recovery`,
       images: [
@@ -37,7 +39,7 @@ export async function generateMetadata({ params }) {
     twitter: {
       card: 'summary_large_image',
       title: d.meta.dataRecovery.title,
-      description: d.dataRecovery.heroDesc,
+      description: desc,
       images: ['https://thenextools.com/thenextools-com-og-image.png'],
     }
   };
