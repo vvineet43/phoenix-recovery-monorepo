@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { locales } from '@/lib/i18n-config';
+import { locales, ogLocales } from '@/lib/i18n-config';
 
 const TRANSLATIONS = {
   en: {
@@ -446,11 +446,14 @@ export async function generateMetadata({ params }) {
       title: t.title,
       description: t.description,
       type: 'website',
+      siteName: 'TheNexTools',
+      locale: ogLocales[lang] || 'en_US',
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',
           width: 1200,
           height: 630,
+          alt: t.title,
         },
       ],
     },
@@ -477,12 +480,12 @@ export default async function RefundPolicyPage({ params }) {
 
       <section className="text-content" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
         <div>
-          <h3>{t.sec1Title}</h3>
+          <h2 style={{ fontSize: '1.25rem' }}>{t.sec1Title}</h2>
           <p>{t.sec1Desc}</p>
         </div>
 
         <div>
-          <h3>{t.sec2Title}</h3>
+          <h2 style={{ fontSize: '1.25rem' }}>{t.sec2Title}</h2>
           <p dangerouslySetInnerHTML={{ __html: t.sec2Desc }} />
           <ol style={{ paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.8rem', marginTop: '1rem' }}>
             <li dangerouslySetInnerHTML={{ __html: t.sec2Li1 }} />
@@ -508,7 +511,7 @@ export default async function RefundPolicyPage({ params }) {
         </div>
 
         <div>
-          <h3>{t.sec4Title}</h3>
+          <h2 style={{ fontSize: '1.25rem' }}>{t.sec4Title}</h2>
           <ol style={{ paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.8rem', marginTop: '1rem' }}>
             <li dangerouslySetInnerHTML={{ __html: t.sec4Li1 }} />
             <li dangerouslySetInnerHTML={{ __html: t.sec4Li2 }} />
@@ -518,12 +521,12 @@ export default async function RefundPolicyPage({ params }) {
         </div>
 
         <div>
-          <h3>{t.sec5Title}</h3>
+          <h2 style={{ fontSize: '1.25rem' }}>{t.sec5Title}</h2>
           <p dangerouslySetInnerHTML={{ __html: t.sec5Desc }} />
         </div>
 
         <div>
-          <h3>{t.sec6Title}</h3>
+          <h2 style={{ fontSize: '1.25rem' }}>{t.sec6Title}</h2>
           <ul style={{ paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.8rem', marginTop: '1rem' }}>
             <li dangerouslySetInnerHTML={{ __html: t.sec6Li1 }} />
             <li dangerouslySetInnerHTML={{ __html: t.sec6Li2 }} />
@@ -532,7 +535,7 @@ export default async function RefundPolicyPage({ params }) {
         </div>
 
         <div>
-          <h3>{t.sec7Title}</h3>
+          <h2 style={{ fontSize: '1.25rem' }}>{t.sec7Title}</h2>
           <p>
             {t.sec7Desc}
             <a href="mailto:contact@thenextools.com" style={{ color: 'var(--primary)', fontWeight: 600 }}>contact@thenextools.com</a>.

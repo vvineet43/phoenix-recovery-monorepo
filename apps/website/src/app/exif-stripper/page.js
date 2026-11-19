@@ -9,7 +9,7 @@ const STRIPPER_STEPS = [
 ];
 
 export const metadata = {
-  title: 'EXIF Metadata Stripper — Remove GPS & Camera Data from Photos | TheNexTools',
+  title: 'EXIF Metadata Stripper — Remove Photo GPS Data | TheNexTools',
   description: 'See the hidden data embedded in your photos — GPS location, device model, timestamps — and strip all of it before sharing. Runs locally in your browser.',
   manifest: '/exif-manifest.json',
   alternates: {
@@ -23,21 +23,24 @@ export const metadata = {
     }
   },
   openGraph: {
-    title: 'EXIF Metadata Stripper — Remove GPS & Camera Data from Photos | TheNexTools',
+    title: 'EXIF Metadata Stripper — Remove Photo GPS Data | TheNexTools',
     description: 'See the hidden data embedded in your photos — GPS location, device model, timestamps — and strip all of it before sharing. Runs locally in your browser.',
     type: 'website',
+    siteName: 'TheNexTools',
+    locale: 'en_US',
     url: 'https://thenextools.com/exif-stripper',
     images: [
       {
         url: 'https://thenextools.com/thenextools-com-og-image.png',
         width: 1200,
         height: 630,
+        alt: 'TheNexTools — Free Offline PDF, Image & Data Recovery Tools',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EXIF Metadata Stripper — Remove GPS & Camera Data from Photos | TheNexTools',
+    title: 'EXIF Metadata Stripper — Remove Photo GPS Data | TheNexTools',
     description: 'See the hidden data embedded in your photos — GPS location, device model, timestamps — and strip all of it before sharing. Runs locally in your browser.',
     images: ['https://thenextools.com/thenextools-com-og-image.png'],
   }
@@ -45,7 +48,7 @@ export const metadata = {
 
 export default function ExifStripperLanding() {
   return (
-    <>
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -97,11 +100,29 @@ export default function ExifStripperLanding() {
               "operatingSystem": "All",
               "browserRequirements": "Requires HTML5 Canvas support",
               "description": "View and remove EXIF camera metadata and GPS coordinates from your photos locally. No server uploads required.",
+              "inLanguage": "en",
+              "publisher": {
+                "@type": "Organization",
+                "name": "TheNexTools",
+                "url": "https://thenextools.com/"
+              },
               "offers": {
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "USD"
               }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              "name": "How to strip EXIF metadata from photos offline",
+              "inLanguage": "en",
+              "step": STEPS.map((step, idx) => ({
+                "@type": "HowToStep",
+                "position": idx + 1,
+                "name": step.title,
+                "text": step.desc
+              }))
             },
             {
               "@context": "https://schema.org",
@@ -111,7 +132,7 @@ export default function ExifStripperLanding() {
                   "@type": "ListItem",
                   "position": 1,
                   "name": "Home",
-                  "item": "https://thenextools.com"
+                  "item": "https://thenextools.com/"
                 },
                 {
                   "@type": "ListItem",
@@ -154,7 +175,7 @@ export default function ExifStripperLanding() {
                 <div className="premium-step-badge">
                   {index + 1}
                 </div>
-                <h4 className="premium-step-title">{step.title}</h4>
+                <h3 className="premium-step-title">{step.title}</h3>
                 <p className="premium-step-text">{step.desc}</p>
               </div>
             ))}
@@ -251,6 +272,6 @@ export default function ExifStripperLanding() {
           <a href="#tool" className="btn btn-primary">Back to Tool</a>
         </div>
       </section>
-    </>
+    </main>
   );
 }

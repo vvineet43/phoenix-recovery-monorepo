@@ -27,12 +27,15 @@ export async function generateMetadata({ params }) {
       title: d.meta.home.title,
       description: desc,
       type: 'website',
+      siteName: 'TheNexTools',
+      locale: d.meta.layout.ogLocale,
       url: locale === 'en' ? 'https://thenextools.com/' : `https://thenextools.com/${locale}`,
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',
           width: 1200,
           height: 630,
+          alt: 'TheNexTools — Free Offline PDF, Image & Data Recovery Tools',
         },
       ],
     },

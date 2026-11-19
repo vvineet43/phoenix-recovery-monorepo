@@ -479,7 +479,7 @@ export function PageEditor({ page, files, onClose, onSave, onApplyToAll }: PageE
                         setPendingSignaturePos(null);
                         setShowSigModal(false);
                       }} style={{ flexShrink: 0, height: '60px', width: '120px', border: '1px solid #e2e8f0', borderRadius: '4px', background: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <img src={sig} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+                        <img src={sig} alt="Saved signature" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
                       </div>
                     ))}
                   </div>

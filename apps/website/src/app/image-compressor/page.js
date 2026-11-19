@@ -26,11 +26,14 @@ export const metadata = {
     title: 'Image Compressor — Shrink JPG, PNG, WebP Locally | TheNexTools',
     description: 'Compress JPG, PNG, and WebP images offline in your browser. Adjust quality, compare full-res before/after, and download individually or as a ZIP.',
     type: 'website',
+    siteName: 'TheNexTools',
+    locale: 'en_US',
     images: [
       {
         url: 'https://thenextools.com/thenextools-com-og-image.png',
         width: 1200,
         height: 630,
+        alt: 'TheNexTools — Free Offline PDF, Image & Data Recovery Tools',
       },
     ],
   },
@@ -44,7 +47,7 @@ export const metadata = {
 
 export default function ImageCompressorLanding() {
   return (
-    <>
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -96,11 +99,29 @@ export default function ImageCompressorLanding() {
               "operatingSystem": "All",
               "browserRequirements": "Requires HTML5 Canvas support",
               "description": "Compress JPEG, PNG, and WebP images locally in your browser. Adjust quality, compare results, and download as ZIP without uploading your files.",
+              "inLanguage": "en",
+              "publisher": {
+                "@type": "Organization",
+                "name": "TheNexTools",
+                "url": "https://thenextools.com/"
+              },
               "offers": {
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "USD"
               }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              "name": "How to compress images offline",
+              "inLanguage": "en",
+              "step": STEPS.map((step, idx) => ({
+                "@type": "HowToStep",
+                "position": idx + 1,
+                "name": step.title,
+                "text": step.desc
+              }))
             },
             {
               "@context": "https://schema.org",
@@ -110,7 +131,7 @@ export default function ImageCompressorLanding() {
                   "@type": "ListItem",
                   "position": 1,
                   "name": "Home",
-                  "item": "https://thenextools.com"
+                  "item": "https://thenextools.com/"
                 },
                 {
                   "@type": "ListItem",
@@ -153,7 +174,7 @@ export default function ImageCompressorLanding() {
                 <div className="premium-step-badge">
                   {index + 1}
                 </div>
-                <h4 className="premium-step-title">{step.title}</h4>
+                <h3 className="premium-step-title">{step.title}</h3>
                 <p className="premium-step-text">{step.desc}</p>
               </div>
             ))}
@@ -250,6 +271,6 @@ export default function ImageCompressorLanding() {
           <a href="#tool" className="btn btn-primary">Back to Tool</a>
         </div>
       </section>
-    </>
+    </main>
   );
 }

@@ -293,7 +293,7 @@ export function ImageConverterApp({ hideHeader }: { hideHeader?: boolean }) {
             onClick={() => fileInputRef.current?.click()}
           >
             <Upload size={40} className="upload-icon" />
-            <h3>{t.uploadTitle}</h3>
+            <h2 style={{ fontSize: '1.15rem' }}>{t.uploadTitle}</h2>
             <p>{t.uploadSubtitle}</p>
             <button className="btn btn-outline" style={{ marginTop: '1rem' }}>{t.browseBtn}</button>
             <input
@@ -308,7 +308,7 @@ export function ImageConverterApp({ hideHeader }: { hideHeader?: boolean }) {
         ) : (
           <div className="workspace-layout">
             <div className="settings-panel">
-              <h3>Conversion Settings</h3>
+              <h2>{t.settingsTitle || 'Conversion Settings'}</h2>
               
               <div className="settings-group">
                 <label>Target Format</label>

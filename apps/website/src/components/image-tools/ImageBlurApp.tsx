@@ -355,7 +355,7 @@ export function ImageBlurApp({ hideHeader }: { hideHeader?: boolean }) {
             onClick={() => fileInputRef.current?.click()}
           >
             <Upload size={40} className="upload-icon" />
-            <h3>{t.uploadTitle}</h3>
+            <h2 style={{ fontSize: '1.15rem' }}>{t.uploadTitle}</h2>
             <p>{t.uploadSubtitle}</p>
             <button className="btn btn-outline" style={{ marginTop: '1rem' }}>{t.chooseBtn}</button>
             <input

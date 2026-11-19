@@ -788,7 +788,8 @@
       "ogLocale": "tr_TR"
     },
     "home": {
-      "title": "TheNexTools — Özel, Çevrimdışı Masaüstü Yardımcı Programları"
+      "title": "TheNexTools — Özel, Çevrimdışı Masaüstü Yardımcı Programları",
+      "description": "Ücretsiz çevrimdışı PDF düzenleyici, görsel sıkıştırıcı, dönüştürücü, EXIF temizleyici ve veri kurtarma araçları. %100 yerel, yükleme yok."
     },
     "contact": {
       "title": "Bize Ulaşın | TheNexTools",
@@ -798,14 +799,17 @@
       "subjectSecurity": "Güvenlik / Gizlilik Kaygısı"
     },
     "dataRecovery": {
-      "title": "NexData Recovery — Silinen Dosyaları Biçimlendirilmiş Sürücülerden Kurtarma | TheNexTools"
+      "title": "NexData Recovery — Silinen Dosyaları Biçimlendirilmiş Sürücülerden Kurtarma | TheNexTools",
+      "description": "Biçimlendirilmiş sürücülerden ve SD kartlardan ham sektör taramasıyla silinen fotoğraf, video ve belgeleri kurtarın. Ücretsiz tarayın ve önizleyin."
     },
     "pdfToolkit": {
       "title": "NexPDF — PDF'leri Çevrimdışı Düzenleyin, İmzalayın, Birleştirin ve Sıkıştırın | TheNexTools",
-      "breadcrumbHome": "Ev"
+      "breadcrumbHome": "Ev",
+      "description": "Tarayıcınızda çevrimdışı PDF düzenleyin, birleştirin, bölün, sıkıştırın, imzalayın, sansürleyin ve OCR yapın. Sıfır sunucu yüklemesi ve ücretsiz."
     },
     "imageToolkit": {
-      "title": "NexImage Araç Takımı — Meta Verileri Sıkıştırın, Dönüştürün, Düzenleyin ve Soyun | TheNexTools"
+      "title": "NexImage Araç Takımı — Meta Verileri Sıkıştırın, Dönüştürün, Düzenleyin ve Soyun | TheNexTools",
+      "description": "JPG/PNG/WebP sıkıştırın, toplu format dönüştürün, yüzleri ve plakaları bulanıklaştırın, GPS EXIF verilerini yüklemeden yerel olarak temizleyin."
     }
   },
   "imageTools": {

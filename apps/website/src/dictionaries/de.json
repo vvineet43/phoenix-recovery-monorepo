@@ -759,7 +759,7 @@
     "seoPage": {
       "keyBenefits": "Hauptvorteile",
       "localPrivate": "Lokal & Sicher",
-      "localPrivateDesc": "Dieses Werkzeug verarbeitet Ihre Dateien direkt in Ihrem Browser — es wird nichts auf einen Server hochgeladen. Ihre Dokumente bleiben von Anfang bis Ende auf Ihrem Gerät.",
+      "localPrivateDesc": "Dieses Werkzeug verarbeitet Ihre Dateien direkt in Ihrem Browser — es wird nichts auf einen Server hochgeladen. Wenn Sie mit {tool} arbeiten, bleibt Ihr Dokument von Anfang bis Ende auf Ihrem Gerät.",
       "privateBadge": "Privat",
       "secureBadge": "Sicher",
       "faqTitle": "Häufig gestellte Fragen",
@@ -788,7 +788,8 @@
       "ogLocale": "de_DE"
     },
     "home": {
-      "title": "TheNexTools — Private, Offline-Desktop-Werkzeuge"
+      "title": "TheNexTools — Private, Offline-Desktop-Werkzeuge",
+      "description": "Kostenloser Offline-PDF-Editor, Bildkompressor, Konverter, EXIF-Entferner & Datenrettung. 100 % lokal im Browser — ganz ohne Server-Upload."
     },
     "contact": {
       "title": "Kontakt | TheNexTools",
@@ -798,14 +799,17 @@
       "subjectSecurity": "Sicherheits- / Datenschutzbedenken"
     },
     "dataRecovery": {
-      "title": "NexData Recovery — Gelöschte Dateien von formatierten Festplatten retten | TheNexTools"
+      "title": "NexData Recovery — Gelöschte Dateien von formatierten Festplatten retten | TheNexTools",
+      "description": "Gelöschte Fotos, Videos & Dokumente von formatierten Laufwerken und SD-Karten per Rohsektor-Scan wiederherstellen. Kostenlos scannen."
     },
     "pdfToolkit": {
       "title": "NexPDF — PDFs offline bearbeiten, signieren, zusammenführen & komprimieren | TheNexTools",
-      "breadcrumbHome": "Start"
+      "breadcrumbHome": "Start",
+      "description": "PDFs offline im Browser bearbeiten, zusammenführen, teilen, komprimieren, unterschreiben, schwärzen & OCR ausführen. Kostenlos ohne Upload."
     },
     "imageToolkit": {
-      "title": "NexImage Toolkit — Bilder komprimieren, konvertieren, schwärzen & Metadaten bereinigen | TheNexTools"
+      "title": "NexImage Toolkit — Bilder komprimieren, konvertieren, schwärzen & Metadaten bereinigen | TheNexTools",
+      "description": "JPG/PNG/WebP komprimieren, stapelweise konvertieren, Gesichter & Kennzeichen verpixeln und GPS-EXIF-Daten lokal im Browser entfernen."
     }
   },
   "imageTools": {

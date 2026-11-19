@@ -25,12 +25,15 @@ export async function generateMetadata({ params }) {
       title: d.meta.contact.title,
       description: d.contact.heroDesc,
       type: 'website',
+      siteName: 'TheNexTools',
+      locale: d.meta.layout.ogLocale,
       url: locale === 'en' ? 'https://thenextools.com/contact' : `https://thenextools.com/${locale}/contact`,
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',
           width: 1200,
           height: 630,
+          alt: 'TheNexTools — Free Offline PDF, Image & Data Recovery Tools',
         },
       ],
     },
@@ -84,6 +87,35 @@ export default async function ContactPage({ params }) {
 
   return (
     <main style={{ paddingTop: 'calc(var(--nav-h) + 4rem)', paddingBottom: '6rem' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": d.meta.contact.title,
+            "url": locale === 'en' ? 'https://thenextools.com/contact' : `https://thenextools.com/${locale}/contact`,
+            "inLanguage": locale,
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "TheNexTools",
+              "url": "https://thenextools.com/",
+              "contactPoint": [
+                {
+                  "@type": "ContactPoint",
+                  "contactType": "customer support",
+                  "email": "support@thenextools.com"
+                },
+                {
+                  "@type": "ContactPoint",
+                  "contactType": "general inquiries",
+                  "email": "contact@thenextools.com"
+                }
+              ]
+            }
+          })
+        }}
+      />
 
       {/* Hero */}
       <div className="container" style={{ maxWidth: '720px', textAlign: 'center', marginBottom: '4rem' }}>

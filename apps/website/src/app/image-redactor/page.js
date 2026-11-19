@@ -9,7 +9,7 @@ const REDACTOR_STEPS = [
 ];
 
 export const metadata = {
-  title: 'Image Redactor — Blur Faces, Plates & Sensitive Areas Locally | TheNexTools',
+  title: 'Blur & Redact Images Offline — Faces & Plates | TheNexTools',
   description: 'Blur faces, license plates, and sensitive data in photos offline. Permanent, flattened pixel redaction in your browser — files never leave your device.',
   manifest: '/image-manifest.json',
   alternates: {
@@ -23,20 +23,23 @@ export const metadata = {
     }
   },
   openGraph: {
-    title: 'Image Redactor — Blur Faces, Plates & Sensitive Areas Locally | TheNexTools',
+    title: 'Blur & Redact Images Offline — Faces & Plates | TheNexTools',
     description: 'Blur faces, license plates, and sensitive data in photos offline. Permanent, flattened pixel redaction in your browser — files never leave your device.',
     type: 'website',
+    siteName: 'TheNexTools',
+    locale: 'en_US',
     images: [
       {
         url: 'https://thenextools.com/thenextools-com-og-image.png',
         width: 1200,
         height: 630,
+        alt: 'TheNexTools — Free Offline PDF, Image & Data Recovery Tools',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Image Redactor — Blur Faces, Plates & Sensitive Areas Locally | TheNexTools',
+    title: 'Blur & Redact Images Offline — Faces & Plates | TheNexTools',
     description: 'Blur faces, license plates, and sensitive data in photos offline. Permanent, flattened pixel redaction in your browser — files never leave your device.',
     images: ['https://thenextools.com/thenextools-com-og-image.png'],
   }
@@ -44,7 +47,7 @@ export const metadata = {
 
 export default function ImageRedactorLanding() {
   return (
-    <>
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -96,11 +99,29 @@ export default function ImageRedactorLanding() {
               "operatingSystem": "All",
               "browserRequirements": "Requires HTML5 Canvas support",
               "description": "Redact and blur screenshots or images locally. Blur faces, license plates, and sensitive documents permanently and irreversibly.",
+              "inLanguage": "en",
+              "publisher": {
+                "@type": "Organization",
+                "name": "TheNexTools",
+                "url": "https://thenextools.com/"
+              },
               "offers": {
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "USD"
               }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              "name": "How to redact and blur images offline",
+              "inLanguage": "en",
+              "step": STEPS.map((step, idx) => ({
+                "@type": "HowToStep",
+                "position": idx + 1,
+                "name": step.title,
+                "text": step.desc
+              }))
             },
             {
               "@context": "https://schema.org",
@@ -110,7 +131,7 @@ export default function ImageRedactorLanding() {
                   "@type": "ListItem",
                   "position": 1,
                   "name": "Home",
-                  "item": "https://thenextools.com"
+                  "item": "https://thenextools.com/"
                 },
                 {
                   "@type": "ListItem",
@@ -153,7 +174,7 @@ export default function ImageRedactorLanding() {
                 <div className="premium-step-badge">
                   {index + 1}
                 </div>
-                <h4 className="premium-step-title">{step.title}</h4>
+                <h3 className="premium-step-title">{step.title}</h3>
                 <p className="premium-step-text">{step.desc}</p>
               </div>
             ))}
@@ -250,6 +271,6 @@ export default function ImageRedactorLanding() {
           <a href="#tool" className="btn btn-primary">Back to Tool</a>
         </div>
       </section>
-    </>
+    </main>
   );
 }

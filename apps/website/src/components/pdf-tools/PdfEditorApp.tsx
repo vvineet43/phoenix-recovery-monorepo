@@ -31,6 +31,7 @@ import { SortablePage } from './SortablePage';
 import { PagePreview } from './PagePreview';
 import { PageEditor } from './PageEditor';
 import { getFileFromTransition, clearTransitionFile } from '../../lib/db';
+import { registerPdfWebMcp } from '../../lib/pdf-webmcp';
 
 export function PdfEditorApp({ initialTool, hideHeader }: { initialTool?: string; hideHeader?: boolean } = {}) {
   const [files, setFiles] = useState<Record<string, PdfFileInfo>>({});
@@ -118,6 +119,10 @@ export function PdfEditorApp({ initialTool, hideHeader }: { initialTool?: string
       if (batchImageInputRef.current) batchImageInputRef.current.value = '';
     }
   }, []);
+
+  useEffect(() => {
+    registerPdfWebMcp(initialTool);
+  }, [initialTool]);
 
   useEffect(() => {
     // Check for tool parameter in prop or URL

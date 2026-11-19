@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ExifStripperPageWrapper } from '@/components/image-tools/ImageCompressorWrapper';
-import { locales } from '@/lib/i18n-config';
+import { locales, ogLocales } from '@/lib/i18n-config';
+import { getDictionary } from '@/dictionaries';
 
 const TRANSLATIONS = {
   en: {
@@ -589,12 +590,15 @@ export async function generateMetadata({ params }) {
       title: t.title,
       description: t.description,
       type: 'website',
+      siteName: 'TheNexTools',
+      locale: ogLocales[lang] || 'en_US',
       url: `https://thenextools.com/${lang}/exif-stripper`,
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',
           width: 1200,
           height: 630,
+          alt: t.title,
         },
       ],
     },
@@ -611,9 +615,10 @@ export default async function ExifStripperLanding({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
   const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+  const d = await getDictionary(lang);
 
   return (
-    <>
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -666,11 +671,29 @@ export default async function ExifStripperLanding({ params }) {
               "operatingSystem": "All",
               "browserRequirements": "Requires HTML5 Canvas support",
               "description": t.description,
+              "publisher": {
+                "@type": "Organization",
+                "name": "TheNexTools",
+                "url": "https://thenextools.com/"
+              },
               "offers": {
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "USD"
               }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              "name": t.howToTitle,
+              "description": t.description,
+              "inLanguage": lang,
+              "step": t.steps.map((step, idx) => ({
+                "@type": "HowToStep",
+                "position": idx + 1,
+                "name": step.title,
+                "text": step.desc
+              }))
             },
             {
               "@context": "https://schema.org",
@@ -721,7 +744,7 @@ export default async function ExifStripperLanding({ params }) {
                 <div className="premium-step-badge">
                   {index + 1}
                 </div>
-                <h4 className="premium-step-title">{step.title}</h4>
+                <h3 className="premium-step-title">{step.title}</h3>
                 <p className="premium-step-text">{step.desc}</p>
               </div>
             ))}
@@ -803,10 +826,10 @@ export default async function ExifStripperLanding({ params }) {
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: '1.35rem', marginBottom: '1.25rem' }}>{t.schemaToolkit}</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center' }}>
-              <Link href={`/${lang}/image-compressor`} className="badge" style={{ textDecoration: 'none' }}>Image Compressor</Link>
-              <Link href={`/${lang}/image-converter`} className="badge" style={{ textDecoration: 'none' }}>Image Converter</Link>
-              <Link href={`/${lang}/image-redactor`} className="badge" style={{ textDecoration: 'none' }}>Image Redactor & Blur</Link>
-              <Link href={`/${lang}/image-toolkit`} className="badge" style={{ textDecoration: 'none' }}>All Image Tools</Link>
+              <Link href={`/${lang}/image-compressor`} className="badge" style={{ textDecoration: 'none' }}>{d.nav.imageCompressTitle}</Link>
+              <Link href={`/${lang}/image-converter`} className="badge" style={{ textDecoration: 'none' }}>{d.nav.imageConvertTitle}</Link>
+              <Link href={`/${lang}/image-redactor`} className="badge" style={{ textDecoration: 'none' }}>{d.nav.imageRedactTitle}</Link>
+              <Link href={`/${lang}/image-toolkit`} className="badge" style={{ textDecoration: 'none' }}>{d.home.imageToolkitTitle}</Link>
           </div>
         </div>
       </section>
@@ -818,6 +841,6 @@ export default async function ExifStripperLanding({ params }) {
           <a href="#tool" className="btn btn-primary">{t.ctaButton}</a>
         </div>
       </section>
-    </>
+    </main>
   );
 }

@@ -71,7 +71,7 @@ export function SortablePage({ page, onRotate, onDelete, onDoubleClick, onEdit, 
               <span style={{ fontSize: '6px', color: 'black', whiteSpace: 'nowrap' }}>{anno.content}</span>
             )}
             {anno.type === 'signature' && (
-              <img src={anno.content} style={{ width: '100%', height: '100%', objectFit: 'contain' }} draggable={false} />
+              <img src={anno.content} alt="Signature annotation" style={{ width: '100%', height: '100%', objectFit: 'contain' }} draggable={false} />
             )}
           </div>
         ))}

@@ -132,7 +132,6 @@
     "cantCard4Title": "Volumi crittografati senza chiave",
     "cantCard4Desc": "Se un'unità è stata crittografata con BitLocker, FileVault o APFS e hai perso la password e la chiave di recupero, i dati non possono essere decrittografati. Nessun software può forzare la crittografia moderna.",
     "cantNote": "Questi scenari non rientrano nella nostra politica di rimborso. Consigliamo di scansionare prima con la versione gratuita per confermare che i file siano effettivamente recuperabili.",
-    "cantNoteNoApp": "Consigliamo di verificare lo stato del disco prima di procedere.",
     "ctaTitle": "Scansiona prima. Vedi cosa c'è. Decidi dopo.",
     "ctaDesc": "La versione gratuita esegue una scansione completa e ti consente di visualizzare l'anteprima di ogni file recuperabile, in modo da sapere esattamente cosa stai ottenendo prima di pagare.",
     "ctaButton": "Scarica la Versione Gratuita"
@@ -265,8 +264,6 @@
     "faqA3": "Sì. NexPDF è costruito come una Progressive Web App (PWA). Una volta visitato il sito, gli strumenti vengono memorizzati nella cache locale e funzionano senza una connessione internet attiva.",
     "faqQ4": "Ci sono limiti o filigrane sui file di output?",
     "faqA4": "No. NexPDF non aggiunge filigrane, non impone limiti di dimensione del file e non applica limiti di utilizzo giornalieri. Ottieni una modifica PDF professionale completamente gratuita.",
-    "faqQ3WithTool": "C'è un limite di dimensione del file per {tool}?",
-    "faqA3WithTool": "No. L'unico limite è la memoria del tuo dispositivo. NexPDF può gestire file di grandi dimensioni senza problemi.",
     "ctaTitle": "Pronto quando lo sei tu.",
     "ctaDesc": "Apri l'editor, rilascia un file e inizia a lavorare. Nessuna registrazione, nessun conto alla rovescia di prova.",
     "ctaButton": "Torna allo Strumento",
@@ -791,7 +788,8 @@
       "ogLocale": "it_IT"
     },
     "home": {
-      "title": "TheNexTools — Utility Desktop Private Offline"
+      "title": "TheNexTools — Utility Desktop Private Offline",
+      "description": "Editor PDF offline gratuito, compressore immagini, convertitore, rimozione EXIF e recupero dati. 100% locale nel browser senza caricamenti."
     },
     "contact": {
       "title": "Contattaci | TheNexTools",
@@ -801,14 +799,17 @@
       "subjectSecurity": "Security"
     },
     "dataRecovery": {
-      "title": "NexData Recovery — Recupera File Eliminati da Unità Formattate | TheNexTools"
+      "title": "NexData Recovery — Recupera File Eliminati da Unità Formattate | TheNexTools",
+      "description": "Recupera foto, video e documenti eliminati da unità formattate e schede SD scansionando i settori fisici. Scansione e anteprima gratuite."
     },
     "pdfToolkit": {
       "title": "NexPDF — Modifica, Firma, Unisci e Comprimi PDF Offline | TheNexTools",
-      "breadcrumbHome": "Home"
+      "breadcrumbHome": "Home",
+      "description": "Modifica, unisci, dividi, comprimi, firma, oscura ed esegui OCR su PDF offline nel browser. Zero caricamenti, nessun limite e gratuito."
     },
     "imageToolkit": {
-      "title": "NexImage Toolkit — Comprimi, Converti, Redigi e Rimuovi Metadati | TheNexTools"
+      "title": "NexImage Toolkit — Comprimi, Converti, Redigi e Rimuovi Metadati | TheNexTools",
+      "description": "Comprimi JPG/PNG/WebP, converti formati in batch, sfoca volti e targhe e rimuovi metadati EXIF GPS localmente senza caricare foto."
     }
   },
   "imageTools": {

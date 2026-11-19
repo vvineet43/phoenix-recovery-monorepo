@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { locales } from '@/lib/i18n-config';
+import { locales, ogLocales } from '@/lib/i18n-config';
 
 const TRANSLATIONS = {
   en: {
@@ -350,12 +350,15 @@ export async function generateMetadata({ params }) {
       title: t.title,
       description: t.description,
       type: 'website',
+      siteName: 'TheNexTools',
+      locale: ogLocales[lang] || 'en_US',
       url: `https://thenextools.com/${lang}/docs`,
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',
           width: 1200,
           height: 630,
+          alt: t.title,
         },
       ],
     },
@@ -411,7 +414,7 @@ export default async function DocsPage({ params }) {
 
         <section className="docs-grid" style={{ display: 'grid', gap: '3rem' }}>
           <div>
-            <h3>{t.sec1Title}</h3>
+            <h2 style={{ fontSize: '1.25rem' }}>{t.sec1Title}</h2>
             <p className="mt-sm">{t.sec1Desc}</p>
             <ul style={{ paddingLeft: '1.25rem', marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <li>{t.sec1Li1}</li>
@@ -421,7 +424,7 @@ export default async function DocsPage({ params }) {
           </div>
 
           <div>
-            <h3>{t.sec2Title}</h3>
+            <h2 style={{ fontSize: '1.25rem' }}>{t.sec2Title}</h2>
             <p className="mt-sm">{t.sec2Desc}</p>
             <ul style={{ paddingLeft: '1.25rem', marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <li dangerouslySetInnerHTML={{ __html: t.sec2Li1 }} />
@@ -431,7 +434,7 @@ export default async function DocsPage({ params }) {
           </div>
 
           <div>
-            <h3>{t.secImgTitle}</h3>
+            <h2 style={{ fontSize: '1.25rem' }}>{t.secImgTitle}</h2>
             <p className="mt-sm">{t.secImgDesc}</p>
             <ul style={{ paddingLeft: '1.25rem', marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <li dangerouslySetInnerHTML={{ __html: t.secImgLi1 }} />
@@ -442,7 +445,7 @@ export default async function DocsPage({ params }) {
           </div>
 
           <div>
-            <h3>{t.sec3Title}</h3>
+            <h2 style={{ fontSize: '1.25rem' }}>{t.sec3Title}</h2>
             <p className="mt-sm">{t.sec3Desc}</p>
             <ul style={{ paddingLeft: '1.25rem', marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <li dangerouslySetInnerHTML={{ __html: t.sec3Li1 }} />

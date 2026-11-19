@@ -27,12 +27,15 @@ export async function generateMetadata({ params }) {
       title: d.meta.dataRecovery.title,
       description: desc,
       type: 'website',
+      siteName: 'TheNexTools',
+      locale: d.meta.layout.ogLocale,
       url: locale === 'en' ? 'https://thenextools.com/data-recovery' : `https://thenextools.com/${locale}/data-recovery`,
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',
           width: 1200,
           height: 630,
+          alt: 'TheNexTools — Free Offline PDF, Image & Data Recovery Tools',
         },
       ],
     },
@@ -54,26 +57,52 @@ export default async function DataRecoveryPage({ params }) {
   const t = d.dataRecovery;
 
   return (
-    <>
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "NexData Recovery",
-            "url": `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/data-recovery`,
-            "applicationCategory": "UtilitiesApplication",
-            "operatingSystem": "macOS, Windows",
-            "description": t.heroDesc,
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "USD",
-              "lowPrice": "0",
-              "highPrice": "49.99",
-              "offerCount": "2"
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "NexData Recovery",
+              "url": `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/data-recovery`,
+              "inLanguage": locale,
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "macOS, Windows",
+              "description": d.meta.dataRecovery.description || t.heroDesc,
+              "publisher": {
+                "@type": "Organization",
+                "name": "TheNexTools",
+                "url": "https://thenextools.com/"
+              },
+              "offers": {
+                "@type": "AggregateOffer",
+                "priceCurrency": "USD",
+                "lowPrice": "0",
+                "highPrice": "49.99",
+                "offerCount": "2"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": d.meta.pdfToolkit.breadcrumbHome,
+                  "item": locale === 'en' ? "https://thenextools.com/" : `https://thenextools.com/${locale}`
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": t.heroBadge,
+                  "item": `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/data-recovery`
+                }
+              ]
             }
-          })
+          ])
         }}
       />
       <header className="hero container">
@@ -232,6 +261,6 @@ export default async function DataRecoveryPage({ params }) {
           <a href="#pricing" className="btn btn-primary">{t.ctaButton}</a>
         </div>
       </section>
-    </>
+    </main>
   );
 }

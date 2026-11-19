@@ -18,12 +18,15 @@ export const metadata = {
     title: 'Refund Policy | TheNexTools',
     description: 'Our refund policy for NexData Recovery Pro and other paid software. Learn how to request a refund and what is covered.',
     type: 'website',
+    siteName: 'TheNexTools',
+    locale: 'en_US',
     url: 'https://thenextools.com/refund-policy',
     images: [
       {
         url: 'https://thenextools.com/thenextools-com-og-image.png',
         width: 1200,
         height: 630,
+        alt: 'TheNexTools — Free Offline PDF, Image & Data Recovery Tools',
       },
     ],
   },
@@ -49,12 +52,12 @@ export default function RefundPolicyPage() {
         <section className="text-content" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
 
           <div>
-            <h3>Overview</h3>
+            <h2 style={{ fontSize: '1.25rem' }}>Overview</h2>
             <p>If NexData Recovery Pro isn&apos;t working properly on your system, you can request a full refund. We just ask that you meet the conditions below.</p>
           </div>
 
           <div>
-            <h3>Refund Eligibility</h3>
+            <h2 style={{ fontSize: '1.25rem' }}>Refund Eligibility</h2>
             <p>To be eligible for a refund, <strong>all</strong> of the following conditions must be met:</p>
             <ol style={{ paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.8rem', marginTop: '1rem' }}>
               <li>The refund request is submitted <strong>within 10 days</strong> of the original purchase date.</li>
@@ -80,7 +83,7 @@ export default function RefundPolicyPage() {
           </div>
 
           <div>
-            <h3>How to Request a Refund</h3>
+            <h2 style={{ fontSize: '1.25rem' }}>How to Request a Refund</h2>
             <ol style={{ paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.8rem', marginTop: '1rem' }}>
               <li>Send an email to <a href="mailto:contact@thenextools.com" style={{ color: 'var(--primary)', fontWeight: 600 }}>contact@thenextools.com</a> with the subject line: <strong>&quot;Refund Request — NexData Recovery Pro&quot;</strong></li>
               <li>Include your <strong>order confirmation email</strong> or <strong>license key</strong> for verification.</li>
@@ -90,12 +93,12 @@ export default function RefundPolicyPage() {
           </div>
 
           <div>
-            <h3>Processing Time</h3>
+            <h2 style={{ fontSize: '1.25rem' }}>Processing Time</h2>
             <p>We aim to review all refund requests within <strong>3 business days</strong>. If approved, the refund will be processed to your original payment method within 5–10 business days depending on your bank or payment provider.</p>
           </div>
 
           <div>
-            <h3>Important Notes</h3>
+            <h2 style={{ fontSize: '1.25rem' }}>Important Notes</h2>
             <ul style={{ paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.8rem', marginTop: '1rem' }}>
               <li>Refund requests submitted <strong>after 10 days</strong> from the purchase date will not be honored.</li>
               <li>We strongly encourage you to use the <strong>Free Version</strong> first — it allows unlimited scanning and full file previews so you can verify your data is recoverable <em>before</em> purchasing a Pro license.</li>
@@ -104,7 +107,7 @@ export default function RefundPolicyPage() {
           </div>
 
           <div>
-            <h3>Contact</h3>
+            <h2 style={{ fontSize: '1.25rem' }}>Contact</h2>
             <p>For any questions about this policy, reach out to us at <a href="mailto:contact@thenextools.com" style={{ color: 'var(--primary)', fontWeight: 600 }}>contact@thenextools.com</a>.</p>
           </div>
 

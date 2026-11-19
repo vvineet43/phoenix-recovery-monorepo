@@ -23,12 +23,15 @@ export const metadata = {
     title: 'Sitemap | TheNexTools',
     description: 'Navigate through TheNexTools. Complete index of all our online PDF tools, image compressors, metadata strippers, and offline data recovery applications.',
     type: 'website',
+    siteName: 'TheNexTools',
+    locale: 'en_US',
     url: 'https://thenextools.com/sitemap',
     images: [
       {
         url: 'https://thenextools.com/thenextools-com-og-image.png',
         width: 1200,
         height: 630,
+        alt: 'TheNexTools — Free Offline PDF, Image & Data Recovery Tools',
       },
     ],
   },

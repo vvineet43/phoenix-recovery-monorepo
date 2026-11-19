@@ -788,7 +788,8 @@
       "ogLocale": "sw_KE"
     },
     "home": {
-      "title": "TheNexTools — Zana za Kompyuta za Faragha, za Nje ya Mtandao"
+      "title": "TheNexTools — Zana za Kompyuta za Faragha, za Nje ya Mtandao",
+      "description": "Kihariri cha PDF bure nje ya mtandao, kibana picha, kibadilisha umbizo, kiondoa EXIF na urejeshaji data. 100% kwenye kifaa chako bila kupakia."
     },
     "contact": {
       "title": "Wasiliana Nasi | TheNexTools",
@@ -798,14 +799,17 @@
       "subjectSecurity": "Wasiwasi wa Usalama / Faragha"
     },
     "dataRecovery": {
-      "title": "Urejeshaji wa NexData — Rejesha Faili Zilizofutwa kutoka kwenye Diski Zilizofomatiwa | TheNexTools"
+      "title": "Urejeshaji wa NexData — Rejesha Faili Zilizofutwa kutoka kwenye Diski Zilizofomatiwa | TheNexTools",
+      "description": "Rejesha picha, video na nyaraka zilizofutwa kutoka kwenye diski na kadi za SD zilizofomatiwa kwa kuchanganua sekta ghafi. Changanua bure."
     },
     "pdfToolkit": {
       "title": "NexPDF — Hariri, Saini, Unganisha & Bana PDFs Nje ya Mtandao | TheNexTools",
-      "breadcrumbHome": "Nyumbani"
+      "breadcrumbHome": "Nyumbani",
+      "description": "Hariri, unganisha, gawanya, bana, saini, futa na fanya OCR kwenye PDF nje ya mtandao kwenye kivinjari chako. Bure kabisa bila kupakia faili."
     },
     "imageToolkit": {
-      "title": "NexImage Toolkit — Bana, Badilisha, Ficha & Ondoa Metadata | TheNexTools"
+      "title": "NexImage Toolkit — Bana, Badilisha, Ficha & Ondoa Metadata | TheNexTools",
+      "description": "Bana JPG/PNG/WebP, badilisha umbizo kwa pamoja, tia ukungu nyuso na nambari za magari, na ondoa data ya GPS EXIF ndani ya kivinjari chako."
     }
   },
   "imageTools": {

@@ -56,12 +56,15 @@ export async function generateMetadata({ params }) {
       title: tool.title,
       description: tool.description,
       type: 'website',
+      siteName: 'TheNexTools',
+      locale: d.meta.layout.ogLocale,
       url: locale === 'en' ? `https://thenextools.com/pdf-toolkit/tools/${slug}` : `https://thenextools.com/${locale}/pdf-toolkit/tools/${slug}`,
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',
           width: 1200,
           height: 630,
+          alt: 'TheNexTools — Free Offline PDF, Image & Data Recovery Tools',
         },
       ],
     },
@@ -73,6 +76,8 @@ export async function generateMetadata({ params }) {
     }
   };
 }
+
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   return Object.keys(TOOLS_METADATA).map((slug) => ({
@@ -125,7 +130,7 @@ export default async function ToolSeoPage({ params }) {
     locale === 'en' ? `/pdf-toolkit/tools/${targetSlug}` : `/${locale}/pdf-toolkit/tools/${targetSlug}`;
 
   return (
-    <>
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -173,16 +178,35 @@ export default async function ToolSeoPage({ params }) {
               "@type": "WebApplication",
               "name": `NexPDF ${tool.h1.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ').replace(/[.।。]+$/g, '')}`,
               "url": `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/pdf-toolkit/tools/${slug}`,
+              "inLanguage": locale,
               "applicationCategory": "UtilityApplication",
               "operatingSystem": "All",
               "browserRequirements": "Requires HTML5 and modern JS support",
               "description": tool.description,
+              "publisher": {
+                "@type": "Organization",
+                "name": "TheNexTools",
+                "url": "https://thenextools.com/"
+              },
               "offers": {
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "USD"
               }
             },
+            ...(tool.steps ? [{
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              "name": tool.howToTitle || (s.howToPrefix + localizedLabel),
+              "description": tool.description,
+              "inLanguage": locale,
+              "step": tool.steps.map((step, idx) => ({
+                "@type": "HowToStep",
+                "position": idx + 1,
+                "name": step.title,
+                "text": step.desc
+              }))
+            }] : []),
             {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
@@ -236,7 +260,7 @@ export default async function ToolSeoPage({ params }) {
         <div className="container">
           <div className="grid-2">
             <div className="feature-card">
-              <h3 style={{ marginBottom: '1.5rem' }}>{s.keyBenefits}</h3>
+              <h2 style={{ fontSize: '1.25rem', marginBottom: '1.5rem' }}>{s.keyBenefits}</h2>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {tool.features.map((feature, i) => (
                   <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
@@ -247,7 +271,7 @@ export default async function ToolSeoPage({ params }) {
               </ul>
             </div>
             <div className="feature-card" style={{ background: 'var(--bg-2)' }}>
-              <h3>{s.localPrivate}</h3>
+              <h2 style={{ fontSize: '1.25rem' }}>{s.localPrivate}</h2>
               <p>
                 {t(s.localPrivateDesc, { tool: localizedLabel })}
               </p>
@@ -273,7 +297,7 @@ export default async function ToolSeoPage({ params }) {
                   <div className="premium-step-badge">
                     {index + 1}
                   </div>
-                  <h4 className="premium-step-title">{step.title}</h4>
+                  <h3 className="premium-step-title">{step.title}</h3>
                   <p className="premium-step-text">{step.desc}</p>
                 </div>
               ))}
@@ -354,6 +378,6 @@ export default async function ToolSeoPage({ params }) {
           <a href="#tool" className="btn btn-primary">{s.backToTool}</a>
         </div>
       </section>
-    </>
+    </main>
   );
 }
