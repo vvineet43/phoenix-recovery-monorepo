@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { locales } from '@/lib/i18n-config';
+import { locales, ogLocales } from '@/lib/i18n-config';
 
 const TRANSLATIONS = {
   en: {
@@ -254,11 +254,14 @@ export async function generateMetadata({ params }) {
       title: t.title,
       description: t.description,
       type: 'website',
+      siteName: 'TheNexTools',
+      locale: ogLocales[lang] || 'en_US',
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',
           width: 1200,
           height: 630,
+          alt: t.title,
         },
       ],
     },
@@ -285,32 +288,32 @@ export default async function TermsPage({ params }) {
 
       <section className="text-content" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
         <div>
-          <h3>{t.sec1Title}</h3>
+          <h2 style={{ fontSize: '1.25rem' }}>{t.sec1Title}</h2>
           <p dangerouslySetInnerHTML={{ __html: t.sec1Desc }} />
         </div>
 
         <div>
-          <h3>{t.sec2Title}</h3>
+          <h2 style={{ fontSize: '1.25rem' }}>{t.sec2Title}</h2>
           <p dangerouslySetInnerHTML={{ __html: t.sec2Desc }} />
         </div>
 
         <div>
-          <h3>{t.sec3Title}</h3>
+          <h2 style={{ fontSize: '1.25rem' }}>{t.sec3Title}</h2>
           <p dangerouslySetInnerHTML={{ __html: t.sec3Desc }} />
         </div>
 
         <div>
-          <h3>{t.sec4Title}</h3>
+          <h2 style={{ fontSize: '1.25rem' }}>{t.sec4Title}</h2>
           <p dangerouslySetInnerHTML={{ __html: t.sec4Desc }} />
         </div>
 
         <div>
-          <h3>{t.sec5Title}</h3>
+          <h2 style={{ fontSize: '1.25rem' }}>{t.sec5Title}</h2>
           <p dangerouslySetInnerHTML={{ __html: t.sec5Desc }} />
         </div>
 
         <div>
-          <h3>{t.sec6Title}</h3>
+          <h2 style={{ fontSize: '1.25rem' }}>{t.sec6Title}</h2>
           <p>
             {t.sec6Desc}
             <a href="mailto:contact@thenextools.com" style={{ color: 'var(--primary)', fontWeight: 600 }}>contact@thenextools.com</a>.

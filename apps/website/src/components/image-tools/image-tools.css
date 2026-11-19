@@ -126,6 +126,7 @@
   flex: 1;
 }
 
+.tool-toolbar-info h2,
 .tool-toolbar-info h3 {
   font-size: 1.05rem;
   font-weight: 700;
@@ -654,6 +655,7 @@
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
 }
 
+.settings-panel h2,
 .settings-panel h3 {
   font-size: 1.05rem;
   margin-bottom: 1.25rem;

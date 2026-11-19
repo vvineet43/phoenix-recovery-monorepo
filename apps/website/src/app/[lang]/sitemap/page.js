@@ -3,7 +3,7 @@ import { TOOLS_METADATA } from '@/lib/pdf-tools-metadata';
 import { 
   FileText, Image, ArrowRight, ShieldCheck, Home
 } from 'lucide-react';
-import { locales } from '@/lib/i18n-config';
+import { locales, ogLocales } from '@/lib/i18n-config';
 import { getDictionary } from '@/dictionaries';
 
 const TRANSLATIONS = {
@@ -511,11 +511,14 @@ export async function generateMetadata({ params }) {
       title: t.title,
       description: t.description,
       type: 'website',
+      siteName: 'TheNexTools',
+      locale: ogLocales[lang] || 'en_US',
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',
           width: 1200,
           height: 630,
+          alt: t.title,
         },
       ],
     },

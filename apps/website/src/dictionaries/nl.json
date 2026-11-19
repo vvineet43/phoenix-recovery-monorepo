@@ -788,7 +788,8 @@
       "ogLocale": "nl_NL"
     },
     "home": {
-      "title": "TheNexTools — Private, Offline Desktop Tools"
+      "title": "TheNexTools — Private, Offline Desktop Tools",
+      "description": "Gratis offline PDF-editor, afbeeldingscompressor, converter, EXIF-verwijderaar en gegevensherstel. 100% lokaal in uw browser zonder uploads."
     },
     "contact": {
       "title": "Contact | TheNexTools",
@@ -798,14 +799,17 @@
       "subjectSecurity": "Zorgen over Beveiliging / Privacy"
     },
     "dataRecovery": {
-      "title": "NexData Recovery — Gelöschte bestanden van geformatteerde schijven redden | TheNexTools"
+      "title": "NexData Recovery — Gelöschte bestanden van geformatteerde schijven redden | TheNexTools",
+      "description": "Herstel verwijderde foto's, video's en documenten van geformatteerde schijven en SD-kaarten via raw sector-scanning. Gratis scannen en bekijken."
     },
     "pdfToolkit": {
       "title": "NexPDF — PDF's offline bewerken, ondertekenen, samenvoegen & comprimeren | TheNexTools",
-      "breadcrumbHome": "Start"
+      "breadcrumbHome": "Start",
+      "description": "Bewerk, voeg samen, splits, comprimeer, onderteken, anonimiseer en OCR PDF's offline in uw browser. Geen uploads, geen limieten en gratis."
     },
     "imageToolkit": {
-      "title": "NexImage Toolkit — Afbeeldingen comprimeren, converteren, anonimiseren & metadaten opschonen | TheNexTools"
+      "title": "NexImage Toolkit — Afbeeldingen comprimeren, converteren, anonimiseren & metadaten opschonen | TheNexTools",
+      "description": "Comprimeer JPG/PNG/WebP, converteer formaten in batch, vervaag gezichten en kentekens en wis GPS EXIF-metadata lokaal zonder uploaden."
     }
   },
   "imageTools": {

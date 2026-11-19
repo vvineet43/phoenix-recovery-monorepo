@@ -231,7 +231,7 @@ export function ExifStripperApp({ hideHeader }: { hideHeader?: boolean }) {
             {/* Toolbar */}
             <div className="tool-toolbar">
               <div className="tool-toolbar-info">
-                <h3>{t.processedInfo.replace('{done}', String(doneCount)).replace('{total}', String(images.length))}</h3>
+                <h2>{t.processedInfo.replace('{done}', String(doneCount)).replace('{total}', String(images.length))}</h2>
                 {hasGps
                   ? <p><span className="meta-danger">{t.gpsDanger}</span></p>
                   : doneCount > 0 ? <p><span className="meta-success">{t.noGpsSuccess}</span></p> : <p>{t.scanning}</p>

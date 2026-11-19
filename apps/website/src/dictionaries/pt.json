@@ -788,7 +788,8 @@
       "ogLocale": "pt_PT"
     },
     "home": {
-      "title": "TheNexTools – Utilitários de desktop offline e privados"
+      "title": "TheNexTools – Utilitários de desktop offline e privados",
+      "description": "Editor de PDF offline grátis, compressor de imagens, conversor, removedor EXIF e recuperação de dados. 100% local no navegador sem uploads."
     },
     "contact": {
       "title": "Contate-nos | TheNexTools",
@@ -798,14 +799,17 @@
       "subjectSecurity": "Preocupação com segurança/privacidade"
     },
     "dataRecovery": {
-      "title": "NexData Recovery — Recupere arquivos excluídos de unidades formatadas | TheNexTools"
+      "title": "NexData Recovery — Recupere arquivos excluídos de unidades formatadas | TheNexTools",
+      "description": "Recupere fotos, vídeos e documentos apagados de discos formatados e cartões SD lendo setores brutos. Escaneie e visualize gratuitamente."
     },
     "pdfToolkit": {
       "title": "NexPDF — Edite, assine, mescle e compacte PDFs offline | TheNexTools",
-      "breadcrumbHome": "Lar"
+      "breadcrumbHome": "Lar",
+      "description": "Edite, mescle, divida, compacte, assine, censure e faça OCR em PDFs offline no navegador. Zero uploads, sem limites de tamanho e grátis."
     },
     "imageToolkit": {
-      "title": "NexImage Toolkit — Compactar, converter, redigir e remover metadados | TheNexTools"
+      "title": "NexImage Toolkit — Compactar, converter, redigir e remover metadados | TheNexTools",
+      "description": "Compacte JPG/PNG/WebP, converta formatos em lote, desfoque rostos e placas e remova metadados EXIF GPS localmente no seu navegador."
     }
   },
   "imageTools": {

@@ -33,12 +33,15 @@ export async function generateMetadata({ params }) {
       title: d.meta.pdfToolkit.title,
       description: desc,
       type: 'website',
+      siteName: 'TheNexTools',
+      locale: d.meta.layout.ogLocale,
       url: locale === 'en' ? 'https://thenextools.com/pdf-toolkit' : `https://thenextools.com/${locale}/pdf-toolkit`,
       images: [
         {
           url: 'https://thenextools.com/thenextools-com-og-image.png',
           width: 1200,
           height: 630,
+          alt: 'TheNexTools — Free Offline PDF, Image & Data Recovery Tools',
         },
       ],
     },
@@ -64,7 +67,7 @@ export default async function PdfToolkitPage({ params }) {
   };
 
   return (
-    <>
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -112,10 +115,16 @@ export default async function PdfToolkitPage({ params }) {
               "@type": "WebApplication",
               "name": "NexPDF Toolkit",
               "url": `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}/pdf-toolkit`,
+              "inLanguage": locale,
               "applicationCategory": "UtilityApplication",
               "operatingSystem": "All",
               "browserRequirements": "Requires HTML5 and modern JS support",
-              "description": t.heroDesc,
+              "description": d.meta.pdfToolkit.description || t.heroDesc,
+              "publisher": {
+                "@type": "Organization",
+                "name": "TheNexTools",
+                "url": "https://thenextools.com/"
+              },
               "offers": {
                 "@type": "Offer",
                 "price": "0",
@@ -130,7 +139,7 @@ export default async function PdfToolkitPage({ params }) {
                   "@type": "ListItem",
                   "position": 1,
                   "name": d.meta.pdfToolkit.breadcrumbHome,
-                  "item": `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}`
+                  "item": locale === 'en' ? "https://thenextools.com/" : `https://thenextools.com/${locale}`
                 },
                 {
                   "@type": "ListItem",
@@ -415,6 +424,6 @@ export default async function PdfToolkitPage({ params }) {
           <a href="#tool" className="btn btn-primary">{t.ctaButton}</a>
         </div>
       </section>
-    </>
+    </main>
   );
 }

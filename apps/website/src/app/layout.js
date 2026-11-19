@@ -26,13 +26,25 @@ export async function generateMetadata({ params }) {
     metadataBase: new URL('https://thenextools.com'),
     title: d.meta.layout.title,
     description: d.meta.layout.description,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     icons: {
+      icon: '/thenextools-com-favicon.ico',
       apple: '/thenextools-com-apple-icon.png',
     },
     openGraph: {
       title: d.meta.layout.title,
       description: d.meta.layout.description,
-      url: locale === 'en' ? 'https://thenextools.com' : `https://thenextools.com/${locale}`,
+      url: locale === 'en' ? 'https://thenextools.com/' : `https://thenextools.com/${locale}`,
       siteName: 'TheNexTools Suite',
       images: [
         {
@@ -62,6 +74,8 @@ export default async function RootLayout({ children, params }) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+        <link rel="alternate" type="text/plain" href="https://thenextools.com/llms.txt" title="LLMs.txt" />
+        <link rel="alternate" type="text/plain" href="https://thenextools.com/llms-full.txt" title="LLMs Full Reference" />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var s=location.pathname.split('/')[1];var l=${JSON.stringify(locales)};if(l.indexOf(s)!==-1){document.documentElement.lang=s;}}catch(e){}})();`

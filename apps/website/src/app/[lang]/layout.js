@@ -1,5 +1,8 @@
+import { notFound, permanentRedirect } from 'next/navigation';
 import { locales, defaultLocale } from '@/lib/i18n-config';
 import { getDictionary } from '@/dictionaries';
+
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   return locales
@@ -10,8 +13,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams || {};
-  const locale = locales.includes(lang) ? lang : defaultLocale;
-  const d = await getDictionary(locale);
+  if (!locales.includes(lang) || lang === defaultLocale) {
+    return {};
+  }
+  const d = await getDictionary(lang);
 
   return {
     metadataBase: new URL('https://thenextools.com'),
@@ -20,7 +25,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: d.meta.layout.title,
       description: d.meta.layout.description,
-      url: locale === 'en' ? 'https://thenextools.com' : `https://thenextools.com/${locale}`,
+      url: `https://thenextools.com/${lang}`,
       siteName: 'TheNexTools Suite',
       images: [
         {
@@ -41,6 +46,16 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function LangLayout({ children }) {
+export default async function LangLayout({ children, params }) {
+  const resolvedParams = await params;
+  const { lang } = resolvedParams || {};
+
+  if (lang === defaultLocale) {
+    permanentRedirect('/');
+  }
+  if (!locales.includes(lang)) {
+    notFound();
+  }
+
   return <>{children}</>;
 }

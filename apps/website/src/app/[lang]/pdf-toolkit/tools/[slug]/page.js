@@ -2,6 +2,8 @@ import { locales, defaultLocale } from '@/lib/i18n-config';
 import ToolSeoPage, { generateMetadata as sharedGenerateMetadata } from '@/app/pdf-toolkit/tools/[slug]/page';
 import { TOOLS_METADATA } from '@/lib/pdf-tools-metadata';
 
+export const dynamicParams = false;
+
 export const generateMetadata = sharedGenerateMetadata;
 
 export async function generateStaticParams() {

@@ -791,7 +791,8 @@
       "ogLocale": "ja_JP"
     },
     "home": {
-      "title": "TheNexTools — プライベート、オフライン デスクトップ ユーティリティ"
+      "title": "TheNexTools — プライベート、オフライン デスクトップ ユーティリティ",
+      "description": "無料のオフラインPDF編集、画像圧縮、フォーマット変換、EXIF削除、データ復元ツール。サーバーへのアップロード一切不要でブラウザ内完結。"
     },
     "contact": {
       "title": "お問い合わせ | TheNexTools",
@@ -801,14 +802,17 @@
       "subjectSecurity": "Security"
     },
     "dataRecovery": {
-      "title": "NexData Recovery — フォーマットされたドライブから削除されたファイルを復元 | TheNexTools"
+      "title": "NexData Recovery — フォーマットされたドライブから削除されたファイルを復元 | TheNexTools",
+      "description": "フォーマット済みドライブやSDカードの物理セクタを直接スキャンし、削除された写真・動画・文書を復元。スキャンとプレビューは無料。"
     },
     "pdfToolkit": {
       "title": "NexPDF — オフラインでのPDF編集、署名、結合、圧縮 | TheNexTools",
-      "breadcrumbHome": "ホーム"
+      "breadcrumbHome": "ホーム",
+      "description": "ブラウザ内でPDFの編集・結合・分割・圧縮・署名・墨消し・OCRをオフライン実行。アップロード不要、容量制限なし、完全無料。"
     },
     "imageToolkit": {
-      "title": "NexImage Toolkit — 画像の圧縮、フォーマット変換、ぼかし処理、メタデータ削除 | TheNexTools"
+      "title": "NexImage Toolkit — 画像の圧縮、フォーマット変換、ぼかし処理、メタデータ削除 | TheNexTools",
+      "description": "JPG/PNG/WebP圧縮、一括フォーマット変換、顔やナンバープレートのぼかし、GPS等のEXIFメタデータ削除をブラウザ内でローカル処理。"
     }
   },
   "imageTools": {

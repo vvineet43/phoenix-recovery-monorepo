@@ -12,4 +12,4 @@ Disallow: /*/image-tools
 
 Sitemap: https://thenextools.com/sitemap.xml
 
-Content-Signal: ai-train=no, search=yes, ai-input=no
+Content-Signal: ai-train=no, search=yes, ai-input=yes

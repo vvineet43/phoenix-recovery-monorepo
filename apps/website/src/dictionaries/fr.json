@@ -788,7 +788,8 @@
       "ogLocale": "fr_FR"
     },
     "home": {
-      "title": "TheNexTools — Utilitaires de bureau privés et hors ligne"
+      "title": "TheNexTools — Utilitaires de bureau privés et hors ligne",
+      "description": "Éditeur PDF hors ligne gratuit, compresseur d'images, convertisseur, suppresseur EXIF et récupération de données. 100 % local sans aucun envoi."
     },
     "contact": {
       "title": "Contactez-nous | LesOutilsNex",
@@ -798,14 +799,17 @@
       "subjectSecurity": "Problème de sécurité/confidentialité"
     },
     "dataRecovery": {
-      "title": "NexData Recovery — Récupérer les fichiers supprimés des lecteurs formatés | LesOutilsNex"
+      "title": "NexData Recovery — Récupérer les fichiers supprimés des lecteurs formatés | LesOutilsNex",
+      "description": "Récupérez photos, vidéos et documents supprimés de disques formatés et cartes SD par analyse de secteurs bruts. Analyse et aperçu gratuits."
     },
     "pdfToolkit": {
       "title": "NexPDF — Modifier, signer, fusionner et compresser des PDF hors ligne | LesOutilsNex",
-      "breadcrumbHome": "Maison"
+      "breadcrumbHome": "Maison",
+      "description": "Éditez, fusionnez, divisez, compressez, signez, masquez et lancez l'OCR sur vos PDF hors ligne dans votre navigateur. Gratuit et sans upload."
     },
     "imageToolkit": {
-      "title": "NexImage Toolkit — Compresser, convertir, caviarder et supprimer les métadonnées | TheNexTools"
+      "title": "NexImage Toolkit — Compresser, convertir, caviarder et supprimer les métadonnées | TheNexTools",
+      "description": "Compressez JPG/PNG/WebP, convertissez par lots, floutez visages et plaques et supprimez les données EXIF GPS localement sans téléversement."
     }
   },
   "imageTools": {
