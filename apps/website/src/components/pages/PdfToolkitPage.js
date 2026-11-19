@@ -13,9 +13,11 @@ export async function generateMetadata({ params }) {
   const locale = lang || 'en';
   const d = await getDictionary(locale);
 
+  const desc = d.meta.pdfToolkit.description || d.pdfToolkit.heroDesc;
+
   return {
     title: d.meta.pdfToolkit.title,
-    description: d.pdfToolkit.heroDesc,
+    description: desc,
     manifest: '/pdf-manifest.json',
     alternates: {
       canonical: locale === 'en' ? '/pdf-toolkit' : `/${locale}/pdf-toolkit`,
@@ -29,7 +31,7 @@ export async function generateMetadata({ params }) {
     },
     openGraph: {
       title: d.meta.pdfToolkit.title,
-      description: d.pdfToolkit.heroDesc,
+      description: desc,
       type: 'website',
       url: locale === 'en' ? 'https://thenextools.com/pdf-toolkit' : `https://thenextools.com/${locale}/pdf-toolkit`,
       images: [
@@ -43,7 +45,7 @@ export async function generateMetadata({ params }) {
     twitter: {
       card: 'summary_large_image',
       title: d.meta.pdfToolkit.title,
-      description: d.pdfToolkit.heroDesc,
+      description: desc,
       images: ['https://thenextools.com/thenextools-com-og-image.png'],
     }
   };

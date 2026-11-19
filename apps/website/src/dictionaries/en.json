@@ -280,7 +280,7 @@
   "pdfTools": {
     "tools": {
       "compress-pdf": {
-        "title": "Compress PDF Locally — Reduce File Size Without Uploading | TheNexTools",
+        "title": "Compress PDF Offline — Shrink File Size Free | TheNexTools",
         "description": "Shrink heavy PDF files right in your browser. Adjust quality with a slider, see the estimated size before downloading, and keep your documents private.",
         "h1": "Make that PDF small enough to email.",
         "p": "You have a 40MB scan that needs to be under 10MB for an email attachment. Instead of uploading it to some random compression site, NexPDF handles it locally — you set the quality, see the estimated size, and download the result.",
@@ -308,7 +308,7 @@
         "toolParam": "compress"
       },
       "merge-pdf": {
-        "title": "Merge PDFs Locally — Combine Documents Without Uploading | TheNexTools",
+        "title": "Merge PDF Offline — Combine PDF Files Free | TheNexTools",
         "description": "Combine multiple PDF files into a single document. Drag to reorder pages, add images, and download — all processed in your browser.",
         "h1": "Combine multiple PDFs into one document.",
         "p": "Load up all the files, drag pages into the right order, and merge. The whole thing happens on your machine — no upload queue, no file size cap, no account required.",
@@ -420,7 +420,7 @@
         "toolParam": "scan"
       },
       "protect-pdf": {
-        "title": "Password Protect PDF Locally — Encrypt Without Uploading | TheNexTools",
+        "title": "Protect PDF with Password Offline — Free Tool | TheNexTools",
         "description": "Add password protection and AES encryption to your PDFs. Runs entirely in your browser — the password never touches a server.",
         "h1": "Lock your PDF with a password.",
         "p": "Set an open password so only authorized people can view the document, and optionally set a separate owner password to restrict printing and editing. The encryption happens locally — your password is never transmitted anywhere.",
@@ -448,7 +448,7 @@
         "toolParam": "protect"
       },
       "unlock-pdf": {
-        "title": "Remove PDF Password Locally — Unlock Without Uploading | TheNexTools",
+        "title": "Unlock PDF Offline — Remove PDF Password Free | TheNexTools",
         "description": "Remove password protection from your PDF files. Enter the password once and download an unprotected copy — all in your browser.",
         "h1": "Remove the password from your PDF.",
         "p": "You know the password but you're tired of typing it every time you open the file. Or you need to share an unlocked version with someone. Enter the password once here and download a clean, unprotected copy.",
@@ -504,7 +504,7 @@
         "toolParam": "watermark"
       },
       "ocr-pdf": {
-        "title": "OCR PDF Locally — Extract Text from Scanned Documents | TheNexTools",
+        "title": "OCR PDF Offline — Extract Text from Scans Free | TheNexTools",
         "description": "Convert scanned PDFs and images into searchable, selectable text using browser-based OCR. No upload required.",
         "h1": "Get searchable text out of a scanned document.",
         "p": "Someone sent you a scan of a contract and you need to copy a paragraph. Or you have a stack of old paper documents photographed as PDFs and need to search through them. NexPDF's OCR engine reads the text from the image and gives you a copyable, searchable result.",
@@ -532,7 +532,7 @@
         "toolParam": "ocr"
       },
       "redact-pdf": {
-        "title": "Redact PDF Locally — Permanently Black Out Sensitive Text | TheNexTools",
+        "title": "Redact PDF Offline — Permanently Hide Text | TheNexTools",
         "description": "Draw black boxes over names, numbers, and addresses in your PDF. The redaction is permanent — the hidden text cannot be recovered.",
         "h1": "Black out what shouldn't be visible.",
         "p": "Draw redaction boxes over social security numbers, client names, financial figures, or anything else that needs to stay hidden. The output is flattened — the text underneath is permanently destroyed, not just covered with a shape.",
@@ -588,7 +588,7 @@
         "toolParam": "html"
       },
       "images-to-pdf": {
-        "title": "Images to PDF Locally — Combine Photos into a Document | TheNexTools",
+        "title": "Images to PDF Offline — Convert JPG/PNG Free | TheNexTools",
         "description": "Convert JPG, PNG, and WebP images into a single PDF document. Rearrange pages, adjust margins, and download — all in your browser.",
         "h1": "Turn a stack of images into a single PDF.",
         "p": "You photographed a multi-page document with your phone and now you need it as a single PDF. Or you have a set of design mockups that need to go out as one file. Drop them in, arrange the order, and export.",
@@ -644,7 +644,7 @@
         "toolParam": "rotate"
       },
       "rearrange-pdf": {
-        "title": "Rearrange PDF Pages Locally — Drag and Drop Reordering | TheNexTools",
+        "title": "Rearrange PDF Pages Offline — Reorder Free | TheNexTools",
         "description": "Reorder, remove, and reorganize pages in your PDF with drag-and-drop. Runs locally in your browser.",
         "h1": "Put the pages in the right order.",
         "p": "The appendix ended up before the introduction, or there are three blank pages in the middle that need to go. Drag thumbnails around to reorder, click to delete, and download the cleaned-up version.",
@@ -672,7 +672,7 @@
         "toolParam": "rearrange"
       },
       "sign-pdf": {
-        "title": "Sign PDF Locally — Add Your Signature Without Printing | TheNexTools",
+        "title": "Sign PDF Offline — Add Signature Without Upload | TheNexTools",
         "description": "Draw or type your signature onto any PDF page. The output is flattened so the signature can't be moved or edited. No upload required.",
         "h1": "Sign it without printing it.",
         "p": "Draw your signature with a mouse or touchscreen, or type it and pick a cursive font. Place it on the right line, resize it, and export a flattened PDF. The signature becomes part of the page — it can't be selected, moved, or edited by the recipient.",
@@ -700,7 +700,7 @@
         "toolParam": "sign"
       },
       "add-page-numbers": {
-        "title": "Add Page Numbers to PDF Locally — Automatic Pagination | TheNexTools",
+        "title": "Add Page Numbers to PDF Offline — Free Tool | TheNexTools",
         "description": "Add sequential page numbers to your PDF. Choose the position and style. Runs locally in your browser.",
         "h1": "Number your pages automatically.",
         "p": "Reports, manuscripts, court filings — anything longer than a few pages usually needs page numbers. Pick where they go (bottom center, top right, etc.) and NexPDF stamps them across every page.",
@@ -728,7 +728,7 @@
         "toolParam": "page-numbers"
       },
       "text-to-pdf": {
-        "title": "Text to PDF Locally — Convert Plain Text to a Formatted Document | TheNexTools",
+        "title": "Text to PDF Offline — Convert Plain Text Free | TheNexTools",
         "description": "Paste plain text and get a clean, formatted PDF back. Preserves line breaks and spacing. Runs in your browser.",
         "h1": "Turn plain text into a proper PDF.",
         "p": "You have meeting notes, server logs, or a code snippet that needs to go out as a PDF. Paste the text in, check the preview, and download a cleanly formatted document. Line breaks and spacing are preserved exactly.",
@@ -788,7 +788,8 @@
       "ogLocale": "en_US"
     },
     "home": {
-      "title": "TheNexTools — Private, Offline Desktop Utilities"
+      "title": "TheNexTools — Free Offline PDF, Image & Recovery Tools",
+      "description": "Free offline PDF editor, image compressor, format converter, EXIF stripper, and raw data recovery tools. 100% local in your browser — zero uploads."
     },
     "contact": {
       "title": "Contact Us | TheNexTools",
@@ -798,14 +799,17 @@
       "subjectSecurity": "Security / Privacy Concern"
     },
     "dataRecovery": {
-      "title": "NexData Recovery — Recover Deleted Files from Formatted Drives | TheNexTools"
+      "title": "Raw Data Recovery Software — Recover Deleted Files | TheNexTools",
+      "description": "Recover deleted photos, videos, and documents from formatted drives and SD cards by scanning raw disk sectors. Scan and preview free, pay once."
     },
     "pdfToolkit": {
-      "title": "NexPDF — Edit, Sign, Merge & Compress PDFs Offline | TheNexTools",
-      "breadcrumbHome": "Home"
+      "title": "Free Offline PDF Editor — Merge, Compress & Sign | TheNexTools",
+      "breadcrumbHome": "Home",
+      "description": "Edit, merge, split, compress, sign, redact, and OCR PDFs offline in your browser. Zero server uploads, no file size caps, and completely free."
     },
     "imageToolkit": {
-      "title": "NexImage Toolkit — Compress, Convert, Redact & Strip Metadata | TheNexTools"
+      "title": "Free Offline Image Tools — Compress, Convert & Blur | TheNexTools",
+      "description": "Compress JPG/PNG/WebP, batch convert image formats, blur faces and plates, and strip GPS EXIF metadata locally in your browser without uploading."
     }
   },
   "imageTools": {

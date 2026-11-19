@@ -232,11 +232,23 @@ export default function ExifStripperLanding() {
         </div>
       </section>
 
+            <section className="divider" style={{ background: 'var(--bg-2)', padding: '3rem 0' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <h2 style={{ fontSize: '1.35rem', marginBottom: '1.25rem' }}>More Image Tools</h2>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center' }}>
+              <Link href="/image-compressor" className="badge" style={{ textDecoration: 'none' }}>Image Compressor</Link>
+              <Link href="/image-converter" className="badge" style={{ textDecoration: 'none' }}>Image Converter</Link>
+              <Link href="/image-redactor" className="badge" style={{ textDecoration: 'none' }}>Image Redactor & Blur</Link>
+              <Link href="/image-toolkit" className="badge" style={{ textDecoration: 'none' }}>All Image Tools</Link>
+          </div>
+        </div>
+      </section>
+
       <section className="cta-section">
         <div className="container">
           <h2>Ready to clean your photos?</h2>
           <p>Drop your files at the top of the page. All metadata is stripped in your browser.</p>
-          <a href="#" className="btn btn-primary">Back to Tool</a>
+          <a href="#tool" className="btn btn-primary">Back to Tool</a>
         </div>
       </section>
     </>

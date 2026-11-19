@@ -112,6 +112,18 @@ export default async function ToolSeoPage({ params }) {
 
   const stepsDescStr = tool.steps ? tool.steps.map(step => `${step.title}: ${step.desc}`).join(' ') : '';
 
+  const allSlugs = Object.keys(TOOLS_METADATA);
+  const currentIdx = allSlugs.indexOf(slug);
+  const relatedSlugs = [];
+  for (let offset = 1; offset <= allSlugs.length && relatedSlugs.length < 6; offset++) {
+    const candidate = allSlugs[(currentIdx + offset) % allSlugs.length];
+    if (candidate !== slug && d.pdfTools?.tools?.[candidate]) {
+      relatedSlugs.push(candidate);
+    }
+  }
+  const getToolHref = (targetSlug) =>
+    locale === 'en' ? `/pdf-toolkit/tools/${targetSlug}` : `/${locale}/pdf-toolkit/tools/${targetSlug}`;
+
   return (
     <>
       <script
@@ -179,7 +191,7 @@ export default async function ToolSeoPage({ params }) {
                   "@type": "ListItem",
                   "position": 1,
                   "name": d.meta.pdfToolkit.breadcrumbHome,
-                  "item": `https://thenextools.com${locale === 'en' ? '' : `/${locale}`}`
+                  "item": locale === 'en' ? 'https://thenextools.com/' : `https://thenextools.com/${locale}`
                 },
                 {
                   "@type": "ListItem",
@@ -309,6 +321,28 @@ export default async function ToolSeoPage({ params }) {
                 {s.faqA4}
               </p>
             </details>
+          </div>
+        </div>
+      </section>
+
+      <section className="divider" style={{ background: 'var(--bg-2)' }}>
+        <div className="container">
+          <div className="section-header" style={{ marginBottom: '2rem' }}>
+            <h2>{d.pdfToolkit?.utilitiesTitle || 'More PDF Tools'}</h2>
+          </div>
+          <div className="dashboard-grid">
+            {relatedSlugs.map((relSlug) => {
+              const relTool = d.pdfTools.tools[relSlug];
+              return (
+                <Link key={relSlug} href={getToolHref(relSlug)} className="dashboard-card" style={{ textDecoration: 'none' }}>
+                  <div className="dashboard-card-header">
+                    <div className="dashboard-card-arrow"><ArrowRight size={16} /></div>
+                  </div>
+                  <h3>{relTool.h1.replace(/[.।。]+$/g, '')}</h3>
+                  <p>{relTool.description}</p>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -10,7 +10,7 @@ const COMPRESSOR_STEPS = [
 
 export const metadata = {
   title: 'Image Compressor — Shrink JPG, PNG, WebP Locally | TheNexTools',
-  description: 'Compress images in your browser without uploading them. Adjust quality, compare before and after at full resolution, and download — individually or as a batch ZIP.',
+  description: 'Compress JPG, PNG, and WebP images offline in your browser. Adjust quality, compare full-res before/after, and download individually or as a ZIP.',
   manifest: '/image-manifest.json',
   alternates: {
     canonical: '/image-compressor',
@@ -24,7 +24,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'Image Compressor — Shrink JPG, PNG, WebP Locally | TheNexTools',
-    description: 'Compress images in your browser without uploading them. Adjust quality, compare before and after at full resolution, and download — individually or as a batch ZIP.',
+    description: 'Compress JPG, PNG, and WebP images offline in your browser. Adjust quality, compare full-res before/after, and download individually or as a ZIP.',
     type: 'website',
     images: [
       {
@@ -37,7 +37,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Image Compressor — Shrink JPG, PNG, WebP Locally | TheNexTools',
-    description: 'Compress images in your browser without uploading them. Adjust quality, compare before and after at full resolution, and download — individually or as a batch ZIP.',
+    description: 'Compress JPG, PNG, and WebP images offline in your browser. Adjust quality, compare full-res before/after, and download individually or as a ZIP.',
     images: ['https://thenextools.com/thenextools-com-og-image.png'],
   }
 };
@@ -231,11 +231,23 @@ export default function ImageCompressorLanding() {
         </div>
       </section>
 
+            <section className="divider" style={{ background: 'var(--bg-2)', padding: '3rem 0' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <h2 style={{ fontSize: '1.35rem', marginBottom: '1.25rem' }}>More Image Tools</h2>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center' }}>
+              <Link href="/image-converter" className="badge" style={{ textDecoration: 'none' }}>Image Converter</Link>
+              <Link href="/image-redactor" className="badge" style={{ textDecoration: 'none' }}>Image Redactor & Blur</Link>
+              <Link href="/exif-stripper" className="badge" style={{ textDecoration: 'none' }}>EXIF Metadata Stripper</Link>
+              <Link href="/image-toolkit" className="badge" style={{ textDecoration: 'none' }}>All Image Tools</Link>
+          </div>
+        </div>
+      </section>
+
       <section className="cta-section">
         <div className="container">
           <h2>Ready to shrink your images?</h2>
           <p>Drop your files at the top of the page. Runs in Chrome, Firefox, Safari, and Edge. Nothing to install.</p>
-          <a href="#" className="btn btn-primary">Back to Tool</a>
+          <a href="#tool" className="btn btn-primary">Back to Tool</a>
         </div>
       </section>
     </>

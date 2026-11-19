@@ -65,8 +65,23 @@ export default function Footer() {
             <ul className="footer-links">
               <li><Link href={getLink('/data-recovery')}>{d.home.dataRecoveryTitle}</Link></li>
               <li><Link href={getLink('/pdf-toolkit')}>{d.home.pdfToolkitTitle}</Link></li>
-              <li><Link href={getLink('/exif-stripper')}>{d.nav.exifStripperTitle}</Link></li>
+              <li><Link href={getLink('/image-toolkit')}>{d.home.imageToolkitTitle}</Link></li>
               <li><Link href={getLink('/image-compressor')}>{d.nav.imageCompressTitle}</Link></li>
+              <li><Link href={getLink('/image-converter')}>{d.nav.imageConvertTitle}</Link></li>
+              <li><Link href={getLink('/image-redactor')}>{d.nav.imageRedactTitle}</Link></li>
+              <li><Link href={getLink('/exif-stripper')}>{d.nav.exifStripperTitle}</Link></li>
+            </ul>
+          </div>
+
+          <div className="footer-group">
+            <div className="footer-group-title">{d.nav.pdfEditing}</div>
+            <ul className="footer-links">
+              <li><Link href={getLink('/pdf-toolkit/tools/merge-pdf')}>{d.nav.mergePdfTitle}</Link></li>
+              <li><Link href={getLink('/pdf-toolkit/tools/compress-pdf')}>{d.nav.compressPdfTitle}</Link></li>
+              <li><Link href={getLink('/pdf-toolkit/tools/split-pdf')}>{d.nav.splitPdfTitle}</Link></li>
+              <li><Link href={getLink('/pdf-toolkit/tools/pdf-to-images')}>{d.nav.pdfToImagesTitle}</Link></li>
+              <li><Link href={getLink('/pdf-toolkit/tools/redact-pdf')}>{d.nav.redactPdfTitle}</Link></li>
+              <li><Link href={getLink('/pdf-toolkit/tools/watermark-pdf')}>{d.nav.watermarkPdfTitle}</Link></li>
             </ul>
           </div>
 
