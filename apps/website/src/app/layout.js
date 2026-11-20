@@ -38,7 +38,12 @@ export async function generateMetadata({ params }) {
       },
     },
     icons: {
-      icon: '/thenextools-com-favicon.ico',
+      icon: [
+        { url: '/thenextools-com-favicon.ico', sizes: '48x48' },
+        { url: '/thenextools-com-icon-192.png', sizes: '192x192', type: 'image/png' },
+        { url: '/thenextools-com-icon-512.png', sizes: '512x512', type: 'image/png' },
+      ],
+      shortcut: '/thenextools-com-favicon.ico',
       apple: '/thenextools-com-apple-icon.png',
     },
     openGraph: {
