@@ -24,7 +24,18 @@ jobs:
 
       - name: Wait for production deployment to propagate
         if: github.event_name == 'push'
-        run: sleep 90
+        run: |
+          for i in $(seq 1 16); do
+            BODY=$(curl -fsS https://thenextools.com/45afb9452f561055130cfd130a88907d.txt 2>/dev/null | tr -d '\r\n' || true)
+            if [ "$BODY" = "45afb9452f561055130cfd130a88907d" ]; then
+              echo "Production key verified on attempt $i; waiting 15s for CDN propagation..."
+              sleep 15
+              exit 0
+            fi
+            echo "Attempt $i: production deploy still propagating, retrying in 15s..."
+            sleep 15
+          done
+          echo "Timed out waiting for key file on production; attempting submission anyway."
 
       - name: Submit sitemap URLs to IndexNow
         working-directory: apps/website

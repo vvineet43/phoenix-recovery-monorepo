@@ -46,7 +46,7 @@ async function main() {
   const keyText = keyRes.ok ? (await keyRes.text()).trim() : '';
   if (!keyRes.ok || keyText !== INDEXNOW_KEY) {
     console.error(
-      `IndexNow key verification failed at ${INDEXNOW_KEY_LOCATION} (status=${keyRes.status}). Deploy public/${INDEXNOW_KEY}.txt first.`
+      `IndexNow key verification failed at ${INDEXNOW_KEY_LOCATION} (status=${keyRes.status}, content-type=${keyRes.headers.get('content-type')}, body=${JSON.stringify(keyText.slice(0, 140))}).`
     );
     process.exit(1);
   }

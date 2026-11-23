@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 import { NextResponse } from 'next/server';
-import sitemap from '@/app/sitemap';
+import { getSitemapEntries } from '@/lib/sitemap-entries';
 import { submitToIndexNow } from '@/lib/indexnow';
 
 function isAuthorized(request) {
@@ -36,7 +36,7 @@ export async function POST(request) {
     }
 
     if (urls.length === 0) {
-      urls = sitemap().map((entry) => entry.url);
+      urls = getSitemapEntries().map((entry) => entry.url);
     }
 
     const result = await submitToIndexNow(urls);
