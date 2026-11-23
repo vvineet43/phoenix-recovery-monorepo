@@ -116,7 +116,7 @@ export default function ImageConverterLanding() {
               "@type": "HowTo",
               "name": "How to convert images offline",
               "inLanguage": "en",
-              "step": STEPS.map((step, idx) => ({
+              "step": CONVERTER_STEPS.map((step, idx) => ({
                 "@type": "HowToStep",
                 "position": idx + 1,
                 "name": step.title,

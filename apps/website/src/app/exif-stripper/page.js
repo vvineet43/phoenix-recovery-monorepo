@@ -117,7 +117,7 @@ export default function ExifStripperLanding() {
               "@type": "HowTo",
               "name": "How to strip EXIF metadata from photos offline",
               "inLanguage": "en",
-              "step": STEPS.map((step, idx) => ({
+              "step": STRIPPER_STEPS.map((step, idx) => ({
                 "@type": "HowToStep",
                 "position": idx + 1,
                 "name": step.title,

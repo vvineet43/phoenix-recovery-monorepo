@@ -116,7 +116,7 @@ export default function ImageCompressorLanding() {
               "@type": "HowTo",
               "name": "How to compress images offline",
               "inLanguage": "en",
-              "step": STEPS.map((step, idx) => ({
+              "step": COMPRESSOR_STEPS.map((step, idx) => ({
                 "@type": "HowToStep",
                 "position": idx + 1,
                 "name": step.title,
