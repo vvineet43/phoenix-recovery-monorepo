@@ -1,0 +1,31 @@
+name: Submit URLs to IndexNow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'apps/website/src/**'
+      - 'apps/website/public/**'
+      - 'apps/website/next.config.ts'
+  workflow_dispatch:
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Wait for production deployment to propagate
+        if: github.event_name == 'push'
+        run: sleep 90
+
+      - name: Submit sitemap URLs to IndexNow
+        working-directory: apps/website
+        run: npm run indexnow

@@ -5,7 +5,7 @@ const withPWA = withPWAInit({
   dest: "public",
   disable: process.env.NODE_ENV === "development",
   register: true,
-  publicExcludes: ["!downloads/**/*", "!*.py"],
+  publicExcludes: ["!downloads/**/*", "!*.py", "!45afb9452f561055130cfd130a88907d.txt"],
   workboxOptions: {
     runtimeCaching: [
       {
